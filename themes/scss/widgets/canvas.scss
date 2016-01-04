@@ -4,6 +4,8 @@
 @import '../variables/sizes';
 @import '../variables/mixins';
 
+$sMargin-canvas2: 78px;
+
 .CDB-Widget-canvas {
   position: relative;
   top: 0;
@@ -73,12 +75,12 @@
     display: none !important;
   }
   .CDB-Widget-canvas {
-    width: calc(100% - 76px);
-    min-width: calc(100% - 76px);
-    max-width: calc(100% - 76px);
+    width: calc(100% - #{$sMargin-canvas});
+    min-width: calc(100% - #{$sMargin-canvas});
+    max-width: calc(100% - #{$sMargin-canvas});
     height: auto;
     margin-top: 8px;
-    margin-left: 76px;
+    margin-left: $sMargin-canvas;
     border-radius: 0;
     overflow: hidden;
     box-sizing: border-box;
