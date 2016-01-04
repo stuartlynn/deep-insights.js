@@ -69,13 +69,16 @@
 
 // Widget media query
 @include media-query() {
+  .CDB-Widget-tooltip {
+    display: none !important;
+  }
   .CDB-Widget-canvas {
-    width: calc(100% - 88px);
-    min-width: calc(100% - 88px);
-    max-width: calc(100% - 88px);
+    width: calc(100% - 76px);
+    min-width: calc(100% - 76px);
+    max-width: calc(100% - 76px);
     height: auto;
     margin-top: 8px;
-    margin-left: 88px;
+    margin-left: 76px;
     border-radius: 0;
     overflow: hidden;
     box-sizing: border-box;
@@ -93,8 +96,23 @@
     @include display-flex();
     @include flex-wrap(nowrap);
   }
-  .CDB-Widget-canvasShadow.is-visible {
-    display: none;
+  .CDB-Widget-canvasShadow {
+    width: 60px;
+    height: auto;
+  }
+  .CDB-Widget-canvasShadow--top {
+    @include background-horizontal(#FFF, rgba(255, 255, 255, 0));
+    bottom: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+    background-color: transparent;
+  }
+  .CDB-Widget-canvasShadow--bottom {
+    @include background-horizontal(rgba(255, 255, 255, 0), #FFF);
+    left: auto;
+    height: 100%;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0;
   }
   .CDB-Widget-canvasInner {
     @include display-flex();
