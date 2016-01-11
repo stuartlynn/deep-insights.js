@@ -62,6 +62,11 @@
   max-width: 304px;
 }
 
+.CDB-Widget-textBig.is-collapsed {
+  font-size: $sFontSize-huge;
+  line-height: 100%;
+}
+
 // Widget media query
 @include media-query() {
   .CDB-Widget-textBigger--maxWidth {
