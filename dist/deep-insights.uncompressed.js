@@ -38170,7 +38170,7 @@ module.exports = DataviewModelBase.extend({
   defaults: _.extend(
     {
       type: 'category',
-      enableFilter: true,
+      filterEnabled: false,
       allCategoryNames: [] // all (new + previously accepted), updated on data fetch (see parse)
     },
     DataviewModelBase.prototype.defaults
@@ -38182,7 +38182,7 @@ module.exports = DataviewModelBase.extend({
       params.push('bbox=' + this.get('boundingBox'));
     }
 
-    params.push('own_filter=' + (this.get('enableFilter') ? 0 : 1));
+    params.push('own_filter=' + (this.get('filterEnabled') ? 1 : 0));
 
     return this.get('url') + '?' + params.join('&');
   },
@@ -38240,9 +38240,7 @@ module.exports = DataviewModelBase.extend({
         this.trigger('error', this);
       }
     }, this);
-    this._searchModel.bind('change:data', function () {
-      this.trigger('change:searchData', this);
-    }, this);
+    this._searchModel.bind('change:data', this._onSearchDataChange, this);
   },
 
   _shouldFetchOnBoundingBoxChange: function () {
@@ -38250,11 +38248,11 @@ module.exports = DataviewModelBase.extend({
   },
 
   enableFilter: function () {
-    this.set('enableFilter', true);
+    this.set('filterEnabled', true);
   },
 
   disableFilter: function () {
-    this.set('enableFilter', false);
+    this.set('filterEnabled', false);
   },
 
   // Search model helper methods //
@@ -38315,6 +38313,45 @@ module.exports = DataviewModelBase.extend({
     return this._data.isOtherAvailable();
   },
 
+  numberOfAcceptedCategories: function () {
+    var acceptedCategories = this.filter.acceptedCategories;
+    var numberOfRejectedCategories = this.numberOfRejectedCategories();
+    var data = this.getData();
+    var totalCategories = data.size();
+    var numberOfAcceptedCategories = data.reduce(
+      function (memo, cat) {
+        var isCategoryInData = acceptedCategories.where({ name: cat.get('name') }).length > 0;
+        return memo + (isCategoryInData ? 1 : 0);
+      },
+      0
+    );
+    if (!numberOfRejectedCategories) {
+      return numberOfAcceptedCategories;
+    } else {
+      return totalCategories - numberOfRejectedCategories;
+    }
+  },
+
+  numberOfRejectedCategories: function () {
+    var rejectedCategories = this.filter.rejectedCategories;
+    var data = this.getData();
+    return data.reduce(
+      function (memo, cat) {
+        var isCategoryInData = rejectedCategories.where({ name: cat.get('name') }).length > 0;
+        return memo + (isCategoryInData ? 1 : 0);
+      },
+      0
+    );
+  },
+
+  _onSearchDataChange: function () {
+    this.getSearchResult().each(function (m) {
+      var selected = this.filter.isAccepted(m.get('name'));
+      m.set('selected', selected);
+    }, this);
+    this.trigger('change:searchData', this);
+  },
+
   refresh: function () {
     if (this.isSearchApplied()) {
       this._searchModel.fetch();
@@ -38350,8 +38387,8 @@ module.exports = DataviewModelBase.extend({
       });
     }, this);
 
-    // Only accepted categories should appear when enableFilter is false
-    if (!this.get('enableFilter')) {
+    // Only accepted categories should appear when filterEnabled is true
+    if (this.get('filterEnabled')) {
       // Add accepted items that are not present in the categories data
       this.filter.acceptedCategories.each(function (mdl) {
         var category = mdl.get('name');
@@ -39052,7 +39089,9 @@ module.exports = DataviewModelBase.extend({
     this._data = new Backbone.Collection(this.get('data'));
 
     // BBox should only be included until after the first fetch, since we want to get the range of the full dataset
-    this.once('change:data', this.set.bind(this, 'submitBBox', true));
+    this.once('change:data', function () {
+      this.set('submitBBox', true);
+    }, this);
     this.listenTo(this.layer, 'change:meta', this._onChangeLayerMeta);
     this.on('change:column change:bins', this._reloadMap, this);
   },
@@ -78118,7 +78157,7 @@ var DashboardMenuView = cdb.core.View.extend({
   className: 'CDB-Dashboard-menu',
 
   events: {
-    'click .js-toggle-view-link': '_toggleView'
+    'click .js-toggle-view': '_toogleView'
   },
 
   render: function () {
@@ -78135,7 +78174,7 @@ var DashboardMenuView = cdb.core.View.extend({
     return this;
   },
 
-  _toggleView: function () {
+  _toogleView: function () {
     this.$el.toggleClass('is-active');
   }
 });
@@ -78147,19 +78186,19 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Dashboard-menuInner"> <div class="CDB-Dashboard-menuHeader"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <div class="CDB-Dashboard-menuActions"> <button class="CDB-Dashboard-menuActionsLink CDB-Dashboard-menuActionsLink--mobile js-toggle-view-link"> <i class="CDB-IconFont CDB-IconFont-arrowNext"></i> </button> </div> <div class="CDB-Dashboard-menuTexts CDB-Dashboard-hideMobile"> <p class="CDB-Dashboard-menuUpdate">UPDATED '+
+__p+='<div class="CDB-Dashboard-menuContainer"> <div class="CDB-Dashboard-menuInner"> <div class="CDB-Dashboard-menuHeader"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <div class="CDB-Dashboard-menuInfo"> <button class="CDB-Shape CDB-Shape--medium js-toggle-view"> <div class="CDB-Shape-threePoints is-horizontal is-medium is-white"> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> </div> </button> </div> <div class="CDB-Dashboard-menuInfo is-active"> <button class="CDB-Shape CDB-Shape--medium js-toggle-view"> <div class="CDB-Shape-threePoints is-horizontal is-medium"> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> </div> </button> </div> <ul class="CDB-Dashboard-menuActions"> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-heartFill CDB-Size-large"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-twitter CDB-Size-large"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-facebook CDB-Size-medium"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-anchor CDB-Size-medium"></i> </a> </li> </ul> <div class="CDB-Dashboard-menuTexts CDB-Dashboard-hideMobile"> <p class="CDB-Text CDB-Size-small is-upper u-altTextColor u-bSpace--m js-timeAgo">UPDATED '+
 ((__t=( updatedAt ))==null?'':_.escape(__t))+
-'</p> <h1 class="CDB-Dashboard-menuTitle">'+
+'</p> <h1 class="CDB-Dashboard-menuTitle CDB-Text CDB-Size-huge js-title">'+
 ((__t=( title ))==null?'':_.escape(__t))+
-'</h1> <h2 class="CDB-Dashboard-menuDescription">'+
+'</h1> <h2 class="CDB-Text CDB-Size-large is-light u-secondaryTextColor js-description">'+
 ((__t=( description ))==null?'':_.escape(__t))+
 '</h2> </div> </div> <div class="CDB-Dashboard-menuFooter"> <ul> <li class="CDB-Dashboard-menuFooterItem"> <div class="CDB-Dashboard-menuMedia CDB-Dashboard-menuAvatar"> <img src="'+
 ((__t=( userAvatarURL ))==null?'':_.escape(__t))+
-'" alt="avatar" class="inline-block"> </div> <p class="CDB-Dashboard-menuFooterTxt">'+
+'" alt="avatar" class="inline-block"> </div> <p class="CDB-Text CDB-Size-medium CDB-Dashboard-menuFooterTxt">'+
 ((__t=( userName ))==null?'':_.escape(__t))+
-'</p> </li> </ul> </div> </div> <div class="CDB-Dashboard-menuHeaderMobile u-showMobile"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <button class="js-toggle-view-link"> <span class="CDB-Shape CDB-Shape--hamburguer"></span> </button> <div class="CDB-Dashboard-menuMedia CDB-Dashboard-menuAvatar"> <img src="'+
+'</p> </li> </ul> </div> </div> <div class="CDB-Dashboard-bg js-toggle-view"></div> <div class="CDB-Dashboard-menuHeaderMobile u-showMobile"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <button class="js-toggle-view-link"> <span class="CDB-Shape CDB-Shape--hamburguer"></span> </button> <div class="CDB-Dashboard-menuMedia CDB-Dashboard-menuAvatar"> <img src="'+
 ((__t=( userAvatarURL ))==null?'':_.escape(__t))+
-'" alt="avatar" class="inline-block"> </div> </div>';
+'" alt="avatar" class="inline-block"> </div> </div> </div>';
 }
 return __p;
 };
@@ -78822,7 +78861,6 @@ module.exports = WidgetModel.extend({
     this.lockedCategories = new LockedCategoriesCollection();
 
     this.listenTo(this.dataviewModel, 'change:allCategoryNames', this._onDataviewAllCategoryNamesChange);
-    this.listenTo(this.dataviewModel, 'change:searchData', this._onDataviewChangeSearchData);
     this.on('change:locked', this._onLockedChange, this);
     this.on('change:collapsed', this._onCollapsedChange, this);
   },
@@ -78918,19 +78956,11 @@ module.exports = WidgetModel.extend({
     }
   },
 
-  _onDataviewChangeSearchData: function () {
-    // Update selected state for each search result item based on locked categories
-    this.dataviewModel.getSearchResult().each(function (m) {
-      var selected = this.lockedCategories.isItemLocked(m.get('name'));
-      m.set('selected', selected);
-    }, this);
-  },
-
   _onLockedChange: function (m, isLocked) {
     if (isLocked) {
-      this.dataviewModel.disableFilter();
-    } else {
       this.dataviewModel.enableFilter();
+    } else {
+      this.dataviewModel.disableFilter();
     }
   },
 
@@ -79272,6 +79302,9 @@ var _ = require('underscore');
 var cdb = require('cartodb.js');
 var CategoryItemView = require('./item/item-view');
 var placeholder = require('./items-placeholder-template.tpl');
+// It is the minimum number of items in order to change select
+// behaviour within the category list.
+var MIN_CATEGORIES = 2;
 
 /**
  * Category list view
@@ -79353,28 +79386,31 @@ module.exports = cdb.core.View.extend({
   _setFilters: function (mdl) {
     var isSelected = mdl.get('selected');
     var filter = this.dataviewModel.filter;
+    var clickedName = mdl.get('name');
 
     if (isSelected) {
+      // If there isn't any filter applied and there are several categories
+      // (> MIN_CATEGORIES), clicking over one will turn rest into as "unselected"
       if (filter.rejectedCategories.size() === 0 &&
           filter.acceptedCategories.size() === 0 &&
-          this.dataviewModel.getCount() > 1
+          this.dataviewModel.getSize() > MIN_CATEGORIES
       ) {
         var data = this.dataviewModel.getData();
         // Make elements "unselected"
         data.each(function (m) {
           var name = m.get('name');
-          if (name !== mdl.get('name')) {
+          if (name !== clickedName) {
             m.set('selected', false);
           }
         });
         filter.accept(mdl.get('name'));
       } else {
         mdl.set('selected', false);
-        filter.reject(mdl.get('name'));
+        filter.reject(clickedName);
       }
     } else {
       mdl.set('selected', true);
-      filter.accept(mdl.get('name'));
+      filter.accept(clickedName);
     }
   },
 
@@ -79554,7 +79590,7 @@ __p+=' <p class="CDB-Widget-textSmaller CDB-Widget-textSmaller--bold CDB-Widget-
 __p+=' '+
 ((__t=( totalCats ))==null?'':_.escape(__t))+
 ' blocked <button class="CDB-Widget-link u-lSpace js-unlock">unlock</button> ';
- } else if (areAllRejected) { 
+ } else if (areAllRejected || rejectedCats === totalCats) { 
 __p+=' None selected ';
  } else { 
 __p+=' '+
@@ -79566,7 +79602,7 @@ __p+=' <button class="CDB-Widget-link u-lSpace js-lock">lock</button> ';
 __p+=' ';
  }
 __p+=' </p> ';
- if (!isLocked) { 
+ if (!isLocked && totalCats > 2) { 
 __p+=' <div class="CDB-Widget-filterButtons"> ';
  if (rejectedCats > 0 || acceptedCats > 0 || areAllRejected) { 
 __p+=' <button class="CDB-Widget-link CDB-Widget-filterButton js-all">all</button> ';
@@ -79604,12 +79640,11 @@ module.exports = cdb.core.View.extend({
   },
 
   render: function () {
-    var f = this.dataviewModel.filter;
     this.$el.html(
       template({
-        acceptedCats: f.acceptedCategories.size(),
-        rejectedCats: f.rejectedCategories.size(),
-        areAllRejected: f.areAllRejected(),
+        acceptedCats: this.dataviewModel.numberOfAcceptedCategories(),
+        rejectedCats: this.dataviewModel.numberOfRejectedCategories(),
+        areAllRejected: this.dataviewModel.filter.areAllRejected(),
         isLocked: this.widgetModel.isLocked(),
         canBeLocked: this.widgetModel.canBeLocked(),
         totalLocked: this.widgetModel.lockedCategories.size(),
@@ -80519,11 +80554,12 @@ var cdb = require('cartodb.js');
 var formatter = require('../../formatter');
 
 module.exports = cdb.core.View.extend({
-  defaults: {
+
+  options: {
     // render the chart once the width is set as default, provide false value for this prop to disable this behavior
     // e.g. for "mini" histogram behavior
     showOnWidthChange: true,
-
+    chartBarColorClass: '',
     labelsMargin: 16, // px
     hasAxisTip: false,
     minimumBarHeight: 2,
@@ -80540,8 +80576,6 @@ module.exports = cdb.core.View.extend({
 
   initialize: function () {
     if (!_.isNumber(this.options.height)) throw new Error('height is required');
-
-    this.options = _.extend({}, this.defaults, this.options);
 
     _.bindAll(this, '_selectBars', '_adjustBrushHandles', '_onBrushMove', '_onBrushStart', '_onMouseMove', '_onMouseOut');
 
@@ -80601,7 +80635,7 @@ module.exports = cdb.core.View.extend({
   chartHeight: function () {
     var m = this.model.get('margin');
     var labelsMargin = this.model.get('showLabels')
-      ? this.defaults.labelsMargin
+      ? this.options.labelsMargin
       : 0;
     return this.model.get('height') - m.top - m.bottom - labelsMargin;
   },
@@ -81393,7 +81427,7 @@ module.exports = cdb.core.View.extend({
     bars
       .enter()
       .append('rect')
-      .attr('class', 'CDB-Chart-bar')
+      .attr('class', 'CDB-Chart-bar ' + this.options.chartBarColorClass)
       .attr('data', function (d) { return _.isEmpty(d) ? 0 : d.freq; })
       .attr('transform', function (d, i) {
         return 'translate(' + (i * self.barWidth) + ', 0 )';
@@ -81458,7 +81492,7 @@ module.exports = cdb.core.View.extend({
     bars
       .enter()
       .append('rect')
-      .attr('class', 'CDB-Chart-bar')
+      .attr('class', 'CDB-Chart-bar ' + this.options.chartBarColorClass)
       .attr('data', function (d) { return _.isEmpty(d) ? 0 : d.freq; })
       .attr('transform', function (d, i) {
         return 'translate(' + (i * self.barWidth) + ', 0 )';
@@ -83037,6 +83071,7 @@ module.exports = cdb.core.View.extend({
       animationBarDelay: function (d, i) {
         return (i * 3);
       },
+      chartBarColorClass: 'CDB-Chart-bar--timeSeries',
       margin: {
         top: 4,
         right: 4,
