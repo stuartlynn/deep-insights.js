@@ -78941,7 +78941,7 @@ module.exports = WidgetModel.extend({
 
   lockCategories: function () {
     this.set('locked', true);
-    this.dataviewModel.forceFetch();
+    this.dataviewModel.fetch();
   },
 
   unlockCategories: function () {
@@ -80429,7 +80429,7 @@ module.exports = cdb.core.View.extend({
     this.$el.html(
       template({
         title: this.model.get('title'),
-        operation: this.model.get('operation'),
+        operation: this._dataviewModel.get('operation'),
         value: value,
         formatedValue: format(value),
         nulls: nulls,
@@ -81669,7 +81669,7 @@ module.exports = cdb.core.View.extend({
 
     this._dataviewModel.bind('change', this._onChangeModel, this);
     this.add_related_model(this._dataviewModel);
-    this._dataviewModel._fetch();
+    this._dataviewModel.fetch();
   },
 
   _storeBounds: function () {
@@ -82019,7 +82019,7 @@ module.exports = cdb.core.View.extend({
     this.histogramChartView.removeShadowBars();
 
     this._dataviewModel.set({ start: null, end: null, bins: null, own_filter: 1 });
-    this._dataviewModel._fetch();
+    this._dataviewModel.fetch();
     this.lockedByUser = false;
   },
 
@@ -82688,7 +82688,7 @@ module.exports = cdb.core.View.extend({
   _onFirstLoad: function () {
     this._storeBounds();
     this._dataviewModel.once('change:data', this.render, this);
-    this._dataviewModel._fetch();
+    this._dataviewModel.fetch();
     if (!this._isDataEmpty()) {
       this.render();
     }
