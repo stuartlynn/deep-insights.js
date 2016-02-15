@@ -14679,7 +14679,7 @@ GMapsTorqueLayer.prototype = torque.extend({},
       self.fire('change:steps', {
         steps: self.provider.getSteps()
       });
-      self.setKey(self.getKey());
+      self.setKeys(self.getKeys());
     };
 
     this.provider = new this.providers[this.options.provider](this.options);
@@ -14811,6 +14811,13 @@ GMapsTorqueLayer.prototype = torque.extend({},
    */
   setKey: function(key) {
     this.setKeys([key]);
+  },
+
+  /** 
+   * returns the array of keys being rendered
+   */
+  getKeys: function() {
+    return this.keys;
   },
 
   setKeys: function(keys) {
@@ -15597,7 +15604,7 @@ L.TorqueLayer = L.CanvasLayer.extend({
       self.fire('change:steps', {
         steps: self.provider.getSteps()
       });
-      self.setKey(self.getKey());
+      self.setKeys(self.getKeys());
     };
 
     this.renderer.on("allIconsLoaded", this.render.bind(this));
@@ -15792,6 +15799,13 @@ L.TorqueLayer = L.CanvasLayer.extend({
    */
   setKey: function(key, options) {
     this.setKeys([key], options);
+  },
+
+  /** 
+   * returns the array of keys being rendered
+   */
+  getKeys: function() {
+    return this.keys;
   },
 
   setKeys: function(keys, options) {
@@ -24985,7 +24999,7 @@ module.exports={
     "leaflet": "0.7.3",
     "mustache": "1.1.0",
     "perfect-scrollbar": "0.6.7",
-    "torque.js": "2.15.0",
+    "torque.js": "2.15.1",
     "underscore": "1.8.3",
     "cartoassets": "github:cartodb/CartoAssets#master"
   },
@@ -25103,7 +25117,7 @@ module.exports={
       "/vendor"
     ]
   },
-  "gitHead": "177ed9b83a148b8230cad49e19fc353ed8aa887f",
+  "gitHead": "3b6dcfd9e68e952142b387d03d3bc61ba4e2b13c",
   "readme": "CartoDB.js (v3.15)\n===========\n\n[![Build Status](http://clinker.cartodb.net/desktop/plugin/public/status/CartoDB-js-develop-testing)]\n(http://clinker.cartodb.net/jenkins/job/CartoDB-js-develop-testing)\n\nThis library allows to embed visualizations created with CartoDB in your map or website in a simple way.\n\n\n## Quick start\n\n  1. Add cartodb.js and css to your site:\n\n    ```html\n\n        <link rel=\"stylesheet\" href=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css\" />\n        <script src=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js\"></script>\n\n        <!-- use these cartodb.css links if you are using https -->\n        <!--link rel=\"stylesheet\" href=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css\" /-->\n\n        <!-- use this cartodb.js link if you are using https -->\n        <!-- script src=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js\"></script -->\n    ```\n\n\n  2. Create the map and add the layer\n\n    ```javascript\n      var map = L.map('map').setView([0, 0], 3);\n\n      // set a base layer\n      L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png', {\n        attribution: 'stamen http://maps.stamen.com/'\n      }).addTo(map);\n\n      // add the cartodb layer\n      var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json';\n      cartodb.createLayer(map, layerUrl).addTo(map);\n    ```\n\n### Usage with Bower\n\nYou can install **cartodb.js** with [bower](http://bower.io/) by running\n\n```sh\nbower install cartodb.js\n```\n\n\n## Documentation\nYou can find the documentation online [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) and the [source](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md) inside this repository.\n\n## Examples\n\n - [Load a layer with google maps](http://cartodb.github.com/cartodb.js/examples/gmaps_force_basemap.html)\n - [Load a layer with Leaflet](http://cartodb.github.com/cartodb.js/examples/leaflet.html)\n - [Show a complete visualization](http://cartodb.github.com/cartodb.js/examples/easy.html)\n - [A visualization with a layer selector](http://cartodb.github.com/cartodb.js/examples/layer_selector.html)\n - [How to create a custom infowindow](http://cartodb.github.com/cartodb.js/examples/custom_infowindow.html)\n - [The Hobbit filming location paths](http://cartodb.github.com/cartodb.js/examples/TheHobbitLocations/) a full example with some widgets\n\n\n## How to build\nBuild CartoDB.js library:\n\n  - Install [node.js](http://nodejs.org/download/), from 0.10 version\n  - Install grunt & bower: `npm install -g grunt-cli bower`\n  - Install node dependencies: `npm install`\n  - Install bower dependencies: `bower install`\n  - Install [ruby](https://www.ruby-lang.org/en/installation/) and [bundler](https://github.com/bundler/bundler)\n  - Install ruby dependencies: `bundle install` (necessary for compass gem)\n  - Start the server: `grunt build`\n  - Happy mapping!\n  - \n  \n## Submitting Contributions\n\nYou will need to sign a Contributor License Agreement (CLA) before making a submission. [Learn more here.](https://cartodb.com/contributing)\n\n",
   "readmeFilename": "README.md",
   "bugs": {
@@ -25111,9 +25125,9 @@ module.exports={
   },
   "homepage": "https://github.com/CartoDB/cartodb.js#readme",
   "_id": "cartodb.js@4.0.0-alpha.1",
-  "_shasum": "fb54e31fef9d388c415decabef4f4b00ab391917",
-  "_from": "cartodb/cartodb.js#177ed9b",
-  "_resolved": "git://github.com/cartodb/cartodb.js.git#177ed9b83a148b8230cad49e19fc353ed8aa887f"
+  "_shasum": "6efe2d9eab04d5092aa30ffff4be71fe1189daa1",
+  "_from": "cartodb/cartodb.js#3b6dcfd",
+  "_resolved": "git://github.com/cartodb/cartodb.js.git#3b6dcfd9e68e952142b387d03d3bc61ba4e2b13c"
 }
 
 },{}],79:[function(require,module,exports){
@@ -29954,12 +29968,25 @@ _.extend(
     _update: function () {
       var changed = this.model.changedAttributes();
       if (changed === false) return;
-      changed.tile_style && this.setCartoCSS(this.model.get('tile_style'));
-      if ('query' in changed || 'query_wrapper' in changed) {
-        this.setSQL(this._getQuery(this.model));
-      }
+
       if ('visible' in changed) {
         this.model.get('visible') ? this.show() : this.hide();
+      }
+
+      if ('urls' in changed) {
+        // REAL HACK
+        this.provider.templateUrl = this.model.get('urls').tiles[0];
+        // set meta
+        _.extend(this.provider.options, this.model.get('meta'));
+        this.model.set(this.model.get('meta'));
+        // this needs to be deferred in order to break the infinite loop
+        // of setReady changing keys and keys updating the model
+        // If we do this in the next iteration 'urls' will not be in changedAttributes
+        // so this will not pass through this code
+        setTimeout(function () {
+          this.provider._setReady(true);
+          this._reloadTiles();
+        }.bind(this), 0);
       }
     },
 
@@ -31158,6 +31185,7 @@ var LeafletTorqueLayer = L.TorqueLayer.extend({
       this.provider.templateUrl = this.model.get('urls').tiles[0];
       // set meta
       _.extend(this.provider.options, this.model.get('meta'));
+      this.model.set(this.model.get('meta'));
       // this needs to be deferred in order to break the infinite loop
       // of setReady changing keys and keys updating the model
       // If we do this in the next iteration 'urls' will not be in changedAttributes
@@ -32250,6 +32278,15 @@ var TorqueLayer = MapLayer.extend({
   },
 
   fetchAttributes: function(layer, featureID, callback) {
+  },
+
+  // given a timestamp returns a step (float)
+  timeToStep: function(timestamp) {
+    var steps = this.get('steps');
+    var start = this.get('start');
+    var end = this.get('end');
+    var step = (steps * (1000*timestamp - start)) / (end - start);
+    return step;
   }
 });
 
