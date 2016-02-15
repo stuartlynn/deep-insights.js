@@ -79093,7 +79093,7 @@ __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listButto
 ((__t=( name ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( name ))==null?'':_.escape(__t))+
-'</p> <p class="CDB-Text CDB-Size-small CDB-Widget-textSmaller" title="'+
+'</p> <p class="CDB-Text CDB-Size-small u-secondaryTextColor" title="'+
 ((__t=( value ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( prefix ))==null?'':_.escape(__t))+
@@ -79123,7 +79123,7 @@ __p+='<div class="CDB-Widget-listItemInner '+
 ((__t=( name ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( name ))==null?'':_.escape(__t))+
-'</p> <p class="CDB-Widget-textSmaller" title="'+
+'</p> <p class="CDB-Text CDB-Size-small u-secondaryTextColor" title="'+
 ((__t=( value ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( prefix ))==null?'':_.escape(__t))+
@@ -79211,11 +79211,11 @@ __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listItemI
 ((__t=( isDisabled ? 'is-disabled' : '' ))==null?'':_.escape(__t))+
 '"> <span class="CDB-Widget-checkbox '+
 ((__t=( isDisabled ? '' : 'is-checked' ))==null?'':_.escape(__t))+
-'"></span> <div class="u-lSpace--xl"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold is-upper CDB-Size-medium" title="'+
+'"></span> <div class="u-lSpace--xl"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text CDB-Size-medium is-semibold is-upper" title="'+
 ((__t=( name ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( name ))==null?'':_.escape(__t))+
-'</p> <p class="CDB-Widget-textSmaller" title="'+
+'</p> <p class="CDB-Text CDB-Size-small is-semibold" title="'+
 ((__t=( value ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( prefix ))==null?'':_.escape(__t))+
@@ -79433,9 +79433,9 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<li class="CDB-Widget-listItem"> <h4 class="CDB-Widget-textBig CDB-Widget-textBig--bold">No results</h4> <p class="CDB-Widget-textSmall u-tSpace-xl">Your search "'+
+__p+='<li class="CDB-Widget-listItem"> <h4 class="CDB-Text CDB-Size-large">No results</h4> <p class="CDB-Text CDB-Size-medium u-tSpace-xl u-altTextColor">Your search "'+
 ((__t=( q ))==null?'':_.escape(__t))+
-'" didn\'t match<br>with any value.</p> <p class="CDB-Widget-textSmall u-tSpace-xl">Try searching again.</p> </li>';
+'" didn\'t match<br>with any value.</p> <p class="CDB-Text CDB-Size-medium u-tSpace-xl u-altTextColor">Try searching again.</p> </li>';
 }
 return __p;
 };
@@ -79581,15 +79581,15 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='';
  if (isSearchEnabled) { 
-__p+=' <p class="CDB-Widget-textSmaller CDB-Widget-textSmaller--bold CDB-Widget-textSmaller--dark CDB-Widget-textSmaller--upper">'+
+__p+=' <p class="CDB-Text is-semibold CDB-Size-small is-upper js-lockCategories">'+
 ((__t=( totalLocked ))==null?'':_.escape(__t))+
 ' selected</p> ';
  } else { 
-__p+=' <p class="CDB-Widget-textSmaller CDB-Widget-textSmaller--bold CDB-Widget-textSmaller--dark CDB-Widget-textSmaller--upper"> ';
+__p+=' <p class="CDB-Text is-semibold CDB-Size-small is-upper js-textInfo"> ';
  if (isLocked) { 
 __p+=' '+
 ((__t=( totalCats ))==null?'':_.escape(__t))+
-' blocked <button class="CDB-Widget-link u-lSpace js-unlock">unlock</button> ';
+' blocked <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-link u-lSpace js-unlock">unlock</button> ';
  } else if (areAllRejected || rejectedCats === totalCats) { 
 __p+=' None selected ';
  } else { 
@@ -79597,7 +79597,7 @@ __p+=' '+
 ((__t=( rejectedCats === 0 && acceptedCats === 0 || acceptedCats >= totalCats ? "All selected" : acceptedCats + " selected" ))==null?'':_.escape(__t))+
 ' ';
  if (canBeLocked) { 
-__p+=' <button class="CDB-Widget-link u-lSpace js-lock">lock</button> ';
+__p+=' <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-link u-lSpace js-lock">lock</button> ';
  }
 __p+=' ';
  }
@@ -79605,7 +79605,7 @@ __p+=' </p> ';
  if (!isLocked && totalCats > 2) { 
 __p+=' <div class="CDB-Widget-filterButtons"> ';
  if (rejectedCats > 0 || acceptedCats > 0 || areAllRejected) { 
-__p+=' <button class="CDB-Widget-link CDB-Widget-filterButton js-all">all</button> ';
+__p+=' <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-link CDB-Widget-filterButton js-all">all</button> ';
  } 
 __p+=' </div> ';
  } 
@@ -79691,7 +79691,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-contentFlex"> <button class="u-rSpace--m CDB-Widget-buttonIcon CDB-Widget-textSmaller CDB-Widget-textSmaller--upper js-searchToggle"> <i class="CDB-IconFont CDB-IconFont--center CDB-IconFont-lens u-rSpace"></i> <span class="u-iBlock"> search in '+
+__p+='<div class="CDB-Widget-contentFlex"> <button class="u-rSpace--m CDB-Text is-semibold is-upper CDB-Size-small js-searchToggle"> <div class="CDB-Shape u-iBlock"> <span class="CDB-Shape-magnify is-small is-blue"></span> </div> <span class="u-iBlock u-actionTextColor"> search in '+
 ((__t=( categoriesCount ))==null?'':_.escape(__t))+
 ' categor'+
 ((__t=( categoriesCount === 1 ? 'y' : 'ies' ))==null?'':_.escape(__t))+
@@ -79835,9 +79835,9 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-contentFlex"> <button class="u-rSpace--m CDB-Widget-link js-searchToggle">cancel</button> </div> ';
+__p+='<div class="CDB-Widget-contentFlex u-tSpace--m"> <button class="CDB-Text is-semibold is-upper CDB-Size-small u-rSpace--m js-searchToggle u-actionTextColor">cancel</button> </div> ';
  if (showPaginator) { 
-__p+=' <div class="CDB-Widget-navDots js-dots"> ';
+__p+=' <div class="CDB-Widget-navDots js-dots u-tSpace--m"> ';
  for (var i = 0, l = pages; i < l; i++) { 
 __p+='<button class="CDB-Shape-dot CDB-Widget-dot--navigation js-page ';
  if (currentPage === i) { 
@@ -79950,7 +79950,7 @@ var AnimateValues = require('../../animate-values');
  */
 
 module.exports = cdb.core.View.extend({
-  className: 'CDB-Widget-info CDB-Widget-textSmaller CDB-Widget-textSmaller--upper',
+  className: 'CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper',
   tagName: 'dl',
 
   initialize: function () {
@@ -80040,7 +80040,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='';
  if (isSearchEnabled) { 
-__p+=' <form class="CDB-Widget-search js-form"> <i class="CDB-IconFont CDB-IconFont-lens CDB-Widget-searchLens"></i> <input type="text" class="CDB-Widget-textInput CDB-Widget-searchTextInput js-textInput" value="'+
+__p+=' <form class="CDB-Widget-search js-form"> <div class="CDB-Shape u-iBlock u-rSpace js-searchIcon"> <span class="CDB-Shape-magnify is-small is-blue"></span> </div> <input type="text" class="CDB-Text CDB-Size-large CDB-Widget-textInput CDB-Widget-searchTextInput js-textInput" value="'+
 ((__t=( q ))==null?'':_.escape(__t))+
 '" placeholder="Search by '+
 ((__t=( columnName ))==null?'':_.escape(__t))+
@@ -80050,7 +80050,7 @@ __p+=' <button type="button" class="CDB-Widget-link CDB-Widget-searchApply js-ap
  } 
 __p+=' </form> ';
  } else { 
-__p+=' <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Widget-textBig" title="'+
+__p+=' <div class="CDB-Widget-title CDB-Widget-contentSpaced js-title"> <h3 class="CDB-Text CDB-Size-large is-ellipsis js-titleText" title="'+
 ((__t=( title ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( title ))==null?'':_.escape(__t))+
@@ -80060,7 +80060,7 @@ __p+=' <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Wi
 ((__t=( isColorApplied ? 'js-cancelColors' : 'js-applyColors' ))==null?'':_.escape(__t))+
 '" data-tooltip="\n          '+
 ((__t=( isColorApplied ? 'Remove colors' : 'Apply colors' ))==null?'':_.escape(__t))+
-'\n        "> <i class="CDB-IconFont CDB-IconFont-drop CDB-IconFont--small CDB-IconFont--top"></i> </button> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> </div> ';
+'\n        "> <i class="CDB-IconFont CDB-IconFont-drop CDB-IconFont--small CDB-IconFont--top"></i> </button> <button class="CDB-Shape js-actions u-lSpace"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> </div> ';
  } 
 __p+='';
 }
@@ -80231,7 +80231,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<ul> <li class="CDB-Dropdown-item"><button class="CDB-Dropdown-link js-toggle">Toggle widget</button></li> <li class="CDB-Dropdown-item"><button class="CDB-Dropdown-link js-pin">Pin widget</button></li> </ul>';
+__p+='<ul class="CDB-Text CDB-Size-medium"> <li class="CDB-Dropdown-item"> <button class="CDB-Dropdown-link js-toggle">Toggle widget</button> </li> <li class="CDB-Dropdown-item"> <button class="CDB-Dropdown-link js-pin">Pin widget</button> </li> </ul>';
 }
 return __p;
 };
@@ -80493,7 +80493,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-header js-header"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <div class="CDB-Widget-contentSpaced"> <h3 class="CDB-Widget-textBig '+
+__p+='<div class="CDB-Widget-header js-header"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large is-ellipsis '+
 ((__t=( isCollapsed ? 'js-value is-collapsed' : 'js-title' ))==null?'':_.escape(__t))+
 '">';
  if (isCollapsed) { 
@@ -80509,11 +80509,11 @@ __p+='</h3> <div class="CDB-Widget-tag CDB-Widget-tag--'+
 ((__t=( operation ))==null?'':_.escape(__t))+
 '"> <span class="CDB-Widget-textSmaller CDB-Widget-textSmaller--upper">'+
 ((__t=( operation ))==null?'':_.escape(__t))+
-'</span> </div> </div> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> <dl class="CDB-Widget-info CDB-Widget-textSmaller CDB-Widget-textSmaller--upper"> <dt class="CDB-Widget-infoCount">'+
+'</span> </div> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper"> <dt class="CDB-Widget-infoCount">'+
 ((__t=( nulls ))==null?'':_.escape(__t))+
 '</dt><dd class="CDB-Widget-infoDescription">null rows</dd> </dl> </div> <div class="CDB-Widget-content"> ';
  if (_.isNumber(value)) { 
-__p+=' <h4 class="CDB-Widget-textBigger CDB-Widget-textBigger--maxWidth '+
+__p+=' <h4 class="CDB-Text CDB-Size-huge '+
 ((__t=( !isCollapsed ? 'js-value' : '' ))==null?'':_.escape(__t))+
 '" title="'+
 ((__t=( value ))==null?'':_.escape(__t))+
@@ -81279,7 +81279,7 @@ module.exports = cdb.core.View.extend({
       .attr('width', 10);
 
     this.textLabel = axisTip.append('text')
-      .attr('class', 'CDB-Chart-axisTipText CDB-Chart-axisTip-' + className)
+      .attr('class', 'CDB-Text CDB-Size-small CDB-Chart-axisTipText CDB-Chart-axisTip-' + className)
       .attr('dy', '11')
       .attr('dx', '0')
       .text(function (d) { return d; });
@@ -81379,7 +81379,7 @@ module.exports = cdb.core.View.extend({
     var adjustTextAnchor = this._generateAdjustAnchorMethod(this.verticalRange);
 
     var axis = this.chart.append('g')
-      .attr('class', 'CDB-Chart-axis');
+      .attr('class', 'CDB-Chart-axis CDB-Text CDB-Size-small');
 
     axis
       .append('g')
@@ -81407,7 +81407,7 @@ module.exports = cdb.core.View.extend({
       .orient('bottom');
 
     var axis = this.canvas.append('g')
-      .attr('class', 'CDB-Chart-axis')
+      .attr('class', 'CDB-Chart-axis CDB-Text CDB-Size-small')
       .attr('transform', 'translate(0,' + (this.chartHeight() + 5) + ')')
       .call(xAxis);
 
@@ -82066,9 +82066,9 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-header js-header"> <div class="js-title"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Widget-textBig js-title">'+
+__p+='<div class="CDB-Widget-header js-header"> <div class="js-title"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large is-ellipsis js-title">'+
 ((__t=( title ))==null?'':_.escape(__t))+
-'</h3> </div> </div> <dl class="CDB-Widget-info CDB-Widget-textSmaller CDB-Widget-textSmaller--upper"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> </div> <div class="CDB-Widget-content js-content"> <div class="CDB-Widget-tooltip CDB-Widget-tooltip--light js-tooltip"></div> <div class="CDB-Widget-filter CDB-Widget-contentSpaced js-filter is-hidden"> <p class="CDB-Widget-textSmaller CDB-Widget-textSmaller--bold CDB-Widget-textSmaller--upper js-val"></p> <div class="CDB-Widget-filterButtons"> <button class="CDB-Widget-link CDB-Widget-filterButton js-zoom">zoom</button> <button class="CDB-Widget-link CDB-Widget-filterButton js-clear">clear</button> </div> </div> </div>';
+'</h3> </div> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> </div> <div class="CDB-Widget-content js-content"> <div class="CDB-Widget-tooltip CDB-Widget-tooltip--light CDB-Text CDB-Size-small js-tooltip"></div> <div class="CDB-Widget-filter CDB-Widget-contentSpaced js-filter is-hidden"> <p class="CDB-Text is-semibold CDB-Size-small js-val"></p> <div class="CDB-Widget-filterButtons"> <button class="CDB-Text CDB-Size-small is-upper CDB-Widget-filterButton js-zoom u-actionTextColor">zoom</button> <button class="CDB-Text CDB-Size-small is-upper CDB-Widget-filterButton js-clear u-actionTextColor">clear</button> </div> </div> </div>';
 }
 return __p;
 };
@@ -82078,7 +82078,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<h3 class="CDB-Widget-textBig" title="'+
+__p+='<h3 class="CDB-Text CDB-Size-large is-overflow" title="'+
 ((__t=( title ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( title ))==null?'':_.escape(__t))+
@@ -82088,7 +82088,7 @@ __p+='<h3 class="CDB-Widget-textBig" title="'+
 ((__t=( isSizesApplied ? 'js-cancelSizes' : 'js-applySizes' ))==null?'':_.escape(__t))+
 '" data-tooltip="'+
 ((__t=( isSizesApplied ? 'Remove sizes' : 'Apply sizes' ))==null?'':_.escape(__t))+
-'"> <i class="CDB-IconFont CDB-IconFont-drop CDB-IconFont--small CDB-IconFont--top"></i> </button> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div>';
+'"> <i class="CDB-IconFont CDB-IconFont-drop CDB-IconFont--small CDB-IconFont--top"></i> </button> <button class="CDB-Shape js-actions u-lSpace"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div>';
 }
 return __p;
 };
@@ -83190,11 +83190,11 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<p class="CDB-Widget-textBig CDB-Widget-text--secondary"> Selected from </p> <p class="CDB-Widget-textBig"> '+
+__p+='<p class="CDB-Text CDB-Size-large u-iBlock"> Selected from </p> <p class="CDB-Text CDB-Size-large u-secondaryTextColor u-iBlock"> '+
 ((__t=( timeFormatter(startDate) ))==null?'':_.escape(__t))+
 ' '+
 ((__t=( dateFormatter(startDate) ))==null?'':_.escape(__t))+
-' </p> <p class="CDB-Widget-textBig CDB-Widget-text--secondary"> to </p> <p class="CDB-Widget-textBig"> '+
+' </p> <p class="CDB-Text CDB-Size-large u-iBlock"> to </p> <p class="CDB-Text CDB-Size-large u-secondaryTextColor u-iBlock"> '+
 ((__t=( timeFormatter(endDate) ))==null?'':_.escape(__t))+
 ' '+
 ((__t=( dateFormatter(endDate) ))==null?'':_.escape(__t))+
@@ -83292,9 +83292,9 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<p class="CDB-Widget-textBig"> '+
+__p+='<p class="CDB-Text CDB-Size-large u-iBlock"> '+
 ((__t=( time ))==null?'':_.escape(__t))+
-' </p> <p class="CDB-Widget-textBig CDB-Widget-text--secondary"> '+
+' </p> <p class="CDB-Text CDB-Size-large u-secondaryTextColor u-iBlock u-lSpace"> '+
 ((__t=( date ))==null?'':_.escape(__t))+
 ' </p>';
 }
@@ -83611,7 +83611,7 @@ var _ = require('underscore');
  *
  */
 module.exports = cdb.core.View.extend({
-  className: 'CDB-Widget-tooltip CDB-Widget-tooltip--light',
+  className: 'CDB-Widget-tooltip CDB-Widget-tooltip--light CDB-Text CDB-Size-small',
 
   options: {
     attribute: 'data-tooltip',
