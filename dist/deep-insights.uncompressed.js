@@ -80505,11 +80505,7 @@ __p+=' '+
 ((__t=( title ))==null?'':_.escape(__t))+
 '';
  } 
-__p+='</h3> <div class="CDB-Widget-tag CDB-Widget-tag--'+
-((__t=( operation ))==null?'':_.escape(__t))+
-'"> <span class="CDB-Widget-textSmaller CDB-Widget-textSmaller--upper">'+
-((__t=( operation ))==null?'':_.escape(__t))+
-'</span> </div> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper"> <dt class="CDB-Widget-infoCount">'+
+__p+='</h3> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper"> <dt class="CDB-Widget-infoCount">'+
 ((__t=( nulls ))==null?'':_.escape(__t))+
 '</dt><dd class="CDB-Widget-infoDescription">null rows</dd> </dl> </div> <div class="CDB-Widget-content"> ';
  if (_.isNumber(value)) { 
