@@ -80074,7 +80074,7 @@ __p+=' <button type="button" class="CDB-Widget-link CDB-Widget-searchApply js-ap
  } 
 __p+=' </form> ';
  } else { 
-__p+=' <div class="CDB-Widget-title CDB-Widget-contentSpaced js-title"> <h3 class="CDB-Text CDB-Size-large is-ellipsis js-titleText" title="'+
+__p+=' <div class="CDB-Widget-title CDB-Widget-contentSpaced js-title"> <h3 class="CDB-Text CDB-Size-large u-ellipsis js-titleText" title="'+
 ((__t=( title ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( title ))==null?'':_.escape(__t))+
@@ -80517,7 +80517,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-header js-header"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large is-ellipsis '+
+__p+='<div class="CDB-Widget-header js-header"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large u-ellipsis '+
 ((__t=( isCollapsed ? 'js-value is-collapsed' : 'js-title' ))==null?'':_.escape(__t))+
 '">';
  if (isCollapsed) { 
@@ -82034,7 +82034,7 @@ module.exports = cdb.core.View.extend({
 
   _onZoomIn: function () {
     this._showMiniRange();
-    this.histogramChartView.expand(20);
+    this.histogramChartView.expand(4);
 
     this.histogramChartView.removeShadowBars();
 
@@ -82086,9 +82086,9 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-header js-header"> <div class="js-title"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large is-ellipsis js-title">'+
+__p+='<div class="CDB-Widget-header js-header"> <div class="js-title"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large u-ellipsis js-title">'+
 ((__t=( title ))==null?'':_.escape(__t))+
-'</h3> </div> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> </div> <div class="CDB-Widget-content js-content"> <div class="CDB-Widget-tooltip CDB-Widget-tooltip--light CDB-Text CDB-Size-small js-tooltip"></div> <div class="CDB-Widget-filter CDB-Widget-contentSpaced js-filter is-hidden"> <p class="CDB-Text is-semibold CDB-Size-small js-val"></p> <div class="CDB-Widget-filterButtons"> <button class="CDB-Text CDB-Size-small is-upper CDB-Widget-filterButton js-zoom u-actionTextColor">zoom</button> <button class="CDB-Text CDB-Size-small is-upper CDB-Widget-filterButton js-clear u-actionTextColor">clear</button> </div> </div> </div>';
+'</h3> </div> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> </div> <div class="CDB-Widget-content CDB-Widget-content--histogram js-content"> <div class="CDB-Widget-tooltip CDB-Widget-tooltip--light CDB-Text CDB-Size-small js-tooltip"></div> <div class="CDB-Widget-filter CDB-Widget-contentSpaced"> <p class="CDB-Text CDB-Size-small is-semibold is-upper js-val"></p> <div class="CDB-Widget-filterButtons js-filter is-hidden"> <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-filterButton js-zoom">zoom</button> <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-filterButton js-clear">clear</button> </div> </div> </div>';
 }
 return __p;
 };
