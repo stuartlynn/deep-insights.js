@@ -25117,7 +25117,7 @@ module.exports={
       "/vendor"
     ]
   },
-  "gitHead": "3b6dcfd9e68e952142b387d03d3bc61ba4e2b13c",
+  "gitHead": "f95c8cb84fe6f4ae156deb0c892e7be26fcd0968",
   "readme": "CartoDB.js (v3.15)\n===========\n\n[![Build Status](http://clinker.cartodb.net/desktop/plugin/public/status/CartoDB-js-develop-testing)]\n(http://clinker.cartodb.net/jenkins/job/CartoDB-js-develop-testing)\n\nThis library allows to embed visualizations created with CartoDB in your map or website in a simple way.\n\n\n## Quick start\n\n  1. Add cartodb.js and css to your site:\n\n    ```html\n\n        <link rel=\"stylesheet\" href=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css\" />\n        <script src=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js\"></script>\n\n        <!-- use these cartodb.css links if you are using https -->\n        <!--link rel=\"stylesheet\" href=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css\" /-->\n\n        <!-- use this cartodb.js link if you are using https -->\n        <!-- script src=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js\"></script -->\n    ```\n\n\n  2. Create the map and add the layer\n\n    ```javascript\n      var map = L.map('map').setView([0, 0], 3);\n\n      // set a base layer\n      L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png', {\n        attribution: 'stamen http://maps.stamen.com/'\n      }).addTo(map);\n\n      // add the cartodb layer\n      var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json';\n      cartodb.createLayer(map, layerUrl).addTo(map);\n    ```\n\n### Usage with Bower\n\nYou can install **cartodb.js** with [bower](http://bower.io/) by running\n\n```sh\nbower install cartodb.js\n```\n\n\n## Documentation\nYou can find the documentation online [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) and the [source](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md) inside this repository.\n\n## Examples\n\n - [Load a layer with google maps](http://cartodb.github.com/cartodb.js/examples/gmaps_force_basemap.html)\n - [Load a layer with Leaflet](http://cartodb.github.com/cartodb.js/examples/leaflet.html)\n - [Show a complete visualization](http://cartodb.github.com/cartodb.js/examples/easy.html)\n - [A visualization with a layer selector](http://cartodb.github.com/cartodb.js/examples/layer_selector.html)\n - [How to create a custom infowindow](http://cartodb.github.com/cartodb.js/examples/custom_infowindow.html)\n - [The Hobbit filming location paths](http://cartodb.github.com/cartodb.js/examples/TheHobbitLocations/) a full example with some widgets\n\n\n## How to build\nBuild CartoDB.js library:\n\n  - Install [node.js](http://nodejs.org/download/), from 0.10 version\n  - Install grunt & bower: `npm install -g grunt-cli bower`\n  - Install node dependencies: `npm install`\n  - Install bower dependencies: `bower install`\n  - Install [ruby](https://www.ruby-lang.org/en/installation/) and [bundler](https://github.com/bundler/bundler)\n  - Install ruby dependencies: `bundle install` (necessary for compass gem)\n  - Start the server: `grunt build`\n  - Happy mapping!\n  - \n  \n## Submitting Contributions\n\nYou will need to sign a Contributor License Agreement (CLA) before making a submission. [Learn more here.](https://cartodb.com/contributing)\n\n",
   "readmeFilename": "README.md",
   "bugs": {
@@ -25125,9 +25125,9 @@ module.exports={
   },
   "homepage": "https://github.com/CartoDB/cartodb.js#readme",
   "_id": "cartodb.js@4.0.0-alpha.1",
-  "_shasum": "6efe2d9eab04d5092aa30ffff4be71fe1189daa1",
-  "_from": "cartodb/cartodb.js#3b6dcfd",
-  "_resolved": "git://github.com/cartodb/cartodb.js.git#3b6dcfd9e68e952142b387d03d3bc61ba4e2b13c"
+  "_shasum": "d453fe2dd0ebee54fb59c3b65842170f5e79a091",
+  "_from": "cartodb/cartodb.js#f95c8cb",
+  "_resolved": "git://github.com/cartodb/cartodb.js.git#f95c8cb84fe6f4ae156deb0c892e7be26fcd0968"
 }
 
 },{}],79:[function(require,module,exports){
@@ -27685,6 +27685,7 @@ module.exports = Model.extend({
 var _ = require('underscore');
 var Model = require('../core/model');
 var WindshaftFiltersBoundingBoxFilter = require('../windshaft/filters/bounding-box');
+var BOUNDING_BOX_FILTER_WAIT = 500;
 
 /**
  * Default dataview model
@@ -27718,7 +27719,7 @@ module.exports = Model.extend({
     }
 
     if (!attrs.id) {
-      this.set('id', attrs.type + '-' + this.cid);
+      this.set('id', this.defaults.type + '-' + this.cid);
     }
 
     this.layer = opts.layer;
@@ -27737,6 +27738,7 @@ module.exports = Model.extend({
 
   _initBinds: function () {
     this.listenTo(this._windshaftMap, 'instanceCreated', this._onNewWindshaftMapInstance);
+    this.listenTo(this.layer, 'change:visible', this._onLayerVisibilityChanged);
 
     this.listenToOnce(this, 'change:url', function () {
       this.fetch({
@@ -27780,6 +27782,17 @@ module.exports = Model.extend({
     }
   },
 
+  /**
+   * Enable/disable the dataview depending on the layer visibility.
+   * @private
+   * @param  {LayerModel} model the layer model which visible property has changed.
+   * @param  {Boolean} value New value for visible.
+   * @returns {void}
+   */
+  _onLayerVisibilityChanged: function (model, value) {
+    this.set({enabled: value});
+  },
+
   _onMapBoundsChanged: function () {
     this._updateBoundingBox();
   },
@@ -27790,7 +27803,6 @@ module.exports = Model.extend({
   },
 
   _onChangeBinds: function () {
-    var BOUNDING_BOX_FILTER_WAIT = 500;
     this.listenTo(this._map, 'change:center change:zoom', _.debounce(this._onMapBoundsChanged.bind(this), BOUNDING_BOX_FILTER_WAIT));
 
     this.on('change:url', function () {
@@ -27869,6 +27881,7 @@ module.exports = Model.extend({
   // Class props
   {
     ATTRS_NAMES: [
+      'id',
       'sync_on_data_change',
       'sync_on_bbox_change',
       'enabled'
@@ -28120,7 +28133,8 @@ module.exports = DataviewModelBase.extend({
       this.set('submitBBox', true);
     }, this);
     this.listenTo(this.layer, 'change:meta', this._onChangeLayerMeta);
-    this.on('change:column change:bins', this._reloadMap, this);
+    this.on('change:column', this._reloadMap, this);
+    this.on('change:bins', this.refresh, this);
   },
 
   getData: function () {
@@ -31572,8 +31586,6 @@ var Map = Model.extend({
 
     this._windshaftMap = options.windshaftMap;
     this._dataviewsCollection = options.dataviewsCollection;
-
-    this._initBinds();
   },
 
   _initBinds: function () {
@@ -31591,10 +31603,14 @@ var Map = Model.extend({
     this.layers.bind('change:attribution', this._updateAttributions, this);
 
     if (this._dataviewsCollection) {
-
       // When new dataviews are defined, a new instance of the map needs to be created
       this.listenTo(this._dataviewsCollection, 'add', _.debounce(this._onDataviewAdded.bind(this), 10));
     }
+  },
+
+  instantiateMap: function () {
+    this._initBinds();
+    this.reload();
   },
 
   _onLayersResetted: function () {
@@ -38609,7 +38625,6 @@ var Vis = View.extend({
     this._applyOptionsToVizJSON(data, options);
 
     this._dataviewsCollection = new DataviewCollection();
-    this._dataviewsCollection.on('add reset remove', _.debounce(this._invalidateSizeOnDataviewsChanges, 10), this);
 
     // Create the WindhaftClient
 
@@ -38771,12 +38786,29 @@ var Vis = View.extend({
     });
 
     // Trigger 'done' event
-
     _.defer(function () {
       self.trigger('done', self, self.map.layers);
     });
 
+    if (!options.skipMapInstantiation) {
+      this._instantiateMap();
+    }
+
     return this;
+  },
+
+  /**
+   * Force a map instantiation.
+   * Only expected to be called if {skipMapInstantiation} flag is set to true when vis is created.
+   */
+  instantiateMap: function () {
+    this._instantiateMap();
+    this.mapView.invalidateSize();
+  },
+
+  _instantiateMap: function () {
+    this._dataviewsCollection.on('add reset remove', _.debounce(this._invalidateSizeOnDataviewsChanges, 10), this);
+    this.map.instantiateMap();
   },
 
   _newLayerModels: function (vizjson, map) {
@@ -78062,7 +78094,9 @@ module.exports = function (selector, vizJSON, opts) {
     widgets: widgets,
     model: model
   });
-  var vis = cdb.createVis(dashboardView.$('#map'), vizJSON, opts);
+  var vis = cdb.createVis(dashboardView.$('#map'), vizJSON, _.extend(opts, {
+    skipMapInstantiation: true
+  }));
 
   // Create widgets
   var widgetsService = new WidgetsService(widgets, vis.dataviews);
@@ -78096,6 +78130,8 @@ module.exports = function (selector, vizJSON, opts) {
   });
 
   dashboardView.render();
+
+  vis.instantiateMap();
 
   return {
     dashboardView: dashboardView,
@@ -78210,7 +78246,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Dashboard-menuContainer"> <div class="CDB-Dashboard-menuInner"> <div class="CDB-Dashboard-menuHeader"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <div class="CDB-Dashboard-menuInfo"> <button class="CDB-Shape CDB-Shape--medium js-toggle-view"> <div class="CDB-Shape-threePoints is-horizontal is-medium is-white"> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> </div> </button> </div> <div class="CDB-Dashboard-menuInfo is-active"> <button class="CDB-Shape CDB-Shape--medium js-toggle-view"> <div class="CDB-Shape-threePoints is-horizontal is-medium"> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> </div> </button> </div> <ul class="CDB-Dashboard-menuActions"> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-heartFill CDB-Size-large"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-twitter CDB-Size-large"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-facebook CDB-Size-medium"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-anchor CDB-Size-medium"></i> </a> </li> </ul> <div class="CDB-Dashboard-menuTexts CDB-Dashboard-hideMobile"> <p class="CDB-Text CDB-Size-small is-upper u-altTextColor u-bSpace--m js-timeAgo">UPDATED '+
+__p+='<div class="CDB-Dashboard-menuContainer"> <div class="CDB-Dashboard-menuInner"> <div class="CDB-Dashboard-menuHeader"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <div class="CDB-Dashboard-menuInfo"> <button class="CDB-Shape CDB-Shape--medium js-toggle-view"> <div class="CDB-Shape-threePoints is-horizontal is-medium is-white"> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> </div> </button> </div> <div class="CDB-Dashboard-menuInfo is-active"> <button class="CDB-Shape CDB-Shape--medium js-toggle-view"> <div class="CDB-Shape-threePoints is-horizontal is-medium"> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> </div> </button> </div> <ul class="CDB-Dashboard-menuActions"> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-heartFill CDB-Size-large"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-twitter CDB-Size-large"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-facebook CDB-Size-medium"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-anchor CDB-Size-medium"></i> </a> </li> </ul> <div class="CDB-Dashboard-menuTexts CDB-Dashboard-hideMobile"> <p class="CDB-Text CDB-Size-small u-upperCase u-altTextColor u-bSpace--m js-timeAgo">UPDATED '+
 ((__t=( updatedAt ))==null?'':_.escape(__t))+
 '</p> <h1 class="CDB-Dashboard-menuTitle CDB-Text CDB-Size-huge js-title">'+
 ((__t=( title ))==null?'':_.escape(__t))+
@@ -79113,7 +79149,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listButton js-button '+
 ((__t=( isDisabled ? 'is-disabled' : '' ))==null?'':_.escape(__t))+
-'"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold is-upper CDB-Size-medium" title="'+
+'"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold u-upperCase CDB-Size-medium" title="'+
 ((__t=( name ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( name ))==null?'':_.escape(__t))+
@@ -79143,7 +79179,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<div class="CDB-Widget-listItemInner '+
 ((__t=( isDisabled ? 'is-disabled' : '' ))==null?'':_.escape(__t))+
-'"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold is-upper CDB-Size-medium" title="'+
+'"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold u-upperCase CDB-Size-medium" title="'+
 ((__t=( name ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( name ))==null?'':_.escape(__t))+
@@ -79235,7 +79271,7 @@ __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listItemI
 ((__t=( isDisabled ? 'is-disabled' : '' ))==null?'':_.escape(__t))+
 '"> <span class="CDB-Widget-checkbox '+
 ((__t=( isDisabled ? '' : 'is-checked' ))==null?'':_.escape(__t))+
-'"></span> <div class="u-lSpace--xl"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text CDB-Size-medium is-semibold is-upper" title="'+
+'"></span> <div class="u-lSpace--xl"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text CDB-Size-medium is-semibold u-upperCase" title="'+
 ((__t=( name ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( name ))==null?'':_.escape(__t))+
@@ -79605,15 +79641,15 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='';
  if (isSearchEnabled) { 
-__p+=' <p class="CDB-Text is-semibold CDB-Size-small is-upper js-lockCategories">'+
+__p+=' <p class="CDB-Text is-semibold CDB-Size-small u-upperCase js-lockCategories">'+
 ((__t=( totalLocked ))==null?'':_.escape(__t))+
 ' selected</p> ';
  } else { 
-__p+=' <p class="CDB-Text is-semibold CDB-Size-small is-upper js-textInfo"> ';
+__p+=' <p class="CDB-Text is-semibold CDB-Size-small u-upperCase js-textInfo"> ';
  if (isLocked) { 
 __p+=' '+
 ((__t=( totalCats ))==null?'':_.escape(__t))+
-' blocked <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-link u-lSpace js-unlock">unlock</button> ';
+' blocked <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-link u-lSpace js-unlock">unlock</button> ';
  } else if (areAllRejected || rejectedCats === totalCats) { 
 __p+=' None selected ';
  } else { 
@@ -79621,7 +79657,7 @@ __p+=' '+
 ((__t=( rejectedCats === 0 && acceptedCats === 0 || acceptedCats >= totalCats ? "All selected" : acceptedCats + " selected" ))==null?'':_.escape(__t))+
 ' ';
  if (canBeLocked) { 
-__p+=' <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-link u-lSpace js-lock">lock</button> ';
+__p+=' <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-link u-lSpace js-lock">lock</button> ';
  }
 __p+=' ';
  }
@@ -79629,7 +79665,7 @@ __p+=' </p> ';
  if (!isLocked && totalCats > 2) { 
 __p+=' <div class="CDB-Widget-filterButtons"> ';
  if (rejectedCats > 0 || acceptedCats > 0 || areAllRejected) { 
-__p+=' <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-link CDB-Widget-filterButton js-all">all</button> ';
+__p+=' <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-link CDB-Widget-filterButton js-all">all</button> ';
  } 
 __p+=' </div> ';
  } 
@@ -79715,7 +79751,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-contentFlex"> <button class="u-rSpace--m CDB-Text is-semibold is-upper CDB-Size-small js-searchToggle"> <div class="CDB-Shape u-iBlock"> <span class="CDB-Shape-magnify is-small is-blue"></span> </div> <span class="u-iBlock u-actionTextColor"> search in '+
+__p+='<div class="CDB-Widget-contentFlex"> <button class="u-rSpace--m CDB-Text is-semibold u-upperCase CDB-Size-small js-searchToggle"> <div class="CDB-Shape u-iBlock"> <span class="CDB-Shape-magnify is-small is-blue"></span> </div> <span class="u-iBlock u-actionTextColor"> search in '+
 ((__t=( categoriesCount ))==null?'':_.escape(__t))+
 ' categor'+
 ((__t=( categoriesCount === 1 ? 'y' : 'ies' ))==null?'':_.escape(__t))+
@@ -79859,7 +79895,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-contentFlex u-tSpace--m"> <button class="CDB-Text is-semibold is-upper CDB-Size-small u-rSpace--m js-searchToggle u-actionTextColor">cancel</button> </div> ';
+__p+='<div class="CDB-Widget-contentFlex u-tSpace--m"> <button class="CDB-Text is-semibold u-upperCase CDB-Size-small u-rSpace--m js-searchToggle u-actionTextColor">cancel</button> </div> ';
  if (showPaginator) { 
 __p+=' <div class="CDB-Widget-navDots js-dots u-tSpace--m"> ';
  for (var i = 0, l = pages; i < l; i++) { 
@@ -79974,7 +80010,7 @@ var AnimateValues = require('../../animate-values');
  */
 
 module.exports = cdb.core.View.extend({
-  className: 'CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper',
+  className: 'CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase',
   tagName: 'dl',
 
   initialize: function () {
@@ -80070,7 +80106,7 @@ __p+=' <form class="CDB-Widget-search js-form"> <div class="CDB-Shape u-iBlock u
 ((__t=( columnName ))==null?'':_.escape(__t))+
 '"> ';
  if (canShowApply) { 
-__p+=' <button type="button" class="CDB-Widget-link CDB-Widget-searchApply js-applyLocked">apply</button> ';
+__p+=' <button type="button" class="CDB-Text is-semibold u-upperCase CDB-Size-small CDB-Widget-searchApply js-applyLocked u-actionTextColor">apply</button> ';
  } 
 __p+=' </form> ';
  } else { 
@@ -80529,7 +80565,7 @@ __p+=' '+
 ((__t=( title ))==null?'':_.escape(__t))+
 '';
  } 
-__p+='</h3> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper"> <dt class="CDB-Widget-infoCount">'+
+__p+='</h3> <div class="CDB-Widget-options"> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase"> <dt class="CDB-Widget-infoCount">'+
 ((__t=( nulls ))==null?'':_.escape(__t))+
 '</dt><dd class="CDB-Widget-infoDescription">null rows</dd> </dl> </div> <div class="CDB-Widget-content"> ';
  if (_.isNumber(value)) { 
@@ -80918,6 +80954,7 @@ module.exports = cdb.core.View.extend({
 
   _removeLines: function () {
     this.chart.select('.CDB-Chart-lines').remove();
+    this.chart.select('.CDB-Chart-line--bottom').remove();
   },
 
   _removeChartContent: function () {
@@ -80935,6 +80972,7 @@ module.exports = cdb.core.View.extend({
     this._generateBars();
     this._generateHandles();
     this._setupBrush();
+    this._generateBottomLine();
   },
 
   _generateLines: function () {
@@ -80966,21 +81004,22 @@ module.exports = cdb.core.View.extend({
     lines.append('g')
       .attr('class', 'y')
       .selectAll('.CDB-Chart-line')
-      .data(this.horizontalRange)
+      .data(this.horizontalRange.slice(0, this.horizontalRange.length - 1))
       .enter().append('svg:line')
       .attr('class', 'CDB-Chart-line')
       .attr('x1', 0)
       .attr('y1', function (d) { return d; })
       .attr('x2', this.chartWidth())
       .attr('y2', function (d) { return d; });
+  },
 
-    this.bottomLine = lines
-      .append('line')
+  _generateBottomLine: function () {
+    this.chart.append('line')
       .attr('class', 'CDB-Chart-line CDB-Chart-line--bottom')
       .attr('x1', 0)
-      .attr('y1', this.chartHeight())
+      .attr('y1', this.chartHeight() - 1)
       .attr('x2', this.chartWidth() - 1)
-      .attr('y2', this.chartHeight());
+      .attr('y2', this.chartHeight() - 1);
   },
 
   _setupD3Bindings: function () { // TODO: move to a helper
@@ -81805,7 +81844,7 @@ module.exports = cdb.core.View.extend({
   _renderMiniChart: function () {
     this.miniHistogramChartView = new HistogramChartView(({
       className: 'CDB-Chart--mini',
-      margin: { top: 0, right: 0, bottom: 4, left: 4 },
+      margin: { top: 0, right: 4, bottom: 4, left: 4 },
       height: 40,
       showOnWidthChange: false,
       data: this._dataviewModel.getData()
@@ -82088,7 +82127,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<div class="CDB-Widget-header js-header"> <div class="js-title"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large u-ellipsis js-title">'+
 ((__t=( title ))==null?'':_.escape(__t))+
-'</h3> </div> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor is-upper"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> </div> <div class="CDB-Widget-content CDB-Widget-content--histogram js-content"> <div class="CDB-Widget-tooltip CDB-Widget-tooltip--light CDB-Text CDB-Size-small js-tooltip"></div> <div class="CDB-Widget-filter CDB-Widget-contentSpaced"> <p class="CDB-Text CDB-Size-small is-semibold is-upper js-val"></p> <div class="CDB-Widget-filterButtons js-filter is-hidden"> <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-filterButton js-zoom">zoom</button> <button class="CDB-Text CDB-Size-small is-upper u-actionTextColor CDB-Widget-filterButton js-clear">clear</button> </div> </div> </div>';
+'</h3> </div> </div> <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> </div> <div class="CDB-Widget-content CDB-Widget-content--histogram js-content"> <div class="CDB-Widget-tooltip CDB-Widget-tooltip--light CDB-Text CDB-Size-small js-tooltip"></div> <div class="CDB-Widget-filter CDB-Widget-contentSpaced"> <p class="CDB-Text CDB-Size-small is-semibold u-upperCase js-val"></p> <div class="CDB-Widget-filterButtons js-filter is-hidden"> <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-filterButton js-zoom">zoom</button> <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-filterButton js-clear">clear</button> </div> </div> </div>';
 }
 return __p;
 };
@@ -82756,7 +82795,7 @@ module.exports = cdb.core.View.extend({
   },
 
   initialize: function () {
-    this.filter = this.options.filter;
+    this._rangeFilter = this.options.rangeFilter;
 
     this.model.bind('change:data', this._onChangeData, this);
   },
@@ -82801,7 +82840,7 @@ module.exports = cdb.core.View.extend({
 
   _onBrushEnd: function (loBarIndex, hiBarIndex) {
     var data = this.model.getData();
-    this.filter.setRange(
+    this._rangeFilter.setRange(
       data[loBarIndex].start,
       data[hiBarIndex - 1].end
     );
@@ -83799,6 +83838,9 @@ module.exports = cdb.core.View.extend({
 
     this._appendView(this.options.contentView);
 
+    // Show or hide the widget depending on the layer visibility
+    this._setVisible(this.model.dataviewModel.layer.get('visible'));
+
     return this;
   },
 
@@ -83807,9 +83849,13 @@ module.exports = cdb.core.View.extend({
     this.addView(view);
   },
 
+  _setVisible: function (visible) {
+    this.$el.toggle(visible);
+  },
+
   _onChangeLayerVisible: function (layer) {
     // !! to force a boolean value, so only a true value actually shows the view
-    this.$el.toggle(!!layer.get('visible'));
+    this._setVisible(!!layer.get('visible'));
   }
 });
 
