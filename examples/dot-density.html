@@ -65,7 +65,21 @@
                 "column": "total_pop_",
                 "operation": "sum"
               }
-            }, {
+            },
+            {
+              "title": "Ethnicity",
+              "type": "category",
+              "layer_id": "8c993676-fde3-4a3b-95ac-48f4480fa4e1",
+              "options": {
+                "type": "aggregation",
+                "column": "ethnicity",
+                "aggregationColumn": "ethnicity",
+                "aggregation": "count",
+                "sync": true
+              }
+            },
+
+            {
               "type": "histogram",
               "title": "Asian Population in census tact",
               "layer_id": "8c993676-fde3-4a3b-95ac-48f4480fa4e1",
@@ -91,6 +105,42 @@
                 "column": "white_pop",
                 "bins": 10
               },
+            },
+            {
+              "type": "histogram",
+              "title": "Median Household income",
+              "layer_id": "8c993676-fde3-4a3b-95ac-48f4480fa4e1",
+              "options": {
+                "column": "median_hou",
+                "bins": 10
+              }
+            },
+            {
+              "type": "histogram",
+              "title": "Median Household rent",
+              "layer_id": "8c993676-fde3-4a3b-95ac-48f4480fa4e1",
+              "options": {
+                "column": "median_ren",
+                "bins": 10
+              }
+            },
+            {
+              "type": "histogram",
+              "title": "Non us citizens",
+              "layer_id": "8c993676-fde3-4a3b-95ac-48f4480fa4e1",
+              "options": {
+                "column": "not_a_us_c",
+                "bins": 10
+              }
+            },
+            {
+              "type": "histogram",
+              "title": "Speaks spanish ",
+              "layer_id": "8c993676-fde3-4a3b-95ac-48f4480fa4e1",
+              "options": {
+                "column": "speaks_spa",
+                "bins": 10
+              }
             },
             {
               "type": "histogram",
