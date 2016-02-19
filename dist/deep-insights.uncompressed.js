@@ -39080,17 +39080,18 @@ module.exports = DataviewModelBase.extend({
     if (this.get('column_type')) {
       params.push('column_type=' + this.get('column_type'));
     }
-    if (_.isNumber(this.get('start'))) {
-      params.push('start=' + this.get('start'));
-    }
-    if (_.isNumber(this.get('end'))) {
-      params.push('end=' + this.get('end'));
-    }
-    if (_.isNumber(this.get('bins'))) {
-      params.push('bins=' + this.get('bins'));
-    }
     if (_.isNumber(this.get('own_filter'))) {
       params.push('own_filter=' + this.get('own_filter'));
+    } else {
+      if (_.isNumber(this.get('start'))) {
+        params.push('start=' + this.get('start'));
+      }
+      if (_.isNumber(this.get('end'))) {
+        params.push('end=' + this.get('end'));
+      }
+      if (_.isNumber(this.get('bins'))) {
+        params.push('bins=' + this.get('bins'));
+      }
     }
     if (this.get('boundingBox') && this.get('submitBBox')) {
       params.push('bbox=' + this.get('boundingBox'));
@@ -39110,10 +39111,27 @@ module.exports = DataviewModelBase.extend({
     // BBox should only be included until after the first fetch, since we want to get the range of the full dataset
     this.once('change:data', function () {
       this.set('submitBBox', true);
+
+      var data = this.getData();
+      if (data && data.length > 0) {
+        this.set({
+          start: data[0].start,
+          end: data[data.length - 1].end,
+          bins: data.length
+        }, { silent: true });
+      }
     }, this);
     this.listenTo(this.layer, 'change:meta', this._onChangeLayerMeta);
     this.on('change:column', this._reloadMap, this);
     this.on('change:bins', this.refresh, this);
+  },
+
+  enableFilter: function () {
+    this.set('own_filter', 1);
+  },
+
+  disableFilter: function () {
+    this.unset('own_filter');
   },
 
   getData: function () {
@@ -78287,7 +78305,7 @@ WidgetsService.prototype.createFormulaModel = function (attrs, layer) {
 
   var dataviewModel = this._dataviews.createFormulaModel(layer, attrs);
 
-  var attrsNames = ['id', 'title', 'collapsed', 'prefix', 'suffix', 'show_stats'];
+  var attrsNames = ['id', 'title', 'collapsed', 'prefix', 'suffix', 'show_stats', 'description'];
   var widgetAttrs = _.pick(attrs, attrsNames);
   widgetAttrs.type = 'formula';
   widgetAttrs.attrsNames = attrsNames;
@@ -79758,7 +79776,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='';
  if (isSearchEnabled) { 
-__p+=' <form class="CDB-Widget-search js-form"> <div class="CDB-Shape u-iBlock u-rSpace js-searchIcon"> <span class="CDB-Shape-magnify is-small is-blue"></span> </div> <input type="text" class="CDB-Text CDB-Size-large CDB-Widget-textInput CDB-Widget-searchTextInput js-textInput" value="'+
+__p+=' <form class="CDB-Widget-search js-form"> <div class="CDB-Shape CDB-Widget-searchLens u-iBlock u-rSpace js-searchIcon"> <span class="CDB-Shape-magnify is-small is-blue"></span> </div> <input type="text" class="CDB-Text CDB-Size-large CDB-Widget-textInput CDB-Widget-searchTextInput js-textInput" value="'+
 ((__t=( q ))==null?'':_.escape(__t))+
 '" placeholder="Search by '+
 ((__t=( columnName ))==null?'':_.escape(__t))+
@@ -80151,6 +80169,7 @@ module.exports = cdb.core.View.extend({
         operation: this._dataviewModel.get('operation'),
         value: value,
         formatedValue: format(value),
+        description: this.model.get('description'),
         nulls: nulls,
         prefix: prefix,
         suffix: suffix,
@@ -80185,7 +80204,7 @@ module.exports = cdb.core.View.extend({
   },
 
   _initBinds: function () {
-    this.model.bind('change:title change:collapsed change:prefix change:suffix', this.render, this);
+    this.model.bind('change:title change:description change:collapsed change:prefix change:suffix', this.render, this);
     this._dataviewModel.bind('change:data', this.render, this);
     this.add_related_model(this._dataviewModel);
   },
@@ -80243,6 +80262,12 @@ __p+=' <h4 class="CDB-Text CDB-Size-huge '+
 ''+
 ((__t=( suffix ))==null?'':_.escape(__t))+
 ' </h4> ';
+ if (description) { 
+__p+=' <p class="CDB-Text CDB-Size-small u-tSpace js-description">'+
+((__t=( description ))==null?'':_.escape(__t))+
+'</p> ';
+ } 
+__p+=' ';
  } else { 
 __p+=' <div class="CDB-Widget-listItem--fake"></div> ';
  } 
@@ -80709,7 +80734,7 @@ module.exports = cdb.core.View.extend({
       data: this.options.data,
       height: this.options.height,
       display: true,
-      show_shadow_bars: this.options.shadowData,
+      show_shadow_bars: this.options.displayShadowBars,
       margin: _.clone(this.options.margin),
       width: 0, // will be set on resize listener
       pos: { x: 0, y: 0 }
@@ -81282,7 +81307,7 @@ module.exports = cdb.core.View.extend({
   },
 
   _generateShadowBars: function () {
-    var data = this.options.shadowData;
+    var data = this.model.get('data');
 
     if (!data || !data.length || !this.model.get('show_shadow_bars')) {
       this._removeShadowBars();
@@ -81377,13 +81402,7 @@ module.exports = cdb.core.View.extend({
   },
 
   _initViews: function () {
-    var titleView = new HistogramTitleView({
-      widgetModel: this.model,
-      dataviewModel: this._dataviewModel
-    });
-
-    this.$('.js-title').html(titleView.render().el);
-    this.addView(titleView);
+    this._initTitleView();
 
     var dropdown = new DropdownView({
       target: this.$('.js-actions'),
@@ -81402,6 +81421,16 @@ module.exports = cdb.core.View.extend({
     this._renderMainChart();
   },
 
+  _initTitleView: function () {
+    var titleView = new HistogramTitleView({
+      widgetModel: this.model,
+      dataviewModel: this._dataviewModel
+    });
+
+    this.$('.js-title').append(titleView.render().el);
+    this.addView(titleView);
+  },
+
   _initBinds: function () {
     this._dataviewModel.once('change:data', this._onFirstLoad, this);
     this.model.bind('change:collapsed', this.render, this);
@@ -81409,28 +81438,17 @@ module.exports = cdb.core.View.extend({
 
   _onFirstLoad: function () {
     this.render();
-    this._storeBounds();
 
-    this._dataviewModel.bind('change', this._onChangeModel, this);
+    this._dataviewModel.bind('change:data', this._onHistogramDataChanged, this);
     this.add_related_model(this._dataviewModel);
     this._dataviewModel.fetch();
-  },
-
-  _storeBounds: function () {
-    var data = this._dataviewModel.getData();
-    if (data && data.length > 0) {
-      this.start = data[0].start;
-      this.end = data[data.length - 1].end;
-      this.binsCount = data.length;
-      this._dataviewModel.set({ start: this.start, end: this.end, bins: this.binsCount }, { silent: true });
-    }
   },
 
   _isZoomed: function () {
     return this.model.get('zoomed');
   },
 
-  _onChangeModel: function () {
+  _onHistogramDataChanged: function () {
     // When the histogram is zoomed, we don't need to rely
     // on the change url to update the histogram
     // TODO the widget should not know about the URL… could this state be got from the dataview model somehow?
@@ -81448,6 +81466,7 @@ module.exports = cdb.core.View.extend({
       } else {
         this.histogramChartView.showShadowBars();
         this.originalData = this._dataviewModel.getData();
+        this.miniHistogramChartView.replaceData(this.originalData);
       }
       this.histogramChartView.replaceData(this._dataviewModel.getData());
     }
@@ -81480,6 +81499,7 @@ module.exports = cdb.core.View.extend({
 
     if (isDataEmpty) {
       this._addPlaceholder();
+      this._initTitleView();
     } else {
       this.originalData = this._dataviewModel.getData();
       this._setupBindings();
@@ -81513,7 +81533,7 @@ module.exports = cdb.core.View.extend({
       width: this.canvasWidth,
       height: this.defaults.chartHeight,
       data: this._dataviewModel.getData(),
-      shadowData: this._dataviewModel.getData()
+      displayShadowBars: true
     }));
 
     this.$('.js-content').append(this.histogramChartView.el);
@@ -81758,18 +81778,16 @@ module.exports = cdb.core.View.extend({
   },
 
   _onZoomIn: function () {
+    this.lockedByUser = false;
     this._showMiniRange();
     this.histogramChartView.updateYScale();
     this.histogramChartView.expand(4);
     this.histogramChartView.removeShadowBars();
-
-    this._dataviewModel.set({ start: null, end: null, bins: null, own_filter: 1 }, { silent: true });
+    this._dataviewModel.enableFilter();
     this._dataviewModel.fetch();
-    this.lockedByUser = false;
   },
 
   _zoom: function () {
-    this.lockedByUser = true;
     this.model.set({ zoomed: true, zoom_enabled: false });
     this.histogramChartView.removeSelection();
   },
@@ -81778,10 +81796,13 @@ module.exports = cdb.core.View.extend({
     this.lockedByUser = true;
     this.lockZoomedData = false;
     this.unsettingRange = true;
-
-    this._dataviewModel.set({ start: this.start, end: this.end, bins: this.binsCount, own_filter: null }, { silent: true });
-
-    this.model.set({ zoom_enabled: false, filter_enabled: false, lo_index: null, hi_index: null });
+    this.model.set({
+      zoom_enabled: false,
+      filter_enabled: false,
+      lo_index: null,
+      hi_index: null
+    });
+    this._dataviewModel.disableFilter();
 
     this.filter.unsetRange();
 
@@ -81803,7 +81824,6 @@ module.exports = cdb.core.View.extend({
   _clear: function () {
     this.histogramChartView.removeSelection();
     this.model.set({ zoomed: false, zoom_enabled: false });
-    this.model.trigger('change:zoomed');
   }
 });
 
@@ -81812,9 +81832,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="CDB-Widget-header js-header"> <div class="js-title"> <div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large u-ellipsis js-title">'+
-((__t=( title ))==null?'':_.escape(__t))+
-'</h3> </div> </div> ';
+__p+='<div class="CDB-Widget-header js-header"> <div class="js-title"></div> ';
  if (showStats) { 
 __p+=' <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> ';
  } 
@@ -81828,7 +81846,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<h3 class="CDB-Text CDB-Size-large is-overflow" title="'+
+__p+='<div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Text CDB-Size-large is-overflow" title="'+
 ((__t=( title ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( title ))==null?'':_.escape(__t))+
@@ -81838,7 +81856,7 @@ __p+='<h3 class="CDB-Text CDB-Size-large is-overflow" title="'+
 ((__t=( isSizesApplied ? 'js-cancelSizes' : 'js-applySizes' ))==null?'':_.escape(__t))+
 '" data-tooltip="'+
 ((__t=( isSizesApplied ? 'Remove sizes' : 'Apply sizes' ))==null?'':_.escape(__t))+
-'"> <i class="CDB-IconFont CDB-IconFont-drop CDB-IconFont--small CDB-IconFont--top"></i> </button> <button class="CDB-Shape js-actions u-lSpace"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div>';
+'"> <i class="CDB-IconFont CDB-IconFont-drop CDB-IconFont--small CDB-IconFont--top"></i> </button> <button class="CDB-Shape js-actions u-lSpace"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> </div>';
 }
 return __p;
 };
@@ -82832,7 +82850,7 @@ module.exports = cdb.core.View.extend({
       hasHandles: true,
       height: this.defaults.histogramChartHeight,
       data: this._dataviewModel.getData(),
-      shadowData: this._dataviewModel.getData()
+      displayShadowBars: true
     });
 
     this.addView(this._chartView);
@@ -83001,7 +83019,7 @@ var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<button class="CDB-Widget-link CDB-Widget-filterButton js-clear">Clear selection</button>';
+__p+='<button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-filterButton js-clear">Clear selection</button>';
 }
 return __p;
 };
