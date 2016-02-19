@@ -175,6 +175,35 @@
                 "bins": 10
               }
             },
+            {
+              "type": "histogram",
+              "title": "Day of week",
+              "layer_id": "25603711-601d-454e-8016-a061faa5e1f0",
+              "options": {
+                "column": "trip_day",
+                "bins": 7
+              }
+            },
+
+            {
+              "type": "histogram",
+              "title": "Dropoff hour",
+              "layer_id": "25603711-601d-454e-8016-a061faa5e1f0",
+              "options": {
+                "column": "dropoff_hour",
+                "bins": 24
+              }
+            },
+
+            {
+              "type": "histogram",
+              "title": "Pickup hour",
+              "layer_id": "25603711-601d-454e-8016-a061faa5e1f0",
+              "options": {
+                "column": "pickup_hour",
+                "bins": 24
+              }
+            },
 
             {
               "title": "Payment type",
@@ -189,19 +218,19 @@
               }
             },
 
-
             {
-              "title": "Payment type",
+              "title": "Rate Code",
               "type": "category",
               "layer_id": "25603711-601d-454e-8016-a061faa5e1f0",
               "options": {
                 "type": "aggregation",
-                "column": "payment_type",
-                "aggregationColumn": "ethnicity",
+                "column": "rate_code",
+                "aggregationColumn": "rate_code",
                 "aggregation": "count",
                 "sync": true
               }
             },
+
 
             {
               "title": "Vehicle type",
@@ -307,7 +336,7 @@
                       "order": 1,
                       "visible": true,
                       "options": {
-                        "sql": "select * from hackdaytaxidata_pickup_dropoff",
+                        "sql": "select *, date_part('dow', dropoff_datetime) trip_day, date_part('hour', dropoff_datetime) dropoff_hour, date_part('hour', pickup_datetime) pickup_hour  from hackdaytaxidata_pickup_dropoff",
                         "layer_name": "hackdaytaxidata_pickup_dropoff",
                         "cartocss": "/** category visualization */\n\n#hackdaytaxidata_pickup_dropoff {\n   marker-fill-opacity: 0.9;\n   marker-line-color: #FFF;\n   marker-line-width: 0;\n   marker-line-opacity: 1;\n   marker-placement: point;\n   marker-type: ellipse;\n   marker-width: 1;\n   marker-allow-overlap: true;\n}\n\n#hackdaytaxidata_pickup_dropoff[type=\"dropoff\"] {\n   marker-fill: #A53ED5;\n}\n#hackdaytaxidata_pickup_dropoff[type=\"pickup\"] {\n   marker-fill: #FFCC00;\n}",
                         "cartocss_version": "2.1.1",
