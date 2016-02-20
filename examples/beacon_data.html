@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Deep-Insights.js | Populated Places</title>
+    <meta name=viewport content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="../dist/themes/css/deep-insights.css" />
+    <script src="../dist/deep-insights.uncompressed.js"></script>
+    <style type="text/css">
+      html, body {
+        position:relative;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="dashboard"></div>
+
+    <script>
+      window.onload = function(){
+  vizJSON= {"id": "a471b3d0-d7f1-11e5-b2d7-0e5db1731f59",
+  "version": "0.1.0",
+  "title": "latlng_csv copy copy",
+  "likes": 0,
+  "description": null,
+  "scrollwheel": false,
+  "legends": true,
+  "url": null,
+  "map_provider": "leaflet",
+  "bounds": [
+    [
+      40.66605624777334,
+      -74.17488098144531
+    ],
+    [
+      40.817446884558805,
+      -73.73268127441406
+    ]
+  ],
+
+  "user": {
+    "fullname": "Stuart Lynn",
+    "avatar_url": "https://s3.amazonaws.com/com.cartodb.users-assets.production/production/piensaenpixel/assets/20150507074635Captura%20de%20pantalla%202015-05-07%20a%20la%28s%29%2009.46.28.png"
+  },
+
+  "datasource": {
+    "user_name": "stuartlynn",
+    "maps_api_template": "https://{user}.cartodb.com:443",
+    "force_cors": true,
+    "stat_tag": "a471b3d0-d7f1-11e5-b2d7-0e5db1731f59"
+  },
+
+  "widgets":[
+    {
+      "title": "V2 User id",
+      "type": "category",
+      "layer_id": "b89b5ef3-0dbd-408f-a5c3-a1297ff246ea",
+      "options": {
+        "type": "aggregation",
+        "column": "v2_user_id",
+        "aggregationColumn": "counts",
+        "aggregation": "count",
+        "sync": true
+      }
+    },
+    {
+      "type": "histogram",
+      "title": "distances",
+      "layer_id": "b89b5ef3-0dbd-408f-a5c3-a1297ff246ea",
+      "options": {
+        "column": "distance",
+        "bins": 10
+      }
+    },
+
+    {
+      "type": "histogram",
+      "title": "checkins",
+      "layer_id": "b89b5ef3-0dbd-408f-a5c3-a1297ff246ea",
+      "options": {
+        "column": "checkins",
+        "bins": 10
+      }
+    },
+  ],
+  "center": "[40.741794637954925, -73.95378112792969]",
+  "zoom": 12,
+  "updated_at": "2016-02-20T18:13:13+00:00",
+  "layers": [
+    {
+      "options": {
+        "visible": true,
+        "type": "Tiled",
+        "name": "Dark matter",
+        "className": "dark_matter_rainbow_labels",
+        "base_type": "default",
+        "urlTemplate": "http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png",
+        "minZoom": "0",
+        "maxZoom": "18",
+        "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+        "subdomains": "abcd",
+        "style": null,
+        "labels": {
+          "url": "http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png"
+        },
+        "read_only": true,
+        "category": "CartoDB",
+        "order": 0,
+        "id": "e205efeb-efb8-41ad-9a72-106279891b9f"
+      },
+      "infowindow": null,
+      "tooltip": null,
+      "id": "527844cb-572b-4ec4-957f-a9c74fabcf3b",
+      "order": 0,
+      "type": "tiled"
+    },
+    {
+      "type": "layergroup",
+      "options": {
+        "user_name": "stuartlynn",
+        "maps_api_template": "https://{user}.cartodb.com:443",
+        "sql_api_template": "https://{user}.cartodb.com:443",
+        "tiler_protocol": "http",
+        "tiler_domain": "cartodb.com",
+        "tiler_port": "80",
+        "sql_api_protocol": "http",
+        "sql_api_domain": "cartodb.com",
+        "sql_api_endpoint": "/api/v2/sql",
+        "sql_api_port": 80,
+        "filter": "mapnik",
+        "layer_definition": {
+          "stat_tag": "a471b3d0-d7f1-11e5-b2d7-0e5db1731f59",
+          "version": "1.0.1",
+          "layers": [
+            {
+              "id": "b89b5ef3-0dbd-408f-a5c3-a1297ff246ea",
+              "type": "CartoDB",
+              "infowindow": {
+                "fields": [
+                  {
+                    "name": "v2_user_id",
+                    "title": true,
+                    "position": 0
+                  }
+                ],
+                "template_name": "infowindow_light",
+                "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                "alternative_names": {},
+                "width": 226,
+                "maxHeight": 180
+              },
+              "tooltip": {
+                "fields": [
+                  {
+                    "name": "v2_user_id",
+                    "title": true,
+                    "position": 0
+                  }
+                ],
+                "template_name": "tooltip_light",
+                "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                "alternative_names": {},
+                "maxHeight": 180
+              },
+              "legend": {
+                "type": "none",
+                "show_title": true,
+                "title": "Platform",
+                "template": "",
+                "visible": true,
+                "items": [
+                  {
+                    "name": "Left label",
+                    "visible": true,
+                    "value": "1.00",
+                    "type": "text"
+                  },
+                  {
+                    "name": "Right label",
+                    "visible": true,
+                    "value": "12.00",
+                    "type": "text"
+                  },
+                  {
+                    "name": "Color",
+                    "visible": true,
+                    "value": "#FFFFCC",
+                    "type": "color"
+                  },
+                  {
+                    "name": "Color",
+                    "visible": true,
+                    "value": "#C7E9B4",
+                    "type": "color"
+                  },
+                  {
+                    "name": "Color",
+                    "visible": true,
+                    "value": "#7FCDBB",
+                    "type": "color"
+                  },
+                  {
+                    "name": "Color",
+                    "visible": true,
+                    "value": "#41B6C4",
+                    "type": "color"
+                  },
+                  {
+                    "name": "Color",
+                    "visible": true,
+                    "value": "#1D91C0",
+                    "type": "color"
+                  },
+                  {
+                    "name": "Color",
+                    "visible": true,
+                    "value": "#225EA8",
+                    "type": "color"
+                  },
+                  {
+                    "name": "Color",
+                    "visible": true,
+                    "value": "#0C2C84",
+                    "type": "color"
+                  }
+                ]
+              },
+              "order": 1,
+              "visible": true,
+              "options": {
+                "sql": " SELECT ST_TRANSFORM(ST_MAKELINE(the_geom order by visit_start), 3857) as the_geom_webmercator, ST_LENGTH(ST_MAKELINE(the_geom order by visit_start)) as distance, min(cartodb_id) as cartodb_id, count(cartodb_id) as checkins , v2_user_id FROM stuartlynn.latlng_csv where latitude is not null and longitude is not null group by v2_user_id",
+                "layer_name": "latlng_csv",
+                "cartocss": "/** simple visualization */\n\n#latlng_csv{\n  line-color: #5CA2D1;\n  line-width: 0.5;\n  line-opacity: 0.7;\n}",
+                "cartocss_version": "2.1.1",
+                "interactivity": "cartodb_id,v2_user_id",
+                "table_name": "\"\"."
+              }
+            }
+          ]
+        },
+        "attribution": ""
+      }
+    },
+    {
+      "options": {
+        "visible": true,
+        "type": "Tiled",
+        "default": "true",
+        "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
+        "subdomains": "abcd",
+        "minZoom": "0",
+        "maxZoom": "18",
+        "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+        "urlTemplate": "http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png",
+        "name": "Dark matter Labels",
+        "id": "f59dacee-5eb2-43c7-ab19-062eff1cee69",
+        "className": "httpsbasemapscartocdncomlight_only_labelszxypng",
+        "order": 2
+      },
+      "infowindow": null,
+      "tooltip": null,
+      "id": "9899bad8-df39-42b1-b5c0-1b31ea7310d2",
+      "order": 2,
+      "type": "tiled"
+    }
+  ],
+  "overlays": [
+    {
+      "type": "share",
+      "order": 2,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 20
+      },
+      "template": ""
+    },
+    {
+      "type": "search",
+      "order": 3,
+      "options": {
+        "display": true,
+        "x": 60,
+        "y": 20
+      },
+      "template": ""
+    },
+    {
+      "type": "zoom",
+      "order": 6,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 20
+      },
+      "template": "<a href=\"#zoom_in\" class=\"zoom_in\">+</a> <a href=\"#zoom_out\" class=\"zoom_out\">-</a>"
+    },
+    {
+      "type": "loader",
+      "order": 8,
+      "options": {
+        "display": true,
+        "x": 20,
+        "y": 150
+      },
+      "template": "<div class=\"loader\" original-title=\"\"></div>"
+    },
+    {
+      "type": "logo",
+      "order": 9,
+      "options": {
+        "display": true,
+        "x": 10,
+        "y": 40
+      },
+      "template": ""
+    }
+  ],
+  "prev": null,
+  "next": null,
+  "transition_options": {
+    "time": 0
+  }
+}
+
+        var dashboard = cartodb.deepInsights.createDashboard('#dashboard', vizJSON, {
+          no_cdn: false,
+          cartodb_logo: false
+        });
+        dashboard.vis.done(function() {
+            window.dashboard = dashboard
+          })
+          .error(function(err) {
+            console.error(err);
+          });
+
+        console.info('first widget is disabled on start, run the following the dev console to enable it:',
+        'dashboard.widgets._widgetsCollection.at(0).update({sync_on_data_change: true, sync_on_bbox_change: true, title: "Min population"})')
+      }
+    </script>
+  </body>
+</html>
