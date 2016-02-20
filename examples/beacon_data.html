@@ -65,6 +65,19 @@
         "sync": true
       }
     },
+
+    {
+      "title": "Cities",
+      "type": "category",
+      "layer_id": "b89b5ef3-0dbd-408f-a5c3-a1297ff246ea",
+      "options": {
+        "type": "aggregation",
+        "column": "city",
+        "aggregationColumn": "checkins",
+        "aggregation": "count",
+        "sync": true
+      }
+    },
     {
       "type": "histogram",
       "title": "distances",
@@ -230,7 +243,7 @@
               "order": 1,
               "visible": true,
               "options": {
-                "sql": " SELECT ST_TRANSFORM(ST_MAKELINE(the_geom order by visit_start), 3857) as the_geom_webmercator, ST_LENGTH(ST_MAKELINE(the_geom order by visit_start)) as distance, min(cartodb_id) as cartodb_id, count(cartodb_id) as checkins , v2_user_id FROM stuartlynn.latlng_csv where latitude is not null and longitude is not null group by v2_user_id",
+                "sql": " SELECT ST_TRANSFORM(ST_MAKELINE(the_geom order by visit_start), 3857) as the_geom_webmercator, ST_LENGTH(ST_MAKELINE(the_geom order by visit_start)) as distance, min(cartodb_id) as cartodb_id, count(cartodb_id) as checkins , min(city) as city , v2_user_id FROM stuartlynn.latlng_csv where latitude is not null and longitude is not null group by v2_user_id",
                 "layer_name": "latlng_csv",
                 "cartocss": "/** simple visualization */\n\n#latlng_csv{\n  line-color: #5CA2D1;\n  line-width: 0.5;\n  line-opacity: 0.7;\n}",
                 "cartocss_version": "2.1.1",
