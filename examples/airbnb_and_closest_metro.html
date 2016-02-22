@@ -515,9 +515,16 @@
             "time": 0
           }
       };
-      cartodb.deepInsights.createDashboard('#dashboard', diJSON, {
+      var dashboard = cartodb.deepInsights.createDashboard('#dashboard', diJSON, {
         no_cdn: false
       });
+
+      dashboard.vis.done(function() {
+          window.dashboard = dashboard
+        })
+        .error(function(err) {
+          console.error(err);
+        });
     }
   </script>
 </body>
