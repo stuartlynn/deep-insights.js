@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deep-Insights.js | Populated Places (local)</title>
+  <meta name=viewport content="width=device-width initial-scale=1">
+  <link rel="stylesheet" href="../dist/themes/css/deep-insights.css" />
+  <!--
+    Placing a local-config.js file with:
+
+    window.GLOBAL_CDB_CONFIG = {
+      maps_api_template: "http://{user}.localhost.lan:8181",
+      user_name: "development"
+    };
+
+    will override this example user/maps api template
+  -->
+  <script src="../dist/deep-insights.uncompressed.js"></script>
+  <style type="text/css">
+    html, body {
+      position:relative;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="Dashboard-canvas" id="dashboard"></div>
+
+  <script>
+    window.onload = function() {
+      var cdbConfig = window.GLOBAL_CDB_CONFIG || {};
+      cdbConfig.maps_api_template = cdbConfig.maps_api_template || "http://{user}.localhost.lan:8181";
+      cdbConfig.user_name = cdbConfig.user_name || "cdb";
+
+      var vizJSON ={
+        "id": "bcb92d2e-da5d-11e5-bcf5-0ef7f98ade21",
+        "version": "0.1.0",
+        "title": "WG_Cameras",
+        "likes": 0,
+        "description": null,
+        "scrollwheel": false,
+        "legends": true,
+        "url": null,
+        "map_provider": "leaflet",
+
+        "user": {
+          "fullname": "zooniverse",
+          "avatar_url": "https://orbitingfrog.files.wordpress.com/2013/11/zooniverse-icon-web-black.png"
+        },
+
+        "datasource": {
+            "type": "public_map",
+            "user_name": "stuartlynn",
+            "maps_api_template": "https://{user}.cartodb.com:443",
+            "stat_tag": "bcb92d2e-da5d-11e5-bcf5-0ef7f98ade21",
+            "force_cors": true
+        },
+
+        "widgets":[
+          {
+            "type": "formula",
+            "title": "Total traps",
+            "layer_id": "b8200365-25d1-401d-83da-76b813d0cf87",
+            "options": {
+              "column": "dist_water",
+              "operation": "count"
+            }
+          },
+
+          {
+            "title": "Veg Type",
+            "type": "category",
+            "layer_id": "b8200365-25d1-401d-83da-76b813d0cf87",
+            "options": {
+              "type": "aggregation",
+              "column": "veg_type",
+              "aggregationColumn": "veg_type",
+              "aggregation": "count",
+              "sync": true
+            }
+          },
+
+          {
+            "title": "Water Type",
+            "type": "category",
+            "layer_id": "b8200365-25d1-401d-83da-76b813d0cf87",
+            "options": {
+              "type": "aggregation",
+              "column": "water_type",
+              "aggregationColumn": "water_type",
+              "aggregation": "count",
+              "sync": true
+            }
+          },
+
+
+
+          {
+            "type": "histogram",
+            "title": "Dist to water",
+            "layer_id": "b8200365-25d1-401d-83da-76b813d0cf87",
+            "options": {
+              "column": "dist_water",
+              "bins": 20
+            }
+          },
+        ],
+
+
+        "bounds": [
+          [
+            -19.078990851489102,
+            34.01641845703125
+          ],
+          [
+            -18.757461906974086,
+            34.90287780761719
+          ]
+        ],
+        "center": "[-18.91830367997407, 34.45964813232422]",
+        "zoom": 11,
+        "updated_at": "2016-02-23T18:46:31+00:00",
+        "layers": [
+          {
+            "options": {
+              "default": "true",
+              "url": "http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+              "subdomains": "abcd",
+              "minZoom": "0",
+              "maxZoom": "18",
+              "name": "Positron",
+              "className": "positron_rainbow_labels",
+              "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+              "labels": {
+                "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png"
+              },
+              "urlTemplate": "http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png"
+            },
+            "infowindow": null,
+            "tooltip": null,
+            "id": "cbd0fc9e-39a0-4515-b305-9a588dbde999",
+            "order": 0,
+            "type": "tiled"
+          },
+          {
+            "type": "layergroup",
+            "options": {
+              "user_name": "stuartlynn",
+              "maps_api_template": "https://{user}.cartodb.com:443",
+              "sql_api_template": "https://{user}.cartodb.com:443",
+              "tiler_protocol": "http",
+              "tiler_domain": "cartodb.com",
+              "tiler_port": "80",
+              "sql_api_protocol": "http",
+              "sql_api_domain": "cartodb.com",
+              "sql_api_endpoint": "/api/v2/sql",
+              "sql_api_port": 80,
+              "filter": "mapnik",
+              "layer_definition": {
+                "stat_tag": "bcb92d2e-da5d-11e5-bcf5-0ef7f98ade21",
+                "version": "1.0.1",
+                "layers": [
+                  {
+                    "id": "b8200365-25d1-401d-83da-76b813d0cf87",
+                    "type": "CartoDB",
+                    "infowindow": {
+                      "fields": [],
+                      "template_name": "table/views/infowindow_light",
+                      "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                      "alternative_names": {},
+                      "width": 226,
+                      "maxHeight": 180
+                    },
+                    "tooltip": {
+                      "fields": [],
+                      "template_name": "tooltip_light",
+                      "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                      "alternative_names": {},
+                      "maxHeight": 180
+                    },
+                    "legend": {
+                      "type": "none",
+                      "show_title": false,
+                      "title": "",
+                      "template": "",
+                      "visible": true
+                    },
+                    "order": 1,
+                    "visible": true,
+                    "options": {
+                      "sql": "select * from cartodb_query_3",
+                      "layer_name": "cartodb_query_3",
+                      "cartocss": "/** simple visualization */\n\n#cartodb_query_3{\n  marker-fill-opacity: 0.9;\n  marker-line-color: #FFF;\n  marker-line-width: 1;\n  marker-line-opacity: 1;\n  marker-placement: point;\n  marker-type: ellipse;\n  marker-width: 10;\n  marker-fill: #FF6600;\n  marker-allow-overlap: true;\n}",
+                      "cartocss_version": "2.1.1",
+                      "interactivity": "cartodb_id",
+                      "table_name": "\"\"."
+                    }
+                  }
+                ]
+              },
+              "attribution": ""
+            }
+          },
+          {
+            "options": {
+              "default": "true",
+              "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
+              "subdomains": "abcd",
+              "minZoom": "0",
+              "maxZoom": "18",
+              "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+              "urlTemplate": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
+              "type": "Tiled",
+              "name": "Positron Labels"
+            },
+            "infowindow": null,
+            "tooltip": null,
+            "id": "71262faa-d2e2-4285-bbff-b8f923a4b7f7",
+            "order": 2,
+            "type": "tiled"
+          }
+        ],
+        "overlays": [
+          {
+            "type": "logo",
+            "order": 9,
+            "options": {
+              "display": true,
+              "x": 10,
+              "y": 40
+            },
+            "template": ""
+          },
+          {
+            "type": "loader",
+            "order": 8,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 150
+            },
+            "template": "<div class=\"loader\" original-title=\"\"></div>"
+          },
+          {
+            "type": "zoom",
+            "order": 6,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 20
+            },
+            "template": "<a href=\"#zoom_in\" class=\"zoom_in\">+</a> <a href=\"#zoom_out\" class=\"zoom_out\">-</a>"
+          },
+          {
+            "type": "search",
+            "order": 3,
+            "options": {
+              "display": true,
+              "x": 60,
+              "y": 20
+            },
+            "template": ""
+          },
+          {
+            "type": "share",
+            "order": 2,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 20
+            },
+            "template": ""
+          }
+        ],
+        "prev": null,
+        "next": null,
+        "transition_options": {
+          "time": 0
+        }
+      }
+
+      cartodb.deepInsights.createDashboard('#dashboard', vizJSON, {
+        no_cdn: false,
+      });
+    }
+  </script>
+</body>
+</html>
