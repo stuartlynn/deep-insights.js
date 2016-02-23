@@ -1897,7 +1897,7 @@
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":242,"underscore":265}],2:[function(require,module,exports){
+},{"jquery":243,"underscore":266}],2:[function(require,module,exports){
 
 },{}],3:[function(require,module,exports){
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
@@ -24843,8 +24843,8 @@ refs.map(function(version) {
 }).call(this,"/node_modules/cartodb.js/node_modules/torque.js/node_modules/carto/node_modules/mapnik-reference")
 
 },{"fs":2,"path":5}],76:[function(require,module,exports){
-module.exports = require(265);
-},{"dup":265}],77:[function(require,module,exports){
+module.exports = require(266);
+},{"dup":266}],77:[function(require,module,exports){
 module.exports={
   "name": "carto",
   "version": "0.15.1-cdb1",
@@ -25117,7 +25117,7 @@ module.exports={
       "/vendor"
     ]
   },
-  "gitHead": "a0d3ed05e878a3403237a0de67f71acd75cb0199",
+  "gitHead": "ad4592d3bedec9b7f0c1ba500319681b5ae5e74b",
   "readme": "CartoDB.js (v3.15)\n===========\n\n[![Build Status](http://clinker.cartodb.net/desktop/plugin/public/status/CartoDB-js-develop-testing)]\n(http://clinker.cartodb.net/jenkins/job/CartoDB-js-develop-testing)\n\nThis library allows to embed visualizations created with CartoDB in your map or website in a simple way.\n\n\n## Quick start\n\n  1. Add cartodb.js and css to your site:\n\n    ```html\n\n        <link rel=\"stylesheet\" href=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css\" />\n        <script src=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js\"></script>\n\n        <!-- use these cartodb.css links if you are using https -->\n        <!--link rel=\"stylesheet\" href=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css\" /-->\n\n        <!-- use this cartodb.js link if you are using https -->\n        <!-- script src=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js\"></script -->\n    ```\n\n\n  2. Create the map and add the layer\n\n    ```javascript\n      var map = L.map('map').setView([0, 0], 3);\n\n      // set a base layer\n      L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png', {\n        attribution: 'stamen http://maps.stamen.com/'\n      }).addTo(map);\n\n      // add the cartodb layer\n      var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json';\n      cartodb.createLayer(map, layerUrl).addTo(map);\n    ```\n\n### Usage with Bower\n\nYou can install **cartodb.js** with [bower](http://bower.io/) by running\n\n```sh\nbower install cartodb.js\n```\n\n\n## Documentation\nYou can find the documentation online [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) and the [source](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md) inside this repository.\n\n## Examples\n\n - [Load a layer with google maps](http://cartodb.github.com/cartodb.js/examples/gmaps_force_basemap.html)\n - [Load a layer with Leaflet](http://cartodb.github.com/cartodb.js/examples/leaflet.html)\n - [Show a complete visualization](http://cartodb.github.com/cartodb.js/examples/easy.html)\n - [A visualization with a layer selector](http://cartodb.github.com/cartodb.js/examples/layer_selector.html)\n - [How to create a custom infowindow](http://cartodb.github.com/cartodb.js/examples/custom_infowindow.html)\n - [The Hobbit filming location paths](http://cartodb.github.com/cartodb.js/examples/TheHobbitLocations/) a full example with some widgets\n\n\n## How to build\nBuild CartoDB.js library:\n\n  - Install [node.js](http://nodejs.org/download/), from 0.10 version\n  - Install grunt & bower: `npm install -g grunt-cli bower`\n  - Install node dependencies: `npm install`\n  - Install bower dependencies: `bower install`\n  - Install [ruby](https://www.ruby-lang.org/en/installation/) and [bundler](https://github.com/bundler/bundler)\n  - Install ruby dependencies: `bundle install` (necessary for compass gem)\n  - Start the server: `grunt build`\n  - Happy mapping!\n  - \n  \n## Submitting Contributions\n\nYou will need to sign a Contributor License Agreement (CLA) before making a submission. [Learn more here.](https://cartodb.com/contributing)\n\n",
   "readmeFilename": "README.md",
   "bugs": {
@@ -25125,9 +25125,9 @@ module.exports={
   },
   "homepage": "https://github.com/CartoDB/cartodb.js#readme",
   "_id": "cartodb.js@4.0.0-alpha.1",
-  "_shasum": "b3af20202259b1274763ae713dcab87c59dd073f",
-  "_from": "cartodb/cartodb.js#a0d3ed0",
-  "_resolved": "git://github.com/cartodb/cartodb.js.git#a0d3ed05e878a3403237a0de67f71acd75cb0199"
+  "_shasum": "a89137be7c3b2373bd06e7eb110bb029a54ab32a",
+  "_from": "cartodb/cartodb.js#ad4592d",
+  "_resolved": "git://github.com/cartodb/cartodb.js.git#ad4592d3bedec9b7f0c1ba500319681b5ae5e74b"
 }
 
 },{}],79:[function(require,module,exports){
@@ -25325,7 +25325,7 @@ module.exports = function(map, layer, options, callback) {
   return promise;
 };
 
-},{"../core/loader":92,"../geo/map":150,"../vis/vis":219,"../vis/vis/layers":221,"./promise":82,"cdb":88,"leaflet":9,"underscore":265}],80:[function(require,module,exports){
+},{"../core/loader":92,"../geo/map":150,"../vis/vis":220,"../vis/vis/layers":222,"./promise":82,"cdb":88,"leaflet":9,"underscore":266}],80:[function(require,module,exports){
 var _ = require('underscore');
 var Vis = require('../vis/vis');
 
@@ -25361,7 +25361,7 @@ var createVis = function(el, vizjson, options, callback) {
 
 module.exports = createVis;
 
-},{"../vis/vis":219,"underscore":265}],81:[function(require,module,exports){
+},{"../vis/vis":220,"underscore":266}],81:[function(require,module,exports){
 var cdb = require('cdb');
 var config = require('cdb.config');
 
@@ -25392,7 +25392,7 @@ _.extend(Promise.prototype, Backbone.Events, {
 
 module.exports = Promise;
 
-},{"backbone":1,"underscore":265}],83:[function(require,module,exports){
+},{"backbone":1,"underscore":266}],83:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Mustache = require('mustache');
@@ -26070,7 +26070,7 @@ SQL.prototype.describe = function(sql, column, options) {
 
 module.exports = SQL;
 
-},{"./promise":82,"jquery":242,"mustache":10,"underscore":265}],84:[function(require,module,exports){
+},{"./promise":82,"jquery":243,"mustache":10,"underscore":266}],84:[function(require,module,exports){
 var isLeafletAlreadyLoaded = !!window.L;
 
 var _ = require('underscore');
@@ -26179,7 +26179,7 @@ require('./vis/layers'); // Layers.register calls
 
 module.exports = cdb;
 
-},{"./api/create-layer":79,"./api/create-vis":80,"./api/module-load":81,"./api/promise":82,"./api/sql":83,"./core/loader":92,"./core/model":96,"./core/sanitize":98,"./core/template":100,"./core/template-list":99,"./core/view":102,"./geo/geocoder/nokia-geocoder":118,"./geo/geocoder/yahoo-geocoder":119,"./geo/geometry":121,"./geo/gmaps":122,"./geo/leaflet":136,"./geo/map":150,"./geo/map-view":149,"./geo/map/cartodb-layer":151,"./geo/map/gmaps-base-layer":152,"./geo/map/layers":153,"./geo/map/map-layer":154,"./geo/map/plain-layer":155,"./geo/map/tile-layer":156,"./geo/map/torque-layer":157,"./geo/map/wms-layer":158,"./geo/ui/annotation":160,"./geo/ui/header":163,"./geo/ui/image":164,"./geo/ui/infobox":165,"./geo/ui/infowindow":167,"./geo/ui/infowindow-model":166,"./geo/ui/layer-selector":168,"./geo/ui/layer-view":169,"./geo/ui/legend":175,"./geo/ui/legend-exports":170,"./geo/ui/legend/legend-view-exports":194,"./geo/ui/search/search":198,"./geo/ui/text":201,"./geo/ui/tiles-loader":202,"./geo/ui/tooltip":203,"./geo/ui/zoom/zoom-view":205,"./ui/common/dialog":207,"./ui/common/dropdown":208,"./ui/common/fullscreen/fullscreen-view":210,"./ui/common/notification":211,"./ui/common/table":212,"./ui/common/table/row":214,"./ui/common/table/row-view":213,"./ui/common/table/table-data":215,"./ui/common/table/table-properties":216,"./vis/layers":217,"./vis/overlays":218,"./vis/vis":219,"./vis/vis/infowindow-template":220,"./vis/vis/layers":221,"./vis/vis/overlay":222,"./vis/vis/overlays":223,"backbone":1,"cdb":88,"cdb.config":86,"cdb.core.Profiler":97,"cdb.core.util":101,"cdb.errors":87,"cdb.log":89,"cdb.templates":90,"jquery":242,"leaflet":9,"lzma":237,"mousewheel":238,"mustache":10,"mwheelIntent":239,"underscore":265}],85:[function(require,module,exports){
+},{"./api/create-layer":79,"./api/create-vis":80,"./api/module-load":81,"./api/promise":82,"./api/sql":83,"./core/loader":92,"./core/model":96,"./core/sanitize":98,"./core/template":100,"./core/template-list":99,"./core/view":102,"./geo/geocoder/nokia-geocoder":118,"./geo/geocoder/yahoo-geocoder":119,"./geo/geometry":121,"./geo/gmaps":122,"./geo/leaflet":136,"./geo/map":150,"./geo/map-view":149,"./geo/map/cartodb-layer":151,"./geo/map/gmaps-base-layer":152,"./geo/map/layers":153,"./geo/map/map-layer":154,"./geo/map/plain-layer":155,"./geo/map/tile-layer":156,"./geo/map/torque-layer":157,"./geo/map/wms-layer":158,"./geo/ui/annotation":160,"./geo/ui/header":163,"./geo/ui/image":164,"./geo/ui/infobox":165,"./geo/ui/infowindow":167,"./geo/ui/infowindow-model":166,"./geo/ui/layer-selector":168,"./geo/ui/layer-view":169,"./geo/ui/legend":175,"./geo/ui/legend-exports":170,"./geo/ui/legend/legend-view-exports":194,"./geo/ui/search/search":198,"./geo/ui/text":201,"./geo/ui/tiles-loader":202,"./geo/ui/tooltip":203,"./geo/ui/zoom/zoom-view":205,"./ui/common/dialog":207,"./ui/common/dropdown":208,"./ui/common/fullscreen/fullscreen-view":210,"./ui/common/notification":211,"./ui/common/table":212,"./ui/common/table/row":214,"./ui/common/table/row-view":213,"./ui/common/table/table-data":215,"./ui/common/table/table-properties":216,"./vis/layers":218,"./vis/overlays":219,"./vis/vis":220,"./vis/vis/infowindow-template":221,"./vis/vis/layers":222,"./vis/vis/overlay":223,"./vis/vis/overlays":224,"backbone":1,"cdb":88,"cdb.config":86,"cdb.core.Profiler":97,"cdb.core.util":101,"cdb.errors":87,"cdb.log":89,"cdb.templates":90,"jquery":243,"leaflet":9,"lzma":238,"mousewheel":239,"mustache":10,"mwheelIntent":240,"underscore":266}],85:[function(require,module,exports){
 /* global google */
 var cdb = require('cdb');
 var moduleLoad = require('./api/module-load');
@@ -26483,7 +26483,7 @@ var ErrorModel = Backbone.Model.extend({
 
 module.exports = ErrorModel;
 
-},{"backbone":1,"cdb.config":86,"jquery":242}],96:[function(require,module,exports){
+},{"backbone":1,"cdb.config":86,"jquery":243}],96:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
@@ -26566,7 +26566,7 @@ var Model = Backbone.Model.extend({
 
 module.exports = Model;
 
-},{"backbone":1,"jquery":242,"underscore":265}],97:[function(require,module,exports){
+},{"backbone":1,"jquery":243,"underscore":266}],97:[function(require,module,exports){
 /*
 # metrics profiler
 
@@ -26755,7 +26755,7 @@ htmlCssSanitizer.html = function(inputHtml, optionalSanitizer) {
 
 module.exports = htmlCssSanitizer;
 
-},{"html-css-sanitizer":236}],99:[function(require,module,exports){
+},{"html-css-sanitizer":237}],99:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var log = require('cdb.log');
@@ -26785,7 +26785,7 @@ var TemplateList = Backbone.Collection.extend({
 
 module.exports = TemplateList;
 
-},{"./template":100,"backbone":1,"cdb.log":89,"underscore":265}],100:[function(require,module,exports){
+},{"./template":100,"backbone":1,"cdb.log":89,"underscore":266}],100:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var Mustache = require('mustache');
@@ -26880,7 +26880,7 @@ var Template = Backbone.Model.extend({
 
 module.exports = Template;
 
-},{"backbone":1,"cdb.log":89,"mustache":10,"underscore":265}],101:[function(require,module,exports){
+},{"backbone":1,"cdb.log":89,"mustache":10,"underscore":266}],101:[function(require,module,exports){
 var util = {};
 
 util.isCORSSupported = function() {
@@ -27182,7 +27182,7 @@ var View = Backbone.View.extend({
 
 module.exports = View;
 
-},{"backbone":1,"cdb.core.Profiler":97,"cdb.templates":90,"underscore":265}],103:[function(require,module,exports){
+},{"backbone":1,"cdb.core.Profiler":97,"cdb.templates":90,"underscore":266}],103:[function(require,module,exports){
 var _ = require('underscore');
 var DataviewModelBase = require('./dataview-model-base');
 var SearchModel = require('./category-dataview/search-model');
@@ -27471,7 +27471,7 @@ module.exports = DataviewModelBase.extend({
   }
 );
 
-},{"./category-dataview/categories-collection":104,"./category-dataview/category-model-range":106,"./category-dataview/search-model":107,"./dataview-model-base":108,"underscore":265}],104:[function(require,module,exports){
+},{"./category-dataview/categories-collection":104,"./category-dataview/category-model-range":106,"./category-dataview/search-model":107,"./dataview-model-base":108,"underscore":266}],104:[function(require,module,exports){
 var Backbone = require('backbone');
 var CategoryItemModel = require('./category-item-model');
 
@@ -27568,7 +27568,7 @@ module.exports = Model.extend({
   }
 });
 
-},{"../../core/model":96,"underscore":265}],107:[function(require,module,exports){
+},{"../../core/model":96,"underscore":266}],107:[function(require,module,exports){
 var _ = require('underscore');
 var Model = require('../../core/model');
 var CategoriesCollection = require('./categories-collection');
@@ -27679,9 +27679,10 @@ module.exports = Model.extend({
 
 });
 
-},{"../../core/model":96,"./categories-collection":104,"underscore":265}],108:[function(require,module,exports){
+},{"../../core/model":96,"./categories-collection":104,"underscore":266}],108:[function(require,module,exports){
 var _ = require('underscore');
 var Model = require('../core/model');
+var BackboneCancelSync = require('../util/backbone-abort-sync');
 var WindshaftFiltersBoundingBoxFilter = require('../windshaft/filters/bounding-box');
 var BOUNDING_BOX_FILTER_WAIT = 500;
 
@@ -27723,6 +27724,8 @@ module.exports = Model.extend({
     this.layer = opts.layer;
     this._map = opts.map;
     this._windshaftMap = opts.windshaftMap;
+
+    this.sync = BackboneCancelSync.bind(this);
 
     // filter is optional, so have to guard before using it
     this.filter = opts.filter;
@@ -27855,10 +27858,22 @@ module.exports = Model.extend({
 
   fetch: function (opts) {
     opts = opts || {};
+
     this.trigger('loading', this);
+
+    if (opts.success) {
+      var successCallback = opts && opts.success;
+    }
+
     return Model.prototype.fetch.call(this, _.extend(opts, {
-      error: function () {
-        this.trigger('error');
+      success: function () {
+        successCallback && successCallback(arguments);
+        this.trigger('loaded', this);
+      }.bind(this),
+      error: function (mdl, err) {
+        if (!err || (err && err.statusText !== 'abort')) {
+          this.trigger('error', mdl, err);
+        }
       }.bind(this)
     }));
   },
@@ -27887,7 +27902,7 @@ module.exports = Model.extend({
   }
 );
 
-},{"../core/model":96,"../windshaft/filters/bounding-box":227,"underscore":265}],109:[function(require,module,exports){
+},{"../core/model":96,"../util/backbone-abort-sync":217,"../windshaft/filters/bounding-box":228,"underscore":266}],109:[function(require,module,exports){
 var Backbone = require('backbone');
 
 /**
@@ -27940,8 +27955,7 @@ module.exports = Model.extend({
   createCategoryModel: function (layerModel, attrs) {
     _checkProperties(attrs, ['column']);
     var categoryFilter = new CategoryFilter({
-      // TODO Setting layer-index on filters here is not good, if order change the filters won't work on the expected layer anymore!
-      layerIndex: this._indexOf(layerModel)
+      layer: layerModel
     });
 
     attrs = _.pick(attrs, CategorDataviewModel.ATTRS_NAMES);
@@ -27975,8 +27989,7 @@ module.exports = Model.extend({
     _checkProperties(attrs, ['column']);
 
     var rangeFilter = new RangeFilter({
-      // TODO Setting layer-index on filters here is not good, if order change the filters won't work on the expected layer anymore!
-      layerIndex: this._indexOf(layerModel)
+      layer: layerModel
     });
 
     attrs = _.pick(attrs, HistogramDataviewModel.ATTRS_NAMES);
@@ -28033,7 +28046,7 @@ function _checkProperties (obj, propertiesArray) {
   });
 }
 
-},{"../core/model":96,"../windshaft/filters/category":228,"../windshaft/filters/range":230,"./category-dataview-model":103,"./formula-dataview-model":111,"./histogram-dataview-model":112,"./list-dataview-model":113,"underscore":265}],111:[function(require,module,exports){
+},{"../core/model":96,"../windshaft/filters/category":229,"../windshaft/filters/range":231,"./category-dataview-model":103,"./formula-dataview-model":111,"./histogram-dataview-model":112,"./list-dataview-model":113,"underscore":266}],111:[function(require,module,exports){
 var _ = require('underscore');
 var DataviewModelBase = require('./dataview-model-base');
 
@@ -28078,7 +28091,7 @@ module.exports = DataviewModelBase.extend({
   }
 );
 
-},{"./dataview-model-base":108,"underscore":265}],112:[function(require,module,exports){
+},{"./dataview-model-base":108,"underscore":266}],112:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var DataviewModelBase = require('./dataview-model-base');
@@ -28231,7 +28244,7 @@ module.exports = DataviewModelBase.extend({
   }
 );
 
-},{"./dataview-model-base":108,"backbone":1,"underscore":265}],113:[function(require,module,exports){
+},{"./dataview-model-base":108,"backbone":1,"underscore":266}],113:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var DataviewModelBase = require('./dataview-model-base');
@@ -28286,7 +28299,7 @@ module.exports = DataviewModelBase.extend({
   }
 );
 
-},{"./dataview-model-base":108,"backbone":1,"underscore":265}],114:[function(require,module,exports){
+},{"./dataview-model-base":108,"backbone":1,"underscore":266}],114:[function(require,module,exports){
 var _ = require('underscore');
 
 /**
@@ -28451,7 +28464,7 @@ CartoDBLayerCommon.prototype = {
 
 module.exports = CartoDBLayerCommon;
 
-},{"underscore":265}],115:[function(require,module,exports){
+},{"underscore":266}],115:[function(require,module,exports){
 var CartoDBLayerGroupBase = require('./cartodb-layer-group-base');
 
 var CartoDBLayerGroupAnonymousMap = CartoDBLayerGroupBase.extend({
@@ -28575,7 +28588,7 @@ var CartoDBLayerGroupBase = MapLayer.extend({
 
 module.exports = CartoDBLayerGroupBase;
 
-},{"./map/map-layer":154,"backbone":1,"cdb.core.util":101,"jquery":242}],117:[function(require,module,exports){
+},{"./map/map-layer":154,"backbone":1,"cdb.core.util":101,"jquery":243}],117:[function(require,module,exports){
 var CartoDBLayerGroupBase = require('./cartodb-layer-group-base');
 
 var CartoDBLayerGroupNamedMap = CartoDBLayerGroupBase.extend({
@@ -28666,7 +28679,7 @@ var NOKIA = {
 
 module.exports = NOKIA;
 
-},{"jquery":242}],119:[function(require,module,exports){
+},{"jquery":243}],119:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 
@@ -28735,7 +28748,7 @@ var YAHOO = {
 
 module.exports = YAHOO;
 
-},{"jquery":242,"underscore":265}],120:[function(require,module,exports){
+},{"jquery":243,"underscore":266}],120:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -28755,7 +28768,7 @@ _.extend(GeometryView.prototype, Backbone.Events,{
 
 module.exports = GeometryView;
 
-},{"backbone":1,"underscore":265}],121:[function(require,module,exports){
+},{"backbone":1,"underscore":266}],121:[function(require,module,exports){
 var Model = require('../core/model');
 
 /**
@@ -28854,7 +28867,7 @@ _.extend(
 
 module.exports = GMapsBaseLayerView;
 
-},{"./gmaps-default-map-style":126,"./gmaps-layer-view":128,"underscore":265}],125:[function(require,module,exports){
+},{"./gmaps-default-map-style":126,"./gmaps-layer-view":128,"underscore":266}],125:[function(require,module,exports){
 var _ = require('underscore');
 var GMapsLayerView = require('./gmaps-layer-view');
 var wax = require('wax.cartodb.js');
@@ -29188,7 +29201,7 @@ _.extend(
 
 module.exports = GMapsCartoDBLayerGroupView;
 
-},{"../cartodb-layer-common":114,"./cartodb-default-options":123,"./gmaps-layer-view":128,"./projector":135,"cdb.core.Profiler":97,"underscore":265,"wax.cartodb.js":240}],126:[function(require,module,exports){
+},{"../cartodb-layer-common":114,"./cartodb-default-options":123,"./gmaps-layer-view":128,"./projector":135,"cdb.core.Profiler":97,"underscore":266,"wax.cartodb.js":241}],126:[function(require,module,exports){
 var DEFAULT_MAP_STYLE = [{
     stylers: [{
         saturation: -65
@@ -29388,7 +29401,7 @@ _.extend(GMapsLayerView.prototype, {
 
 module.exports = GMapsLayerView;
 
-},{"backbone":1,"underscore":265}],129:[function(require,module,exports){
+},{"backbone":1,"underscore":266}],129:[function(require,module,exports){
 var _ = require('underscore');
 var log = require('cdb.log');
 var MapView = require('../map-view');
@@ -29658,7 +29671,7 @@ var GoogleMapsMapView = MapView.extend({
 
 module.exports = GoogleMapsMapView;
 
-},{"../map-view":149,"./gmaps-path-view":130,"./gmaps-point-view":132,"./projector":135,"cdb.log":89,"underscore":265}],130:[function(require,module,exports){
+},{"../map-view":149,"./gmaps-path-view":130,"./gmaps-point-view":132,"./projector":135,"cdb.log":89,"underscore":266}],130:[function(require,module,exports){
 var _ = require('underscore');
 var GeoJSON = require('geojson');
 var GeometryView = require('../geometry-view');
@@ -29814,7 +29827,7 @@ PathView.prototype.edit = function(enable) {
 
 module.exports = PathView;
 
-},{"../geometry-view":120,"geojson":234,"underscore":265}],131:[function(require,module,exports){
+},{"../geometry-view":120,"geojson":235,"underscore":266}],131:[function(require,module,exports){
 var _ = require('underscore');
 var GMapsLayerView = require('./gmaps-layer-view');
 
@@ -29849,7 +29862,7 @@ _.extend(
 
 module.exports = GMapsPlainLayerView;
 
-},{"./gmaps-layer-view":128,"underscore":265}],132:[function(require,module,exports){
+},{"./gmaps-layer-view":128,"underscore":266}],132:[function(require,module,exports){
 var _ = require('underscore');
 var GeoJSON = require('geojson');
 var config = require('cdb.config');
@@ -29937,7 +29950,7 @@ PointView.prototype.edit = function(enable) {
 
 module.exports = PointView;
 
-},{"../geometry-view":120,"cdb.config":86,"geojson":234,"underscore":265}],133:[function(require,module,exports){
+},{"../geometry-view":120,"cdb.config":86,"geojson":235,"underscore":266}],133:[function(require,module,exports){
 var _ = require('underscore');
 var GMapsLayerView = require('./gmaps-layer-view');
 
@@ -29980,7 +29993,7 @@ _.extend(
 
 module.exports = GMapsTiledLayerView;
 
-},{"./gmaps-layer-view":128,"underscore":265}],134:[function(require,module,exports){
+},{"./gmaps-layer-view":128,"underscore":266}],134:[function(require,module,exports){
 var _ = require('underscore');
 var torque = require('torque.js');
 var Backbone = require('backbone');
@@ -30047,7 +30060,7 @@ _.extend(
 
 module.exports = GMapsTorqueLayerView;
 
-},{"../torque-layer-view-base":159,"./gmaps-layer-view":128,"backbone":1,"torque.js":21,"underscore":265}],135:[function(require,module,exports){
+},{"../torque-layer-view-base":159,"./gmaps-layer-view":128,"backbone":1,"torque.js":21,"underscore":266}],135:[function(require,module,exports){
 // helper to get pixel position from latlon
 var Projector = function(map) { this.setMap(map); };
 Projector.prototype = new google.maps.OverlayView();
@@ -30429,7 +30442,7 @@ var LeafletCartoDBLayerGroupView = L.TileLayer.extend({
 
 module.exports = LeafletCartoDBLayerGroupView;
 
-},{"../cartodb-layer-common":114,"./leaflet-layer-view":140,"backbone":1,"cdb.config":86,"cdb.core.Profiler":97,"leaflet":9,"underscore":265,"wax.cartodb.js":240}],138:[function(require,module,exports){
+},{"../cartodb-layer-common":114,"./leaflet-layer-view":140,"backbone":1,"cdb.config":86,"cdb.core.Profiler":97,"leaflet":9,"underscore":266,"wax.cartodb.js":241}],138:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var LeafletLayerView = require('./leaflet-layer-view');
@@ -30490,7 +30503,7 @@ _.extend(LeafletGmapsTiledLayerView.prototype, LeafletLayerView.prototype, {
 
 module.exports = LeafletGmapsTiledLayerView;
 
-},{"./leaflet-layer-view":140,"leaflet":9,"underscore":265}],139:[function(require,module,exports){
+},{"./leaflet-layer-view":140,"leaflet":9,"underscore":266}],139:[function(require,module,exports){
 var log = require('cdb.log');
 var LeafletTiledLayerView = require('./leaflet-tiled-layer-view');
 var LeafletWMSLayerView = require('./leaflet-wms-layer-view');
@@ -30582,7 +30595,7 @@ _.extend(LeafletLayerView.prototype, {
 
 module.exports = LeafletLayerView;
 
-},{"backbone":1,"underscore":265}],141:[function(require,module,exports){
+},{"backbone":1,"underscore":266}],141:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var L = require('leaflet');
@@ -30936,7 +30949,7 @@ L.Icon.Default.imagePath = (function () {
 
 module.exports = LeafletMapView;
 
-},{"../../core/sanitize":98,"../../core/view":102,"../map-view":149,"./leaflet-path-view":142,"./leaflet-point-view":144,"jquery":242,"leaflet":9,"underscore":265}],142:[function(require,module,exports){
+},{"../../core/sanitize":98,"../../core/view":102,"../map-view":149,"./leaflet-path-view":142,"./leaflet-point-view":144,"jquery":243,"leaflet":9,"underscore":266}],142:[function(require,module,exports){
  var _ = require('underscore');
  var L = require('leaflet');
  var GeometryView = require('../geometry-view');
@@ -31005,7 +31018,7 @@ PathView.prototype.edit = function(enable) {
 
 module.exports = PathView;
 
-},{"../geometry-view":120,"leaflet":9,"underscore":265}],143:[function(require,module,exports){
+},{"../geometry-view":120,"leaflet":9,"underscore":266}],143:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var LeafletLayerView = require('./leaflet-layer-view');
@@ -31054,7 +31067,7 @@ _.extend(LeafletPlainLayerView.prototype, LeafletLayerView.prototype);
 
 module.exports = LeafletPlainLayerView;
 
-},{"./leaflet-layer-view":140,"leaflet":9,"underscore":265}],144:[function(require,module,exports){
+},{"./leaflet-layer-view":140,"leaflet":9,"underscore":266}],144:[function(require,module,exports){
  var L = require('leaflet');
  var config = require('cdb.config');
  var GeometryView = require('../geometry-view');
@@ -31172,7 +31185,7 @@ _.extend(LeafletTiledLayerView.prototype, LeafletLayerView.prototype, {
 
 module.exports = LeafletTiledLayerView;
 
-},{"./leaflet-layer-view":140,"leaflet":9,"underscore":265}],146:[function(require,module,exports){
+},{"./leaflet-layer-view":140,"leaflet":9,"underscore":266}],146:[function(require,module,exports){
 /* global L */
 require('torque.js'); // required to setup the "L" object
 var _ = require('underscore');
@@ -31239,7 +31252,7 @@ _.extend(LeafletTorqueLayer.prototype, TorqueLayerViewBase);
 
 module.exports = LeafletTorqueLayer;
 
-},{"../torque-layer-view-base":159,"./leaflet-layer-view":140,"cdb.core.util":101,"torque.js":21,"underscore":265}],147:[function(require,module,exports){
+},{"../torque-layer-view-base":159,"./leaflet-layer-view":140,"cdb.core.util":101,"torque.js":21,"underscore":266}],147:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var LeafletLayerView = require('./leaflet-layer-view.js');
@@ -31275,7 +31288,7 @@ _.extend(LeafletWMSLayerView.prototype, LeafletLayerView.prototype, {
 
 module.exports = LeafletWMSLayerView;
 
-},{"./leaflet-layer-view.js":140,"leaflet":9,"underscore":265}],148:[function(require,module,exports){
+},{"./leaflet-layer-view.js":140,"leaflet":9,"underscore":266}],148:[function(require,module,exports){
 /* global google */
 var cdb = require('cdb');
 var LeafletLayerViewFactory = require('./leaflet/leaflet-layer-view-factory');
@@ -31577,7 +31590,7 @@ var MapView = View.extend({
 
 module.exports = MapView;
 
-},{"../core/view":102,"./cartodb-layer-group-anonymous-map":115,"./cartodb-layer-group-named-map":117,"cdb.log":89,"underscore":265}],150:[function(require,module,exports){
+},{"../core/view":102,"./cartodb-layer-group-anonymous-map":115,"./cartodb-layer-group-named-map":117,"cdb.log":89,"underscore":266}],150:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var Backbone = require('backbone');
@@ -31600,6 +31613,8 @@ var Map = Model.extend({
     keyboard: true,
     provider: 'leaflet'
   },
+
+  RELOAD_DEBOUNCE_TIME: 10,
 
   initialize: function (attrs, options) {
     options = options || {};
@@ -31656,7 +31671,7 @@ var Map = Model.extend({
     this.reload();
   },
 
-  reload: function (options) {
+  reload: _.debounce(function (options) {
     if (this._windshaftMap) {
       var instanceOptions = {
         layers: this.layers.models,
@@ -31668,7 +31683,7 @@ var Map = Model.extend({
       }
       this._windshaftMap.createInstance(instanceOptions);
     }
-  },
+  }, this.RELOAD_DEBOUNCE_TIME),
 
   _updateAttributions: function () {
     var defaultCartoDBAttribution = this.defaults.attribution[0];
@@ -31940,7 +31955,7 @@ var Map = Model.extend({
 
 module.exports = Map;
 
-},{"../core/model":96,"../core/sanitize":98,"./map/layers":153,"backbone":1,"cdb.config":86,"cdb.log":89,"leaflet":9,"underscore":265}],151:[function(require,module,exports){
+},{"../core/model":96,"../core/sanitize":98,"./map/layers":153,"backbone":1,"cdb.config":86,"cdb.log":89,"leaflet":9,"underscore":266}],151:[function(require,module,exports){
 var _ = require('underscore');
 var config = require('cdb.config');
 var MapLayer = require('./map-layer');
@@ -32035,7 +32050,7 @@ var CartoDBLayer = MapLayer.extend({
 
 module.exports = CartoDBLayer;
 
-},{"./map-layer":154,"cdb.config":86,"underscore":265}],152:[function(require,module,exports){
+},{"./map-layer":154,"cdb.config":86,"underscore":266}],152:[function(require,module,exports){
 var MapLayer = require('./map-layer');
 
 var GMapsBaseLayer = MapLayer.extend({
@@ -32195,7 +32210,7 @@ var MapLayer = Model.extend({
 
 module.exports = MapLayer;
 
-},{"../../core/model":96,"cdb":88,"cdb.log":89,"underscore":265}],155:[function(require,module,exports){
+},{"../../core/model":96,"cdb":88,"cdb.log":89,"underscore":266}],155:[function(require,module,exports){
 var MapLayer = require('./map-layer');
 
 /**
@@ -32330,7 +32345,7 @@ var TorqueLayer = MapLayer.extend({
 
 module.exports = TorqueLayer;
 
-},{"./map-layer":154,"underscore":265}],158:[function(require,module,exports){
+},{"./map-layer":154,"underscore":266}],158:[function(require,module,exports){
 var MapLayer = require('./map-layer');
 
 /**
@@ -32512,7 +32527,7 @@ module.exports = {
   }
 };
 
-},{"underscore":265}],160:[function(require,module,exports){
+},{"underscore":266}],160:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Model = require('../../core/model');
@@ -32874,7 +32889,7 @@ var Annotation = View.extend({
 
 module.exports = Annotation;
 
-},{"../../core/model":96,"../../core/sanitize":98,"../../core/template":100,"../../core/view":102,"jquery":242,"underscore":265}],161:[function(require,module,exports){
+},{"../../core/model":96,"../../core/sanitize":98,"../../core/template":100,"../../core/view":102,"jquery":243,"underscore":266}],161:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -32886,7 +32901,7 @@ __p+='<button type="button" class="CDB-Attribution-button js-button">?</button> 
 return __p;
 };
 
-},{"underscore":265}],162:[function(require,module,exports){
+},{"underscore":266}],162:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var View = require('../../../core/view');
@@ -32974,7 +32989,7 @@ var Attribution = View.extend({
 
 module.exports = Attribution;
 
-},{"../../../core/model":96,"../../../core/sanitize":98,"../../../core/view":102,"./attribution-template.tpl":161,"jquery":242,"underscore":265}],163:[function(require,module,exports){
+},{"../../../core/model":96,"../../../core/sanitize":98,"../../../core/view":102,"./attribution-template.tpl":161,"jquery":243,"underscore":266}],163:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../core/sanitize');
 var View = require('../../core/view');
@@ -33033,7 +33048,7 @@ var Header = View.extend({
 
 module.exports = Header;
 
-},{"../../core/sanitize":98,"../../core/view":102,"underscore":265}],164:[function(require,module,exports){
+},{"../../core/sanitize":98,"../../core/view":102,"underscore":266}],164:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var sanitize = require('../../core/sanitize');
@@ -33123,7 +33138,7 @@ module.exports = Text.extend({
 
 });
 
-},{"../../core/sanitize":98,"./text":201,"jquery":242,"underscore":265}],165:[function(require,module,exports){
+},{"../../core/sanitize":98,"./text":201,"jquery":243,"underscore":266}],165:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../core/view');
 var Template = require('../../core/template');
@@ -33201,7 +33216,7 @@ var InfoBox = View.extend({
 
 module.exports = InfoBox;
 
-},{"../../core/template":100,"../../core/view":102,"underscore":265}],166:[function(require,module,exports){
+},{"../../core/template":100,"../../core/view":102,"underscore":266}],166:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
@@ -33411,7 +33426,7 @@ var InfowindowModel = Backbone.Model.extend({
 
 module.exports = InfowindowModel;
 
-},{"backbone":1,"jquery":242,"underscore":265}],167:[function(require,module,exports){
+},{"backbone":1,"jquery":243,"underscore":266}],167:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Ps = require('perfect-scrollbar');
@@ -34125,7 +34140,7 @@ var Infowindow = View.extend({
 
 module.exports = Infowindow;
 
-},{"../../core/sanitize":98,"../../core/template":100,"../../core/util":101,"../../core/view":102,"cdb.templates":90,"clip-path":235,"jquery":242,"perfect-scrollbar":244,"underscore":265}],168:[function(require,module,exports){
+},{"../../core/sanitize":98,"../../core/template":100,"../../core/util":101,"../../core/view":102,"cdb.templates":90,"clip-path":236,"jquery":243,"perfect-scrollbar":245,"underscore":266}],168:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cdb'); // cdb.god, cdb.geo.ui.*
 var Dropdown = require('../../ui/common/dropdown');
@@ -34245,7 +34260,7 @@ var LayerSelector = View.extend({
 
 module.exports = LayerSelector;
 
-},{"../../core/model":96,"../../core/view":102,"../../ui/common/dropdown":208,"./layer-view":169,"cdb":88,"underscore":265}],169:[function(require,module,exports){
+},{"../../core/model":96,"../../core/view":102,"../../ui/common/dropdown":208,"./layer-view":169,"cdb":88,"underscore":266}],169:[function(require,module,exports){
 var _ = require('underscore');
 var templates = require('cdb.templates');
 var View = require('../../core/view');
@@ -34324,7 +34339,7 @@ var LayerView = View.extend({
 
 module.exports = LayerView;
 
-},{"../../core/view":102,"cdb.templates":90,"underscore":265}],170:[function(require,module,exports){
+},{"../../core/view":102,"cdb.templates":90,"underscore":266}],170:[function(require,module,exports){
 module.exports = {
   LegendItemModel: require('./legend-item-model'),
   LegendItem: require('./legend-item'),
@@ -34400,7 +34415,7 @@ var LegendItem = View.extend({
 
 module.exports = LegendItem;
 
-},{"../../core/view":102,"cdb.templates":90,"underscore":265}],173:[function(require,module,exports){
+},{"../../core/view":102,"cdb.templates":90,"underscore":266}],173:[function(require,module,exports){
 var Backbone = require('backbone');
 var LegendItemModel = require('./legend-item-model');
 
@@ -34618,7 +34633,7 @@ var Legend = View.extend({
 
 module.exports = Legend;
 
-},{"../../core/view":102,"./legend-exports":170,"./legend-model":174,"underscore":265}],176:[function(require,module,exports){
+},{"../../core/view":102,"./legend-exports":170,"./legend-model":174,"underscore":266}],176:[function(require,module,exports){
 var $ = require('jquery');
 var View = require('../../../core/view');
 
@@ -34653,7 +34668,7 @@ var BaseLegend = View.extend({
 
 module.exports = BaseLegend;
 
-},{"../../../core/view":102,"jquery":242}],177:[function(require,module,exports){
+},{"../../../core/view":102,"jquery":243}],177:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize.js')
 var BaseLegend = require('./base-legend');
@@ -34727,7 +34742,7 @@ var BubbleLegend = BaseLegend.extend({
 
 module.exports = BubbleLegend;
 
-},{"../../../core/sanitize.js":98,"./base-legend":176,"underscore":265}],178:[function(require,module,exports){
+},{"../../../core/sanitize.js":98,"./base-legend":176,"underscore":266}],178:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize');
 var BaseLegend = require('./base-legend');
@@ -34795,7 +34810,7 @@ var CategoryLegend = BaseLegend.extend({
 
 module.exports = CategoryLegend;
 
-},{"../../../core/sanitize":98,"../legend-item":172,"./base-legend":176,"underscore":265}],179:[function(require,module,exports){
+},{"../../../core/sanitize":98,"../legend-item":172,"./base-legend":176,"underscore":266}],179:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize');
 var BaseLegend = require('./base-legend');
@@ -34884,7 +34899,7 @@ var ChoroplethLegend = BaseLegend.extend({
 
 module.exports = ChoroplethLegend;
 
-},{"../../../core/sanitize":98,"./base-legend":176,"underscore":265}],180:[function(require,module,exports){
+},{"../../../core/sanitize":98,"./base-legend":176,"underscore":266}],180:[function(require,module,exports){
 var _ = require('underscore');
 var BaseLegend = require('./base-legend');
 var LegendItem = require('../legend-item');
@@ -34939,7 +34954,7 @@ var ColorLegend = BaseLegend.extend({
 
 module.exports = ColorLegend;
 
-},{"../legend-item":172,"./base-legend":176,"underscore":265}],181:[function(require,module,exports){
+},{"../legend-item":172,"./base-legend":176,"underscore":266}],181:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize.js')
 var BaseLegend = require('./base-legend');
@@ -35011,7 +35026,7 @@ var CustomLegend = BaseLegend.extend({
 
 module.exports = CustomLegend;
 
-},{"../../../core/sanitize.js":98,"../legend-item":172,"../legend-items":173,"./base-legend":176,"underscore":265}],182:[function(require,module,exports){
+},{"../../../core/sanitize.js":98,"../legend-item":172,"../legend-items":173,"./base-legend":176,"underscore":266}],182:[function(require,module,exports){
 var View = require('../../../core/view');
 
 var DebugLegend = View.extend({ });
@@ -35108,7 +35123,7 @@ var DensityLegend = BaseLegend.extend({
 
 module.exports = DensityLegend;
 
-},{"../../../core/sanitize":98,"./base-legend":176,"underscore":265}],184:[function(require,module,exports){
+},{"../../../core/sanitize":98,"./base-legend":176,"underscore":266}],184:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize');
 var BaseLegend = require('./base-legend');
@@ -35255,7 +35270,7 @@ var IntensityLegend = BaseLegend.extend({
 
 module.exports = IntensityLegend;
 
-},{"../../../core/sanitize":98,"./base-legend":176,"underscore":265}],185:[function(require,module,exports){
+},{"../../../core/sanitize":98,"./base-legend":176,"underscore":266}],185:[function(require,module,exports){
 var LegendModel = require('../legend-model');
 var BubbleLegend = require('./bubble-legend');
 
@@ -35402,7 +35417,7 @@ var LegendChoropleth = ChoroplethLegend.extend({
 
 module.exports = LegendChoropleth;
 
-},{"../legend-model":174,"./choropleth-legend":179,"underscore":265}],188:[function(require,module,exports){
+},{"../legend-model":174,"./choropleth-legend":179,"underscore":266}],188:[function(require,module,exports){
 var LegendCategory = require('./legend-category');
 
 /**
@@ -35512,7 +35527,7 @@ var LegendDensity = DensityLegend.extend({
 
 module.exports = LegendDensity;
 
-},{"../legend-model":174,"./density-legend":183,"underscore":265}],191:[function(require,module,exports){
+},{"../legend-model":174,"./density-legend":183,"underscore":266}],191:[function(require,module,exports){
 var IntensityLegend = require('./intensity-legend');
 var LegendModel = require('../legend-model');
 
@@ -35670,7 +35685,7 @@ var LegendStacked = StackedLegend.extend({
 
 module.exports = LegendStacked;
 
-},{"../legend-model":174,"../legends":197,"./stacked-legend":196,"cdb":88,"underscore":265}],194:[function(require,module,exports){
+},{"../legend-model":174,"../legends":197,"./stacked-legend":196,"cdb":88,"underscore":266}],194:[function(require,module,exports){
 var Legend = {};
 Legend.Bubble = require('./legend-bubble');
 Legend.Category = require('./legend-category');
@@ -35786,7 +35801,7 @@ var StackedLegend = View.extend({
 
 module.exports = StackedLegend;
 
-},{"../../../core/view":102,"jquery":242,"underscore":265}],197:[function(require,module,exports){
+},{"../../../core/view":102,"jquery":243,"underscore":266}],197:[function(require,module,exports){
 var Backbone = require('backbone');
 var LegendModel = require('./legend-model');
 
@@ -36019,7 +36034,7 @@ var Search = View.extend({
 
 module.exports = Search;
 
-},{"../../../core/view":102,"../../../geo/geocoder/nokia-geocoder":118,"../../../geo/geometry":121,"../../../geo/ui/infowindow":167,"../../../geo/ui/infowindow-model":166,"./search_infowindow_template.tpl":199,"./search_template.tpl":200,"underscore":265}],199:[function(require,module,exports){
+},{"../../../core/view":102,"../../../geo/geocoder/nokia-geocoder":118,"../../../geo/geometry":121,"../../../geo/ui/infowindow":167,"../../../geo/ui/infowindow-model":166,"./search_infowindow_template.tpl":199,"./search_template.tpl":200,"underscore":266}],199:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -36031,7 +36046,7 @@ __p+='<div class="CDB-infowindow CDB-infowindow--light js-infowindow"> <div clas
 return __p;
 };
 
-},{"underscore":265}],200:[function(require,module,exports){
+},{"underscore":266}],200:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -36041,7 +36056,7 @@ __p+='<div class="CDB-Overlay"> <div class="CDB-Search-inner"> <form class="js-f
 return __p;
 };
 
-},{"underscore":265}],201:[function(require,module,exports){
+},{"underscore":266}],201:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../core/view');
 var sanitize = require('../../core/sanitize');
@@ -36234,7 +36249,7 @@ var Text = View.extend({
 
 module.exports = Text;
 
-},{"../../core/sanitize":98,"../../core/view":102,"jquery":242,"underscore":265}],202:[function(require,module,exports){
+},{"../../core/sanitize":98,"../../core/view":102,"jquery":243,"underscore":266}],202:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../core/view');
 
@@ -36286,7 +36301,7 @@ var TilesLoader = View.extend({
 
 module.exports = TilesLoader;
 
-},{"../../core/view":102,"underscore":265}],203:[function(require,module,exports){
+},{"../../core/view":102,"underscore":266}],203:[function(require,module,exports){
 var _ = require('underscore');
 var InfoBox = require('./infobox');
 var sanitize = require('../../core/sanitize');
@@ -36502,7 +36517,7 @@ var Tooltip = InfoBox.extend({
 
 module.exports = Tooltip;
 
-},{"../../core/sanitize":98,"./infobox":165,"./infowindow-model":166,"underscore":265}],204:[function(require,module,exports){
+},{"../../core/sanitize":98,"./infobox":165,"./infowindow-model":166,"underscore":266}],204:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -36512,7 +36527,7 @@ __p+='<div class="CDB-Overlay"> <button class="CDB-Zoom-action CDB-Zoom-action--
 return __p;
 };
 
-},{"underscore":265}],205:[function(require,module,exports){
+},{"underscore":266}],205:[function(require,module,exports){
 var View = require('../../../core/view');
 var template = require('./zoom-template.tpl');
 
@@ -36757,7 +36772,7 @@ module.exports = View.extend({
 
 });
 
-},{"../../core/view":102,"cdb.templates":90,"jquery":242,"underscore":265}],208:[function(require,module,exports){
+},{"../../core/view":102,"cdb.templates":90,"jquery":243,"underscore":266}],208:[function(require,module,exports){
 var $ = require('jquery');
 var cdb = require('cdb');
 var _ = require('underscore');
@@ -36916,7 +36931,7 @@ var Dropdown = View.extend({
 
 module.exports = Dropdown;
 
-},{"../../core/view":102,"cdb":88,"cdb.templates":90,"jquery":242,"underscore":265}],209:[function(require,module,exports){
+},{"../../core/view":102,"cdb":88,"cdb.templates":90,"jquery":243,"underscore":266}],209:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -36928,7 +36943,7 @@ __p+='<a href="'+
 return __p;
 };
 
-},{"underscore":265}],210:[function(require,module,exports){
+},{"underscore":266}],210:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var log = require('cdb.log');
@@ -37048,7 +37063,7 @@ var FullScreen = View.extend({
 
 module.exports = FullScreen;
 
-},{"../../../core/view":102,"./fullscreen-template.tpl":209,"cdb.log":89,"jquery":242,"underscore":265}],211:[function(require,module,exports){
+},{"../../../core/view":102,"./fullscreen-template.tpl":209,"cdb.log":89,"jquery":243,"underscore":266}],211:[function(require,module,exports){
 var _ = require('underscore');
 var templates = require('cdb.templates');
 var View = require('../../core/view');
@@ -37135,7 +37150,7 @@ var Notification = View.extend({
 
 module.exports = Notification;
 
-},{"../../core/view":102,"cdb.templates":90,"underscore":265}],212:[function(require,module,exports){
+},{"../../core/view":102,"cdb.templates":90,"underscore":266}],212:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var View = require('../../core/view');
@@ -37444,7 +37459,7 @@ var Table = View.extend({
 
 module.exports = Table;
 
-},{"../../core/view":102,"./table/row-view":213,"jquery":242,"underscore":265}],213:[function(require,module,exports){
+},{"../../core/view":102,"./table/row-view":213,"jquery":243,"underscore":266}],213:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../../core/view');
 
@@ -37544,7 +37559,7 @@ var RowView = View.extend({
 
 module.exports = RowView;
 
-},{"../../../core/view":102,"underscore":265}],214:[function(require,module,exports){
+},{"../../../core/view":102,"underscore":266}],214:[function(require,module,exports){
 var Model = require('../../../core/model');
 
 /**
@@ -37611,7 +37626,26 @@ var TableProperties = Model.extend({
 
 module.exports = TableProperties;
 
-},{"../../../core/model":96,"underscore":265}],217:[function(require,module,exports){
+},{"../../../core/model":96,"underscore":266}],217:[function(require,module,exports){
+var Backbone = require('backbone');
+
+/**
+ * Abort ongoing request if it exists
+ */
+module.exports = function (method, model, options) {
+  var self = arguments[1];
+
+  if (this._xhr) {
+    this._xhr.abort();
+  }
+  this._xhr = Backbone.sync.apply(this, arguments);
+  this._xhr.always(function () {
+    self._xhr = null;
+  });
+  return this._xhr;
+};
+
+},{"backbone":1}],218:[function(require,module,exports){
 var Layers = require('./vis/layers');
 var TileLayer = require('../geo/map/tile-layer');
 var WMSLayer = require('../geo/map/wms-layer');
@@ -37729,7 +37763,7 @@ function normalizeOptions (data, options) {
   }
 }
 
-},{"../geo/map/cartodb-layer":151,"../geo/map/gmaps-base-layer":152,"../geo/map/plain-layer":155,"../geo/map/tile-layer":156,"../geo/map/torque-layer":157,"../geo/map/wms-layer":158,"./vis/layers":221}],218:[function(require,module,exports){
+},{"../geo/map/cartodb-layer":151,"../geo/map/gmaps-base-layer":152,"../geo/map/plain-layer":155,"../geo/map/tile-layer":156,"../geo/map/torque-layer":157,"../geo/map/wms-layer":158,"./vis/layers":222}],219:[function(require,module,exports){
 var _ = require('underscore');
 var Overlay = require('./vis/overlay');
 var Model = require('../core/model');
@@ -38053,7 +38087,7 @@ Overlay.register('infobox', function (data, vis) {
 
 });
 
-},{"../core/model":96,"../core/template":100,"../geo/ui/annotation":160,"../geo/ui/attribution/attribution-view":162,"../geo/ui/header":163,"../geo/ui/infobox":165,"../geo/ui/infowindow":167,"../geo/ui/infowindow-model":166,"../geo/ui/layer-selector":168,"../geo/ui/search/search":198,"../geo/ui/text":201,"../geo/ui/tiles-loader":202,"../geo/ui/tooltip":203,"../geo/ui/zoom/zoom-view":205,"../ui/common/fullscreen/fullscreen-view":210,"./vis/overlay":222,"underscore":265}],219:[function(require,module,exports){
+},{"../core/model":96,"../core/template":100,"../geo/ui/annotation":160,"../geo/ui/attribution/attribution-view":162,"../geo/ui/header":163,"../geo/ui/infobox":165,"../geo/ui/infowindow":167,"../geo/ui/infowindow-model":166,"../geo/ui/layer-selector":168,"../geo/ui/search/search":198,"../geo/ui/text":201,"../geo/ui/tiles-loader":202,"../geo/ui/tooltip":203,"../geo/ui/zoom/zoom-view":205,"../ui/common/fullscreen/fullscreen-view":210,"./vis/overlay":223,"underscore":266}],220:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var $ = require('jquery');
@@ -38269,9 +38303,6 @@ var Vis = View.extend({
   },
 
   load: function (data, options) {
-    if (!data.datasource) {
-      throw new Error('viz.json needs to include a "datasource" attribute.');
-    }
 
     var self = this;
     this.https = (window && window.location.protocol && window.location.protocol === 'https:') || !!data.https;
@@ -38289,6 +38320,10 @@ var Vis = View.extend({
       });
 
       return this;
+    }
+
+    if (!data.datasource) {
+      throw new Error('viz.json needs to include a "datasource" attribute.');
     }
 
     // Load the modules (torque) for layers in the viz.json
@@ -39189,7 +39224,7 @@ var Vis = View.extend({
 
 module.exports = Vis;
 
-},{"../api/sql":83,"../core/loader":92,"../core/template":100,"../core/view":102,"../dataviews/dataviews-collection":109,"../dataviews/dataviews-factory":110,"../geo/map":150,"../geo/map-view-factory":148,"../geo/ui/infowindow":167,"../geo/ui/infowindow-model":166,"../geo/ui/legend":175,"../geo/ui/legend-model":174,"../geo/ui/legend/stacked-legend":196,"../geo/ui/tooltip":203,"../windshaft/client":224,"../windshaft/config":225,"../windshaft/layergroup-config":231,"../windshaft/namedmap-config":232,"../windshaft/windshaft-map":233,"./vis/infowindow-template":220,"./vis/layers":221,"./vis/overlay":222,"backbone":1,"cdb":88,"cdb.config":86,"cdb.core.util":101,"cdb.log":89,"jquery":242,"underscore":265}],220:[function(require,module,exports){
+},{"../api/sql":83,"../core/loader":92,"../core/template":100,"../core/view":102,"../dataviews/dataviews-collection":109,"../dataviews/dataviews-factory":110,"../geo/map":150,"../geo/map-view-factory":148,"../geo/ui/infowindow":167,"../geo/ui/infowindow-model":166,"../geo/ui/legend":175,"../geo/ui/legend-model":174,"../geo/ui/legend/stacked-legend":196,"../geo/ui/tooltip":203,"../windshaft/client":225,"../windshaft/config":226,"../windshaft/layergroup-config":232,"../windshaft/namedmap-config":233,"../windshaft/windshaft-map":234,"./vis/infowindow-template":221,"./vis/layers":222,"./vis/overlay":223,"backbone":1,"cdb":88,"cdb.config":86,"cdb.core.util":101,"cdb.log":89,"jquery":243,"underscore":266}],221:[function(require,module,exports){
 var INFOWINDOW_TEMPLATE = {
   light: [
     '<div class="cartodb-popup v2">',
@@ -39214,7 +39249,7 @@ var INFOWINDOW_TEMPLATE = {
 
 module.exports = INFOWINDOW_TEMPLATE;
 
-},{}],221:[function(require,module,exports){
+},{}],222:[function(require,module,exports){
 var _ = require('underscore');
 var log = require('cdb.log');
 
@@ -39258,7 +39293,7 @@ var Layers = {
 
 module.exports = Layers;
 
-},{"cdb.log":89,"underscore":265}],222:[function(require,module,exports){
+},{"cdb.log":89,"underscore":266}],223:[function(require,module,exports){
 var log = require('cdb.log');
 
 /**
@@ -39299,7 +39334,7 @@ var Overlay = {
 
 module.exports = Overlay;
 
-},{"cdb.log":89}],223:[function(require,module,exports){
+},{"cdb.log":89}],224:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var Overlays = Backbone.Collection.extend({
@@ -39309,7 +39344,7 @@ var Overlays = Backbone.Collection.extend({
 
 module.exports = Overlays;
 
-},{"backbone":1}],224:[function(require,module,exports){
+},{"backbone":1}],225:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var LZMA = require('lzma');
@@ -39445,12 +39480,12 @@ WindshaftClient.prototype._jsonpCallbackName = function (payload) {
 
 module.exports = WindshaftClient;
 
-},{"../core/util":101,"jquery":242,"lzma":237,"underscore":265}],225:[function(require,module,exports){
+},{"../core/util":101,"jquery":243,"lzma":238,"underscore":266}],226:[function(require,module,exports){
 module.exports = {
   MAPS_API_BASE_URL: 'api/v1/map'
 };
 
-},{}],226:[function(require,module,exports){
+},{}],227:[function(require,module,exports){
 var Model = require('../../core/model');
 
 module.exports = Model.extend({
@@ -39469,7 +39504,7 @@ module.exports = Model.extend({
   }
 });
 
-},{"../../core/model":96}],227:[function(require,module,exports){
+},{"../../core/model":96}],228:[function(require,module,exports){
 var Model = require('../../core/model');
 
 module.exports = Model.extend({
@@ -39496,7 +39531,7 @@ module.exports = Model.extend({
   }
 });
 
-},{"../../core/model":96}],228:[function(require,module,exports){
+},{"../../core/model":96}],229:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var WindshaftFilterBase = require('./base');
@@ -39634,36 +39669,42 @@ module.exports = WindshaftFilterBase.extend({
   }
 });
 
-},{"./base":226,"backbone":1,"underscore":265}],229:[function(require,module,exports){
+},{"./base":227,"backbone":1,"underscore":266}],230:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
 module.exports = Backbone.Collection.extend({
+
+  /**
+   * @param  {Array.<Filter>} filters Array with the filters to add to the collection.
+   * @param  {Array.<LayerModel>} layers  Array of LayerModel in the same order passed to the WindshaftMap.
+   * @returns {WindshaftFilterCollection}
+   */
+  initialize: function (filters, layers) {
+    this.layers = layers;
+    Backbone.Collection.prototype.initialize.apply(this, filters);
+  },
+
   toJSON: function () {
     var json = {};
     var activeFilters = this.getActiveFilters();
     if (activeFilters.length) {
       json.layers = [];
-      _.each(activeFilters, function (filter) {
-        if (!filter.isEmpty()) {
-          var index = filter.get('layerIndex');
-          if (index >= 0) {
-            if (json.layers[index]) {
-              _.extend(json.layers[index], filter.toJSON());
-            } else {
-              json.layers[index] = filter.toJSON();
+      var l, f, filters, filtersJson;
+      for (l = 0; l < this.layers.length; l++) {
+        var layer = this.layers[l];
+        if (layer.isVisible()) {
+          filters = this.getActiveFiltersForLayer(layer);
+          filtersJson = {};
+          if (filters.length) {
+            for (f = 0; f < filters.length; f++) {
+              _.extend(filtersJson, filters[f].toJSON());
             }
-          } else {
-            throw new Error('layerIndex missing for filter ' + JSON.stringify(filter.toJSON()));
           }
+          json.layers.push(filtersJson);
         }
-      });
-      // fill the holes
-      for (var i = 0; i < json.layers.length; ++i) {
-        json.layers[i] = json.layers[i] || {};
       }
     }
-
     return json;
   },
 
@@ -39671,10 +39712,16 @@ module.exports = Backbone.Collection.extend({
     return this.filter(function (filter) {
       return !filter.isEmpty();
     });
+  },
+
+  getActiveFiltersForLayer: function (layer) {
+    return this.filter(function (filter) {
+      return !filter.isEmpty() && filter.get('layer') === layer;
+    });
   }
 });
 
-},{"backbone":1,"underscore":265}],230:[function(require,module,exports){
+},{"backbone":1,"underscore":266}],231:[function(require,module,exports){
 var _ = require('underscore');
 var WindshaftFilterBase = require('./base');
 
@@ -39707,7 +39754,7 @@ module.exports = WindshaftFilterBase.extend({
   }
 });
 
-},{"./base":226,"underscore":265}],231:[function(require,module,exports){
+},{"./base":227,"underscore":266}],232:[function(require,module,exports){
 var _ = require('underscore');
 var LayerGroupConfig = {};
 
@@ -39754,7 +39801,7 @@ LayerGroupConfig.generate = function (options) {
 
 module.exports = LayerGroupConfig;
 
-},{"underscore":265}],232:[function(require,module,exports){
+},{"underscore":266}],233:[function(require,module,exports){
 var _ = require('underscore');
 var NamedMapConfig = {};
 
@@ -39773,7 +39820,7 @@ NamedMapConfig.generate = function (options) {
 
 module.exports = NamedMapConfig;
 
-},{"underscore":265}],233:[function(require,module,exports){
+},{"underscore":266}],234:[function(require,module,exports){
 var Backbone = require('backbone');
 var _ = require('underscore');
 var WindshaftFiltersCollection = require('./filters/collection');
@@ -39824,13 +39871,17 @@ var WindshaftMap = Backbone.Model.extend({
     var filtersFromVisibleLayers = [];
     if (dataviews) {
       filtersFromVisibleLayers = dataviews.chain()
-        .filter(function (dataview) { return dataview.layer.isVisible(); })
-        .map(function (dataview) { return dataview.filter; })
+        .filter(function (dataview) {
+          return dataview.layer.isVisible();
+        })
+        .map(function (dataview) {
+          return dataview.filter;
+        })
         .compact() // not all dataviews have filters
         .value();
     }
 
-    var filters = new WindshaftFiltersCollection(filtersFromVisibleLayers);
+    var filters = new WindshaftFiltersCollection(filtersFromVisibleLayers, layers);
 
     this.client.instantiateMap({
       mapDefinition: mapConfig,
@@ -40055,7 +40106,7 @@ var WindshaftMap = Backbone.Model.extend({
 
 module.exports = WindshaftMap;
 
-},{"./config":225,"./filters/collection":229,"./layergroup-config":231,"./namedmap-config":232,"backbone":1,"underscore":265}],234:[function(require,module,exports){
+},{"./config":226,"./filters/collection":230,"./layergroup-config":232,"./namedmap-config":233,"backbone":1,"underscore":266}],235:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 var GeoJSON = function( geojson, options ){
@@ -40294,7 +40345,7 @@ type: "Error",
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],235:[function(require,module,exports){
+},{}],236:[function(require,module,exports){
 (function (global){
 
 ; _ = global._ = require("underscore");
@@ -40325,7 +40376,7 @@ jQuery = global.jQuery = require("jquery");
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":242,"underscore":265}],236:[function(require,module,exports){
+},{"jquery":243,"underscore":266}],237:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 // -------------------------------------------------------------------------------------------------------------------
@@ -45185,7 +45236,7 @@ if (typeof window !== 'undefined') {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],237:[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 var LZMA = (function () {
@@ -49077,7 +49128,7 @@ this.LZMA = LZMA;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],238:[function(require,module,exports){
+},{}],239:[function(require,module,exports){
 (function (global){
 
 ; jQuery = global.jQuery = require("jquery");
@@ -49170,7 +49221,7 @@ function handler(event) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":242}],239:[function(require,module,exports){
+},{"jquery":243}],240:[function(require,module,exports){
 (function (global){
 
 ; jQuery = global.jQuery = require("jquery");
@@ -49257,7 +49308,7 @@ function handler(event) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":242}],240:[function(require,module,exports){
+},{"jquery":243}],241:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /* wax - 7.0.1 - v6.0.4-181-ga34788e */
@@ -52637,7 +52688,7 @@ wax.g.connector.prototype.getTileUrl = function(coord, z) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],241:[function(require,module,exports){
+},{}],242:[function(require,module,exports){
 !function() {
   var d3 = {
     version: "3.5.8"
@@ -62188,7 +62239,7 @@ wax.g.connector.prototype.getTileUrl = function(coord, z) {
   });
   if (typeof define === "function" && define.amd) define(this.d3 = d3); else if (typeof module === "object" && module.exports) module.exports = d3; else this.d3 = d3;
 }();
-},{}],242:[function(require,module,exports){
+},{}],243:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -71400,7 +71451,7 @@ return jQuery;
 
 }));
 
-},{}],243:[function(require,module,exports){
+},{}],244:[function(require,module,exports){
 //! moment.js
 //! version : 2.10.6
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -74596,7 +74647,7 @@ return jQuery;
     return _moment;
 
 }));
-},{}],244:[function(require,module,exports){
+},{}],245:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74604,7 +74655,7 @@ return jQuery;
 
 module.exports = require('./src/js/main');
 
-},{"./src/js/main":250}],245:[function(require,module,exports){
+},{"./src/js/main":251}],246:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74651,7 +74702,7 @@ exports.list = function (element) {
   }
 };
 
-},{}],246:[function(require,module,exports){
+},{}],247:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74740,7 +74791,7 @@ DOM.queryChildren = function (element, selector) {
 
 module.exports = DOM;
 
-},{}],247:[function(require,module,exports){
+},{}],248:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74816,7 +74867,7 @@ EventManager.prototype.once = function (element, eventName, handler) {
 
 module.exports = EventManager;
 
-},{}],248:[function(require,module,exports){
+},{}],249:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74834,7 +74885,7 @@ module.exports = (function () {
   };
 })();
 
-},{}],249:[function(require,module,exports){
+},{}],250:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74920,7 +74971,7 @@ exports.env = {
   supportsIePointer: window.navigator.msMaxTouchPoints !== null
 };
 
-},{"./class":245,"./dom":246}],250:[function(require,module,exports){
+},{"./class":246,"./dom":247}],251:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74936,7 +74987,7 @@ module.exports = {
   destroy: destroy
 };
 
-},{"./plugin/destroy":252,"./plugin/initialize":260,"./plugin/update":264}],251:[function(require,module,exports){
+},{"./plugin/destroy":253,"./plugin/initialize":261,"./plugin/update":265}],252:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74958,7 +75009,7 @@ module.exports = {
   wheelSpeed: 1
 };
 
-},{}],252:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -74985,7 +75036,7 @@ module.exports = function (element) {
   instances.remove(element);
 };
 
-},{"../lib/dom":246,"../lib/helper":249,"./instances":261}],253:[function(require,module,exports){
+},{"../lib/dom":247,"../lib/helper":250,"./instances":262}],254:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75050,7 +75101,7 @@ module.exports = function (element) {
   bindClickRailHandler(element, i);
 };
 
-},{"../../lib/helper":249,"../instances":261,"../update-geometry":262,"../update-scroll":263}],254:[function(require,module,exports){
+},{"../../lib/helper":250,"../instances":262,"../update-geometry":263,"../update-scroll":264}],255:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75158,7 +75209,7 @@ module.exports = function (element) {
   bindMouseScrollYHandler(element, i);
 };
 
-},{"../../lib/dom":246,"../../lib/helper":249,"../instances":261,"../update-geometry":262,"../update-scroll":263}],255:[function(require,module,exports){
+},{"../../lib/dom":247,"../../lib/helper":250,"../instances":262,"../update-geometry":263,"../update-scroll":264}],256:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75285,7 +75336,7 @@ module.exports = function (element) {
   bindKeyboardHandler(element, i);
 };
 
-},{"../../lib/helper":249,"../instances":261,"../update-geometry":262,"../update-scroll":263}],256:[function(require,module,exports){
+},{"../../lib/helper":250,"../instances":262,"../update-geometry":263,"../update-scroll":264}],257:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75432,7 +75483,7 @@ module.exports = function (element) {
   bindMouseWheelHandler(element, i);
 };
 
-},{"../../lib/helper":249,"../instances":261,"../update-geometry":262,"../update-scroll":263}],257:[function(require,module,exports){
+},{"../../lib/helper":250,"../instances":262,"../update-geometry":263,"../update-scroll":264}],258:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75452,7 +75503,7 @@ module.exports = function (element) {
   bindNativeScrollHandler(element, i);
 };
 
-},{"../instances":261,"../update-geometry":262}],258:[function(require,module,exports){
+},{"../instances":262,"../update-geometry":263}],259:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75566,7 +75617,7 @@ module.exports = function (element) {
   bindSelectionHandler(element, i);
 };
 
-},{"../../lib/helper":249,"../instances":261,"../update-geometry":262,"../update-scroll":263}],259:[function(require,module,exports){
+},{"../../lib/helper":250,"../instances":262,"../update-geometry":263,"../update-scroll":264}],260:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75739,7 +75790,7 @@ module.exports = function (element, supportsTouch, supportsIePointer) {
   bindTouchHandler(element, i, supportsTouch, supportsIePointer);
 };
 
-},{"../instances":261,"../update-geometry":262,"../update-scroll":263}],260:[function(require,module,exports){
+},{"../instances":262,"../update-geometry":263,"../update-scroll":264}],261:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75788,7 +75839,7 @@ module.exports = function (element, userSettings) {
   updateGeometry(element);
 };
 
-},{"../lib/class":245,"../lib/helper":249,"./handler/click-rail":253,"./handler/drag-scrollbar":254,"./handler/keyboard":255,"./handler/mouse-wheel":256,"./handler/native-scroll":257,"./handler/selection":258,"./handler/touch":259,"./instances":261,"./update-geometry":262}],261:[function(require,module,exports){
+},{"../lib/class":246,"../lib/helper":250,"./handler/click-rail":254,"./handler/drag-scrollbar":255,"./handler/keyboard":256,"./handler/mouse-wheel":257,"./handler/native-scroll":258,"./handler/selection":259,"./handler/touch":260,"./instances":262,"./update-geometry":263}],262:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -75897,7 +75948,7 @@ exports.get = function (element) {
   return instances[getId(element)];
 };
 
-},{"../lib/dom":246,"../lib/event-manager":247,"../lib/guid":248,"../lib/helper":249,"./default-setting":251}],262:[function(require,module,exports){
+},{"../lib/dom":247,"../lib/event-manager":248,"../lib/guid":249,"../lib/helper":250,"./default-setting":252}],263:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -76020,7 +76071,7 @@ module.exports = function (element) {
   cls[i.scrollbarYActive ? 'add' : 'remove'](element, 'ps-active-y');
 };
 
-},{"../lib/class":245,"../lib/dom":246,"../lib/helper":249,"./instances":261,"./update-scroll":263}],263:[function(require,module,exports){
+},{"../lib/class":246,"../lib/dom":247,"../lib/helper":250,"./instances":262,"./update-scroll":264}],264:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -76127,7 +76178,7 @@ module.exports = function (element, axis, value) {
 
 };
 
-},{"./instances":261}],264:[function(require,module,exports){
+},{"./instances":262}],265:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -76164,7 +76215,7 @@ module.exports = function (element) {
   d.css(i.scrollbarYRail, 'display', '');
 };
 
-},{"../lib/dom":246,"../lib/helper":249,"./instances":261,"./update-geometry":262}],265:[function(require,module,exports){
+},{"../lib/dom":247,"../lib/helper":250,"./instances":262,"./update-geometry":263}],266:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -77714,7 +77765,7 @@ module.exports = function (element) {
   }
 }.call(this));
 
-},{}],266:[function(require,module,exports){
+},{}],267:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var DashboardView = require('./dashboard-view');
@@ -77807,7 +77858,7 @@ module.exports = function (selector, vizJSON, opts) {
   };
 };
 
-},{"./dashboard-view":272,"./widgets-service":276,"./widgets/widgets-collection":347,"cartodb.js":206,"underscore":265}],267:[function(require,module,exports){
+},{"./dashboard-view":273,"./widgets-service":277,"./widgets/widgets-collection":348,"cartodb.js":206,"underscore":266}],268:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var WidgetViewFactory = require('./widgets/widget-view-factory');
@@ -77854,14 +77905,17 @@ module.exports = cdb.core.View.extend({
     this._widgets = options.widgets;
     this._widgets.bind('add', this._maybeRenderWidgetView, this);
     this._widgets.bind('reset', this.render, this);
+    this._widgets.bind('add reset remove', this._onWidgetsChange, this);
     this.add_related_model(this._widgets);
   },
 
   render: function () {
     this.clearSubViews();
     this.$el.empty();
+
     this._widgets.each(this._maybeRenderWidgetView, this);
-    this.$el.toggle(!_.isEmpty(this._subviews));
+    this._toggleVisiblity();
+
     return this;
   },
 
@@ -77871,11 +77925,19 @@ module.exports = cdb.core.View.extend({
       this.addView(view);
       this.$el.append(view.render().el);
     }
+  },
+
+  _toggleVisiblity: function () {
+    this.$el.toggle(!_.isEmpty(this._subviews));
+  },
+
+  _onWidgetsChange: function () {
+    this._toggleVisiblity();
   }
 
 });
 
-},{"./widgets/time-series/content-view":324,"./widgets/time-series/torque-content-view":327,"./widgets/widget-view-factory":345,"cartodb.js":206,"underscore":265}],268:[function(require,module,exports){
+},{"./widgets/time-series/content-view":325,"./widgets/time-series/torque-content-view":328,"./widgets/widget-view-factory":346,"cartodb.js":206,"underscore":266}],269:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./dashboard-menu-view.tpl');
 var moment = require('moment');
@@ -77908,7 +77970,7 @@ var DashboardMenuView = cdb.core.View.extend({
 
 module.exports = DashboardMenuView;
 
-},{"./dashboard-menu-view.tpl":269,"cartodb.js":206,"moment":243}],269:[function(require,module,exports){
+},{"./dashboard-menu-view.tpl":270,"cartodb.js":206,"moment":244}],270:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -77930,7 +77992,7 @@ __p+='<div class="CDB-Dashboard-menuContainer"> <div class="CDB-Dashboard-menuIn
 return __p;
 };
 
-},{"underscore":265}],270:[function(require,module,exports){
+},{"underscore":266}],271:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Ps = require('perfect-scrollbar');
@@ -78080,7 +78142,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./dashboard-sidebar.tpl":271,"./widgets/category/content-view":281,"./widgets/formula/content-view":306,"./widgets/histogram/content-view":310,"./widgets/list/content-view":317,"./widgets/widget-view-factory":345,"cartodb.js":206,"jquery":242,"perfect-scrollbar":244,"underscore":265}],271:[function(require,module,exports){
+},{"./dashboard-sidebar.tpl":272,"./widgets/category/content-view":282,"./widgets/formula/content-view":307,"./widgets/histogram/content-view":311,"./widgets/list/content-view":318,"./widgets/widget-view-factory":346,"cartodb.js":206,"jquery":243,"perfect-scrollbar":245,"underscore":266}],272:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78090,7 +78152,7 @@ __p+='<div class="CDB-Widget-canvasInner js-container"></div>';
 return __p;
 };
 
-},{"underscore":265}],272:[function(require,module,exports){
+},{"underscore":266}],273:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./dashboard.tpl');
 var DashboardBelowMapView = require('./dashboard-below-map-view');
@@ -78146,7 +78208,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./dashboard-below-map-view":267,"./dashboard-menu-view":268,"./dashboard-sidebar-view":270,"./dashboard.tpl":273,"cartodb.js":206}],273:[function(require,module,exports){
+},{"./dashboard-below-map-view":268,"./dashboard-menu-view":269,"./dashboard-sidebar-view":271,"./dashboard.tpl":274,"cartodb.js":206}],274:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78156,7 +78218,7 @@ __p+='<div class="CDB-Dashboard-mapWrapper js-map-wrapper"> <div class="CDB-Map-
 return __p;
 };
 
-},{"underscore":265}],274:[function(require,module,exports){
+},{"underscore":266}],275:[function(require,module,exports){
 var _ = require('underscore');
 var d3 = require('d3');
 
@@ -78204,7 +78266,7 @@ format.formatValue = function (value) {
 
 module.exports = format;
 
-},{"d3":241,"underscore":265}],275:[function(require,module,exports){
+},{"d3":242,"underscore":266}],276:[function(require,module,exports){
 var cdb = require('cartodb.js');
 
 cdb.deepInsights = {
@@ -78213,7 +78275,7 @@ cdb.deepInsights = {
 
 module.exports = cdb;
 
-},{"./create-dashboard":266,"cartodb.js":206}],276:[function(require,module,exports){
+},{"./create-dashboard":267,"cartodb.js":206}],277:[function(require,module,exports){
 var _ = require('underscore');
 var WidgetModel = require('./widgets/widget-model');
 var CategoryWidgetModel = require('./widgets/category/category-widget-model');
@@ -78376,7 +78438,7 @@ function _checkProperties (obj, propertiesArray) {
 
 module.exports = WidgetsService;
 
-},{"./widgets/category/category-widget-model":279,"./widgets/histogram/histogram-widget-model":314,"./widgets/widget-model":343,"underscore":265}],277:[function(require,module,exports){
+},{"./widgets/category/category-widget-model":280,"./widgets/histogram/histogram-widget-model":315,"./widgets/widget-model":344,"underscore":266}],278:[function(require,module,exports){
 var _ = require('underscore');
 var d3 = require('d3');
 var cdb = require('cartodb.js');
@@ -78498,7 +78560,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"cartodb.js":206,"d3":241,"underscore":265}],278:[function(require,module,exports){
+},{"cartodb.js":206,"d3":242,"underscore":266}],279:[function(require,module,exports){
 var _ = require('underscore');
 var colors = ['#2CA095', '#E5811B', '#4A4DBA', '#AD2BAD', '#559030', '#E1C221']; // Demo colors
 var defaultColor = '#CCC';
@@ -78561,7 +78623,7 @@ CategoryColors.prototype.getCategoryByColor = function (color) {
 
 module.exports = CategoryColors;
 
-},{"underscore":265}],279:[function(require,module,exports){
+},{"underscore":266}],280:[function(require,module,exports){
 var _ = require('underscore');
 var WidgetModel = require('../widget-model');
 var CategoryColors = require('./category-colors');
@@ -78701,7 +78763,7 @@ module.exports = WidgetModel.extend({
 
 });
 
-},{"../widget-model":343,"./category-colors":278,"./locked-categories-collection":291,"underscore":265}],280:[function(require,module,exports){
+},{"../widget-model":344,"./category-colors":279,"./locked-categories-collection":292,"underscore":266}],281:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78711,7 +78773,7 @@ __p+='<div class="CDB-Widget-header js-header"></div> <div class="CDB-Widget-con
 return __p;
 };
 
-},{"underscore":265}],281:[function(require,module,exports){
+},{"underscore":266}],282:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var SearchTitleView = require('./title/search-title-view');
 var CategoryOptionsView = require('./options/options-view');
@@ -78811,7 +78873,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./content-template.tpl":280,"./list/items-view":288,"./list/search-items-view":290,"./options/options-view":293,"./paginator/paginator-view":295,"./paginator/search-paginator-view":297,"./stats/stats-view":300,"./title/search-title-view":302,"cartodb.js":206}],282:[function(require,module,exports){
+},{"./content-template.tpl":281,"./list/items-view":289,"./list/search-items-view":291,"./options/options-view":294,"./paginator/paginator-view":296,"./paginator/search-paginator-view":298,"./stats/stats-view":301,"./title/search-title-view":303,"cartodb.js":206}],283:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78841,7 +78903,7 @@ __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listButto
 return __p;
 };
 
-},{"underscore":265}],283:[function(require,module,exports){
+},{"underscore":266}],284:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78871,7 +78933,7 @@ __p+='<div class="CDB-Widget-listItemInner '+
 return __p;
 };
 
-},{"underscore":265}],284:[function(require,module,exports){
+},{"underscore":266}],285:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var formatter = require('../../../../formatter');
 var clickableTemplate = require('./item-clickable-template.tpl');
@@ -78931,7 +78993,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../../../formatter":274,"./item-clickable-template.tpl":282,"./item-unclickable-template.tpl":283,"cartodb.js":206}],285:[function(require,module,exports){
+},{"../../../../formatter":275,"./item-clickable-template.tpl":283,"./item-unclickable-template.tpl":284,"cartodb.js":206}],286:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78959,7 +79021,7 @@ __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listItemI
 return __p;
 };
 
-},{"underscore":265}],286:[function(require,module,exports){
+},{"underscore":266}],287:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var formatter = require('../../../../formatter');
 var template = require('./search-item-clickable-template.tpl');
@@ -79015,7 +79077,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../../../formatter":274,"./search-item-clickable-template.tpl":285,"cartodb.js":206}],287:[function(require,module,exports){
+},{"../../../../formatter":275,"./search-item-clickable-template.tpl":286,"cartodb.js":206}],288:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79025,7 +79087,7 @@ __p+='<li class="CDB-Widget-listItem CDB-Widget-listItem--fake"></li> <li class=
 return __p;
 };
 
-},{"underscore":265}],288:[function(require,module,exports){
+},{"underscore":266}],289:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var cdb = require('cartodb.js');
@@ -79157,7 +79219,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./item/item-view":284,"./items-placeholder-template.tpl":287,"cartodb.js":206,"jquery":242,"underscore":265}],289:[function(require,module,exports){
+},{"./item/item-view":285,"./items-placeholder-template.tpl":288,"cartodb.js":206,"jquery":243,"underscore":266}],290:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79169,7 +79231,7 @@ __p+='<li class="CDB-Widget-listItem"> <h4 class="CDB-Text CDB-Size-large">No re
 return __p;
 };
 
-},{"underscore":265}],290:[function(require,module,exports){
+},{"underscore":266}],291:[function(require,module,exports){
 var $ = require('jquery');
 var CategoryItemsView = require('./items-view');
 var WidgetSearchCategoryItemView = require('./item/search-item-view');
@@ -79252,7 +79314,7 @@ module.exports = CategoryItemsView.extend({
 
 });
 
-},{"./item/search-item-view":286,"./items-view":288,"./search-items-no-results-template.tpl":289,"jquery":242}],291:[function(require,module,exports){
+},{"./item/search-item-view":287,"./items-view":289,"./search-items-no-results-template.tpl":290,"jquery":243}],292:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -79303,7 +79365,7 @@ module.exports = Backbone.Collection.extend({
 
 });
 
-},{"backbone":1,"underscore":265}],292:[function(require,module,exports){
+},{"backbone":1,"underscore":266}],293:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79345,7 +79407,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":265}],293:[function(require,module,exports){
+},{"underscore":266}],294:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./options-template.tpl');
 
@@ -79415,7 +79477,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./options-template.tpl":292,"cartodb.js":206}],294:[function(require,module,exports){
+},{"./options-template.tpl":293,"cartodb.js":206}],295:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79443,7 +79505,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":265}],295:[function(require,module,exports){
+},{"underscore":266}],296:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var cdb = require('cartodb.js');
@@ -79559,7 +79621,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./paginator-template.tpl":294,"cartodb.js":206,"jquery":242,"underscore":265}],296:[function(require,module,exports){
+},{"./paginator-template.tpl":295,"cartodb.js":206,"jquery":243,"underscore":266}],297:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79583,7 +79645,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":265}],297:[function(require,module,exports){
+},{"underscore":266}],298:[function(require,module,exports){
 var PaginatorView = require('./paginator-view');
 var searchTemplate = require('./search-paginator-template.tpl');
 
@@ -79625,7 +79687,7 @@ module.exports = PaginatorView.extend({
 
 });
 
-},{"./paginator-view":295,"./search-paginator-template.tpl":296}],298:[function(require,module,exports){
+},{"./paginator-view":296,"./search-paginator-template.tpl":297}],299:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79637,7 +79699,7 @@ __p+=''+
 return __p;
 };
 
-},{"underscore":265}],299:[function(require,module,exports){
+},{"underscore":266}],300:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79665,7 +79727,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":265}],300:[function(require,module,exports){
+},{"underscore":266}],301:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var formatter = require('../../../formatter');
@@ -79762,7 +79824,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"../../../formatter":274,"../../animate-values":277,"./cats-template.tpl":298,"./stats-template.tpl":299,"cartodb.js":206,"underscore":265}],301:[function(require,module,exports){
+},{"../../../formatter":275,"../../animate-values":278,"./cats-template.tpl":299,"./stats-template.tpl":300,"cartodb.js":206,"underscore":266}],302:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79796,7 +79858,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":265}],302:[function(require,module,exports){
+},{"underscore":266}],303:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var cdb = require('cartodb.js');
@@ -79955,7 +80017,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../dropdown/widget-dropdown-view":304,"../../widget-tooltip-view":344,"./search-title-template.tpl":301,"cartodb.js":206,"jquery":242,"underscore":265}],303:[function(require,module,exports){
+},{"../../dropdown/widget-dropdown-view":305,"../../widget-tooltip-view":345,"./search-title-template.tpl":302,"cartodb.js":206,"jquery":243,"underscore":266}],304:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79965,7 +80027,7 @@ __p+='<ul class="CDB-Text CDB-Size-medium"> <li class="CDB-Dropdown-item"> <butt
 return __p;
 };
 
-},{"underscore":265}],304:[function(require,module,exports){
+},{"underscore":266}],305:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var cdb = require('cartodb.js');
@@ -80099,7 +80161,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./template.tpl":303,"cartodb.js":206,"jquery":242,"underscore":265}],305:[function(require,module,exports){
+},{"./template.tpl":304,"cartodb.js":206,"jquery":243,"underscore":266}],306:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -80115,7 +80177,7 @@ __p+=''+
 return __p;
 };
 
-},{"underscore":265}],306:[function(require,module,exports){
+},{"underscore":266}],307:[function(require,module,exports){
 var _ = require('underscore');
 var d3 = require('d3');
 var cdb = require('cartodb.js');
@@ -80219,7 +80281,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../formatter":274,"../animate-values.js":277,"../dropdown/widget-dropdown-view":304,"./animation-template.tpl":305,"./template.tpl":307,"cartodb.js":206,"d3":241,"underscore":265}],307:[function(require,module,exports){
+},{"../../formatter":275,"../animate-values.js":278,"../dropdown/widget-dropdown-view":305,"./animation-template.tpl":306,"./template.tpl":308,"cartodb.js":206,"d3":242,"underscore":266}],308:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -80269,7 +80331,7 @@ __p+=' </div>';
 return __p;
 };
 
-},{"underscore":265}],308:[function(require,module,exports){
+},{"underscore":266}],309:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -80283,7 +80345,7 @@ __p+=''+
 return __p;
 };
 
-},{"underscore":265}],309:[function(require,module,exports){
+},{"underscore":266}],310:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var d3 = require('d3');
@@ -81370,7 +81432,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"../../formatter":274,"cartodb.js":206,"d3":241,"jquery":242,"underscore":265}],310:[function(require,module,exports){
+},{"../../formatter":275,"cartodb.js":206,"d3":242,"jquery":243,"underscore":266}],311:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var Backbone = require('backbone');
@@ -81678,6 +81740,14 @@ module.exports = cdb.core.View.extend({
 
   _onChangeBins: function () {
     this._originalData.reset([]); // Clean originalData
+    this.model.set({
+      zoom_enabled: false,
+      filter_enabled: false,
+      lo_index: null,
+      hi_index: null
+    });
+    this._dataviewModel.disableFilter();
+    this.filter.unsetRange();
   },
 
   _onChangeZoomEnabled: function () {
@@ -81731,7 +81801,7 @@ module.exports = cdb.core.View.extend({
   },
 
   _updateStats: function () {
-    var data = this._originalData.toJSON();
+    var data = this._dataviewModel.getData();
 
     if (this._isZoomed()) {
       data = this.zoomedData;
@@ -81840,7 +81910,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"../../formatter":274,"../animate-values.js":277,"../dropdown/widget-dropdown-view":304,"./animation-template.tpl":308,"./chart":309,"./content.tpl":311,"./histogram-title-view":313,"./placeholder.tpl":315,"backbone":1,"cartodb.js":206,"underscore":265}],311:[function(require,module,exports){
+},{"../../formatter":275,"../animate-values.js":278,"../dropdown/widget-dropdown-view":305,"./animation-template.tpl":309,"./chart":310,"./content.tpl":312,"./histogram-title-view":314,"./placeholder.tpl":316,"backbone":1,"cartodb.js":206,"underscore":266}],312:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -81854,7 +81924,7 @@ __p+=' </div> <div class="CDB-Widget-content CDB-Widget-content--histogram js-co
 return __p;
 };
 
-},{"underscore":265}],312:[function(require,module,exports){
+},{"underscore":266}],313:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -81874,7 +81944,7 @@ __p+='<div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Tex
 return __p;
 };
 
-},{"underscore":265}],313:[function(require,module,exports){
+},{"underscore":266}],314:[function(require,module,exports){
 var $ = require('jquery');
 var cdb = require('cartodb.js');
 var TooltipView = require('../widget-tooltip-view');
@@ -81937,7 +82007,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../widget-tooltip-view":344,"./histogram-title-template.tpl":312,"cartodb.js":206,"jquery":242}],314:[function(require,module,exports){
+},{"../widget-tooltip-view":345,"./histogram-title-template.tpl":313,"cartodb.js":206,"jquery":243}],315:[function(require,module,exports){
 var WidgetModel = require('../widget-model');
 
 /**
@@ -81956,7 +82026,7 @@ module.exports = WidgetModel.extend({
 
 });
 
-},{"../widget-model":343}],315:[function(require,module,exports){
+},{"../widget-model":344}],316:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -81972,7 +82042,7 @@ __p+=' </ul>';
 return __p;
 };
 
-},{"underscore":265}],316:[function(require,module,exports){
+},{"underscore":266}],317:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -81988,7 +82058,7 @@ __p+='<div class="CDB-Widget-header"> <div class="CDB-Widget-title CDB-Widget-co
 return __p;
 };
 
-},{"underscore":265}],317:[function(require,module,exports){
+},{"underscore":266}],318:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var format = require('../../formatter');
@@ -82069,7 +82139,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../formatter":274,"./content-template.tpl":316,"./edges-view":318,"./items-view":321,"./paginator-view":322,"./placeholder-template.tpl":323,"cartodb.js":206,"underscore":265}],318:[function(require,module,exports){
+},{"../../formatter":275,"./content-template.tpl":317,"./edges-view":319,"./items-view":322,"./paginator-view":323,"./placeholder-template.tpl":324,"cartodb.js":206,"underscore":266}],319:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 
@@ -82127,7 +82197,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"cartodb.js":206,"underscore":265}],319:[function(require,module,exports){
+},{"cartodb.js":206,"underscore":266}],320:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82183,7 +82253,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":265}],320:[function(require,module,exports){
+},{"underscore":266}],321:[function(require,module,exports){
 var _ = require('underscore');
 var format = require('../../formatter');
 var cdb = require('cartodb.js');
@@ -82262,7 +82332,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../formatter":274,"./item-template.tpl":319,"cartodb.js":206,"underscore":265}],321:[function(require,module,exports){
+},{"../../formatter":275,"./item-template.tpl":320,"cartodb.js":206,"underscore":266}],322:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var WidgetListItemView = require('./item-view');
 
@@ -82307,7 +82377,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./item-view":320,"cartodb.js":206}],322:[function(require,module,exports){
+},{"./item-view":321,"cartodb.js":206}],323:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var cdb = require('cartodb.js');
@@ -82412,7 +82482,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"cartodb.js":206,"jquery":242,"underscore":265}],323:[function(require,module,exports){
+},{"cartodb.js":206,"jquery":243,"underscore":266}],324:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82422,7 +82492,7 @@ __p+='<ul class="CDB-Widget-list CDB-Widget-list--withBorders"> <li class="CDB-W
 return __p;
 };
 
-},{"underscore":265}],324:[function(require,module,exports){
+},{"underscore":266}],325:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var placeholderTemplate = require('./placeholder.tpl');
@@ -82495,7 +82565,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./histogram-view":325,"./placeholder.tpl":326,"cartodb.js":206,"underscore":265}],325:[function(require,module,exports){
+},{"./histogram-view":326,"./placeholder.tpl":327,"cartodb.js":206,"underscore":266}],326:[function(require,module,exports){
 var $ = require('jquery');
 var cdb = require('cartodb.js');
 var HistogramChartView = require('../histogram/chart');
@@ -82581,7 +82651,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../histogram/chart":309,"cartodb.js":206,"jquery":242}],326:[function(require,module,exports){
+},{"../histogram/chart":310,"cartodb.js":206,"jquery":243}],327:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82605,7 +82675,7 @@ __p+=' </div> </div>';
 return __p;
 };
 
-},{"underscore":265}],327:[function(require,module,exports){
+},{"underscore":266}],328:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var torqueTemplate = require('./torque-template.tpl');
@@ -82672,7 +82742,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./placeholder.tpl":326,"./torque-header-view":330,"./torque-histogram-view":331,"./torque-template.tpl":336,"cartodb.js":206,"underscore":265}],328:[function(require,module,exports){
+},{"./placeholder.tpl":327,"./torque-header-view":331,"./torque-histogram-view":332,"./torque-template.tpl":337,"cartodb.js":206,"underscore":266}],329:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./torque-controls.tpl');
 
@@ -82715,7 +82785,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-controls.tpl":329,"cartodb.js":206}],329:[function(require,module,exports){
+},{"./torque-controls.tpl":330,"cartodb.js":206}],330:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82727,7 +82797,7 @@ __p+='<div class="CDB-Widget-controlButtonContent"> <i class="'+
 return __p;
 };
 
-},{"underscore":265}],330:[function(require,module,exports){
+},{"underscore":266}],331:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var TorqueControlsView = require('./torque-controls-view');
 var TorqueTimeInfoView = require('./torque-time-info-view');
@@ -82800,7 +82870,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-controls-view":328,"./torque-render-range-info-view":332,"./torque-reset-render-range-view":334,"./torque-time-info-view":337,"cartodb.js":206}],331:[function(require,module,exports){
+},{"./torque-controls-view":329,"./torque-render-range-info-view":333,"./torque-reset-render-range-view":335,"./torque-time-info-view":338,"cartodb.js":206}],332:[function(require,module,exports){
 var $ = require('jquery');
 var cdb = require('cartodb.js');
 var HistogramChartView = require('../histogram/chart');
@@ -82941,7 +83011,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../histogram/chart":309,"./torque-time-slider-view":339,"cartodb.js":206,"jquery":242}],332:[function(require,module,exports){
+},{"../histogram/chart":310,"./torque-time-slider-view":340,"cartodb.js":206,"jquery":243}],333:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var d3 = require('d3');
 var template = require('./torque-render-range-info.tpl');
@@ -82982,7 +83052,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-render-range-info.tpl":333,"cartodb.js":206,"d3":241}],333:[function(require,module,exports){
+},{"./torque-render-range-info.tpl":334,"cartodb.js":206,"d3":242}],334:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83000,7 +83070,7 @@ __p+='<p class="CDB-Text CDB-Size-large u-iBlock"> Selected from </p> <p class="
 return __p;
 };
 
-},{"underscore":265}],334:[function(require,module,exports){
+},{"underscore":266}],335:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./torque-reset-render-range.tpl');
 
@@ -83027,7 +83097,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-reset-render-range.tpl":335,"cartodb.js":206}],335:[function(require,module,exports){
+},{"./torque-reset-render-range.tpl":336,"cartodb.js":206}],336:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83037,7 +83107,7 @@ __p+='<button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-W
 return __p;
 };
 
-},{"underscore":265}],336:[function(require,module,exports){
+},{"underscore":266}],337:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83047,7 +83117,7 @@ __p+='<div class="CDB-Widget-header CDB-Widget-header--timeSeries js-header"></d
 return __p;
 };
 
-},{"underscore":265}],337:[function(require,module,exports){
+},{"underscore":266}],338:[function(require,module,exports){
 var d3 = require('d3');
 var cdb = require('cartodb.js');
 var template = require('./torque-time-info.tpl');
@@ -83084,7 +83154,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-time-info.tpl":338,"cartodb.js":206,"d3":241}],338:[function(require,module,exports){
+},{"./torque-time-info.tpl":339,"cartodb.js":206,"d3":242}],339:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83098,7 +83168,7 @@ __p+='<p class="CDB-Text CDB-Size-large u-iBlock"> '+
 return __p;
 };
 
-},{"underscore":265}],339:[function(require,module,exports){
+},{"underscore":266}],340:[function(require,module,exports){
 var d3 = require('d3');
 var cdb = require('cartodb.js');
 
@@ -83270,7 +83340,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"cartodb.js":206,"d3":241}],340:[function(require,module,exports){
+},{"cartodb.js":206,"d3":242}],341:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83280,7 +83350,7 @@ __p+='<button class="CDB-Widget-button CDB-Widget-errorButton js-refresh"> <span
 return __p;
 };
 
-},{"underscore":265}],341:[function(require,module,exports){
+},{"underscore":266}],342:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./widget-error-template.tpl');
 
@@ -83301,25 +83371,21 @@ module.exports = cdb.core.View.extend({
   },
 
   render: function () {
-    if (this.model.dataviewModel) {
-      this.$el.html(template());
-    } else {
-      this.$el.empty();
-    }
+    this.$el.html(template());
     return this;
   },
 
   _initBinds: function () {
-    var m = this.model.dataviewModel;
-    if (m) {
-      m.bind('error', this.show, this);
-      m.bind('loading', this.hide, this);
-      this.add_related_model(m);
-    }
+    this.model.bind('error', function (mdl, err) {
+      if (!err || (err && err.statusText !== 'abort')) {
+        this.show();
+      }
+    }, this);
+    this.model.bind('loading loaded', this.hide, this);
   },
 
   _onRefreshClick: function () {
-    this.model.dataviewModel.refresh();
+    this.model.refresh();
   },
 
   show: function () {
@@ -83332,7 +83398,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./widget-error-template.tpl":340,"cartodb.js":206}],342:[function(require,module,exports){
+},{"./widget-error-template.tpl":341,"cartodb.js":206}],343:[function(require,module,exports){
 var cdb = require('cartodb.js');
 
 /**
@@ -83350,7 +83416,12 @@ module.exports = cdb.core.View.extend({
 
   _initBinds: function () {
     this.model.bind('loading', this.show, this);
-    this.model.bind('sync error', this.hide, this);
+    this.model.bind('error', function (mdl, err) {
+      if (!err || (err && err.statusText !== 'abort')) {
+        this.hide();
+      }
+    }, this);
+    this.model.bind('loaded', this.hide, this);
   },
 
   show: function () {
@@ -83367,7 +83438,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"cartodb.js":206}],343:[function(require,module,exports){
+},{"cartodb.js":206}],344:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 
@@ -83411,7 +83482,7 @@ module.exports = cdb.core.Model.extend({
   }
 });
 
-},{"cartodb.js":206,"underscore":265}],344:[function(require,module,exports){
+},{"cartodb.js":206,"underscore":266}],345:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var _ = require('underscore');
 
@@ -83472,7 +83543,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"cartodb.js":206,"underscore":265}],345:[function(require,module,exports){
+},{"cartodb.js":206,"underscore":266}],346:[function(require,module,exports){
 var _ = require('underscore');
 var WidgetView = require('./widget-view');
 
@@ -83524,7 +83595,7 @@ WidgetViewFactory.prototype.createWidgetView = function (widget) {
 
 module.exports = WidgetViewFactory;
 
-},{"./widget-view":346,"underscore":265}],346:[function(require,module,exports){
+},{"./widget-view":347,"underscore":266}],347:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var WidgetLoaderView = require('./widget-loader-view');
 var WidgetErrorView = require('./widget-error-view');
@@ -83582,7 +83653,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./widget-error-view":341,"./widget-loader-view":342,"cartodb.js":206}],347:[function(require,module,exports){
+},{"./widget-error-view":342,"./widget-loader-view":343,"cartodb.js":206}],348:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -83606,6 +83677,6 @@ module.exports = Backbone.Collection.extend({
   }
 });
 
-},{"backbone":1,"underscore":265}]},{},[275])(275)
+},{"backbone":1,"underscore":266}]},{},[276])(276)
 });
 //# sourceMappingURL=deep-insights.uncompressed.map
