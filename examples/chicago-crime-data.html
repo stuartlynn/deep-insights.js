@@ -21,7 +21,6 @@
     <script>
       window.onload = function() {
 
-        
 
         var vizJSON = {
           "id": "aedee286-da42-11e5-bb68-0ea31932ec1d",
@@ -35,17 +34,17 @@
           "map_provider": "leaflet",
           "bounds": [
             [
-              41.747750439738155,
-              -87.86178588867188
+              41.74211494855704,
+              -88.05335998535156
             ],
             [
-              42.00542768820574,
-              -87.02201843261719
+              41.99522219923445,
+              -87.16690063476561
             ]
           ],
-          "center": "[41.87671893034394, -87.44190216064453]",
+          "center": "[41.8687938398043, -87.6101303100586]",
           "zoom": 11,
-          "updated_at": "2016-02-23T15:32:56+00:00",
+          "updated_at": "2016-02-23T19:24:04+00:00",
 
           "user": {
             "fullname": "Stuart Lynn",
@@ -144,14 +143,13 @@
 
 
           ],
-
           "layers": [
             {
               "options": {
                 "visible": true,
                 "type": "Tiled",
                 "name": "Dark matter",
-                "className": "dark_matter_rainbow_labels",
+                "className": "httpsbasemapscartocdncomdark_nolabelszxypng",
                 "base_type": "default",
                 "urlTemplate": "http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png",
                 "minZoom": "0",
@@ -165,7 +163,7 @@
                 "read_only": true,
                 "category": "CartoDB",
                 "order": 0,
-                "id": "83c419ee-b2b1-4831-817a-982ebc7b7cae"
+                "id": "2729ab53-79cd-4275-8332-9fa85df0b0dd"
               },
               "infowindow": null,
               "tooltip": null,
@@ -191,6 +189,42 @@
                   "stat_tag": "aedee286-da42-11e5-bb68-0ea31932ec1d",
                   "version": "1.0.1",
                   "layers": [
+                    {
+                      "id": "1b190a08-bffa-4f72-859a-cd23725b6886",
+                      "type": "CartoDB",
+                      "infowindow": {
+                        "fields": [],
+                        "template_name": "table/views/infowindow_light",
+                        "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                        "alternative_names": {},
+                        "width": 226,
+                        "maxHeight": 180
+                      },
+                      "tooltip": {
+                        "fields": [],
+                        "template_name": "tooltip_light",
+                        "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                        "alternative_names": {},
+                        "maxHeight": 180
+                      },
+                      "legend": {
+                        "type": "none",
+                        "show_title": false,
+                        "title": "",
+                        "template": "",
+                        "visible": true
+                      },
+                      "order": 1,
+                      "visible": true,
+                      "options": {
+                        "sql": "select * from table_5",
+                        "layer_name": "Police_Boundaries",
+                        "cartocss": "/** simple visualization */\n\n#table_5{\n  polygon-fill: #FF6600;\n  polygon-opacity: 0;\n  line-color: #5CA2D1;\n  line-width: 0.5;\n  line-opacity: 1;\n}",
+                        "cartocss_version": "2.1.1",
+                        "interactivity": "cartodb_id",
+                        "table_name": "\"\"."
+                      }
+                    },
                     {
                       "id": "be1eea1f-ad75-4eb4-86f5-f7f2157ed6f9",
                       "type": "CartoDB",
@@ -273,12 +307,48 @@
                           }
                         ]
                       },
-                      "order": 1,
+                      "order": 2,
                       "visible": true,
                       "options": {
-                        "sql": "select *, date_part('dow', date_of_occurrence) as day_of_week, date_part('year', date_of_occurrence) as year, date_part('month', date_of_occurrence) as month from crimes_map",
+                        "sql": "select * from crimes_map",
                         "layer_name": "crimes_map",
                         "cartocss": "/** category visualization */\n\n#crimes_map {\n   marker-fill-opacity: 0.9;\n   marker-line-color: #FFF;\n   marker-line-width: 0;\n   marker-line-opacity: 1;\n   marker-placement: point;\n   marker-type: ellipse;\n   marker-width: 1;\n   marker-allow-overlap: true;\n}\n\n#crimes_map[primary_description=\"ASSAULT\"] {\n   marker-fill: #A6CEE3;\n}\n#crimes_map[primary_description=\"BATTERY\"] {\n   marker-fill: #1F78B4;\n}\n#crimes_map[primary_description=\"BURGLARY\"] {\n   marker-fill: #B2DF8A;\n}\n#crimes_map[primary_description=\"CRIMINAL DAMAGE\"] {\n   marker-fill: #33A02C;\n}\n#crimes_map[primary_description=\"DECEPTIVE PRACTICE\"] {\n   marker-fill: #FB9A99;\n}\n#crimes_map[primary_description=\"MOTOR VEHICLE THEFT\"] {\n   marker-fill: #E31A1C;\n}\n#crimes_map[primary_description=\"NARCOTICS\"] {\n   marker-fill: #FDBF6F;\n}\n#crimes_map[primary_description=\"OTHER OFFENSE\"] {\n   marker-fill: #FF7F00;\n}\n#crimes_map[primary_description=\"ROBBERY\"] {\n   marker-fill: #CAB2D6;\n}\n#crimes_map[primary_description=\"THEFT\"] {\n   marker-fill: #6A3D9A;\n}\n#crimes_map {\n   marker-fill: #DDDDDD;\n}",
+                        "cartocss_version": "2.1.1",
+                        "interactivity": "cartodb_id",
+                        "table_name": "\"\"."
+                      }
+                    },
+                    {
+                      "id": "87f6a5b5-aa7a-4f3b-acde-ac87a9df2c5f",
+                      "type": "CartoDB",
+                      "infowindow": {
+                        "fields": [],
+                        "template_name": "table/views/infowindow_light",
+                        "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                        "alternative_names": {},
+                        "width": 226,
+                        "maxHeight": 180
+                      },
+                      "tooltip": {
+                        "fields": [],
+                        "template_name": "tooltip_light",
+                        "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                        "alternative_names": {},
+                        "maxHeight": 180
+                      },
+                      "legend": {
+                        "type": "none",
+                        "show_title": false,
+                        "title": "",
+                        "template": "",
+                        "visible": true
+                      },
+                      "order": 3,
+                      "visible": true,
+                      "options": {
+                        "sql": "select * from policestationsdec2012",
+                        "layer_name": "policestationsdec2012",
+                        "cartocss": "/** simple visualization */\n\n#policestationsdec2012{\n  marker-fill-opacity: 0.9;\n  marker-line-color: #FFF;\n  marker-line-width: 0;\n  marker-line-opacity: 1;\n  marker-placement: point;\n  marker-type: ellipse;\n  marker-width: 10;\n  marker-fill: #FF6600;\n  marker-allow-overlap: true;\n}",
                         "cartocss_version": "2.1.1",
                         "interactivity": "cartodb_id",
                         "table_name": "\"\"."
@@ -300,16 +370,28 @@
                 "maxZoom": "18",
                 "subdomains": "abcd",
                 "kind": "tiled",
-                "order": 2
+                "order": 4,
+                "id": "2b722b53-0d8b-44c5-9f0e-686e8cf6a870",
+                "className": "httpsbasemapscartocdncomdark_only_labelszxypng"
               },
               "infowindow": null,
               "tooltip": null,
               "id": "2b722b53-0d8b-44c5-9f0e-686e8cf6a870",
-              "order": 2,
+              "order": 4,
               "type": "tiled"
             }
           ],
           "overlays": [
+            {
+              "type": "layer_selector",
+              "order": 4,
+              "options": {
+                "x": 220,
+                "y": 20,
+                "display": true
+              },
+              "template": null
+            },
             {
               "type": "share",
               "order": 2,
@@ -366,7 +448,7 @@
           "transition_options": {
             "time": 0
           }
-        };
+        }
 
 
         var dashboard = cartodb.deepInsights.createDashboard('#dashboard', vizJSON, {
