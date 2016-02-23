@@ -32,19 +32,6 @@
           "legends": true,
           "url": null,
           "map_provider": "leaflet",
-          "bounds": [
-            [
-              41.74211494855704,
-              -88.05335998535156
-            ],
-            [
-              41.99522219923445,
-              -87.16690063476561
-            ]
-          ],
-          "center": "[41.8687938398043, -87.6101303100586]",
-          "zoom": 11,
-          "updated_at": "2016-02-23T19:24:04+00:00",
 
           "user": {
             "fullname": "Stuart Lynn",
@@ -143,6 +130,20 @@
 
 
           ],
+
+          "bounds": [
+            [
+              41.74211494855704,
+              -88.05335998535156
+            ],
+            [
+              41.99522219923445,
+              -87.16690063476561
+            ]
+          ],
+          "center": "[41.8687938398043, -87.6101303100586]",
+          "zoom": 11,
+          "updated_at": "2016-02-23T20:08:47+00:00",
           "layers": [
             {
               "options": {
@@ -229,7 +230,33 @@
                       "id": "be1eea1f-ad75-4eb4-86f5-f7f2157ed6f9",
                       "type": "CartoDB",
                       "infowindow": {
-                        "fields": null,
+                        "fields": [
+                          {
+                            "name": "arrest",
+                            "title": true,
+                            "position": 1
+                          },
+                          {
+                            "name": "location",
+                            "title": true,
+                            "position": 9
+                          },
+                          {
+                            "name": "location_description",
+                            "title": true,
+                            "position": 10
+                          },
+                          {
+                            "name": "primary_description",
+                            "title": true,
+                            "position": 19
+                          },
+                          {
+                            "name": "secondary_description",
+                            "title": true,
+                            "position": 20
+                          }
+                        ],
                         "template_name": "infowindow_light",
                         "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
                         "alternative_names": {},
@@ -310,7 +337,7 @@
                       "order": 2,
                       "visible": true,
                       "options": {
-                        "sql": "select * from crimes_map",
+                        "sql": "select *, date_part('dow', date_of_occurrence) as day_of_week, date_part('year', date_of_occurrence) as year, date_part('month', date_of_occurrence) as month from crimes_map",
                         "layer_name": "crimes_map",
                         "cartocss": "/** category visualization */\n\n#crimes_map {\n   marker-fill-opacity: 0.9;\n   marker-line-color: #FFF;\n   marker-line-width: 0;\n   marker-line-opacity: 1;\n   marker-placement: point;\n   marker-type: ellipse;\n   marker-width: 1;\n   marker-allow-overlap: true;\n}\n\n#crimes_map[primary_description=\"ASSAULT\"] {\n   marker-fill: #A6CEE3;\n}\n#crimes_map[primary_description=\"BATTERY\"] {\n   marker-fill: #1F78B4;\n}\n#crimes_map[primary_description=\"BURGLARY\"] {\n   marker-fill: #B2DF8A;\n}\n#crimes_map[primary_description=\"CRIMINAL DAMAGE\"] {\n   marker-fill: #33A02C;\n}\n#crimes_map[primary_description=\"DECEPTIVE PRACTICE\"] {\n   marker-fill: #FB9A99;\n}\n#crimes_map[primary_description=\"MOTOR VEHICLE THEFT\"] {\n   marker-fill: #E31A1C;\n}\n#crimes_map[primary_description=\"NARCOTICS\"] {\n   marker-fill: #FDBF6F;\n}\n#crimes_map[primary_description=\"OTHER OFFENSE\"] {\n   marker-fill: #FF7F00;\n}\n#crimes_map[primary_description=\"ROBBERY\"] {\n   marker-fill: #CAB2D6;\n}\n#crimes_map[primary_description=\"THEFT\"] {\n   marker-fill: #6A3D9A;\n}\n#crimes_map {\n   marker-fill: #DDDDDD;\n}",
                         "cartocss_version": "2.1.1",
@@ -350,7 +377,7 @@
                         "layer_name": "policestationsdec2012",
                         "cartocss": "/** simple visualization */\n\n#policestationsdec2012{\n  marker-fill-opacity: 0.9;\n  marker-line-color: #FFF;\n  marker-line-width: 0;\n  marker-line-opacity: 1;\n  marker-placement: point;\n  marker-type: ellipse;\n  marker-width: 10;\n  marker-fill: #FF6600;\n  marker-allow-overlap: true;\n}",
                         "cartocss_version": "2.1.1",
-                        "interactivity": "cartodb_id",
+                        "interactivity": "cartodb_id,arrest,location_description,location,primary_description,secondary_description",
                         "table_name": "\"\"."
                       }
                     }
