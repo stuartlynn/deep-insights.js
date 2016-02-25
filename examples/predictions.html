@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deep-Insights.js | Populated Places (local)</title>
+  <meta name=viewport content="width=device-width initial-scale=1">
+  <link rel="stylesheet" href="../dist/themes/css/deep-insights.css" />
+  <!--
+    Placing a local-config.js file with:
+
+    window.GLOBAL_CDB_CONFIG = {
+      maps_api_template: "http://{user}.localhost.lan:8181",
+      user_name: "development"
+    };
+
+    will override this example user/maps api template
+  -->
+  <script src="../dist/deep-insights.uncompressed.js"></script>
+  <style type="text/css">
+    html, body {
+      position:relative;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="Dashboard-canvas" id="dashboard"></div>
+
+  <script>
+    window.onload = function() {
+      var cdbConfig = window.GLOBAL_CDB_CONFIG || {};
+      cdbConfig.maps_api_template = cdbConfig.maps_api_template || "http://{user}.localhost.lan:8181";
+      cdbConfig.user_name = cdbConfig.user_name || "cdb";
+
+      var vizJSON ={
+        "id": "25ad4a74-dbe2-11e5-bb10-0e3ff518bd15",
+        "version": "0.1.0",
+        "title": "all_models_copy",
+        "likes": 0,
+        "description": null,
+        "scrollwheel": false,
+        "legends": true,
+        "url": null,
+        "map_provider": "leaflet",
+        "bounds": [
+          [
+            40.58423507588185,
+            -74.35752868652342
+          ],
+          [
+            40.8870435151357,
+            -73.4710693359375
+          ]
+        ],
+        "center": "[40.73581157695217, -73.91429901123047]",
+        "zoom": 11,
+        "updated_at": "2016-02-25T17:11:11+00:00",
+
+        "user": {
+          "fullname": "Bar Manager",
+          "avatar_url": "https://orbitingfrog.files.wordpress.com/2013/11/zooniverse-icon-web-black.png"
+        },
+
+        "datasource": {
+            "type": "public_map",
+            "user_name": "stuartlynn",
+            "maps_api_template": "https://{user}.cartodb.com:443",
+            "stat_tag": "25ad4a74-dbe2-11e5-bb10-0e3ff518bd15",
+            "force_cors": true
+        },
+        "center": "[40.66579582990906, -73.80958557128906]",
+        "zoom": 11,
+        "updated_at": "2016-02-09T16:54:44+00:00",
+
+        "widgets":[
+          {
+            "type": "histogram",
+            "title": "Late Night prediciton",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "prediction",
+              "bins": 20
+            }
+          },
+
+          {
+            "type": "histogram",
+            "title": "Asian Population in census tact",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "asian_pop",
+              "bins": 10
+            }
+          },
+          {
+            "type": "histogram",
+            "title": "Black Population in census tact",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "black_pop",
+              "bins": 10
+            }
+          },
+          {
+            "type": "histogram",
+            "title": "Black Population in census tact",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "white_pop",
+              "bins": 10
+            },
+          },
+          {
+            "type": "histogram",
+            "title": "Median Household income",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "median_household_income",
+              "bins": 10
+            }
+          },
+          {
+            "type": "histogram",
+            "title": "Median Household rent",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "median_rent",
+              "bins": 10
+            }
+          },
+          {
+            "type": "histogram",
+            "title": "Non us citizens",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "not_a_us_citizen_pop",
+              "bins": 10
+            }
+          },
+          {
+            "type": "histogram",
+            "title": "Speaks spanish ",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "speaks_spanish_or_spanish_creole",
+              "bins": 10
+            }
+          },
+          {
+            "type": "histogram",
+            "title": "Gini Index",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "gini_index_in_households",
+              "bins": 10
+            },
+          },
+
+          {
+            "type": "histogram",
+            "title": "Median age",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "median_age",
+              "bins": 10
+            },
+          },
+
+          {
+            "type": "histogram",
+            "title": "Median age Male",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "median_age_male",
+              "bins": 10
+            },
+          },
+          {
+            "type": "histogram",
+            "title": "Median age Female",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "median_age_female",
+              "bins": 10
+            },
+          },
+           {
+            "type": "histogram",
+            "title": "Total Population",
+            "layer_id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+            "options": {
+              "column": "total_pop",
+              "bins": 10
+            }
+          }
+        ],
+
+        "layers": [
+          {
+            "options": {
+              "visible": true,
+              "type": "Tiled",
+              "name": "Dark matter",
+              "className": "httpsbasemapscartocdncomdark_nolabelszxypng",
+              "base_type": "default",
+              "urlTemplate": "http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png",
+              "minZoom": "0",
+              "maxZoom": "18",
+              "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+              "subdomains": "abcd",
+              "style": null,
+              "labels": {
+                "url": "http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png"
+              },
+              "read_only": true,
+              "category": "CartoDB",
+              "order": 0,
+              "id": "dcdc989b-c517-47b7-9423-e83e0994728c"
+            },
+            "infowindow": null,
+            "tooltip": null,
+            "id": "dcdc989b-c517-47b7-9423-e83e0994728c",
+            "order": 0,
+            "type": "tiled"
+          },
+          {
+            "type": "layergroup",
+            "options": {
+              "user_name": "stuartlynn",
+              "maps_api_template": "https://{user}.cartodb.com:443",
+              "sql_api_template": "https://{user}.cartodb.com:443",
+              "tiler_protocol": "http",
+              "tiler_domain": "cartodb.com",
+              "tiler_port": "80",
+              "sql_api_protocol": "http",
+              "sql_api_domain": "cartodb.com",
+              "sql_api_endpoint": "/api/v2/sql",
+              "sql_api_port": 80,
+              "filter": "mapnik",
+              "layer_definition": {
+                "stat_tag": "25ad4a74-dbe2-11e5-bb10-0e3ff518bd15",
+                "version": "1.0.1",
+                "layers": [
+                  {
+                    "id": "a0e99062-4a57-4c0a-8a78-905b286a2502",
+                    "type": "CartoDB",
+                    "infowindow": {
+                      "fields": [],
+                      "template_name": "table/views/infowindow_light",
+                      "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                      "alternative_names": {},
+                      "width": 226,
+                      "maxHeight": 180
+                    },
+                    "tooltip": {
+                      "fields": [],
+                      "template_name": "tooltip_light",
+                      "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                      "alternative_names": {},
+                      "maxHeight": 180
+                    },
+                    "legend": {
+                      "type": "none",
+                      "show_title": false,
+                      "title": "",
+                      "template": "",
+                      "visible": true,
+                      "items": [
+                        {
+                          "name": "Left label",
+                          "visible": true,
+                          "value": "0.00",
+                          "type": "text"
+                        },
+                        {
+                          "name": "Right label",
+                          "visible": true,
+                          "value": "1295.00",
+                          "type": "text"
+                        },
+                        {
+                          "name": "Color",
+                          "visible": true,
+                          "value": "#FFFFB2",
+                          "type": "color"
+                        },
+                        {
+                          "name": "Color",
+                          "visible": true,
+                          "value": "#FED976",
+                          "type": "color"
+                        },
+                        {
+                          "name": "Color",
+                          "visible": true,
+                          "value": "#FEB24C",
+                          "type": "color"
+                        },
+                        {
+                          "name": "Color",
+                          "visible": true,
+                          "value": "#FD8D3C",
+                          "type": "color"
+                        },
+                        {
+                          "name": "Color",
+                          "visible": true,
+                          "value": "#FC4E2A",
+                          "type": "color"
+                        },
+                        {
+                          "name": "Color",
+                          "visible": true,
+                          "value": "#E31A1C",
+                          "type": "color"
+                        },
+                        {
+                          "name": "Color",
+                          "visible": true,
+                          "value": "#B10026",
+                          "type": "color"
+                        }
+                      ]
+                    },
+                    "order": 1,
+                    "visible": true,
+                    "options": {
+                      "sql": "SELECT *, late_night_prediction prediction FROM stuartlynn.all_models_copy where late_night_prediction < 1 ",
+                      "layer_name": "all_models_copy",
+                      "cartocss": "/** choropleth visualization */\n\n#all_models_copy{\n  polygon-fill: #1ab8d4;\n  polygon-opacity: 0.8;\n  line-color: #FFF;\n  line-width: 0.5;\n  line-opacity: 0;\n}\n#all_models_copy{\n [prediction <= 0.99] {polygon-fill: #1ab8d4;}\n[prediction <= 0.98] {polygon-fill: #14b6d2;}\n[prediction <= 0.97] {polygon-fill: #0cb4d0;}\n[prediction <= 0.96] {polygon-fill: #02b2ce;}\n[prediction <= 0.95] {polygon-fill: #00b0cc;}\n[prediction <= 0.94] {polygon-fill: #00afca;}\n[prediction <= 0.93] {polygon-fill: #00adc8;}\n[prediction <= 0.92] {polygon-fill: #00abc6;}\n[prediction <= 0.91] {polygon-fill: #00a9c5;}\n[prediction <= 0.9] {polygon-fill: #00a7c3;}\n[prediction <= 0.89] {polygon-fill: #00a5c1;}\n[prediction <= 0.88] {polygon-fill: #00a3bf;}\n[prediction <= 0.87] {polygon-fill: #00a1bd;}\n[prediction <= 0.86] {polygon-fill: #00a0bb;}\n[prediction <= 0.85] {polygon-fill: #009eb9;}\n[prediction <= 0.84] {polygon-fill: #009cb7;}\n[prediction <= 0.83] {polygon-fill: #009ab5;}\n[prediction <= 0.82] {polygon-fill: #0098b3;}\n[prediction <= 0.81] {polygon-fill: #0096b1;}\n[prediction <= 0.8] {polygon-fill: #0094b0;}\n[prediction <= 0.79] {polygon-fill: #0093ae;}\n[prediction <= 0.78] {polygon-fill: #0091ac;}\n[prediction <= 0.77] {polygon-fill: #008faa;}\n[prediction <= 0.76] {polygon-fill: #008da8;}\n[prediction <= 0.75] {polygon-fill: #008ba6;}\n[prediction <= 0.74] {polygon-fill: #0089a4;}\n[prediction <= 0.73] {polygon-fill: #0088a2;}\n[prediction <= 0.72] {polygon-fill: #0086a1;}\n[prediction <= 0.71] {polygon-fill: #00849f;}\n[prediction <= 0.7] {polygon-fill: #00829d;}\n[prediction <= 0.69] {polygon-fill: #00809b;}\n[prediction <= 0.68] {polygon-fill: #007f99;}\n[prediction <= 0.67] {polygon-fill: #007d97;}\n[prediction <= 0.66] {polygon-fill: #007b95;}\n[prediction <= 0.65] {polygon-fill: #007994;}\n[prediction <= 0.64] {polygon-fill: #007792;}\n[prediction <= 0.63] {polygon-fill: #007690;}\n[prediction <= 0.62] {polygon-fill: #00748e;}\n[prediction <= 0.61] {polygon-fill: #00728c;}\n[prediction <= 0.6] {polygon-fill: #00708b;}\n[prediction <= 0.59] {polygon-fill: #006f89;}\n[prediction <= 0.58] {polygon-fill: #006d87;}\n[prediction <= 0.57] {polygon-fill: #006b85;}\n[prediction <= 0.56] {polygon-fill: #006983;}\n[prediction <= 0.55] {polygon-fill: #006882;}\n[prediction <= 0.54] {polygon-fill: #006680;}\n[prediction <= 0.53] {polygon-fill: #00647e;}\n[prediction <= 0.52] {polygon-fill: #00627c;}\n[prediction <= 0.51] {polygon-fill: #00617a;}\n[prediction <= 0.5] {polygon-fill: #005f79;}\n[prediction <= 0.49] {polygon-fill: #005d77;}\n[prediction <= 0.48] {polygon-fill: #005c75;}\n[prediction <= 0.47] {polygon-fill: #005a73;}\n[prediction <= 0.46] {polygon-fill: #005872;}\n[prediction <= 0.45] {polygon-fill: #005670;}\n[prediction <= 0.44] {polygon-fill: #00556e;}\n[prediction <= 0.43] {polygon-fill: #00536c;}\n[prediction <= 0.42] {polygon-fill: #00516b;}\n[prediction <= 0.41] {polygon-fill: #005069;}\n[prediction <= 0.4] {polygon-fill: #004e67;}\n[prediction <= 0.39] {polygon-fill: #004c66;}\n[prediction <= 0.38] {polygon-fill: #004b64;}\n[prediction <= 0.37] {polygon-fill: #004962;}\n[prediction <= 0.36] {polygon-fill: #004760;}\n[prediction <= 0.35] {polygon-fill: #00465f;}\n[prediction <= 0.34] {polygon-fill: #00445d;}\n[prediction <= 0.33] {polygon-fill: #00425b;}\n[prediction <= 0.32] {polygon-fill: #00415a;}\n[prediction <= 0.31] {polygon-fill: #003f58;}\n[prediction <= 0.3] {polygon-fill: #003e56;}\n[prediction <= 0.29] {polygon-fill: #003c55;}\n[prediction <= 0.28] {polygon-fill: #003a53;}\n[prediction <= 0.27] {polygon-fill: #003951;}\n[prediction <= 0.26] {polygon-fill: #003750;}\n[prediction <= 0.25] {polygon-fill: #00364e;}\n[prediction <= 0.24] {polygon-fill: #00344c;}\n[prediction <= 0.23] {polygon-fill: #00324b;}\n[prediction <= 0.22] {polygon-fill: #003149;}\n[prediction <= 0.21] {polygon-fill: #002f47;}\n[prediction <= 0.2] {polygon-fill: #002e46;}\n[prediction <= 0.19] {polygon-fill: #002c44;}\n[prediction <= 0.18] {polygon-fill: #002b43;}\n[prediction <= 0.17] {polygon-fill: #002941;}\n[prediction <= 0.16] {polygon-fill: #00283f;}\n[prediction <= 0.15] {polygon-fill: #00273e;}\n[prediction <= 0.14] {polygon-fill: #00263c;}\n[prediction <= 0.13] {polygon-fill: #00243b;}\n[prediction <= 0.12] {polygon-fill: #002339;}\n[prediction <= 0.11] {polygon-fill: #002237;}\n[prediction <= 0.1] {polygon-fill: #002136;}\n[prediction <= 0.09] {polygon-fill: #002034;}\n[prediction <= 0.08] {polygon-fill: #001f33;}\n[prediction <= 0.07] {polygon-fill: #001e31;}\n[prediction <= 0.06] {polygon-fill: #001d30;}\n[prediction <= 0.05] {polygon-fill: #001c2e;}\n[prediction <= 0.04] {polygon-fill: #001a2d;}\n[prediction <= 0.03] {polygon-fill: #00192b;}\n[prediction <= 0.02] {polygon-fill: #00182a;}\n[prediction <= 0.01] {polygon-fill: #001628;}\n[prediction <= 0] {polygon-fill: #001527;} \n}",
+                      "cartocss_version": "2.1.1",
+                      "interactivity": "cartodb_id",
+                      "table_name": "\"\"."
+                    }
+                  },
+                  {
+                    "id": "73fe43ed-89d4-4441-b278-73566229d8b7",
+                    "type": "CartoDB",
+                    "infowindow": {
+                      "fields": [],
+                      "template_name": "table/views/infowindow_light",
+                      "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                      "alternative_names": {},
+                      "width": 226,
+                      "maxHeight": 180
+                    },
+                    "tooltip": {
+                      "fields": [],
+                      "template_name": "tooltip_light",
+                      "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                      "alternative_names": {},
+                      "maxHeight": 180
+                    },
+                    "legend": {
+                      "type": "none",
+                      "show_title": false,
+                      "title": "",
+                      "template": "",
+                      "visible": true
+                    },
+                    "order": 2,
+                    "visible": true,
+                    "options": {
+                      "sql": "select * from bars",
+                      "layer_name": "bars",
+                      "cartocss": "/** simple visualization */\n\n#bars{\n  marker-fill-opacity: 0.9;\n  marker-line-color: #FFF;\n  marker-line-width: 0;\n  marker-line-opacity: 1;\n  marker-placement: point;\n  marker-type: ellipse;\n  marker-width: 3;\n  marker-fill: #A53ED5;\n  marker-allow-overlap: true;\n}",
+                      "cartocss_version": "2.1.1",
+                      "interactivity": "cartodb_id",
+                      "table_name": "\"\"."
+                    }
+                  }
+                ]
+              },
+              "attribution": ""
+            }
+          },
+          {
+            "options": {
+              "visible": true,
+              "type": "Tiled",
+              "default": "true",
+              "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
+              "subdomains": "abcd",
+              "minZoom": "0",
+              "maxZoom": "18",
+              "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+              "urlTemplate": "http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png",
+              "name": "Dark matter Labels",
+              "id": "e3caf3a4-35ea-4946-bfa8-4d1754efeee2",
+              "className": "httpsbasemapscartocdncomdark_only_labelszxypng",
+              "order": 3
+            },
+            "infowindow": null,
+            "tooltip": null,
+            "id": "e3caf3a4-35ea-4946-bfa8-4d1754efeee2",
+            "order": 3,
+            "type": "tiled"
+          }
+        ],
+        "overlays": [
+          {
+            "type": "share",
+            "order": 2,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 20
+            },
+            "template": ""
+          },
+          {
+            "type": "search",
+            "order": 3,
+            "options": {
+              "display": true,
+              "x": 60,
+              "y": 20
+            },
+            "template": ""
+          },
+          {
+            "type": "zoom",
+            "order": 6,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 20
+            },
+            "template": "<a href=\"#zoom_in\" class=\"zoom_in\">+</a> <a href=\"#zoom_out\" class=\"zoom_out\">-</a>"
+          },
+          {
+            "type": "loader",
+            "order": 8,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 150
+            },
+            "template": "<div class=\"loader\" original-title=\"\"></div>"
+          },
+          {
+            "type": "logo",
+            "order": 9,
+            "options": {
+              "display": true,
+              "x": 10,
+              "y": 40
+            },
+            "template": ""
+          }
+        ],
+        "prev": null,
+        "next": null,
+        "transition_options": {
+          "time": 0
+        }
+      }
+      cartodb.deepInsights.createDashboard('#dashboard', vizJSON, {
+        no_cdn: false,
+      });
+    }
+  </script>
+</body>
+</html>
