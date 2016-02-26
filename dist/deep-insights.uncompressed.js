@@ -1897,7 +1897,9 @@
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":2,"underscore":93}],2:[function(require,module,exports){
+},{"jquery":3,"underscore":94}],2:[function(require,module,exports){
+module.exports = require(308);
+},{"dup":308}],3:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -11109,7 +11111,7 @@ return jQuery;
 
 }));
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /*
  Leaflet, a JavaScript library for mobile-friendly interactive maps. http://leafletjs.com
  (c) 2010-2013, Vladimir Agafonkin
@@ -20290,7 +20292,8 @@ L.Map.include({
 
 
 }(window, document));
-},{}],4:[function(require,module,exports){
+
+},{}],5:[function(require,module,exports){
 /*!
  * mustache.js - Logic-less {{mustache}} templates with JavaScript
  * http://github.com/janl/mustache.js
@@ -20877,7 +20880,7 @@ L.Map.include({
 
 }));
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -20885,7 +20888,7 @@ L.Map.include({
 
 module.exports = require('./src/js/main');
 
-},{"./src/js/main":11}],6:[function(require,module,exports){
+},{"./src/js/main":12}],7:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -20932,7 +20935,7 @@ exports.list = function (element) {
   }
 };
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21021,7 +21024,7 @@ DOM.queryChildren = function (element, selector) {
 
 module.exports = DOM;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21097,7 +21100,7 @@ EventManager.prototype.once = function (element, eventName, handler) {
 
 module.exports = EventManager;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21115,7 +21118,7 @@ module.exports = (function () {
   };
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21201,7 +21204,7 @@ exports.env = {
   supportsIePointer: window.navigator.msMaxTouchPoints !== null
 };
 
-},{"./class":6,"./dom":7}],11:[function(require,module,exports){
+},{"./class":7,"./dom":8}],12:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21217,7 +21220,7 @@ module.exports = {
   destroy: destroy
 };
 
-},{"./plugin/destroy":13,"./plugin/initialize":21,"./plugin/update":25}],12:[function(require,module,exports){
+},{"./plugin/destroy":14,"./plugin/initialize":22,"./plugin/update":26}],13:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21239,7 +21242,7 @@ module.exports = {
   wheelSpeed: 1
 };
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21266,7 +21269,7 @@ module.exports = function (element) {
   instances.remove(element);
 };
 
-},{"../lib/dom":7,"../lib/helper":10,"./instances":22}],14:[function(require,module,exports){
+},{"../lib/dom":8,"../lib/helper":11,"./instances":23}],15:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21331,7 +21334,7 @@ module.exports = function (element) {
   bindClickRailHandler(element, i);
 };
 
-},{"../../lib/helper":10,"../instances":22,"../update-geometry":23,"../update-scroll":24}],15:[function(require,module,exports){
+},{"../../lib/helper":11,"../instances":23,"../update-geometry":24,"../update-scroll":25}],16:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21439,7 +21442,7 @@ module.exports = function (element) {
   bindMouseScrollYHandler(element, i);
 };
 
-},{"../../lib/dom":7,"../../lib/helper":10,"../instances":22,"../update-geometry":23,"../update-scroll":24}],16:[function(require,module,exports){
+},{"../../lib/dom":8,"../../lib/helper":11,"../instances":23,"../update-geometry":24,"../update-scroll":25}],17:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21566,7 +21569,7 @@ module.exports = function (element) {
   bindKeyboardHandler(element, i);
 };
 
-},{"../../lib/helper":10,"../instances":22,"../update-geometry":23,"../update-scroll":24}],17:[function(require,module,exports){
+},{"../../lib/helper":11,"../instances":23,"../update-geometry":24,"../update-scroll":25}],18:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21713,7 +21716,7 @@ module.exports = function (element) {
   bindMouseWheelHandler(element, i);
 };
 
-},{"../../lib/helper":10,"../instances":22,"../update-geometry":23,"../update-scroll":24}],18:[function(require,module,exports){
+},{"../../lib/helper":11,"../instances":23,"../update-geometry":24,"../update-scroll":25}],19:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21733,7 +21736,7 @@ module.exports = function (element) {
   bindNativeScrollHandler(element, i);
 };
 
-},{"../instances":22,"../update-geometry":23}],19:[function(require,module,exports){
+},{"../instances":23,"../update-geometry":24}],20:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -21847,7 +21850,7 @@ module.exports = function (element) {
   bindSelectionHandler(element, i);
 };
 
-},{"../../lib/helper":10,"../instances":22,"../update-geometry":23,"../update-scroll":24}],20:[function(require,module,exports){
+},{"../../lib/helper":11,"../instances":23,"../update-geometry":24,"../update-scroll":25}],21:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -22020,7 +22023,7 @@ module.exports = function (element, supportsTouch, supportsIePointer) {
   bindTouchHandler(element, i, supportsTouch, supportsIePointer);
 };
 
-},{"../instances":22,"../update-geometry":23,"../update-scroll":24}],21:[function(require,module,exports){
+},{"../instances":23,"../update-geometry":24,"../update-scroll":25}],22:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -22069,7 +22072,7 @@ module.exports = function (element, userSettings) {
   updateGeometry(element);
 };
 
-},{"../lib/class":6,"../lib/helper":10,"./handler/click-rail":14,"./handler/drag-scrollbar":15,"./handler/keyboard":16,"./handler/mouse-wheel":17,"./handler/native-scroll":18,"./handler/selection":19,"./handler/touch":20,"./instances":22,"./update-geometry":23}],22:[function(require,module,exports){
+},{"../lib/class":7,"../lib/helper":11,"./handler/click-rail":15,"./handler/drag-scrollbar":16,"./handler/keyboard":17,"./handler/mouse-wheel":18,"./handler/native-scroll":19,"./handler/selection":20,"./handler/touch":21,"./instances":23,"./update-geometry":24}],23:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -22178,7 +22181,7 @@ exports.get = function (element) {
   return instances[getId(element)];
 };
 
-},{"../lib/dom":7,"../lib/event-manager":8,"../lib/guid":9,"../lib/helper":10,"./default-setting":12}],23:[function(require,module,exports){
+},{"../lib/dom":8,"../lib/event-manager":9,"../lib/guid":10,"../lib/helper":11,"./default-setting":13}],24:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -22301,7 +22304,7 @@ module.exports = function (element) {
   cls[i.scrollbarYActive ? 'add' : 'remove'](element, 'ps-active-y');
 };
 
-},{"../lib/class":6,"../lib/dom":7,"../lib/helper":10,"./instances":22,"./update-scroll":24}],24:[function(require,module,exports){
+},{"../lib/class":7,"../lib/dom":8,"../lib/helper":11,"./instances":23,"./update-scroll":25}],25:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -22408,7 +22411,7 @@ module.exports = function (element, axis, value) {
 
 };
 
-},{"./instances":22}],25:[function(require,module,exports){
+},{"./instances":23}],26:[function(require,module,exports){
 /* Copyright (c) 2015 Hyunje Alex Jun and other contributors
  * Licensed under the MIT License
  */
@@ -22445,7 +22448,7 @@ module.exports = function (element) {
   d.css(i.scrollbarYRail, 'display', '');
 };
 
-},{"../lib/dom":7,"../lib/helper":10,"./instances":22,"./update-geometry":23}],26:[function(require,module,exports){
+},{"../lib/dom":8,"../lib/helper":11,"./instances":23,"./update-geometry":24}],27:[function(require,module,exports){
 /**
  * Abstract handler for animator steps
  */
@@ -22471,7 +22474,7 @@ AnimatorStepsRange.prototype = {
 
 module.exports = AnimatorStepsRange;
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 (function (global){
 var torque = require('./');
 var AnimatorStepsRange = require('./animator-steps-range');
@@ -22643,7 +22646,7 @@ module.exports = Animator;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./":36,"./animator-steps-range":26}],28:[function(require,module,exports){
+},{"./":37,"./animator-steps-range":27}],29:[function(require,module,exports){
 var _torque_reference_latest = {
     "version": "1.0.0",
     "style": {
@@ -23061,7 +23064,7 @@ module.exports = {
   }
 };
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 (function (global){
 //
 // common functionallity for torque layers
@@ -23105,7 +23108,7 @@ module.exports.TorqueLayer = TorqueLayer;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"carto":56}],30:[function(require,module,exports){
+},{"carto":57}],31:[function(require,module,exports){
 (function (global){
   var Event = {};
   Event.on = function(evt, callback) {
@@ -23201,7 +23204,7 @@ module.exports = {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 /**
  * @license
  * Copyright 2013 Google Inc. All Rights Reserved.
@@ -23726,7 +23729,7 @@ CanvasLayer.prototype.scheduleUpdate = function() {
 
 module.exports = CanvasLayer;
 
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 /*
  ====================
  canvas setup for drawing tiles
@@ -23824,7 +23827,7 @@ CanvasTileLayer.prototype.releaseTile = function (tile) {
 
 module.exports = CanvasTileLayer;
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 function GMapsTileLoader() {
 }
 
@@ -24032,7 +24035,7 @@ GMapsTileLoader.prototype = {
 
 module.exports = GMapsTileLoader;
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 var gmaps = {};
 if (typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
     gmaps = require('./torque');
@@ -24040,7 +24043,7 @@ if (typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
 }
 module.exports = gmaps;
 
-},{"./gmaps_tileloader_mixin":33,"./torque":35}],35:[function(require,module,exports){
+},{"./gmaps_tileloader_mixin":34,"./torque":36}],36:[function(require,module,exports){
 (function (global){
 var carto = global.carto || require('carto');
 var torque = require('../');
@@ -24554,7 +24557,7 @@ module.exports = {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../":36,"./CanvasLayer":31,"./canvas_tile_layer":32,"./gmaps_tileloader_mixin":33,"carto":56}],36:[function(require,module,exports){
+},{"../":37,"./CanvasLayer":32,"./canvas_tile_layer":33,"./gmaps_tileloader_mixin":34,"carto":57}],37:[function(require,module,exports){
 module.exports = require('./core');
 
 module.exports.Animator = require('./animator');
@@ -24573,7 +24576,7 @@ module.exports.GMapsTileLoader = gmaps.GMapsTileLoader;
 module.exports.GMapsTorqueLayer = gmaps.GMapsTorqueLayer;
 module.exports.GMapsTiledTorqueLayer = gmaps.GMapsTiledTorqueLayer;
 
-},{"./animator":27,"./cartocss_reference":28,"./common":29,"./core":30,"./gmaps":34,"./leaflet":38,"./math":41,"./mercator":42,"./provider":44,"./renderer":50,"./request":54}],37:[function(require,module,exports){
+},{"./animator":28,"./cartocss_reference":29,"./common":30,"./core":31,"./gmaps":35,"./leaflet":39,"./math":42,"./mercator":43,"./provider":45,"./renderer":51,"./request":55}],38:[function(require,module,exports){
 require('./leaflet_tileloader_mixin');
 
 /**
@@ -24828,12 +24831,12 @@ L.CanvasLayer = L.Class.extend({
 
 });
 
-},{"./leaflet_tileloader_mixin":39}],38:[function(require,module,exports){
+},{"./leaflet_tileloader_mixin":40}],39:[function(require,module,exports){
 if (typeof L !== 'undefined') {
     require('./torque');
 }
 
-},{"./torque":40}],39:[function(require,module,exports){
+},{"./torque":41}],40:[function(require,module,exports){
 L.Mixin.TileLoader = {
 
   _initTileLoader: function() {
@@ -24983,7 +24986,7 @@ L.Mixin.TileLoader = {
 
 }
 
-},{}],40:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 (function (global){
 var carto = global.carto || require('carto');
 var torque = require('../');
@@ -25478,7 +25481,7 @@ L.TorqueLayer = L.CanvasLayer.extend({
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../":36,"./canvas_layer":37,"carto":56}],41:[function(require,module,exports){
+},{"../":37,"./canvas_layer":38,"carto":57}],42:[function(require,module,exports){
   function clamp(a, b) {
     return function(t) {
       return Math.max(Math.min(t, b), a);
@@ -25511,7 +25514,7 @@ module.exports = {
     invLinear: invLinear
 };
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 var Point = function(x, y) {
   this.x = x || 0;
   this.y = y || 0;
@@ -25604,7 +25607,7 @@ MercatorProjection.prototype.latLonToTilePoint = function(lat, lon, tileX, tileY
 
 module.exports = MercatorProjection;
 
-},{}],43:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 /*
 # metrics profiler
 
@@ -25748,7 +25751,7 @@ Profiler.metric = function(name) {
 
 module.exports = Profiler;
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 module.exports = {
     json: require('./json'),
     JsonArray: require('./jsonarray'),
@@ -25756,7 +25759,7 @@ module.exports = {
     tileJSON: require('./tilejson')
 };
 
-},{"./json":45,"./jsonarray":46,"./tilejson":47,"./windshaft":48}],45:[function(require,module,exports){
+},{"./json":46,"./jsonarray":47,"./tilejson":48,"./windshaft":49}],46:[function(require,module,exports){
 var torque = require('../');
 var Profiler = require('../profiler');
 
@@ -26335,7 +26338,7 @@ var Profiler = require('../profiler');
 
 module.exports = json;
 
-},{"../":36,"../profiler":43}],46:[function(require,module,exports){
+},{"../":37,"../profiler":44}],47:[function(require,module,exports){
 var torque = require('../');
 var Profiler = require('../profiler');
 
@@ -26565,7 +26568,7 @@ var Profiler = require('../profiler');
 
   module.exports = json;
 
-},{"../":36,"../profiler":43}],47:[function(require,module,exports){
+},{"../":37,"../profiler":44}],48:[function(require,module,exports){
   var torque = require('../');
 
   var Uint8Array = torque.types.Uint8Array;
@@ -26905,7 +26908,7 @@ var Profiler = require('../profiler');
   };
 
   module.exports = tileJSON;
-},{"../":36}],48:[function(require,module,exports){
+},{"../":37}],49:[function(require,module,exports){
   var torque = require('../');
   var Profiler = require('../profiler');
 
@@ -27395,7 +27398,7 @@ var Profiler = require('../profiler');
 
   module.exports = windshaft;
 
-},{"../":36,"../profiler":43}],49:[function(require,module,exports){
+},{"../":37,"../profiler":44}],50:[function(require,module,exports){
   var TAU = Math.PI*2;
   // min value to render a line. 
   // it does not make sense to render a line of a width is not even visible
@@ -27488,13 +27491,13 @@ module.exports = {
     MAX_SPRITE_RADIUS: MAX_SPRITE_RADIUS
 };
 
-},{}],50:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 module.exports = {
     cartocss: require('./cartocss_render'),
     Point: require('./point'),
     Rectangle: require('./rectangle')
 };
-},{"./cartocss_render":49,"./point":51,"./rectangle":52}],51:[function(require,module,exports){
+},{"./cartocss_render":50,"./point":52,"./rectangle":53}],52:[function(require,module,exports){
 (function (global){
 var torque = require('../');
 var cartocss = require('./cartocss_render');
@@ -27971,7 +27974,7 @@ module.exports = PointRenderer;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../":36,"../profiler":43,"./cartocss_render":49,"./torque_filters":53,"carto":56}],52:[function(require,module,exports){
+},{"../":37,"../profiler":44,"./cartocss_render":50,"./torque_filters":54,"carto":57}],53:[function(require,module,exports){
 (function (global){
 var carto = global.carto || require('carto');
 
@@ -28136,7 +28139,7 @@ module.exports = RectanbleRenderer;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"carto":56}],53:[function(require,module,exports){
+},{"carto":57}],54:[function(require,module,exports){
 /*
  Based on simpleheat, a tiny JavaScript library for drawing heatmaps with Canvas, 
  by Vladimir Agafonkin
@@ -28228,7 +28231,7 @@ torque_filters.prototype = {
 
 module.exports = torque_filters;
 
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 (function (global){
 var torque = require('./core');
 
@@ -28333,7 +28336,7 @@ module.exports = {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./core":30}],55:[function(require,module,exports){
+},{"./core":31}],56:[function(require,module,exports){
 (function (tree) {
 
 tree.functions = {
@@ -28546,7 +28549,7 @@ function clamp(val) {
 
 })(require('./tree'));
 
-},{"./tree":61}],56:[function(require,module,exports){
+},{"./tree":62}],57:[function(require,module,exports){
 (function (process,__dirname){
 var util = require('util'),
     fs = require('fs'),
@@ -28667,7 +28670,7 @@ function stylize(str, style) {
 
 }).call(this,require('_process'),"/../cartodb.js/node_modules/torque.js/node_modules/carto/lib/carto")
 
-},{"../../package.json":92,"./functions":55,"./parser":57,"./renderer":58,"./renderer_js":59,"./torque-reference":60,"./tree":61,"./tree/call":62,"./tree/color":63,"./tree/comment":64,"./tree/definition":65,"./tree/dimension":66,"./tree/element":67,"./tree/expression":68,"./tree/field":69,"./tree/filter":70,"./tree/filterset":71,"./tree/fontset":72,"./tree/frame_offset":73,"./tree/imagefilter":74,"./tree/invalid":75,"./tree/keyword":76,"./tree/layer":77,"./tree/literal":78,"./tree/operation":79,"./tree/quoted":80,"./tree/reference":81,"./tree/rule":82,"./tree/ruleset":83,"./tree/selector":84,"./tree/style":85,"./tree/url":86,"./tree/value":87,"./tree/variable":88,"./tree/zoom":89,"_process":265,"fs":261,"path":264,"util":267}],57:[function(require,module,exports){
+},{"../../package.json":93,"./functions":56,"./parser":58,"./renderer":59,"./renderer_js":60,"./torque-reference":61,"./tree":62,"./tree/call":63,"./tree/color":64,"./tree/comment":65,"./tree/definition":66,"./tree/dimension":67,"./tree/element":68,"./tree/expression":69,"./tree/field":70,"./tree/filter":71,"./tree/filterset":72,"./tree/fontset":73,"./tree/frame_offset":74,"./tree/imagefilter":75,"./tree/invalid":76,"./tree/keyword":77,"./tree/layer":78,"./tree/literal":79,"./tree/operation":80,"./tree/quoted":81,"./tree/reference":82,"./tree/rule":83,"./tree/ruleset":84,"./tree/selector":85,"./tree/style":86,"./tree/url":87,"./tree/value":88,"./tree/variable":89,"./tree/zoom":90,"_process":329,"fs":325,"path":328,"util":331}],58:[function(require,module,exports){
 (function (global){
 var carto = exports,
     tree = require('./tree'),
@@ -29453,7 +29456,7 @@ carto.Parser = function Parser(env) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./tree":61,"underscore":91}],58:[function(require,module,exports){
+},{"./tree":62,"underscore":92}],59:[function(require,module,exports){
 (function (global){
 var _ = global._ || require('underscore');
 var carto = require('./index');
@@ -29860,7 +29863,7 @@ module.exports.sortStyles = sortStyles;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./index":56,"underscore":91}],59:[function(require,module,exports){
+},{"./index":57,"underscore":92}],60:[function(require,module,exports){
 (function (global){
 (function(carto) {
 var tree = require('./tree');
@@ -30153,7 +30156,7 @@ if(typeof(module) !== 'undefined') {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../carto":56,"./torque-reference":60,"./tree":61,"underscore":91}],60:[function(require,module,exports){
+},{"../carto":57,"./torque-reference":61,"./tree":62,"underscore":92}],61:[function(require,module,exports){
 var _mapnik_reference_latest = {
     "version": "2.1.1",
     "style": {
@@ -32067,7 +32070,7 @@ module.exports = {
   }
 };
 
-},{}],61:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 /**
  * TODO: document this. What does this do?
  */
@@ -32080,7 +32083,7 @@ if(typeof(module) !== "undefined") {
   };
 }
 
-},{}],62:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 (function (global){
 (function(tree) {
 var _ = global._ || require('underscore');
@@ -32197,7 +32200,7 @@ tree.Call.prototype = {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../tree":61,"underscore":91}],63:[function(require,module,exports){
+},{"../tree":62,"underscore":92}],64:[function(require,module,exports){
 (function(tree) {
 // RGB Colors - #ff0014, #eee
 // can be initialized with a 3 or 6 char string or a 3 or 4 element
@@ -32294,7 +32297,7 @@ tree.Color.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],64:[function(require,module,exports){
+},{"../tree":62}],65:[function(require,module,exports){
 (function(tree) {
 
 tree.Comment = function Comment(value, silent) {
@@ -32311,7 +32314,7 @@ tree.Comment.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],65:[function(require,module,exports){
+},{"../tree":62}],66:[function(require,module,exports){
 (function (global){
 (function(tree) {
 var assert = require('assert'),
@@ -32575,7 +32578,7 @@ tree.Definition.prototype.toJS = function(env) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../tree":61,"assert":262,"underscore":91}],66:[function(require,module,exports){
+},{"../tree":62,"assert":326,"underscore":92}],67:[function(require,module,exports){
 (function (global){
 (function(tree) {
 var _ = global._ || require('underscore');
@@ -32679,7 +32682,7 @@ tree.Dimension.prototype = {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../tree":61,"underscore":91}],67:[function(require,module,exports){
+},{"../tree":62,"underscore":92}],68:[function(require,module,exports){
 (function(tree) {
 
 // An element is an id or class selector
@@ -32711,7 +32714,7 @@ tree.Element.prototype.toString = function() { return this.value; };
 
 })(require('../tree'));
 
-},{"../tree":61}],68:[function(require,module,exports){
+},{"../tree":62}],69:[function(require,module,exports){
 (function(tree) {
 
 tree.Expression = function Expression(value) {
@@ -32739,7 +32742,7 @@ tree.Expression.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],69:[function(require,module,exports){
+},{"../tree":62}],70:[function(require,module,exports){
 (function(tree) {
 
 tree.Field = function Field(content) {
@@ -32758,7 +32761,7 @@ tree.Field.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],70:[function(require,module,exports){
+},{"../tree":62}],71:[function(require,module,exports){
 (function(tree) {
 
 tree.Filter = function Filter(key, op, val, index, filename) {
@@ -32828,7 +32831,7 @@ tree.Filter.prototype.toString = function() {
 
 })(require('../tree'));
 
-},{"../tree":61}],71:[function(require,module,exports){
+},{"../tree":62}],72:[function(require,module,exports){
 (function (global){
 var tree = require('../tree');
 var _ = global._ || require('underscore');
@@ -33100,7 +33103,7 @@ tree.Filterset.prototype.add = function(filter, env) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../tree":61,"underscore":91}],72:[function(require,module,exports){
+},{"../tree":62,"underscore":92}],73:[function(require,module,exports){
 (function(tree) {
 
 tree._getFontSet = function(env, fonts) {
@@ -33133,7 +33136,7 @@ tree.FontSet.prototype.toXML = function(env) {
 
 })(require('../tree'));
 
-},{"../tree":61}],73:[function(require,module,exports){
+},{"../tree":62}],74:[function(require,module,exports){
 var tree = require('../tree');
 
 // Storage for Frame offset value
@@ -33162,7 +33165,7 @@ tree.FrameOffset.max = 32;
 tree.FrameOffset.none = 0;
 
 
-},{"../tree":61}],74:[function(require,module,exports){
+},{"../tree":62}],75:[function(require,module,exports){
 (function(tree) {
 
 tree.ImageFilter = function ImageFilter(filter, args) {
@@ -33186,7 +33189,7 @@ tree.ImageFilter.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],75:[function(require,module,exports){
+},{"../tree":62}],76:[function(require,module,exports){
 (function (tree) {
 tree.Invalid = function Invalid(chunk, index, message) {
     this.chunk = chunk;
@@ -33210,7 +33213,7 @@ tree.Invalid.prototype.ev = function(env) {
 };
 })(require('../tree'));
 
-},{"../tree":61}],76:[function(require,module,exports){
+},{"../tree":62}],77:[function(require,module,exports){
 (function(tree) {
 
 tree.Keyword = function Keyword(value) {
@@ -33229,7 +33232,7 @@ tree.Keyword.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],77:[function(require,module,exports){
+},{"../tree":62}],78:[function(require,module,exports){
 (function(tree) {
 
 tree.LayerXML = function(obj, styles) {
@@ -33268,7 +33271,7 @@ tree.LayerXML = function(obj, styles) {
 
 })(require('../tree'));
 
-},{"../tree":61}],78:[function(require,module,exports){
+},{"../tree":62}],79:[function(require,module,exports){
 // A literal is a literal string for Mapnik - the
 // result of the combination of a `tree.Field` with any
 // other type.
@@ -33290,7 +33293,7 @@ tree.Literal.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],79:[function(require,module,exports){
+},{"../tree":62}],80:[function(require,module,exports){
 // An operation is an expression with an op in between two operands,
 // like 2 + 1.
 (function(tree) {
@@ -33389,7 +33392,7 @@ tree.operate = function(op, a, b) {
 
 })(require('../tree'));
 
-},{"../tree":61}],80:[function(require,module,exports){
+},{"../tree":62}],81:[function(require,module,exports){
 (function(tree) {
 
 tree.Quoted = function Quoted(content) {
@@ -33421,7 +33424,7 @@ tree.Quoted.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],81:[function(require,module,exports){
+},{"../tree":62}],82:[function(require,module,exports){
 (function (global){
 // Carto pulls in a reference from the `mapnik-reference`
 // module. This file builds indexes from that file for its various
@@ -33645,7 +33648,7 @@ tree.Reference = ref;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../tree":61,"mapnik-reference":90,"underscore":91}],82:[function(require,module,exports){
+},{"../tree":62,"mapnik-reference":91,"underscore":92}],83:[function(require,module,exports){
 (function(tree) {
 // a rule is a single property and value combination, or variable
 // name and value combination, like
@@ -33767,7 +33770,7 @@ tree.Rule.prototype.ev = function(context) {
 
 })(require('../tree'));
 
-},{"../tree":61}],83:[function(require,module,exports){
+},{"../tree":62}],84:[function(require,module,exports){
 (function(tree) {
 
 tree.Ruleset = function Ruleset(selectors, rules) {
@@ -33946,7 +33949,7 @@ tree.Ruleset.prototype = {
 };
 })(require('../tree'));
 
-},{"../tree":61}],84:[function(require,module,exports){
+},{"../tree":62}],85:[function(require,module,exports){
 (function(tree) {
 
 tree.Selector = function Selector(filters, zoom, frame_offset, elements, attachment, conditions, index) {
@@ -33975,7 +33978,7 @@ tree.Selector.prototype.specificity = function() {
 
 })(require('../tree'));
 
-},{"../tree":61}],85:[function(require,module,exports){
+},{"../tree":62}],86:[function(require,module,exports){
 (function (global){
 (function(tree) {
 var _ = global._ || require('underscore');
@@ -34048,7 +34051,7 @@ tree.StyleXML = function(name, attachment, definitions, env) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../tree":61,"underscore":91}],86:[function(require,module,exports){
+},{"../tree":62,"underscore":92}],87:[function(require,module,exports){
 (function(tree) {
 
 tree.URL = function URL(val, paths) {
@@ -34068,7 +34071,7 @@ tree.URL.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],87:[function(require,module,exports){
+},{"../tree":62}],88:[function(require,module,exports){
 (function(tree) {
 
 tree.Value = function Value(value) {
@@ -34121,7 +34124,7 @@ tree.Value.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],88:[function(require,module,exports){
+},{"../tree":62}],89:[function(require,module,exports){
 (function(tree) {
 
 tree.Variable = function Variable(name, index, filename) {
@@ -34164,7 +34167,7 @@ tree.Variable.prototype = {
 
 })(require('../tree'));
 
-},{"../tree":61}],89:[function(require,module,exports){
+},{"../tree":62}],90:[function(require,module,exports){
 var tree = require('../tree');
 
 // Storage for zoom ranges. Only supports continuous ranges,
@@ -34284,7 +34287,7 @@ tree.Zoom.prototype.toString = function() {
     return str;
 };
 
-},{"../tree":61}],90:[function(require,module,exports){
+},{"../tree":62}],91:[function(require,module,exports){
 (function (__dirname){
 var fs = require('fs'),
     path = require('path'),
@@ -34314,9 +34317,9 @@ refs.map(function(version) {
 
 }).call(this,"/../cartodb.js/node_modules/torque.js/node_modules/carto/node_modules/mapnik-reference")
 
-},{"fs":261,"path":264}],91:[function(require,module,exports){
-module.exports = require(93);
-},{"dup":93}],92:[function(require,module,exports){
+},{"fs":325,"path":328}],92:[function(require,module,exports){
+module.exports = require(94);
+},{"dup":94}],93:[function(require,module,exports){
 module.exports={
   "name": "carto",
   "version": "0.15.1-cdb1",
@@ -34402,7 +34405,7 @@ module.exports={
   "_from": "https://github.com/CartoDB/carto/archive/master.tar.gz"
 }
 
-},{}],93:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -35952,7 +35955,7 @@ module.exports={
   }
 }.call(this));
 
-},{}],94:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 module.exports={
   "name": "cartodb.js",
   "version": "4.0.0-alpha.1",
@@ -35993,7 +35996,9 @@ module.exports={
     "perfect-scrollbar": "0.6.7",
     "torque.js": "2.15.1",
     "underscore": "1.8.3",
-    "cartoassets": "CartoDB/CartoAssets#master"
+    "cartoassets": "CartoDB/CartoAssets#master",
+    "d3": "3.5.8",
+    "d3.cartodb": "git://github.com/CartoDB/d3.cartodb.git#85d576f902b2a7f89a116b82c389ccaf9d64bd76"
   },
   "devDependencies": {
     "browserify": "11.2.0",
@@ -36111,7 +36116,7 @@ module.exports={
   }
 }
 
-},{}],95:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var cdb = require('cdb'); // cdb.geo.GoogleMapsMapView, cdb.geo.LeafletMapView
@@ -36306,7 +36311,7 @@ module.exports = function(map, layer, options, callback) {
   return promise;
 };
 
-},{"../core/loader":108,"../geo/map":166,"../vis/vis":238,"../vis/vis/layers":240,"./promise":98,"cdb":104,"leaflet":3,"underscore":93}],96:[function(require,module,exports){
+},{"../core/loader":109,"../geo/map":174,"../vis/vis":246,"../vis/vis/layers":248,"./promise":99,"cdb":105,"leaflet":4,"underscore":94}],97:[function(require,module,exports){
 var _ = require('underscore');
 var Vis = require('../vis/vis');
 
@@ -36342,7 +36347,7 @@ var createVis = function(el, vizjson, options, callback) {
 
 module.exports = createVis;
 
-},{"../vis/vis":238,"underscore":93}],97:[function(require,module,exports){
+},{"../vis/vis":246,"underscore":94}],98:[function(require,module,exports){
 var cdb = require('cdb');
 var config = require('cdb.config');
 
@@ -36354,7 +36359,7 @@ module.exports = function (name, mod) {
   });
 };
 
-},{"cdb":104,"cdb.config":102}],98:[function(require,module,exports){
+},{"cdb":105,"cdb.config":103}],99:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -36373,7 +36378,7 @@ _.extend(Promise.prototype, Backbone.Events, {
 
 module.exports = Promise;
 
-},{"backbone":1,"underscore":93}],99:[function(require,module,exports){
+},{"backbone":1,"underscore":94}],100:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Mustache = require('mustache');
@@ -37051,7 +37056,7 @@ SQL.prototype.describe = function(sql, column, options) {
 
 module.exports = SQL;
 
-},{"./promise":98,"jquery":2,"mustache":4,"underscore":93}],100:[function(require,module,exports){
+},{"./promise":99,"jquery":3,"mustache":5,"underscore":94}],101:[function(require,module,exports){
 var isLeafletAlreadyLoaded = !!window.L;
 
 var _ = require('underscore');
@@ -37160,7 +37165,7 @@ require('./vis/layers'); // Layers.register calls
 
 module.exports = cdb;
 
-},{"./api/create-layer":95,"./api/create-vis":96,"./api/module-load":97,"./api/promise":98,"./api/sql":99,"./core/loader":108,"./core/model":112,"./core/sanitize":114,"./core/template":116,"./core/template-list":115,"./core/view":118,"./geo/geocoder/nokia-geocoder":134,"./geo/geocoder/yahoo-geocoder":135,"./geo/geometry":137,"./geo/gmaps":138,"./geo/leaflet":152,"./geo/map":166,"./geo/map-view":165,"./geo/map/cartodb-layer":167,"./geo/map/gmaps-base-layer":168,"./geo/map/layers":169,"./geo/map/map-layer":170,"./geo/map/plain-layer":171,"./geo/map/tile-layer":172,"./geo/map/torque-layer":173,"./geo/map/wms-layer":174,"./geo/ui/annotation":176,"./geo/ui/header":179,"./geo/ui/image":180,"./geo/ui/infobox":181,"./geo/ui/infowindow":183,"./geo/ui/infowindow-model":182,"./geo/ui/layer-selector":184,"./geo/ui/layer-view":185,"./geo/ui/legend":191,"./geo/ui/legend-exports":186,"./geo/ui/legend/legend-view-exports":210,"./geo/ui/search/search":214,"./geo/ui/text":217,"./geo/ui/tiles-loader":218,"./geo/ui/tooltip":219,"./geo/ui/zoom/zoom-view":221,"./ui/common/dialog":223,"./ui/common/dropdown":224,"./ui/common/fullscreen/fullscreen-view":226,"./ui/common/notification":227,"./ui/common/table":228,"./ui/common/table/row":230,"./ui/common/table/row-view":229,"./ui/common/table/table-data":231,"./ui/common/table/table-properties":232,"./vis/layers":235,"./vis/overlays":236,"./vis/vis":238,"./vis/vis/infowindow-template":239,"./vis/vis/layers":240,"./vis/vis/overlay":241,"./vis/vis/overlays":242,"backbone":1,"cdb":104,"cdb.config":102,"cdb.core.Profiler":113,"cdb.core.util":117,"cdb.errors":103,"cdb.log":105,"cdb.templates":106,"jquery":2,"leaflet":3,"lzma":256,"mousewheel":257,"mustache":4,"mwheelIntent":258,"underscore":93}],101:[function(require,module,exports){
+},{"./api/create-layer":96,"./api/create-vis":97,"./api/module-load":98,"./api/promise":99,"./api/sql":100,"./core/loader":109,"./core/model":113,"./core/sanitize":115,"./core/template":117,"./core/template-list":116,"./core/view":119,"./geo/geocoder/nokia-geocoder":141,"./geo/geocoder/yahoo-geocoder":142,"./geo/geometry":144,"./geo/gmaps":145,"./geo/leaflet":159,"./geo/map":174,"./geo/map-view":173,"./geo/map/cartodb-layer":175,"./geo/map/gmaps-base-layer":176,"./geo/map/layers":177,"./geo/map/map-layer":178,"./geo/map/plain-layer":179,"./geo/map/tile-layer":180,"./geo/map/torque-layer":181,"./geo/map/wms-layer":182,"./geo/ui/annotation":184,"./geo/ui/header":187,"./geo/ui/image":188,"./geo/ui/infobox":189,"./geo/ui/infowindow":191,"./geo/ui/infowindow-model":190,"./geo/ui/layer-selector":192,"./geo/ui/layer-view":193,"./geo/ui/legend":199,"./geo/ui/legend-exports":194,"./geo/ui/legend/legend-view-exports":218,"./geo/ui/search/search":222,"./geo/ui/text":225,"./geo/ui/tiles-loader":226,"./geo/ui/tooltip":227,"./geo/ui/zoom/zoom-view":229,"./ui/common/dialog":231,"./ui/common/dropdown":232,"./ui/common/fullscreen/fullscreen-view":234,"./ui/common/notification":235,"./ui/common/table":236,"./ui/common/table/row":238,"./ui/common/table/row-view":237,"./ui/common/table/table-data":239,"./ui/common/table/table-properties":240,"./vis/layers":243,"./vis/overlays":244,"./vis/vis":246,"./vis/vis/infowindow-template":247,"./vis/vis/layers":248,"./vis/vis/overlay":249,"./vis/vis/overlays":250,"backbone":1,"cdb":105,"cdb.config":103,"cdb.core.Profiler":114,"cdb.core.util":118,"cdb.errors":104,"cdb.log":106,"cdb.templates":107,"jquery":3,"leaflet":4,"lzma":264,"mousewheel":265,"mustache":5,"mwheelIntent":266,"underscore":94}],102:[function(require,module,exports){
 /* global google */
 var cdb = require('cdb');
 var moduleLoad = require('./api/module-load');
@@ -37175,7 +37180,7 @@ cdb.geo.LeafletTorqueLayer = require('./geo/leaflet/leaflet-torque-layer');
 moduleLoad('torque', torque);
 module.exports = torque;
 
-},{"./api/module-load":97,"./geo/gmaps/gmaps-torque-layer-view":150,"./geo/leaflet/leaflet-torque-layer":162,"cdb":104,"torque.js":36}],102:[function(require,module,exports){
+},{"./api/module-load":98,"./geo/gmaps/gmaps-torque-layer-view":157,"./geo/leaflet/leaflet-torque-layer":170,"cdb":105,"torque.js":37}],103:[function(require,module,exports){
 var Config = require('./core/config');
 
 var config = new Config();
@@ -37186,11 +37191,11 @@ config.set({
 
 module.exports = config;
 
-},{"./core/config":107}],103:[function(require,module,exports){
+},{"./core/config":108}],104:[function(require,module,exports){
 var ErrorList = require('./core/log/error-list');
 module.exports = new ErrorList();
 
-},{"./core/log/error-list":110}],104:[function(require,module,exports){
+},{"./core/log/error-list":111}],105:[function(require,module,exports){
 // Creates cdb object, mutated in the entry file cartodb.js
 // Used to avoid circular dependencies
 var cdb = {};
@@ -37221,24 +37226,24 @@ cdb.vis = {};
 
 module.exports = cdb;
 
-},{"../package.json":94}],105:[function(require,module,exports){
+},{"../package.json":95}],106:[function(require,module,exports){
 var Log = require('./core/log');
 
 module.exports = new Log({tag: 'cdb'});
 
-},{"./core/log":109}],106:[function(require,module,exports){
+},{"./core/log":110}],107:[function(require,module,exports){
 var TemplateList = require('./core/template-list');
 
 module.exports = new TemplateList();
 
-},{"./core/template-list":115}],107:[function(require,module,exports){
+},{"./core/template-list":116}],108:[function(require,module,exports){
 var Backbone = require('backbone');
 
 /**
  * global configuration
  */
 var Config = Backbone.Model.extend({
-  VERSION: 2,
+  VERSION: 4,
 
   initialize: function() {
     this.modules = new Backbone.Collection();
@@ -37250,54 +37255,12 @@ var Config = Backbone.Model.extend({
 
   //error track
   REPORT_ERROR_URL: '/api/v0/error',
-  ERROR_TRACK_ENABLED: false,
-
-  /**
-   * returns the base url to compose the final url
-   * http://user.cartodb.com/
-   */
-  getSqlApiBaseUrl: function() {
-    var url;
-    if (this.get('sql_api_template')) {
-      url = this.get("sql_api_template").replace('{user}', this.get('user_name'));
-    } else {
-      url = this.get('sql_api_protocol') + '://' +
-        this.get('user_name') + '.' +
-        this.get('sql_api_domain') + ':' +
-        this.get('sql_api_port');
-    }
-    return url;
-  },
-
-  /**
-   * returns the full sql api url, including the api endpoint
-   * allos to specify the version
-   * http://user.cartodb.com/api/v1/sql
-   */
-  getSqlApiUrl: function(version) {
-    version = version || 'v2';
-    return this.getSqlApiBaseUrl() + "/api/" + version + "/sql";
-  },
-
-  /**
-   *  returns the maps api host, removing user template
-   *  and the protocol.
-   *  cartodb.com:3333
-   */
-  getMapsApiHost: function() {
-    var url;
-    var mapsApiTemplate = this.get('maps_api_template');
-    if (mapsApiTemplate) {
-      url = mapsApiTemplate.replace(/https?:\/\/{user}\./, '');
-    }
-    return url;
-  }
-
+  ERROR_TRACK_ENABLED: false
 });
 
 module.exports = Config;
 
-},{"backbone":1}],108:[function(require,module,exports){
+},{"backbone":1}],109:[function(require,module,exports){
 var cdb = require('cdb'); // cdb.DEBUG
 
 var Loader = {
@@ -37373,7 +37336,7 @@ window.vizjson = function(data) {
 
 module.exports = Loader;
 
-},{"cdb":104}],109:[function(require,module,exports){
+},{"cdb":105}],110:[function(require,module,exports){
 var Backbone = require('backbone');
 var cdb = require('cdb'); // cdb.DEBUG
 var errors = require('cdb.errors');
@@ -37423,7 +37386,7 @@ var Log = Backbone.Model.extend({
 
 module.exports = Log;
 
-},{"backbone":1,"cdb":104,"cdb.config":102,"cdb.errors":103}],110:[function(require,module,exports){
+},{"backbone":1,"cdb":105,"cdb.config":103,"cdb.errors":104}],111:[function(require,module,exports){
 var Backbone = require('backbone');
 var ErrorModel = require('./error');
 
@@ -37447,7 +37410,7 @@ var ErrorList = Backbone.Collection.extend({
 
 module.exports = ErrorList;
 
-},{"./error":111,"backbone":1}],111:[function(require,module,exports){
+},{"./error":112,"backbone":1}],112:[function(require,module,exports){
 var Backbone = require('backbone');
 var $ = require('jquery');
 var config = require('cdb.config');
@@ -37464,7 +37427,7 @@ var ErrorModel = Backbone.Model.extend({
 
 module.exports = ErrorModel;
 
-},{"backbone":1,"cdb.config":102,"jquery":2}],112:[function(require,module,exports){
+},{"backbone":1,"cdb.config":103,"jquery":3}],113:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
@@ -37547,7 +37510,7 @@ var Model = Backbone.Model.extend({
 
 module.exports = Model;
 
-},{"backbone":1,"jquery":2,"underscore":93}],113:[function(require,module,exports){
+},{"backbone":1,"jquery":3,"underscore":94}],114:[function(require,module,exports){
 /*
 # metrics profiler
 
@@ -37710,7 +37673,7 @@ Profiler.metric = function(name) {
 
 module.exports = Profiler;
 
-},{}],114:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 var htmlCssSanitizer = require('html-css-sanitizer');
 
 /**
@@ -37736,7 +37699,7 @@ htmlCssSanitizer.html = function(inputHtml, optionalSanitizer) {
 
 module.exports = htmlCssSanitizer;
 
-},{"html-css-sanitizer":255}],115:[function(require,module,exports){
+},{"html-css-sanitizer":263}],116:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var log = require('cdb.log');
@@ -37766,7 +37729,7 @@ var TemplateList = Backbone.Collection.extend({
 
 module.exports = TemplateList;
 
-},{"./template":116,"backbone":1,"cdb.log":105,"underscore":93}],116:[function(require,module,exports){
+},{"./template":117,"backbone":1,"cdb.log":106,"underscore":94}],117:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var Mustache = require('mustache');
@@ -37861,7 +37824,7 @@ var Template = Backbone.Model.extend({
 
 module.exports = Template;
 
-},{"backbone":1,"cdb.log":105,"mustache":4,"underscore":93}],117:[function(require,module,exports){
+},{"backbone":1,"cdb.log":106,"mustache":5,"underscore":94}],118:[function(require,module,exports){
 var util = {};
 
 util.isCORSSupported = function() {
@@ -37989,7 +37952,7 @@ util.browser = util._inferBrowser();
 
 module.exports = util;
 
-},{}],118:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var Profiler = require('cdb.core.Profiler');
@@ -38163,7 +38126,7 @@ var View = Backbone.View.extend({
 
 module.exports = View;
 
-},{"backbone":1,"cdb.core.Profiler":113,"cdb.templates":106,"underscore":93}],119:[function(require,module,exports){
+},{"backbone":1,"cdb.core.Profiler":114,"cdb.templates":107,"underscore":94}],120:[function(require,module,exports){
 var _ = require('underscore');
 var DataviewModelBase = require('./dataview-model-base');
 var SearchModel = require('./category-dataview/search-model');
@@ -38209,29 +38172,16 @@ module.exports = DataviewModelBase.extend({
     this._searchModel = new SearchModel();
 
     this.on('change:column change:aggregation change:aggregation_column', this._reloadMap, this);
-  },
-
-  // Set any needed parameter when they have changed in this model
-  _setInternalModels: function () {
-    var url = this.get('url');
-
-    this._searchModel.set({
-      url: url,
-      boundingBox: this.get('boundingBox')
-    });
-
-    this._rangeModel.setUrl(url);
-  },
-
-  _onChangeBinds: function () {
-    DataviewModelBase.prototype._onChangeBinds.call(this);
-    this._setInternalModels();
 
     this.bind('change:url change:boundingBox', function () {
       this._searchModel.set({
         url: this.get('url'),
         boundingBox: this.get('boundingBox')
       });
+    }, this);
+
+    this.once('change:url', function () {
+      this._rangeModel.setUrl(this.get('url'));
     }, this);
 
     this._rangeModel.bind('change:totalCount change:categoriesCount', function () {
@@ -38241,6 +38191,10 @@ module.exports = DataviewModelBase.extend({
       });
     }, this);
 
+    this._bindSearchModelEvents();
+  },
+
+  _bindSearchModelEvents: function () {
     this._searchModel.bind('loading', function () {
       this.trigger('loading', this);
     }, this);
@@ -38253,6 +38207,14 @@ module.exports = DataviewModelBase.extend({
       }
     }, this);
     this._searchModel.bind('change:data', this._onSearchDataChange, this);
+  },
+
+  _onSearchDataChange: function () {
+    this.getSearchResult().each(function (m) {
+      var selected = this.filter.isAccepted(m.get('name'));
+      m.set('selected', selected);
+    }, this);
+    this.trigger('change:searchData', this);
   },
 
   _shouldFetchOnBoundingBoxChange: function () {
@@ -38356,14 +38318,6 @@ module.exports = DataviewModelBase.extend({
     );
   },
 
-  _onSearchDataChange: function () {
-    this.getSearchResult().each(function (m) {
-      var selected = this.filter.isAccepted(m.get('name'));
-      m.set('selected', selected);
-    }, this);
-    this.trigger('change:searchData', this);
-  },
-
   refresh: function () {
     if (this.isSearchApplied()) {
       this._searchModel.fetch();
@@ -38413,6 +38367,7 @@ module.exports = DataviewModelBase.extend({
     }
 
     this._data.reset(newData);
+
     return {
       allCategoryNames: _
         .chain(allNewCategoryNames)
@@ -38452,7 +38407,7 @@ module.exports = DataviewModelBase.extend({
   }
 );
 
-},{"./category-dataview/categories-collection":120,"./category-dataview/category-model-range":122,"./category-dataview/search-model":123,"./dataview-model-base":124,"underscore":93}],120:[function(require,module,exports){
+},{"./category-dataview/categories-collection":121,"./category-dataview/category-model-range":123,"./category-dataview/search-model":124,"./dataview-model-base":125,"underscore":94}],121:[function(require,module,exports){
 var Backbone = require('backbone');
 var CategoryItemModel = require('./category-item-model');
 
@@ -38486,7 +38441,7 @@ module.exports = Backbone.Collection.extend({
 
 });
 
-},{"./category-item-model":121,"backbone":1}],121:[function(require,module,exports){
+},{"./category-item-model":122,"backbone":1}],122:[function(require,module,exports){
 var Model = require('../../core/model');
 
 /**
@@ -38502,7 +38457,7 @@ module.exports = Model.extend({
 
 });
 
-},{"../../core/model":112}],122:[function(require,module,exports){
+},{"../../core/model":113}],123:[function(require,module,exports){
 var _ = require('underscore');
 var Model = require('../../core/model');
 
@@ -38549,7 +38504,7 @@ module.exports = Model.extend({
   }
 });
 
-},{"../../core/model":112,"underscore":93}],123:[function(require,module,exports){
+},{"../../core/model":113,"underscore":94}],124:[function(require,module,exports){
 var _ = require('underscore');
 var Model = require('../../core/model');
 var BackboneAbortSync = require('../../util/backbone-abort-sync');
@@ -38666,7 +38621,7 @@ module.exports = Model.extend({
   }
 });
 
-},{"../../core/model":112,"../../util/backbone-abort-sync":233,"./categories-collection":120,"underscore":93}],124:[function(require,module,exports){
+},{"../../core/model":113,"../../util/backbone-abort-sync":241,"./categories-collection":121,"underscore":94}],125:[function(require,module,exports){
 var _ = require('underscore');
 var Model = require('../core/model');
 var BackboneCancelSync = require('../util/backbone-abort-sync');
@@ -38720,6 +38675,10 @@ module.exports = Model.extend({
       this.filter.set('dataviewId', this.id);
     }
 
+    var dataProvider = this.layer.getDataProvider();
+    if (dataProvider) {
+      this._dataProvider = dataProvider.createDataProviderForDataview(this);
+    }
     this._initBinds();
     this._updateBoundingBox();
   },
@@ -38728,23 +38687,34 @@ module.exports = Model.extend({
     this.listenTo(this._windshaftMap, 'instanceCreated', this._onNewWindshaftMapInstance);
     this.listenTo(this.layer, 'change:visible', this._onLayerVisibilityChanged);
 
-    this.listenToOnce(this, 'change:url', function () {
-      this.fetch({
-        success: this._onChangeBinds.bind(this)
+    if (this._dataProvider) {
+      this.listenToOnce(this._dataProvider, 'dataChanged', this._onChangeBinds, this);
+      this.listenTo(this._dataProvider, 'dataChanged', this._onDataProviderChanged);
+    } else {
+      this.listenToOnce(this, 'change:url', function () {
+        this.fetch({
+          success: this._onChangeBinds.bind(this)
+        });
       });
-    });
-
-    // Retrigger an event when the filter changes
+    }
     if (this.filter) {
       this.listenTo(this.filter, 'change', this._onFilterChanged);
     }
   },
 
+  _onDataProviderChanged: function () {
+    this.set(this.parse(this._dataProvider.getData()));
+  },
+
   /**
    * @private
    */
-  _onFilterChanged: function () {
-    this._reloadMap();
+  _onFilterChanged: function (filter) {
+    if (this._dataProvider) {
+      this._dataProvider.applyFilter(filter);
+    } else {
+      this._reloadMap();
+    }
   },
 
   /**
@@ -38819,7 +38789,7 @@ module.exports = Model.extend({
   },
 
   _shouldFetchOnURLChange: function () {
-    return (this.get('sync_on_data_change') && this.get('enabled')) || (this._wasUpdated && this.get('enabled'));
+    return this.get('sync_on_data_change') && this.get('enabled');
   },
 
   _shouldFetchOnBoundingBoxChange: function () {
@@ -38832,7 +38802,6 @@ module.exports = Model.extend({
 
   update: function (attrs) {
     attrs = _.pick(attrs, this.constructor.ATTRS_NAMES);
-    this._wasUpdated = true;
     this.set(attrs);
   },
 
@@ -38846,26 +38815,27 @@ module.exports = Model.extend({
 
   fetch: function (opts) {
     opts = opts || {};
+    if (this._dataProvider) {
+      this.set(this.parse(this._dataProvider.getData()));
+    } else {
+      this.trigger('loading', this);
 
-    this.trigger('loading', this);
+      if (opts.success) {
+        var successCallback = opts && opts.success;
+      }
 
-    if (opts.success) {
-      var successCallback = opts && opts.success;
+      return Model.prototype.fetch.call(this, _.extend(opts, {
+        success: function () {
+          successCallback && successCallback(arguments);
+          this.trigger('loaded', this);
+        }.bind(this),
+        error: function (mdl, err) {
+          if (!err || (err && err.statusText !== 'abort')) {
+            this.trigger('error', mdl, err);
+          }
+        }.bind(this)
+      }));
     }
-
-    return Model.prototype.fetch.call(this, _.extend(opts, {
-      success: function () {
-        successCallback && successCallback(arguments);
-        this.trigger('loaded', this);
-        this._wasUpdated = false;
-      }.bind(this),
-      error: function (mdl, err) {
-        if (!err || (err && err.statusText !== 'abort')) {
-          this._wasUpdated = false;
-          this.trigger('error', mdl, err);
-        }
-      }.bind(this)
-    }));
   },
 
   toJSON: function () {
@@ -38892,7 +38862,7 @@ module.exports = Model.extend({
   }
 );
 
-},{"../core/model":112,"../util/backbone-abort-sync":233,"../windshaft/filters/bounding-box":246,"underscore":93}],125:[function(require,module,exports){
+},{"../core/model":113,"../util/backbone-abort-sync":241,"../windshaft/filters/bounding-box":254,"underscore":94}],126:[function(require,module,exports){
 var Backbone = require('backbone');
 
 /**
@@ -38914,7 +38884,7 @@ module.exports = Backbone.Collection.extend({
   }
 });
 
-},{"backbone":1}],126:[function(require,module,exports){
+},{"backbone":1}],127:[function(require,module,exports){
 var _ = require('underscore');
 var Model = require('../core/model');
 var CategoryFilter = require('../windshaft/filters/category');
@@ -39036,7 +39006,7 @@ function _checkProperties (obj, propertiesArray) {
   });
 }
 
-},{"../core/model":112,"../windshaft/filters/category":247,"../windshaft/filters/range":249,"./category-dataview-model":119,"./formula-dataview-model":127,"./histogram-dataview-model":128,"./list-dataview-model":129,"underscore":93}],127:[function(require,module,exports){
+},{"../core/model":113,"../windshaft/filters/category":255,"../windshaft/filters/range":257,"./category-dataview-model":120,"./formula-dataview-model":128,"./histogram-dataview-model":129,"./list-dataview-model":130,"underscore":94}],128:[function(require,module,exports){
 var _ = require('underscore');
 var DataviewModelBase = require('./dataview-model-base');
 
@@ -39081,7 +39051,7 @@ module.exports = DataviewModelBase.extend({
   }
 );
 
-},{"./dataview-model-base":124,"underscore":93}],128:[function(require,module,exports){
+},{"./dataview-model-base":125,"underscore":94}],129:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var DataviewModelBase = require('./dataview-model-base');
@@ -39238,7 +39208,7 @@ module.exports = DataviewModelBase.extend({
   }
 );
 
-},{"./dataview-model-base":124,"backbone":1,"underscore":93}],129:[function(require,module,exports){
+},{"./dataview-model-base":125,"backbone":1,"underscore":94}],130:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var DataviewModelBase = require('./dataview-model-base');
@@ -39293,7 +39263,7 @@ module.exports = DataviewModelBase.extend({
   }
 );
 
-},{"./dataview-model-base":124,"backbone":1,"underscore":93}],130:[function(require,module,exports){
+},{"./dataview-model-base":125,"backbone":1,"underscore":94}],131:[function(require,module,exports){
 var _ = require('underscore');
 
 /**
@@ -39458,7 +39428,7 @@ CartoDBLayerCommon.prototype = {
 
 module.exports = CartoDBLayerCommon;
 
-},{"underscore":93}],131:[function(require,module,exports){
+},{"underscore":94}],132:[function(require,module,exports){
 var CartoDBLayerGroupBase = require('./cartodb-layer-group-base');
 
 var CartoDBLayerGroupAnonymousMap = CartoDBLayerGroupBase.extend({
@@ -39489,7 +39459,7 @@ var CartoDBLayerGroupAnonymousMap = CartoDBLayerGroupBase.extend({
 
 module.exports = CartoDBLayerGroupAnonymousMap;
 
-},{"./cartodb-layer-group-base":132}],132:[function(require,module,exports){
+},{"./cartodb-layer-group-base":133}],133:[function(require,module,exports){
 var $ = require('jquery');
 var Backbone = require('backbone');
 var MapLayer = require('./map/map-layer');
@@ -39508,7 +39478,7 @@ var CartoDBLayerGroupBase = MapLayer.extend({
       throw new Error('windshaftMap option is required');
     }
 
-    this.layers = new Backbone.Collection(options.layers || {});
+    this.layers = new Backbone.Collection(options.layers || []);
     this._windshaftMap = options.windshaftMap;
 
     // When a new instance of the map is created in Windshaft, we will need to use
@@ -39582,7 +39552,7 @@ var CartoDBLayerGroupBase = MapLayer.extend({
 
 module.exports = CartoDBLayerGroupBase;
 
-},{"./map/map-layer":170,"backbone":1,"cdb.core.util":117,"jquery":2}],133:[function(require,module,exports){
+},{"./map/map-layer":178,"backbone":1,"cdb.core.util":118,"jquery":3}],134:[function(require,module,exports){
 var CartoDBLayerGroupBase = require('./cartodb-layer-group-base');
 
 var CartoDBLayerGroupNamedMap = CartoDBLayerGroupBase.extend({
@@ -39601,7 +39571,291 @@ var CartoDBLayerGroupNamedMap = CartoDBLayerGroupBase.extend({
 
 module.exports = CartoDBLayerGroupNamedMap;
 
-},{"./cartodb-layer-group-base":132}],134:[function(require,module,exports){
+},{"./cartodb-layer-group-base":133}],135:[function(require,module,exports){
+var _ = require('underscore');
+var GeoJSONDataProviderBase = require('./geojson-data-provider-base');
+
+var CategoryGeoJSONDataProvider = function (vectorLayerView, layerIndex) {
+  GeoJSONDataProviderBase.apply(this, arguments);
+};
+
+_.extend(CategoryGeoJSONDataProvider.prototype, GeoJSONDataProviderBase.prototype);
+
+CategoryGeoJSONDataProvider.prototype.getData = function () {
+  var options = this._dataview.attributes;
+  var columnName = options.column;
+  var filterEnabled = options.filterEnabled;
+  var numberOfCategories = 5;
+  var filter = this._vectorLayerView.getFilter(this._layerIndex);
+  var features = this._getFeatures();
+  if (!filterEnabled) {
+    features = filter.getValues(false, columnName);
+  }
+
+  // TODO: There's probably a more efficient way of doing this
+  var groups = _.groupBy(features, function (feature) { return feature.properties[columnName]; });
+  var groupCounts = _.map(Object.keys(groups), function (key) {
+    return {
+      key: key,
+      value: groups[key].length
+    };
+  });
+  var sortedGroups = _.sortBy(groupCounts, function (group) {
+    return group.value;
+  }).reverse();
+  var count = features.length;
+
+  var nulls = filter.getValues(false, columnName).reduce(function (p, c) { return p + (c.properties[columnName] === null ? 1 : 0); }, 0);
+  var data = {
+    categories: [],
+    categoriesCount: sortedGroups.length,
+    count: count,
+    max: sortedGroups[0].value,
+    min: sortedGroups[sortedGroups.length - 1].value,
+    nulls: nulls,
+    type: 'aggregation'
+  };
+
+  _.each(sortedGroups.slice(0, numberOfCategories), function (category) {
+    data.categories.push({
+      category: category.key,
+      value: category.value,
+      agg: false
+    });
+  });
+  var remainingCategories = sortedGroups.slice(numberOfCategories);
+  if (!filterEnabled && remainingCategories.length > 0) {
+    var lastCat = {
+      category: 'Other',
+      value: remainingCategories.reduce(function (p, c) {
+        return p + c.value;
+      }, 0),
+      agg: true
+    };
+    data.categories.push(lastCat);
+  }
+  return data;
+};
+
+CategoryGeoJSONDataProvider.prototype.applyFilter = function (filter) {
+  var columnName = this._dataview.get('column');
+  var filterType;
+  var filterOptions;
+  if (filter.isEmpty()) {
+    filterType = 'accept';
+    filterOptions = { column: columnName, values: 'all' };
+  } else if (filter.get('rejectAll')) {
+    filterType = 'reject';
+    filterOptions = { column: columnName, values: 'all' };
+  } else if (filter.acceptedCategories.size()) {
+    filterType = 'accept';
+    filterOptions = { column: columnName, values: filter.getAcceptedCategoryNames() };
+  } else if (filter.rejectedCategories.size()) {
+    filterType = 'reject';
+    filterOptions = { column: columnName, values: filter.getRejectedCategoryNames() };
+  }
+  this._vectorLayerView.applyFilter(this._layerIndex, filterType, filterOptions);
+};
+
+module.exports = CategoryGeoJSONDataProvider;
+
+},{"./geojson-data-provider-base":137,"underscore":94}],136:[function(require,module,exports){
+var _ = require('underscore');
+var GeoJSONDataProviderBase = require('./geojson-data-provider-base');
+
+var FormulaGeoJSONDataProvider = function (vectorLayerView, layerIndex) {
+  GeoJSONDataProviderBase.apply(this, arguments);
+};
+
+_.extend(FormulaGeoJSONDataProvider.prototype, GeoJSONDataProviderBase.prototype);
+
+FormulaGeoJSONDataProvider.prototype.getData = function () {
+  var options = this._dataview.attributes;
+  var features = this._getFeatures();
+  var operation = options.operation;
+  var columnName = options.column;
+  var nulls = features.reduce(function (p, c) { return p + (c.properties[columnName] === null ? 1 : 0); }, 0);
+  var result;
+  if (operation === 'count') {
+    result = features.length;
+  } else if (operation === 'avg') {
+    result = features.reduce(function (p, c) { return p + c.properties[columnName]; }, 0) / features.length;
+  } else if (operation === 'sum') {
+    result = features.reduce(function (p, c) { return p + c.properties[columnName]; }, 0);
+  } else if (operation === 'min') {
+    result = features.reduce(function (p, c) { return Math.min(p, c.properties[columnName]); }, Infinity);
+  } else if (operation === 'max') {
+    result = features.reduce(function (p, c) { return Math.max(p, c.properties[columnName]); }, 0);
+  } else {
+    throw new Error("Coudn't generate data for formula dataview and '" + operation + "' operation.");
+  }
+  var data = {
+    'operation': operation,
+    'result': result,
+    'nulls': nulls,
+    'type': 'formula'
+  };
+  return data;
+};
+
+module.exports = FormulaGeoJSONDataProvider;
+
+},{"./geojson-data-provider-base":137,"underscore":94}],137:[function(require,module,exports){
+var _ = require('underscore');
+var Backbone = require('backbone');
+
+var GeoJSONDataProviderBase = function (options) {
+  this._dataview = options.dataview;
+  this._vectorLayerView = options.vectorLayerView;
+  this._layerIndex = options.layerIndex;
+
+  this._vectorLayerView._on('featuresChanged', function () {
+    this.trigger('dataChanged', this.getData());
+  }.bind(this));
+};
+
+GeoJSONDataProviderBase.prototype.getData = function () {
+  throw new Error('Subclasses of GeoJSONDataProviderBase must implement .getData');
+};
+
+GeoJSONDataProviderBase.prototype.applyFilter = function () {};
+
+GeoJSONDataProviderBase.prototype._getFeatures = function () {
+  return this._vectorLayerView.getFeatures()[this._layerIndex];
+};
+
+_.extend(GeoJSONDataProviderBase.prototype, Backbone.Events);
+
+module.exports = GeoJSONDataProviderBase;
+
+},{"backbone":1,"underscore":94}],138:[function(require,module,exports){
+var HistogramGeoJSONDataProvider = require('./histogram-geojson-data-provider');
+var CategoryGeoJSONDataProvider = require('./category-geojson-data-provider');
+var FormulaGeoJSONDataProvider = require('./formula-geojson-data-provider');
+var ListGeoJSONDataProvider = require('./list-geojson-data-provider');
+
+var GeoJSONDataProvider = function (vectorLayerView, layerIndex) {
+  this._vectorLayerView = vectorLayerView;
+  this._layerIndex = layerIndex;
+};
+
+GeoJSONDataProvider.prototype._dataProviderMap = {
+  'histogram': HistogramGeoJSONDataProvider,
+  'category': CategoryGeoJSONDataProvider,
+  'formula': FormulaGeoJSONDataProvider,
+  'list': ListGeoJSONDataProvider
+};
+
+GeoJSONDataProvider.prototype.createDataProviderForDataview = function (dataview) {
+  var options = {
+    dataview: dataview,
+    vectorLayerView: this._vectorLayerView,
+    layerIndex: this._layerIndex
+  };
+  var DataProviderClass = this._dataProviderMap[dataview.get('type')];
+  if (DataProviderClass) {
+    return new DataProviderClass(options);
+  }
+
+  throw new Error("Couldn't create data provider for dataview of type " + dataview.get('type'));
+};
+
+module.exports = GeoJSONDataProvider;
+
+},{"./category-geojson-data-provider":135,"./formula-geojson-data-provider":136,"./histogram-geojson-data-provider":139,"./list-geojson-data-provider":140}],139:[function(require,module,exports){
+var d3 = require('d3');
+var _ = require('underscore');
+var GeoJSONDataProviderBase = require('./geojson-data-provider-base');
+
+var HistogramGeoJSONDataProvider = function (vectorLayerView, layerIndex) {
+  GeoJSONDataProviderBase.apply(this, arguments);
+};
+
+_.extend(HistogramGeoJSONDataProvider.prototype, GeoJSONDataProviderBase.prototype);
+
+HistogramGeoJSONDataProvider.prototype.getData = function () {
+  var options = this._dataview.attributes;
+  var filter = this._vectorLayerView.getFilter(this._layerIndex);
+  var columnName = options.column;
+  var end, start, bins, width, values;
+  var numberOfBins = options.bins || options.data.length;
+  if (options.own_filter === 1) {
+    end = filter.getMax(columnName);
+    start = filter.getMin(columnName);
+    values = filter.getValues();
+    bins = d3.layout.histogram().bins(numberOfBins)(filter.getValues().map(function (f) {
+      return f.properties[options.column];
+    }));
+    width = (end - start) / options.data.length;
+  } else {
+    end = options.end || filter.getMax(columnName);
+    start = typeof options.start === 'number' ? options.start : filter.getMin(columnName);
+    width = (end - start) / options.bins;
+    values = filter.getValues(false, columnName);
+    bins = d3.layout.histogram().bins(numberOfBins)(filter.getValues(false, columnName).map(function (f) {
+      return f.properties[options.column];
+    }));
+  }
+  bins = bins.map(function (bin, index) {
+    return {
+      bin: index,
+      max: d3.max(bin),
+      min: d3.min(bin),
+      avg: d3.mean(bin),
+      freq: bin.length
+    };
+  });
+  var nulls = values.reduce(function (p, c) { return p + (c.properties[columnName] === null ? 1 : 0); }, 0);
+  var average = bins.reduce(function (p, c) {
+    return p + c.avg;
+  }, 0) / bins.reduce(function (p, c) {
+    return p + c.freq;
+  }, 0);
+  var histogram = {
+    'bin_width': width,
+    'bins_count': bins.length,
+    'bins_start': start,
+    'nulls': nulls,
+    'avg': average,
+    'bins': bins,
+    'type': 'histogram'
+  };
+  return histogram;
+};
+
+HistogramGeoJSONDataProvider.prototype.applyFilter = function (filter) {
+  var columnName = this._dataview.get('column');
+  var filterOptions;
+  if (filter.isEmpty()) {
+    filterOptions = { column: columnName, min: 0, max: Infinity };
+  } else {
+    filterOptions = { column: columnName, min: filter.get('min'), max: filter.get('max') };
+  }
+
+  this._vectorLayerView.applyFilter(this._layerIndex, 'range', filterOptions);
+};
+
+module.exports = HistogramGeoJSONDataProvider;
+
+},{"./geojson-data-provider-base":137,"d3":2,"underscore":94}],140:[function(require,module,exports){
+var _ = require('underscore');
+var GeoJSONDataProviderBase = require('./geojson-data-provider-base');
+
+var ListGeoJSONDataProvider = function (vectorLayerView, layerIndex) {
+  GeoJSONDataProviderBase.apply(this, arguments);
+};
+
+_.extend(ListGeoJSONDataProvider.prototype, GeoJSONDataProviderBase.prototype);
+
+ListGeoJSONDataProvider.prototype.getData = function (features) {
+};
+
+ListGeoJSONDataProvider.prototype.applyFilter = function (filter) {
+};
+
+module.exports = ListGeoJSONDataProvider;
+
+},{"./geojson-data-provider-base":137,"underscore":94}],141:[function(require,module,exports){
 var $ = require('jquery');
 
 /**
@@ -39673,7 +39927,7 @@ var NOKIA = {
 
 module.exports = NOKIA;
 
-},{"jquery":2}],135:[function(require,module,exports){
+},{"jquery":3}],142:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 
@@ -39742,7 +39996,7 @@ var YAHOO = {
 
 module.exports = YAHOO;
 
-},{"jquery":2,"underscore":93}],136:[function(require,module,exports){
+},{"jquery":3,"underscore":94}],143:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -39762,7 +40016,7 @@ _.extend(GeometryView.prototype, Backbone.Events,{
 
 module.exports = GeometryView;
 
-},{"backbone":1,"underscore":93}],137:[function(require,module,exports){
+},{"backbone":1,"underscore":94}],144:[function(require,module,exports){
 var Model = require('../core/model');
 
 /**
@@ -39779,7 +40033,7 @@ var Geometry = Model.extend({
 
 module.exports = Geometry;
 
-},{"../core/model":112}],138:[function(require,module,exports){
+},{"../core/model":113}],145:[function(require,module,exports){
 var gmapsModels = {};
 
 // only add models if google.maps lib is loaded
@@ -39800,7 +40054,7 @@ if (typeof (window.google) !== 'undefined' && typeof (window.google.maps) !== 'u
 
 module.exports = gmapsModels;
 
-},{"./gmaps/gmaps-base-layer-view":140,"./gmaps/gmaps-cartodb-layer-group-view":141,"./gmaps/gmaps-layer-view":144,"./gmaps/gmaps-map-view":145,"./gmaps/gmaps-path-view":146,"./gmaps/gmaps-plain-layer-view":147,"./gmaps/gmaps-point-view":148,"./gmaps/gmaps-tiled-layer-view":149}],139:[function(require,module,exports){
+},{"./gmaps/gmaps-base-layer-view":147,"./gmaps/gmaps-cartodb-layer-group-view":148,"./gmaps/gmaps-layer-view":151,"./gmaps/gmaps-map-view":152,"./gmaps/gmaps-path-view":153,"./gmaps/gmaps-plain-layer-view":154,"./gmaps/gmaps-point-view":155,"./gmaps/gmaps-tiled-layer-view":156}],146:[function(require,module,exports){
 var config = require('cdb.config');
 
 var CartoDBDefaultOptions = {
@@ -39823,7 +40077,7 @@ var CartoDBDefaultOptions = {
 
 module.exports = CartoDBDefaultOptions;
 
-},{"cdb.config":102}],140:[function(require,module,exports){
+},{"cdb.config":103}],147:[function(require,module,exports){
 /* global google */
 var _ = require('underscore');
 var DEFAULT_MAP_STYLE = require('./gmaps-default-map-style');
@@ -39861,7 +40115,7 @@ _.extend(
 
 module.exports = GMapsBaseLayerView;
 
-},{"./gmaps-default-map-style":142,"./gmaps-layer-view":144,"underscore":93}],141:[function(require,module,exports){
+},{"./gmaps-default-map-style":149,"./gmaps-layer-view":151,"underscore":94}],148:[function(require,module,exports){
 var _ = require('underscore');
 var GMapsLayerView = require('./gmaps-layer-view');
 var wax = require('wax.cartodb.js');
@@ -40195,7 +40449,7 @@ _.extend(
 
 module.exports = GMapsCartoDBLayerGroupView;
 
-},{"../cartodb-layer-common":130,"./cartodb-default-options":139,"./gmaps-layer-view":144,"./projector":151,"cdb.core.Profiler":113,"underscore":93,"wax.cartodb.js":259}],142:[function(require,module,exports){
+},{"../cartodb-layer-common":131,"./cartodb-default-options":146,"./gmaps-layer-view":151,"./projector":158,"cdb.core.Profiler":114,"underscore":94,"wax.cartodb.js":267}],149:[function(require,module,exports){
 var DEFAULT_MAP_STYLE = [{
     stylers: [{
         saturation: -65
@@ -40266,7 +40520,7 @@ var DEFAULT_MAP_STYLE = [{
 
 module.exports = DEFAULT_MAP_STYLE;
 
-},{}],143:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 /* global google */
 var cdb = require('cdb');
 var log = require('cdb.log');
@@ -40321,7 +40575,7 @@ GMapsLayerViewFactory.prototype.createLayerView = function (layerModel, mapModel
 
 module.exports = GMapsLayerViewFactory;
 
-},{"../leaflet/leaflet-wms-layer-view":163,"./gmaps-base-layer-view":140,"./gmaps-cartodb-layer-group-view":141,"./gmaps-plain-layer-view":147,"./gmaps-tiled-layer-view":149,"cdb":104,"cdb.log":105}],144:[function(require,module,exports){
+},{"../leaflet/leaflet-wms-layer-view":171,"./gmaps-base-layer-view":147,"./gmaps-cartodb-layer-group-view":148,"./gmaps-plain-layer-view":154,"./gmaps-tiled-layer-view":156,"cdb":105,"cdb.log":106}],151:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -40395,7 +40649,7 @@ _.extend(GMapsLayerView.prototype, {
 
 module.exports = GMapsLayerView;
 
-},{"backbone":1,"underscore":93}],145:[function(require,module,exports){
+},{"backbone":1,"underscore":94}],152:[function(require,module,exports){
 var _ = require('underscore');
 var log = require('cdb.log');
 var MapView = require('../map-view');
@@ -40665,7 +40919,7 @@ var GoogleMapsMapView = MapView.extend({
 
 module.exports = GoogleMapsMapView;
 
-},{"../map-view":165,"./gmaps-path-view":146,"./gmaps-point-view":148,"./projector":151,"cdb.log":105,"underscore":93}],146:[function(require,module,exports){
+},{"../map-view":173,"./gmaps-path-view":153,"./gmaps-point-view":155,"./projector":158,"cdb.log":106,"underscore":94}],153:[function(require,module,exports){
 var _ = require('underscore');
 var GeoJSON = require('geojson');
 var GeometryView = require('../geometry-view');
@@ -40821,7 +41075,7 @@ PathView.prototype.edit = function(enable) {
 
 module.exports = PathView;
 
-},{"../geometry-view":136,"geojson":253,"underscore":93}],147:[function(require,module,exports){
+},{"../geometry-view":143,"geojson":261,"underscore":94}],154:[function(require,module,exports){
 var _ = require('underscore');
 var GMapsLayerView = require('./gmaps-layer-view');
 
@@ -40856,7 +41110,7 @@ _.extend(
 
 module.exports = GMapsPlainLayerView;
 
-},{"./gmaps-layer-view":144,"underscore":93}],148:[function(require,module,exports){
+},{"./gmaps-layer-view":151,"underscore":94}],155:[function(require,module,exports){
 var _ = require('underscore');
 var GeoJSON = require('geojson');
 var config = require('cdb.config');
@@ -40944,7 +41198,7 @@ PointView.prototype.edit = function(enable) {
 
 module.exports = PointView;
 
-},{"../geometry-view":136,"cdb.config":102,"geojson":253,"underscore":93}],149:[function(require,module,exports){
+},{"../geometry-view":143,"cdb.config":103,"geojson":261,"underscore":94}],156:[function(require,module,exports){
 var _ = require('underscore');
 var GMapsLayerView = require('./gmaps-layer-view');
 
@@ -40987,7 +41241,7 @@ _.extend(
 
 module.exports = GMapsTiledLayerView;
 
-},{"./gmaps-layer-view":144,"underscore":93}],150:[function(require,module,exports){
+},{"./gmaps-layer-view":151,"underscore":94}],157:[function(require,module,exports){
 var _ = require('underscore');
 var torque = require('torque.js');
 var Backbone = require('backbone');
@@ -41054,7 +41308,7 @@ _.extend(
 
 module.exports = GMapsTorqueLayerView;
 
-},{"../torque-layer-view-base":175,"./gmaps-layer-view":144,"backbone":1,"torque.js":36,"underscore":93}],151:[function(require,module,exports){
+},{"../torque-layer-view-base":183,"./gmaps-layer-view":151,"backbone":1,"torque.js":37,"underscore":94}],158:[function(require,module,exports){
 // helper to get pixel position from latlon
 var Projector = function(map) { this.setMap(map); };
 Projector.prototype = new google.maps.OverlayView();
@@ -41076,7 +41330,7 @@ Projector.prototype.pixelToLatLng = function(point) {
 
 module.exports = Projector;
 
-},{}],152:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 module.exports = {
   LeafletLayerView: require('./leaflet/leaflet-layer-view'),
 
@@ -41094,7 +41348,7 @@ module.exports = {
   LeafletMapView: require('./leaflet/leaflet-map-view')
 };
 
-},{"./leaflet/leaflet-cartodb-layer-group-view":153,"./leaflet/leaflet-gmaps-tiled-layer-view":154,"./leaflet/leaflet-layer-view":156,"./leaflet/leaflet-map-view":157,"./leaflet/leaflet-path-view":158,"./leaflet/leaflet-plain-layer-view":159,"./leaflet/leaflet-point-view":160,"./leaflet/leaflet-tiled-layer-view":161,"./leaflet/leaflet-wms-layer-view":163}],153:[function(require,module,exports){
+},{"./leaflet/leaflet-cartodb-layer-group-view":160,"./leaflet/leaflet-gmaps-tiled-layer-view":162,"./leaflet/leaflet-layer-view":164,"./leaflet/leaflet-map-view":165,"./leaflet/leaflet-path-view":166,"./leaflet/leaflet-plain-layer-view":167,"./leaflet/leaflet-point-view":168,"./leaflet/leaflet-tiled-layer-view":169,"./leaflet/leaflet-wms-layer-view":171}],160:[function(require,module,exports){
 var wax = require('wax.cartodb.js');
 var L = require('leaflet');
 var config = require('cdb.config');
@@ -41417,7 +41671,83 @@ var LeafletCartoDBLayerGroupView = L.TileLayer.extend({
 
 module.exports = LeafletCartoDBLayerGroupView;
 
-},{"../cartodb-layer-common":130,"./leaflet-layer-view":156,"backbone":1,"cdb.config":102,"cdb.core.Profiler":113,"leaflet":3,"underscore":93,"wax.cartodb.js":259}],154:[function(require,module,exports){
+},{"../cartodb-layer-common":131,"./leaflet-layer-view":164,"backbone":1,"cdb.config":103,"cdb.core.Profiler":114,"leaflet":4,"underscore":94,"wax.cartodb.js":267}],161:[function(require,module,exports){
+require('d3.cartodb');// TODO: The 'd3.cartodb' module doens't currently export L.CartoDBd3Layer
+// and it's currently relying on window.L so weed to do the following trick.
+// Check out: https://github.com/CartoDB/d3.cartodb/issues/93 for more info
+var CartoDBd3Layer = window.L.CartoDBd3Layer;
+var LeafletLayerView = require('./leaflet-layer-view');
+var GeoJSONDataProviderFactory = require('../data-providers/geojson/geojson-data-provider-factory');
+
+var LeafletCartoDBVectorLayerGroupView = CartoDBd3Layer.extend({
+  includes: [
+    LeafletLayerView.prototype
+  ],
+
+  // TODO: There's a conflict between LeafletLayerView.protoype.on
+  // and L.CartoDBd3Layer.prototype.on. The GeoJSONDataProvider needs
+  // to use the former one, so we have to add an alias.
+  _on: CartoDBd3Layer.prototype.on,
+
+  initialize: function (layerModel, leafletMap) {
+    LeafletLayerView.call(this, layerModel, this, leafletMap);
+    CartoDBd3Layer.prototype.initialize.call(this);
+
+    // Bind changes to the urls of the model
+    layerModel.bind('change:urls', this._onTileJSONChanged, this);
+
+    layerModel.layers.bind('change:cartocss', function (child, style) {
+      var index = child.get('order') - 1;
+      this.setCartoCSS(index, style);
+    }, this);
+
+    layerModel.layers.each(function (layer) {
+      this._onLayerAdded(layer, layerModel.layers);
+    }, this);
+
+    layerModel.layers.bind('add', this._onLayerAdded, this);
+
+    this._on('featureClick', function (event, latlng, pos, data, layerIndex) {
+      this.trigger('featureClick', event, latlng, pos, data, layerIndex);
+    }.bind(this));
+
+    this._on('featureOver', function (event, latlng, pos, data, layerIndex) {
+      this.trigger('featureOver', event, latlng, pos, data, layerIndex);
+
+      // CartoDB.js tooltips depend on the mouseover event so we trigger it here
+      this.trigger('mouseover', event, latlng, pos, data);
+    }.bind(this));
+
+    this._on('featureOut', function (event, latlng, pos, data, layerIndex) {
+      // CartoDB.js tooltips depend on the mouseout event so we trigger it here
+      this.trigger('mouseout');
+    }.bind(this));
+  },
+
+  _onLayerAdded: function (layerModel, layersCollection) {
+    var layerIndex = layersCollection.indexOf(layerModel);
+    layerModel.setDataProvider(new GeoJSONDataProviderFactory(this, layerIndex));
+  },
+
+  _onTileJSONChanged: function () {
+    var tilejson = this.model.get('urls');
+    this.options.styles = this.model.layers.pluck('cartocss');
+    this.setUrl(tilejson.tiles[0]);
+  },
+
+  onAdd: function (map) {
+    CartoDBd3Layer.prototype.onAdd.call(this, map);
+    this.trigger('added', this);
+    this.added = true;
+  },
+
+  // Invoked by LeafletLayerView
+  _modelUpdated: function () {}
+});
+
+module.exports = LeafletCartoDBVectorLayerGroupView;
+
+},{"../data-providers/geojson/geojson-data-provider-factory":138,"./leaflet-layer-view":164,"d3.cartodb":314}],162:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var LeafletLayerView = require('./leaflet-layer-view');
@@ -41478,23 +41808,36 @@ _.extend(LeafletGmapsTiledLayerView.prototype, LeafletLayerView.prototype, {
 
 module.exports = LeafletGmapsTiledLayerView;
 
-},{"./leaflet-layer-view":156,"leaflet":3,"underscore":93}],155:[function(require,module,exports){
+},{"./leaflet-layer-view":164,"leaflet":4,"underscore":94}],163:[function(require,module,exports){
 var log = require('cdb.log');
 var LeafletTiledLayerView = require('./leaflet-tiled-layer-view');
 var LeafletWMSLayerView = require('./leaflet-wms-layer-view');
 var LeafletPlainLayerView = require('./leaflet-plain-layer-view');
 var LeafletGmapsTiledLayerView = require('./leaflet-gmaps-tiled-layer-view');
 var LeafletCartoDBLayerGroupView = require('./leaflet-cartodb-layer-group-view');
+var LeafletCartoDBVectorLayerGroupView = require('./leaflet-cartodb-vector-layer-group-view');
 
-var LeafletLayerViewFactory = function () {};
+var LayerGroupViewConstructor = function (layerGroupModel, mapModel, options) {
+  if (options.vector) {
+    var layerView = new LeafletCartoDBVectorLayerGroupView(layerGroupModel, mapModel);
+
+    return layerView;
+  }
+  return new LeafletCartoDBLayerGroupView(layerGroupModel, mapModel);
+};
+
+var LeafletLayerViewFactory = function (options) {
+  options = options || {};
+  this._vector = options.vector;
+};
 
 LeafletLayerViewFactory.prototype._constructors = {
   'tiled': LeafletTiledLayerView,
   'wms': LeafletWMSLayerView,
   'plain': LeafletPlainLayerView,
   'gmapsbase': LeafletGmapsTiledLayerView,
-  'layergroup': LeafletCartoDBLayerGroupView,
-  'namedmap': LeafletCartoDBLayerGroupView,
+  'layergroup': LayerGroupViewConstructor,
+  'namedmap': LayerGroupViewConstructor,
   'torque': function (layer, map) {
     // TODO for now adding this error to be thrown if object is not present, since it's dependency
     // is not included in the standard bundle
@@ -41511,7 +41854,9 @@ LeafletLayerViewFactory.prototype.createLayerView = function (layerModel, mapMod
 
   if (LayerViewClass) {
     try {
-      return new LayerViewClass(layerModel, mapModel);
+      return new LayerViewClass(layerModel, mapModel, {
+        vector: this._vector
+      });
     } catch (e) {
       log.error("Error creating an instance of layer view for '" + layerType + "' layer -> " + e.message);
       throw e;
@@ -41523,14 +41868,14 @@ LeafletLayerViewFactory.prototype.createLayerView = function (layerModel, mapMod
 
 module.exports = LeafletLayerViewFactory;
 
-},{"./leaflet-cartodb-layer-group-view":153,"./leaflet-gmaps-tiled-layer-view":154,"./leaflet-plain-layer-view":159,"./leaflet-tiled-layer-view":161,"./leaflet-wms-layer-view":163,"cdb.log":105}],156:[function(require,module,exports){
+},{"./leaflet-cartodb-layer-group-view":160,"./leaflet-cartodb-vector-layer-group-view":161,"./leaflet-gmaps-tiled-layer-view":162,"./leaflet-plain-layer-view":167,"./leaflet-tiled-layer-view":169,"./leaflet-wms-layer-view":171,"cdb.log":106}],164:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
 /**
  * base layer for all leaflet layers
  */
-var LeafletLayerView = function(layerModel, leafletLayer, leafletMap) {
+var LeafletLayerView = function (layerModel, leafletLayer, leafletMap) {
   this.leafletLayer = leafletLayer;
   this.leafletMap = leafletMap;
   this.model = layerModel;
@@ -41544,7 +41889,7 @@ var LeafletLayerView = function(layerModel, leafletLayer, leafletMap) {
 _.extend(LeafletLayerView.prototype, Backbone.Events);
 _.extend(LeafletLayerView.prototype, {
 
-  setModel: function(model) {
+  setModel: function (model) {
     if (this.model) {
       this.model.unbind('change', this._modelUpdated, this);
     }
@@ -41555,22 +41900,21 @@ _.extend(LeafletLayerView.prototype, {
   /**
    * remove layer from the map and unbind events
    */
-  remove: function() {
+  remove: function () {
     this.leafletMap.removeLayer(this.leafletLayer);
     this.trigger('remove', this);
     this.model.unbind(null, null, this);
     this.unbind();
   },
 
-  reload: function() {
+  reload: function () {
     this.leafletLayer.redraw();
   }
-
 });
 
 module.exports = LeafletLayerView;
 
-},{"backbone":1,"underscore":93}],157:[function(require,module,exports){
+},{"backbone":1,"underscore":94}],165:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var L = require('leaflet');
@@ -41924,7 +42268,7 @@ L.Icon.Default.imagePath = (function () {
 
 module.exports = LeafletMapView;
 
-},{"../../core/sanitize":114,"../../core/view":118,"../map-view":165,"./leaflet-path-view":158,"./leaflet-point-view":160,"jquery":2,"leaflet":3,"underscore":93}],158:[function(require,module,exports){
+},{"../../core/sanitize":115,"../../core/view":119,"../map-view":173,"./leaflet-path-view":166,"./leaflet-point-view":168,"jquery":3,"leaflet":4,"underscore":94}],166:[function(require,module,exports){
  var _ = require('underscore');
  var L = require('leaflet');
  var GeometryView = require('../geometry-view');
@@ -41993,7 +42337,7 @@ PathView.prototype.edit = function(enable) {
 
 module.exports = PathView;
 
-},{"../geometry-view":136,"leaflet":3,"underscore":93}],159:[function(require,module,exports){
+},{"../geometry-view":143,"leaflet":4,"underscore":94}],167:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var LeafletLayerView = require('./leaflet-layer-view');
@@ -42042,7 +42386,7 @@ _.extend(LeafletPlainLayerView.prototype, LeafletLayerView.prototype);
 
 module.exports = LeafletPlainLayerView;
 
-},{"./leaflet-layer-view":156,"leaflet":3,"underscore":93}],160:[function(require,module,exports){
+},{"./leaflet-layer-view":164,"leaflet":4,"underscore":94}],168:[function(require,module,exports){
  var L = require('leaflet');
  var config = require('cdb.config');
  var GeometryView = require('../geometry-view');
@@ -42123,7 +42467,7 @@ PointView.prototype._eventHandler = function(evtType) {
 
 module.exports = PointView;
 
-},{"../geometry-view":136,"cdb.config":102,"leaflet":3}],161:[function(require,module,exports){
+},{"../geometry-view":143,"cdb.config":103,"leaflet":4}],169:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var LeafletLayerView = require('./leaflet-layer-view');
@@ -42140,8 +42484,17 @@ var LeafletTiledLayerView = L.TileLayer.extend({
       opacity:      layerModel.get('opacity')
     });
     LeafletLayerView.call(this, layerModel, this, leafletMap);
-  }
+  },
 
+  onAdd: function (map) {
+    L.TileLayer.prototype.onAdd.call(this, map);
+
+    var container = this.getContainer();
+    // Disable mouse events for the container of this layer so that
+    // events are not captured and other layers below can respond to mouse
+    // events
+    container.style.pointerEvents = 'none';
+  }
 });
 
 _.extend(LeafletTiledLayerView.prototype, LeafletLayerView.prototype, {
@@ -42160,7 +42513,7 @@ _.extend(LeafletTiledLayerView.prototype, LeafletLayerView.prototype, {
 
 module.exports = LeafletTiledLayerView;
 
-},{"./leaflet-layer-view":156,"leaflet":3,"underscore":93}],162:[function(require,module,exports){
+},{"./leaflet-layer-view":164,"leaflet":4,"underscore":94}],170:[function(require,module,exports){
 /* global L */
 require('torque.js'); // required to setup the "L" object
 var _ = require('underscore');
@@ -42227,7 +42580,7 @@ _.extend(LeafletTorqueLayer.prototype, TorqueLayerViewBase);
 
 module.exports = LeafletTorqueLayer;
 
-},{"../torque-layer-view-base":175,"./leaflet-layer-view":156,"cdb.core.util":117,"torque.js":36,"underscore":93}],163:[function(require,module,exports){
+},{"../torque-layer-view-base":183,"./leaflet-layer-view":164,"cdb.core.util":118,"torque.js":37,"underscore":94}],171:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var LeafletLayerView = require('./leaflet-layer-view.js');
@@ -42263,7 +42616,7 @@ _.extend(LeafletWMSLayerView.prototype, LeafletLayerView.prototype, {
 
 module.exports = LeafletWMSLayerView;
 
-},{"./leaflet-layer-view.js":156,"leaflet":3,"underscore":93}],164:[function(require,module,exports){
+},{"./leaflet-layer-view.js":164,"leaflet":4,"underscore":94}],172:[function(require,module,exports){
 /* global google */
 var cdb = require('cdb');
 var LeafletLayerViewFactory = require('./leaflet/leaflet-layer-view-factory');
@@ -42292,13 +42645,15 @@ MapViewFactory.prototype.createMapView = function (provider, mapModel, el) {
   return new MapViewClass({
     el: el,
     map: mapModel,
-    layerViewFactory: new LayerViewFactoryClass()
+    layerViewFactory: new LayerViewFactoryClass({
+      vector: mapModel.get('vector')
+    })
   });
 };
 
 module.exports = MapViewFactory;
 
-},{"./gmaps/gmaps-layer-view-factory":143,"./leaflet/leaflet-layer-view-factory":155,"cdb":104}],165:[function(require,module,exports){
+},{"./gmaps/gmaps-layer-view-factory":150,"./leaflet/leaflet-layer-view-factory":163,"cdb":105}],173:[function(require,module,exports){
 var _ = require('underscore');
 var log = require('cdb.log');
 var View = require('../core/view');
@@ -42333,6 +42688,8 @@ var MapView = View.extend({
     this.map.layers.bind('reset', this._addLayers, this);
     this.map.layers.bind('add', this._addLayer, this);
     this.map.layers.bind('remove', this._removeLayer, this);
+
+    // TODO: When this.map.layers get new indexes, something needs to happen
     this.add_related_model(this.map.layers);
 
     this.bind('clean', this._removeLayers, this);
@@ -42565,7 +42922,7 @@ var MapView = View.extend({
 
 module.exports = MapView;
 
-},{"../core/view":118,"./cartodb-layer-group-anonymous-map":131,"./cartodb-layer-group-named-map":133,"cdb.log":105,"underscore":93}],166:[function(require,module,exports){
+},{"../core/view":119,"./cartodb-layer-group-anonymous-map":132,"./cartodb-layer-group-named-map":134,"cdb.log":106,"underscore":94}],174:[function(require,module,exports){
 var _ = require('underscore');
 var L = require('leaflet');
 var Backbone = require('backbone');
@@ -42586,7 +42943,9 @@ var Map = Model.extend({
     scrollwheel: true,
     drag: true,
     keyboard: true,
-    provider: 'leaflet'
+    provider: 'leaflet',
+    // enforce client-side rendering using GeoJSON vector tiles
+    vector: false
   },
 
   RELOAD_DEBOUNCE_TIME: 10,
@@ -42930,7 +43289,7 @@ var Map = Model.extend({
 
 module.exports = Map;
 
-},{"../core/model":112,"../core/sanitize":114,"./map/layers":169,"backbone":1,"cdb.config":102,"cdb.log":105,"leaflet":3,"underscore":93}],167:[function(require,module,exports){
+},{"../core/model":113,"../core/sanitize":115,"./map/layers":177,"backbone":1,"cdb.config":103,"cdb.log":106,"leaflet":4,"underscore":94}],175:[function(require,module,exports){
 var _ = require('underscore');
 var config = require('cdb.config');
 var MapLayer = require('./map-layer');
@@ -43020,12 +43379,20 @@ var CartoDBLayer = MapLayer.extend({
   // Layers inside a "namedmap" layer have the layer_name defined in the root of their definition
   getName: function () {
     return this.get('options') && this.get('options').layer_name || this.get('layer_name');
+  },
+
+  setDataProvider: function (dataProvider) {
+    this._dataProvider = dataProvider;
+  },
+
+  getDataProvider: function () {
+    return this._dataProvider;
   }
 });
 
 module.exports = CartoDBLayer;
 
-},{"./map-layer":170,"cdb.config":102,"underscore":93}],168:[function(require,module,exports){
+},{"./map-layer":178,"cdb.config":103,"underscore":94}],176:[function(require,module,exports){
 var MapLayer = require('./map-layer');
 
 var GMapsBaseLayer = MapLayer.extend({
@@ -43039,7 +43406,7 @@ var GMapsBaseLayer = MapLayer.extend({
 
 module.exports = GMapsBaseLayer;
 
-},{"./map-layer":170}],169:[function(require,module,exports){
+},{"./map-layer":178}],177:[function(require,module,exports){
 var Backbone = require('backbone');
 var MapLayer = require('./map-layer');
 
@@ -43098,7 +43465,7 @@ var Layers = Backbone.Collection.extend({
 
 module.exports = Layers;
 
-},{"./map-layer":170,"backbone":1}],170:[function(require,module,exports){
+},{"./map-layer":178,"backbone":1}],178:[function(require,module,exports){
 var _ = require('underscore');
 var log = require('cdb.log');
 
@@ -43185,7 +43552,7 @@ var MapLayer = Model.extend({
 
 module.exports = MapLayer;
 
-},{"../../core/model":112,"cdb":104,"cdb.log":105,"underscore":93}],171:[function(require,module,exports){
+},{"../../core/model":113,"cdb":105,"cdb.log":106,"underscore":94}],179:[function(require,module,exports){
 var MapLayer = require('./map-layer');
 
 /**
@@ -43203,7 +43570,7 @@ var PlainLayer = MapLayer.extend({
 
 module.exports = PlainLayer;
 
-},{"./map-layer":170}],172:[function(require,module,exports){
+},{"./map-layer":178}],180:[function(require,module,exports){
 var MapLayer = require('./map-layer');
 
 var TileLayer = MapLayer.extend({
@@ -43213,7 +43580,7 @@ var TileLayer = MapLayer.extend({
 
 module.exports = TileLayer
 
-},{"./map-layer":170}],173:[function(require,module,exports){
+},{"./map-layer":178}],181:[function(require,module,exports){
 var _ = require('underscore');
 var MapLayer = require('./map-layer');
 
@@ -43308,6 +43675,14 @@ var TorqueLayer = MapLayer.extend({
   fetchAttributes: function(layer, featureID, callback) {
   },
 
+  setDataProvider: function (dataProvider) {
+    this._dataProvider = dataProvider;
+  },
+
+  getDataProvider: function () {
+    return this._dataProvider;
+  },
+
   // given a timestamp returns a step (float)
   timeToStep: function(timestamp) {
     var steps = this.get('steps');
@@ -43320,7 +43695,7 @@ var TorqueLayer = MapLayer.extend({
 
 module.exports = TorqueLayer;
 
-},{"./map-layer":170,"underscore":93}],174:[function(require,module,exports){
+},{"./map-layer":178,"underscore":94}],182:[function(require,module,exports){
 var MapLayer = require('./map-layer');
 
 /**
@@ -43340,7 +43715,7 @@ var WMSLayer = MapLayer.extend({
 
 module.exports = WMSLayer;
 
-},{"./map-layer":170}],175:[function(require,module,exports){
+},{"./map-layer":178}],183:[function(require,module,exports){
 var _ = require('underscore');
 
 /**
@@ -43502,7 +43877,7 @@ module.exports = {
   }
 };
 
-},{"underscore":93}],176:[function(require,module,exports){
+},{"underscore":94}],184:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Model = require('../../core/model');
@@ -43864,7 +44239,7 @@ var Annotation = View.extend({
 
 module.exports = Annotation;
 
-},{"../../core/model":112,"../../core/sanitize":114,"../../core/template":116,"../../core/view":118,"jquery":2,"underscore":93}],177:[function(require,module,exports){
+},{"../../core/model":113,"../../core/sanitize":115,"../../core/template":117,"../../core/view":119,"jquery":3,"underscore":94}],185:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -43876,7 +44251,7 @@ __p+='<button type="button" class="CDB-Attribution-button js-button">?</button> 
 return __p;
 };
 
-},{"underscore":93}],178:[function(require,module,exports){
+},{"underscore":94}],186:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var View = require('../../../core/view');
@@ -43964,7 +44339,7 @@ var Attribution = View.extend({
 
 module.exports = Attribution;
 
-},{"../../../core/model":112,"../../../core/sanitize":114,"../../../core/view":118,"./attribution-template.tpl":177,"jquery":2,"underscore":93}],179:[function(require,module,exports){
+},{"../../../core/model":113,"../../../core/sanitize":115,"../../../core/view":119,"./attribution-template.tpl":185,"jquery":3,"underscore":94}],187:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../core/sanitize');
 var View = require('../../core/view');
@@ -44023,7 +44398,7 @@ var Header = View.extend({
 
 module.exports = Header;
 
-},{"../../core/sanitize":114,"../../core/view":118,"underscore":93}],180:[function(require,module,exports){
+},{"../../core/sanitize":115,"../../core/view":119,"underscore":94}],188:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var sanitize = require('../../core/sanitize');
@@ -44113,7 +44488,7 @@ module.exports = Text.extend({
 
 });
 
-},{"../../core/sanitize":114,"./text":217,"jquery":2,"underscore":93}],181:[function(require,module,exports){
+},{"../../core/sanitize":115,"./text":225,"jquery":3,"underscore":94}],189:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../core/view');
 var Template = require('../../core/template');
@@ -44191,7 +44566,7 @@ var InfoBox = View.extend({
 
 module.exports = InfoBox;
 
-},{"../../core/template":116,"../../core/view":118,"underscore":93}],182:[function(require,module,exports){
+},{"../../core/template":117,"../../core/view":119,"underscore":94}],190:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Backbone = require('backbone');
@@ -44401,7 +44776,7 @@ var InfowindowModel = Backbone.Model.extend({
 
 module.exports = InfowindowModel;
 
-},{"backbone":1,"jquery":2,"underscore":93}],183:[function(require,module,exports){
+},{"backbone":1,"jquery":3,"underscore":94}],191:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Ps = require('perfect-scrollbar');
@@ -45115,7 +45490,7 @@ var Infowindow = View.extend({
 
 module.exports = Infowindow;
 
-},{"../../core/sanitize":114,"../../core/template":116,"../../core/util":117,"../../core/view":118,"cdb.templates":106,"clip-path":254,"jquery":2,"perfect-scrollbar":5,"underscore":93}],184:[function(require,module,exports){
+},{"../../core/sanitize":115,"../../core/template":117,"../../core/util":118,"../../core/view":119,"cdb.templates":107,"clip-path":262,"jquery":3,"perfect-scrollbar":6,"underscore":94}],192:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cdb'); // cdb.god, cdb.geo.ui.*
 var Dropdown = require('../../ui/common/dropdown');
@@ -45235,7 +45610,7 @@ var LayerSelector = View.extend({
 
 module.exports = LayerSelector;
 
-},{"../../core/model":112,"../../core/view":118,"../../ui/common/dropdown":224,"./layer-view":185,"cdb":104,"underscore":93}],185:[function(require,module,exports){
+},{"../../core/model":113,"../../core/view":119,"../../ui/common/dropdown":232,"./layer-view":193,"cdb":105,"underscore":94}],193:[function(require,module,exports){
 var _ = require('underscore');
 var templates = require('cdb.templates');
 var View = require('../../core/view');
@@ -45314,7 +45689,7 @@ var LayerView = View.extend({
 
 module.exports = LayerView;
 
-},{"../../core/view":118,"cdb.templates":106,"underscore":93}],186:[function(require,module,exports){
+},{"../../core/view":119,"cdb.templates":107,"underscore":94}],194:[function(require,module,exports){
 module.exports = {
   LegendItemModel: require('./legend-item-model'),
   LegendItem: require('./legend-item'),
@@ -45334,7 +45709,7 @@ module.exports = {
   StackedLegend: require('./legend/stacked-legend')
 };
 
-},{"./legend-item":188,"./legend-item-model":187,"./legend-items":189,"./legend-model":190,"./legend/base-legend":192,"./legend/bubble-legend":193,"./legend/category-legend":194,"./legend/choropleth-legend":195,"./legend/color-legend":196,"./legend/custom-legend":197,"./legend/debug-legend":198,"./legend/density-legend":199,"./legend/intensity-legend":200,"./legend/none-legend":211,"./legend/stacked-legend":212,"./legends":213}],187:[function(require,module,exports){
+},{"./legend-item":196,"./legend-item-model":195,"./legend-items":197,"./legend-model":198,"./legend/base-legend":200,"./legend/bubble-legend":201,"./legend/category-legend":202,"./legend/choropleth-legend":203,"./legend/color-legend":204,"./legend/custom-legend":205,"./legend/debug-legend":206,"./legend/density-legend":207,"./legend/intensity-legend":208,"./legend/none-legend":219,"./legend/stacked-legend":220,"./legends":221}],195:[function(require,module,exports){
 var Model = require('../../core/model');
 
 var LegendItemModel = Model.extend({
@@ -45349,7 +45724,7 @@ var LegendItemModel = Model.extend({
 
 module.exports = LegendItemModel;
 
-},{"../../core/model":112}],188:[function(require,module,exports){
+},{"../../core/model":113}],196:[function(require,module,exports){
 var _ = require('underscore');
 var templates = require('cdb.templates');
 var View = require('../../core/view');
@@ -45390,7 +45765,7 @@ var LegendItem = View.extend({
 
 module.exports = LegendItem;
 
-},{"../../core/view":118,"cdb.templates":106,"underscore":93}],189:[function(require,module,exports){
+},{"../../core/view":119,"cdb.templates":107,"underscore":94}],197:[function(require,module,exports){
 var Backbone = require('backbone');
 var LegendItemModel = require('./legend-item-model');
 
@@ -45403,7 +45778,7 @@ var LegendItems = Backbone.Collection.extend({
 
 module.exports = LegendItems;
 
-},{"./legend-item-model":187,"backbone":1}],190:[function(require,module,exports){
+},{"./legend-item-model":195,"backbone":1}],198:[function(require,module,exports){
 var Model = require('../../core/model');
 var LegendItems = require('./legend-items');
 
@@ -45452,7 +45827,7 @@ var LegendModel = Model.extend({
 
 module.exports = LegendModel;
 
-},{"../../core/model":112,"./legend-items":189}],191:[function(require,module,exports){
+},{"../../core/model":113,"./legend-items":197}],199:[function(require,module,exports){
 var _ = require('underscore');
 var LegendModel = require('./legend-model');
 var LegendExports = require('./legend-exports');
@@ -45608,7 +45983,7 @@ var Legend = View.extend({
 
 module.exports = Legend;
 
-},{"../../core/view":118,"./legend-exports":186,"./legend-model":190,"underscore":93}],192:[function(require,module,exports){
+},{"../../core/view":119,"./legend-exports":194,"./legend-model":198,"underscore":94}],200:[function(require,module,exports){
 var $ = require('jquery');
 var View = require('../../../core/view');
 
@@ -45643,7 +46018,7 @@ var BaseLegend = View.extend({
 
 module.exports = BaseLegend;
 
-},{"../../../core/view":118,"jquery":2}],193:[function(require,module,exports){
+},{"../../../core/view":119,"jquery":3}],201:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize.js')
 var BaseLegend = require('./base-legend');
@@ -45717,7 +46092,7 @@ var BubbleLegend = BaseLegend.extend({
 
 module.exports = BubbleLegend;
 
-},{"../../../core/sanitize.js":114,"./base-legend":192,"underscore":93}],194:[function(require,module,exports){
+},{"../../../core/sanitize.js":115,"./base-legend":200,"underscore":94}],202:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize');
 var BaseLegend = require('./base-legend');
@@ -45785,7 +46160,7 @@ var CategoryLegend = BaseLegend.extend({
 
 module.exports = CategoryLegend;
 
-},{"../../../core/sanitize":114,"../legend-item":188,"./base-legend":192,"underscore":93}],195:[function(require,module,exports){
+},{"../../../core/sanitize":115,"../legend-item":196,"./base-legend":200,"underscore":94}],203:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize');
 var BaseLegend = require('./base-legend');
@@ -45874,7 +46249,7 @@ var ChoroplethLegend = BaseLegend.extend({
 
 module.exports = ChoroplethLegend;
 
-},{"../../../core/sanitize":114,"./base-legend":192,"underscore":93}],196:[function(require,module,exports){
+},{"../../../core/sanitize":115,"./base-legend":200,"underscore":94}],204:[function(require,module,exports){
 var _ = require('underscore');
 var BaseLegend = require('./base-legend');
 var LegendItem = require('../legend-item');
@@ -45929,7 +46304,7 @@ var ColorLegend = BaseLegend.extend({
 
 module.exports = ColorLegend;
 
-},{"../legend-item":188,"./base-legend":192,"underscore":93}],197:[function(require,module,exports){
+},{"../legend-item":196,"./base-legend":200,"underscore":94}],205:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize.js')
 var BaseLegend = require('./base-legend');
@@ -46001,13 +46376,13 @@ var CustomLegend = BaseLegend.extend({
 
 module.exports = CustomLegend;
 
-},{"../../../core/sanitize.js":114,"../legend-item":188,"../legend-items":189,"./base-legend":192,"underscore":93}],198:[function(require,module,exports){
+},{"../../../core/sanitize.js":115,"../legend-item":196,"../legend-items":197,"./base-legend":200,"underscore":94}],206:[function(require,module,exports){
 var View = require('../../../core/view');
 
 var DebugLegend = View.extend({ });
 module.exports = DebugLegend
 
-},{"../../../core/view":118}],199:[function(require,module,exports){
+},{"../../../core/view":119}],207:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize');
 var BaseLegend = require('./base-legend');
@@ -46098,7 +46473,7 @@ var DensityLegend = BaseLegend.extend({
 
 module.exports = DensityLegend;
 
-},{"../../../core/sanitize":114,"./base-legend":192,"underscore":93}],200:[function(require,module,exports){
+},{"../../../core/sanitize":115,"./base-legend":200,"underscore":94}],208:[function(require,module,exports){
 var _ = require('underscore');
 var sanitize = require('../../../core/sanitize');
 var BaseLegend = require('./base-legend');
@@ -46245,7 +46620,7 @@ var IntensityLegend = BaseLegend.extend({
 
 module.exports = IntensityLegend;
 
-},{"../../../core/sanitize":114,"./base-legend":192,"underscore":93}],201:[function(require,module,exports){
+},{"../../../core/sanitize":115,"./base-legend":200,"underscore":94}],209:[function(require,module,exports){
 var LegendModel = require('../legend-model');
 var BubbleLegend = require('./bubble-legend');
 
@@ -46289,7 +46664,7 @@ var LegendBubble = BubbleLegend.extend({
 
 module.exports = LegendBubble;
 
-},{"../legend-model":190,"./bubble-legend":193}],202:[function(require,module,exports){
+},{"../legend-model":198,"./bubble-legend":201}],210:[function(require,module,exports){
 var CategoryLegend = require('./category-legend');
 var LegendItems = require('../legend-items');
 var LegendModel = require('../legend-model');
@@ -46331,7 +46706,7 @@ var LegendCategory = CategoryLegend.extend({
 
 module.exports = LegendCategory;
 
-},{"../legend-items":189,"../legend-model":190,"./category-legend":194}],203:[function(require,module,exports){
+},{"../legend-items":197,"../legend-model":198,"./category-legend":202}],211:[function(require,module,exports){
 var _ = require('underscore');
 var ChoroplethLegend = require('./choropleth-legend');
 var LegendModel = require('../legend-model');
@@ -46392,7 +46767,7 @@ var LegendChoropleth = ChoroplethLegend.extend({
 
 module.exports = LegendChoropleth;
 
-},{"../legend-model":190,"./choropleth-legend":195,"underscore":93}],204:[function(require,module,exports){
+},{"../legend-model":198,"./choropleth-legend":203,"underscore":94}],212:[function(require,module,exports){
 var LegendCategory = require('./legend-category');
 
 /**
@@ -46401,7 +46776,7 @@ var LegendCategory = require('./legend-category');
 var LegendColor = LegendCategory.extend({ });
 module.exports = LegendColor;
 
-},{"./legend-category":202}],205:[function(require,module,exports){
+},{"./legend-category":210}],213:[function(require,module,exports){
 var CustomLegend = require('./custom-legend');
 var LegendItems = require('../legend-items');
 var LegendModel = require('../legend-model');
@@ -46441,7 +46816,7 @@ var LegendCustom = CustomLegend.extend({
 
 module.exports = LegendCustom;
 
-},{"../legend-items":189,"../legend-model":190,"./custom-legend":197}],206:[function(require,module,exports){
+},{"../legend-items":197,"../legend-model":198,"./custom-legend":205}],214:[function(require,module,exports){
 var _ = require('underscore');
 var DensityLegend = require('./density-legend');
 var LegendModel = require('../legend-model');
@@ -46502,7 +46877,7 @@ var LegendDensity = DensityLegend.extend({
 
 module.exports = LegendDensity;
 
-},{"../legend-model":190,"./density-legend":199,"underscore":93}],207:[function(require,module,exports){
+},{"../legend-model":198,"./density-legend":207,"underscore":94}],215:[function(require,module,exports){
 var IntensityLegend = require('./intensity-legend');
 var LegendModel = require('../legend-model');
 
@@ -46552,14 +46927,14 @@ var LegendIntensity = IntensityLegend.extend({
 
 module.exports = LegendIntensity;
 
-},{"../legend-model":190,"./intensity-legend":200}],208:[function(require,module,exports){
+},{"../legend-model":198,"./intensity-legend":208}],216:[function(require,module,exports){
 var View = require('../../../core/view');
 
 var LegendNone = View.extend({ });
 
 module.exports = LegendNone;
 
-},{"../../../core/view":118}],209:[function(require,module,exports){
+},{"../../../core/view":119}],217:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cdb'); // cdb.geo.ui.Legend.*
 var Legends = require('../legends');
@@ -46660,7 +47035,7 @@ var LegendStacked = StackedLegend.extend({
 
 module.exports = LegendStacked;
 
-},{"../legend-model":190,"../legends":213,"./stacked-legend":212,"cdb":104,"underscore":93}],210:[function(require,module,exports){
+},{"../legend-model":198,"../legends":221,"./stacked-legend":220,"cdb":105,"underscore":94}],218:[function(require,module,exports){
 var Legend = {};
 Legend.Bubble = require('./legend-bubble');
 Legend.Category = require('./legend-category');
@@ -46674,14 +47049,14 @@ Legend.Stacked = require('./legend-stacked');
 
 module.exports = Legend;
 
-},{"./legend-bubble":201,"./legend-category":202,"./legend-choropleth":203,"./legend-color":204,"./legend-custom":205,"./legend-density":206,"./legend-intensity":207,"./legend-none":208,"./legend-stacked":209}],211:[function(require,module,exports){
+},{"./legend-bubble":209,"./legend-category":210,"./legend-choropleth":211,"./legend-color":212,"./legend-custom":213,"./legend-density":214,"./legend-intensity":215,"./legend-none":216,"./legend-stacked":217}],219:[function(require,module,exports){
 var BaseLegend = require('./base-legend');
 
 var NoneLegend  = BaseLegend.extend({ });
 
 module.exports = NoneLegend;
 
-},{"./base-legend":192}],212:[function(require,module,exports){
+},{"./base-legend":200}],220:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var View = require('../../../core/view');
@@ -46776,7 +47151,7 @@ var StackedLegend = View.extend({
 
 module.exports = StackedLegend;
 
-},{"../../../core/view":118,"jquery":2,"underscore":93}],213:[function(require,module,exports){
+},{"../../../core/view":119,"jquery":3,"underscore":94}],221:[function(require,module,exports){
 var Backbone = require('backbone');
 var LegendModel = require('./legend-model');
 
@@ -46784,7 +47159,7 @@ module.exports = Backbone.Collection.extend({
   model: LegendModel
 });
 
-},{"./legend-model":190,"backbone":1}],214:[function(require,module,exports){
+},{"./legend-model":198,"backbone":1}],222:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../../core/view');
 var NOKIA = require('../../../geo/geocoder/nokia-geocoder');
@@ -47009,7 +47384,7 @@ var Search = View.extend({
 
 module.exports = Search;
 
-},{"../../../core/view":118,"../../../geo/geocoder/nokia-geocoder":134,"../../../geo/geometry":137,"../../../geo/ui/infowindow":183,"../../../geo/ui/infowindow-model":182,"./search_infowindow_template.tpl":215,"./search_template.tpl":216,"underscore":93}],215:[function(require,module,exports){
+},{"../../../core/view":119,"../../../geo/geocoder/nokia-geocoder":141,"../../../geo/geometry":144,"../../../geo/ui/infowindow":191,"../../../geo/ui/infowindow-model":190,"./search_infowindow_template.tpl":223,"./search_template.tpl":224,"underscore":94}],223:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -47021,7 +47396,7 @@ __p+='<div class="CDB-infowindow CDB-infowindow--light js-infowindow"> <div clas
 return __p;
 };
 
-},{"underscore":93}],216:[function(require,module,exports){
+},{"underscore":94}],224:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -47031,7 +47406,7 @@ __p+='<div class="CDB-Overlay"> <div class="CDB-Search-inner"> <form class="js-f
 return __p;
 };
 
-},{"underscore":93}],217:[function(require,module,exports){
+},{"underscore":94}],225:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../core/view');
 var sanitize = require('../../core/sanitize');
@@ -47224,7 +47599,7 @@ var Text = View.extend({
 
 module.exports = Text;
 
-},{"../../core/sanitize":114,"../../core/view":118,"jquery":2,"underscore":93}],218:[function(require,module,exports){
+},{"../../core/sanitize":115,"../../core/view":119,"jquery":3,"underscore":94}],226:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../core/view');
 
@@ -47276,7 +47651,7 @@ var TilesLoader = View.extend({
 
 module.exports = TilesLoader;
 
-},{"../../core/view":118,"underscore":93}],219:[function(require,module,exports){
+},{"../../core/view":119,"underscore":94}],227:[function(require,module,exports){
 var _ = require('underscore');
 var InfoBox = require('./infobox');
 var sanitize = require('../../core/sanitize');
@@ -47492,7 +47867,7 @@ var Tooltip = InfoBox.extend({
 
 module.exports = Tooltip;
 
-},{"../../core/sanitize":114,"./infobox":181,"./infowindow-model":182,"underscore":93}],220:[function(require,module,exports){
+},{"../../core/sanitize":115,"./infobox":189,"./infowindow-model":190,"underscore":94}],228:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -47502,7 +47877,7 @@ __p+='<div class="CDB-Overlay"> <button class="CDB-Zoom-action CDB-Zoom-action--
 return __p;
 };
 
-},{"underscore":93}],221:[function(require,module,exports){
+},{"underscore":94}],229:[function(require,module,exports){
 var View = require('../../../core/view');
 var template = require('./zoom-template.tpl');
 
@@ -47567,7 +47942,7 @@ module.exports = View.extend({
 
 });
 
-},{"../../../core/view":118,"./zoom-template.tpl":220}],222:[function(require,module,exports){
+},{"../../../core/view":119,"./zoom-template.tpl":228}],230:[function(require,module,exports){
 var cdb = require('./cartodb.js');
 
 // Eager-load cartodb.mod.torque stuff for the default case
@@ -47575,7 +47950,7 @@ require('./cartodb.mod.torque.js');
 
 module.exports = cdb;
 
-},{"./cartodb.js":100,"./cartodb.mod.torque.js":101}],223:[function(require,module,exports){
+},{"./cartodb.js":101,"./cartodb.mod.torque.js":102}],231:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var templates = require('cdb.templates');
@@ -47747,7 +48122,7 @@ module.exports = View.extend({
 
 });
 
-},{"../../core/view":118,"cdb.templates":106,"jquery":2,"underscore":93}],224:[function(require,module,exports){
+},{"../../core/view":119,"cdb.templates":107,"jquery":3,"underscore":94}],232:[function(require,module,exports){
 var $ = require('jquery');
 var cdb = require('cdb');
 var _ = require('underscore');
@@ -47906,7 +48281,7 @@ var Dropdown = View.extend({
 
 module.exports = Dropdown;
 
-},{"../../core/view":118,"cdb":104,"cdb.templates":106,"jquery":2,"underscore":93}],225:[function(require,module,exports){
+},{"../../core/view":119,"cdb":105,"cdb.templates":107,"jquery":3,"underscore":94}],233:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -47918,7 +48293,7 @@ __p+='<a href="'+
 return __p;
 };
 
-},{"underscore":93}],226:[function(require,module,exports){
+},{"underscore":94}],234:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var log = require('cdb.log');
@@ -48038,7 +48413,7 @@ var FullScreen = View.extend({
 
 module.exports = FullScreen;
 
-},{"../../../core/view":118,"./fullscreen-template.tpl":225,"cdb.log":105,"jquery":2,"underscore":93}],227:[function(require,module,exports){
+},{"../../../core/view":119,"./fullscreen-template.tpl":233,"cdb.log":106,"jquery":3,"underscore":94}],235:[function(require,module,exports){
 var _ = require('underscore');
 var templates = require('cdb.templates');
 var View = require('../../core/view');
@@ -48125,7 +48500,7 @@ var Notification = View.extend({
 
 module.exports = Notification;
 
-},{"../../core/view":118,"cdb.templates":106,"underscore":93}],228:[function(require,module,exports){
+},{"../../core/view":119,"cdb.templates":107,"underscore":94}],236:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var View = require('../../core/view');
@@ -48434,7 +48809,7 @@ var Table = View.extend({
 
 module.exports = Table;
 
-},{"../../core/view":118,"./table/row-view":229,"jquery":2,"underscore":93}],229:[function(require,module,exports){
+},{"../../core/view":119,"./table/row-view":237,"jquery":3,"underscore":94}],237:[function(require,module,exports){
 var _ = require('underscore');
 var View = require('../../../core/view');
 
@@ -48534,7 +48909,7 @@ var RowView = View.extend({
 
 module.exports = RowView;
 
-},{"../../../core/view":118,"underscore":93}],230:[function(require,module,exports){
+},{"../../../core/view":119,"underscore":94}],238:[function(require,module,exports){
 var Model = require('../../../core/model');
 
 /**
@@ -48545,7 +48920,7 @@ var Row = Model.extend({
 
 module.exports = Row;
 
-},{"../../../core/model":112}],231:[function(require,module,exports){
+},{"../../../core/model":113}],239:[function(require,module,exports){
 var Backbone = require('backbone');
 var Row = require('./row');
 
@@ -48579,7 +48954,7 @@ var TableData = Backbone.Collection.extend({
 
 module.exports = TableData;
 
-},{"./row":230,"backbone":1}],232:[function(require,module,exports){
+},{"./row":238,"backbone":1}],240:[function(require,module,exports){
 var _ = require('underscore');
 var Model = require('../../../core/model');
 
@@ -48601,7 +48976,7 @@ var TableProperties = Model.extend({
 
 module.exports = TableProperties;
 
-},{"../../../core/model":112,"underscore":93}],233:[function(require,module,exports){
+},{"../../../core/model":113,"underscore":94}],241:[function(require,module,exports){
 var Backbone = require('backbone');
 
 /**
@@ -48620,7 +48995,7 @@ module.exports = function (method, model, options) {
   return this._xhr;
 };
 
-},{"backbone":1}],234:[function(require,module,exports){
+},{"backbone":1}],242:[function(require,module,exports){
 var _ = require('underscore');
 var Overlay = require('./vis/overlay');
 var InfowindowModel = require('../geo/ui/infowindow-model');
@@ -48648,8 +49023,10 @@ InfowindowManager.prototype._addInfowindowForLayer = function (layerModel) {
   if (layerModel.getInfowindowData && layerModel.getInfowindowData()) {
     var layerView = this._mapView.getLayerViewByLayerCid(layerModel.cid);
 
-    this._addInfowindowOverlay(layerView, layerModel);
-    this._bindFeatureClickEvent(layerView);
+    if (!layerView.infowindowView) {
+      this._addInfowindowOverlay(layerView, layerModel);
+      this._bindFeatureClickEvent(layerView);
+    }
 
     layerView.bind('mouseover', function () {
       this._mapView.setCursor('pointer');
@@ -48672,7 +49049,7 @@ InfowindowManager.prototype._addInfowindowOverlay = function (layerView, layerMo
 InfowindowManager.prototype._bindFeatureClickEvent = function (layerView) {
   var infowindowView = layerView.infowindowView;
 
-  var onFeatureClick = function (e, latlng, pos, data, layerIndex) {
+  layerView.bind('featureClick', function (e, latlng, pos, data, layerIndex) {
     var layerModel = layerView.model;
     if (layerModel.layers) {
       layerModel = layerModel.layers.at(layerIndex);
@@ -48729,14 +49106,12 @@ InfowindowManager.prototype._bindFeatureClickEvent = function (layerView) {
         return feature.cartodb_id !== cartoDBId;
       }).hide();
     }
-  };
-  layerView.unbind('featureClick', onFeatureClick);
-  layerView.bind('featureClick', onFeatureClick);
+  });
 };
 
 module.exports = InfowindowManager;
 
-},{"../geo/ui/infowindow-model":182,"./vis/overlay":241,"underscore":93}],235:[function(require,module,exports){
+},{"../geo/ui/infowindow-model":190,"./vis/overlay":249,"underscore":94}],243:[function(require,module,exports){
 var Layers = require('./vis/layers');
 var TileLayer = require('../geo/map/tile-layer');
 var WMSLayer = require('../geo/map/wms-layer');
@@ -48854,7 +49229,7 @@ function normalizeOptions (data, options) {
   }
 }
 
-},{"../geo/map/cartodb-layer":167,"../geo/map/gmaps-base-layer":168,"../geo/map/plain-layer":171,"../geo/map/tile-layer":172,"../geo/map/torque-layer":173,"../geo/map/wms-layer":174,"./vis/layers":240}],236:[function(require,module,exports){
+},{"../geo/map/cartodb-layer":175,"../geo/map/gmaps-base-layer":176,"../geo/map/plain-layer":179,"../geo/map/tile-layer":180,"../geo/map/torque-layer":181,"../geo/map/wms-layer":182,"./vis/layers":248}],244:[function(require,module,exports){
 var _ = require('underscore');
 var Overlay = require('./vis/overlay');
 var Model = require('../core/model');
@@ -49178,7 +49553,7 @@ Overlay.register('infobox', function (data, vis) {
 
 });
 
-},{"../core/model":112,"../core/template":116,"../geo/ui/annotation":176,"../geo/ui/attribution/attribution-view":178,"../geo/ui/header":179,"../geo/ui/infobox":181,"../geo/ui/infowindow":183,"../geo/ui/infowindow-model":182,"../geo/ui/layer-selector":184,"../geo/ui/search/search":214,"../geo/ui/text":217,"../geo/ui/tiles-loader":218,"../geo/ui/tooltip":219,"../geo/ui/zoom/zoom-view":221,"../ui/common/fullscreen/fullscreen-view":226,"./vis/overlay":241,"underscore":93}],237:[function(require,module,exports){
+},{"../core/model":113,"../core/template":117,"../geo/ui/annotation":184,"../geo/ui/attribution/attribution-view":186,"../geo/ui/header":187,"../geo/ui/infobox":189,"../geo/ui/infowindow":191,"../geo/ui/infowindow-model":190,"../geo/ui/layer-selector":192,"../geo/ui/search/search":222,"../geo/ui/text":225,"../geo/ui/tiles-loader":226,"../geo/ui/tooltip":227,"../geo/ui/zoom/zoom-view":229,"../ui/common/fullscreen/fullscreen-view":234,"./vis/overlay":249,"underscore":94}],245:[function(require,module,exports){
 var Tooltip = require('../geo/ui/tooltip');
 
 /**
@@ -49204,8 +49579,10 @@ TooltipManager.prototype._addTooltipForLayer = function (layerModel) {
   if (layerModel.getTooltipData && layerModel.getTooltipData()) {
     var layerView = this._mapView.getLayerViewByLayerCid(layerModel.cid);
 
-    this._addTooltipOverlay(layerView, layerModel);
-    this._bindFeatureOverEvent(layerView);
+    if (!layerView.tooltipView) {
+      this._addTooltipOverlay(layerView, layerModel);
+      this._bindFeatureOverEvent(layerView);
+    }
   }
 };
 
@@ -49235,7 +49612,7 @@ TooltipManager.prototype._addTooltipOverlay = function (layerView, layerModel) {
 TooltipManager.prototype._bindFeatureOverEvent = function (layerView) {
   var tooltipView = layerView.tooltipView;
 
-  var onFeatureOver = function (e, latlng, pos, data, layerIndex) {
+  layerView.bind('featureOver', function (e, latlng, pos, data, layerIndex) {
     var layerModel = layerView.model;
     if (layerModel.layers) {
       layerModel = layerModel.layers.at(layerIndex);
@@ -49249,18 +49626,16 @@ TooltipManager.prototype._bindFeatureOverEvent = function (layerView) {
       tooltipView.setTemplate(tooltipData.template);
       tooltipView.setFields(tooltipData.fields);
       tooltipView.setAlternativeNames(tooltipData.alternative_names);
-      // tooltipView.enable();
+      tooltipView.enable();
     } else {
       tooltipView.disable();
     }
-  };
-  layerView.unbind('featureOver', onFeatureOver);
-  layerView.bind('featureOver', onFeatureOver);
+  });
 };
 
 module.exports = TooltipManager;
 
-},{"../geo/ui/tooltip":219}],238:[function(require,module,exports){
+},{"../geo/ui/tooltip":227}],246:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var $ = require('jquery');
@@ -49576,7 +49951,8 @@ var Vis = View.extend({
       legends: data.legends,
       scrollwheel: scrollwheel,
       drag: allowDragging,
-      provider: data.map_provider
+      provider: data.map_provider,
+      vector: data.vector,
     };
 
     if (data.bounds) {
@@ -50245,7 +50621,7 @@ var Vis = View.extend({
 
 module.exports = Vis;
 
-},{"../api/sql":99,"../core/loader":108,"../core/template":116,"../core/view":118,"../dataviews/dataviews-collection":125,"../dataviews/dataviews-factory":126,"../geo/map":166,"../geo/map-view-factory":164,"../geo/ui/infowindow":183,"../geo/ui/infowindow-model":182,"../geo/ui/legend":191,"../geo/ui/legend-model":190,"../geo/ui/legend/stacked-legend":212,"../windshaft/client":243,"../windshaft/config":244,"../windshaft/layergroup-config":250,"../windshaft/namedmap-config":251,"../windshaft/windshaft-map":252,"./infowindow-manager":234,"./tooltip-manager":237,"./vis/infowindow-template":239,"./vis/layers":240,"./vis/overlay":241,"backbone":1,"cdb":104,"cdb.config":102,"cdb.core.util":117,"cdb.log":105,"jquery":2,"underscore":93}],239:[function(require,module,exports){
+},{"../api/sql":100,"../core/loader":109,"../core/template":117,"../core/view":119,"../dataviews/dataviews-collection":126,"../dataviews/dataviews-factory":127,"../geo/map":174,"../geo/map-view-factory":172,"../geo/ui/infowindow":191,"../geo/ui/infowindow-model":190,"../geo/ui/legend":199,"../geo/ui/legend-model":198,"../geo/ui/legend/stacked-legend":220,"../windshaft/client":251,"../windshaft/config":252,"../windshaft/layergroup-config":258,"../windshaft/namedmap-config":259,"../windshaft/windshaft-map":260,"./infowindow-manager":242,"./tooltip-manager":245,"./vis/infowindow-template":247,"./vis/layers":248,"./vis/overlay":249,"backbone":1,"cdb":105,"cdb.config":103,"cdb.core.util":118,"cdb.log":106,"jquery":3,"underscore":94}],247:[function(require,module,exports){
 var INFOWINDOW_TEMPLATE = {
   light: [
     '<div class="cartodb-popup v2">',
@@ -50270,7 +50646,7 @@ var INFOWINDOW_TEMPLATE = {
 
 module.exports = INFOWINDOW_TEMPLATE;
 
-},{}],240:[function(require,module,exports){
+},{}],248:[function(require,module,exports){
 var _ = require('underscore');
 var log = require('cdb.log');
 
@@ -50314,7 +50690,7 @@ var Layers = {
 
 module.exports = Layers;
 
-},{"cdb.log":105,"underscore":93}],241:[function(require,module,exports){
+},{"cdb.log":106,"underscore":94}],249:[function(require,module,exports){
 var log = require('cdb.log');
 
 /**
@@ -50355,7 +50731,7 @@ var Overlay = {
 
 module.exports = Overlay;
 
-},{"cdb.log":105}],242:[function(require,module,exports){
+},{"cdb.log":106}],250:[function(require,module,exports){
 var Backbone = require('backbone');
 
 var Overlays = Backbone.Collection.extend({
@@ -50365,7 +50741,7 @@ var Overlays = Backbone.Collection.extend({
 
 module.exports = Overlays;
 
-},{"backbone":1}],243:[function(require,module,exports){
+},{"backbone":1}],251:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var LZMA = require('lzma');
@@ -50501,12 +50877,12 @@ WindshaftClient.prototype._jsonpCallbackName = function (payload) {
 
 module.exports = WindshaftClient;
 
-},{"../core/util":117,"jquery":2,"lzma":256,"underscore":93}],244:[function(require,module,exports){
+},{"../core/util":118,"jquery":3,"lzma":264,"underscore":94}],252:[function(require,module,exports){
 module.exports = {
   MAPS_API_BASE_URL: 'api/v1/map'
 };
 
-},{}],245:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
 var Model = require('../../core/model');
 
 module.exports = Model.extend({
@@ -50525,7 +50901,7 @@ module.exports = Model.extend({
   }
 });
 
-},{"../../core/model":112}],246:[function(require,module,exports){
+},{"../../core/model":113}],254:[function(require,module,exports){
 var Model = require('../../core/model');
 
 module.exports = Model.extend({
@@ -50552,7 +50928,7 @@ module.exports = Model.extend({
   }
 });
 
-},{"../../core/model":112}],247:[function(require,module,exports){
+},{"../../core/model":113}],255:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 var WindshaftFilterBase = require('./base');
@@ -50687,10 +51063,18 @@ module.exports = WindshaftFilterBase.extend({
     json[this.get('dataviewId')] = filter;
 
     return json;
+  },
+
+  getAcceptedCategoryNames: function () {
+    return this.acceptedCategories.map(function (category) { return category.get('name'); });
+  },
+
+  getRejectedCategoryNames: function () {
+    return this.rejectedCategories.map(function (category) { return category.get('name'); });
   }
 });
 
-},{"./base":245,"backbone":1,"underscore":93}],248:[function(require,module,exports){
+},{"./base":253,"backbone":1,"underscore":94}],256:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -50742,7 +51126,7 @@ module.exports = Backbone.Collection.extend({
   }
 });
 
-},{"backbone":1,"underscore":93}],249:[function(require,module,exports){
+},{"backbone":1,"underscore":94}],257:[function(require,module,exports){
 var _ = require('underscore');
 var WindshaftFilterBase = require('./base');
 
@@ -50775,7 +51159,7 @@ module.exports = WindshaftFilterBase.extend({
   }
 });
 
-},{"./base":245,"underscore":93}],250:[function(require,module,exports){
+},{"./base":253,"underscore":94}],258:[function(require,module,exports){
 var _ = require('underscore');
 var LayerGroupConfig = {};
 
@@ -50822,7 +51206,7 @@ LayerGroupConfig.generate = function (options) {
 
 module.exports = LayerGroupConfig;
 
-},{"underscore":93}],251:[function(require,module,exports){
+},{"underscore":94}],259:[function(require,module,exports){
 var _ = require('underscore');
 var NamedMapConfig = {};
 
@@ -50841,7 +51225,7 @@ NamedMapConfig.generate = function (options) {
 
 module.exports = NamedMapConfig;
 
-},{"underscore":93}],252:[function(require,module,exports){
+},{"underscore":94}],260:[function(require,module,exports){
 var Backbone = require('backbone');
 var _ = require('underscore');
 var WindshaftFiltersCollection = require('./filters/collection');
@@ -51127,7 +51511,7 @@ var WindshaftMap = Backbone.Model.extend({
 
 module.exports = WindshaftMap;
 
-},{"./config":244,"./filters/collection":248,"./layergroup-config":250,"./namedmap-config":251,"backbone":1,"underscore":93}],253:[function(require,module,exports){
+},{"./config":252,"./filters/collection":256,"./layergroup-config":258,"./namedmap-config":259,"backbone":1,"underscore":94}],261:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 var GeoJSON = function( geojson, options ){
@@ -51366,7 +51750,7 @@ type: "Error",
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],254:[function(require,module,exports){
+},{}],262:[function(require,module,exports){
 (function (global){
 
 ; _ = global._ = require("underscore");
@@ -51397,7 +51781,7 @@ jQuery = global.jQuery = require("jquery");
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":2,"underscore":93}],255:[function(require,module,exports){
+},{"jquery":3,"underscore":94}],263:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 // -------------------------------------------------------------------------------------------------------------------
@@ -56257,7 +56641,7 @@ if (typeof window !== 'undefined') {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],256:[function(require,module,exports){
+},{}],264:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 var LZMA = (function () {
@@ -60149,7 +60533,7 @@ this.LZMA = LZMA;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],257:[function(require,module,exports){
+},{}],265:[function(require,module,exports){
 (function (global){
 
 ; jQuery = global.jQuery = require("jquery");
@@ -60242,7 +60626,7 @@ function handler(event) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":2}],258:[function(require,module,exports){
+},{"jquery":3}],266:[function(require,module,exports){
 (function (global){
 
 ; jQuery = global.jQuery = require("jquery");
@@ -60329,7 +60713,7 @@ function handler(event) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"jquery":2}],259:[function(require,module,exports){
+},{"jquery":3}],267:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /* wax - 7.0.1 - v6.0.4-181-ga34788e */
@@ -63709,1320 +64093,4245 @@ wax.g.connector.prototype.getTileUrl = function(coord, z) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],260:[function(require,module,exports){
-module.exports = require(1);
-},{"dup":1,"jquery":269,"underscore":292}],261:[function(require,module,exports){
-
-},{}],262:[function(require,module,exports){
-// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
-//
-// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
-//
-// Originally from narwhal.js (http://narwhaljs.org)
-// Copyright (c) 2009 Thomas Robinson <280north.com>
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the 'Software'), to
-// deal in the Software without restriction, including without limitation the
-// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-// sell copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-// when used in node, this will actually load the util module we depend on
-// versus loading the builtin util module as happens otherwise
-// this is a bug in node module loading as far as I am concerned
-var util = require('util/');
-
-var pSlice = Array.prototype.slice;
-var hasOwn = Object.prototype.hasOwnProperty;
-
-// 1. The assert module provides functions that throw
-// AssertionError's when particular conditions are not met. The
-// assert module must conform to the following interface.
-
-var assert = module.exports = ok;
-
-// 2. The AssertionError is defined in assert.
-// new assert.AssertionError({ message: message,
-//                             actual: actual,
-//                             expected: expected })
-
-assert.AssertionError = function AssertionError(options) {
-  this.name = 'AssertionError';
-  this.actual = options.actual;
-  this.expected = options.expected;
-  this.operator = options.operator;
-  if (options.message) {
-    this.message = options.message;
-    this.generatedMessage = false;
-  } else {
-    this.message = getMessage(this);
-    this.generatedMessage = true;
-  }
-  var stackStartFunction = options.stackStartFunction || fail;
-
-  if (Error.captureStackTrace) {
-    Error.captureStackTrace(this, stackStartFunction);
-  }
-  else {
-    // non v8 browsers so we can have a stacktrace
-    var err = new Error();
-    if (err.stack) {
-      var out = err.stack;
-
-      // try to strip useless frames
-      var fn_name = stackStartFunction.name;
-      var idx = out.indexOf('\n' + fn_name);
-      if (idx >= 0) {
-        // once we have located the function frame
-        // we need to strip out everything before it (and its line)
-        var next_line = out.indexOf('\n', idx + 1);
-        out = out.substring(next_line + 1);
-      }
-
-      this.stack = out;
-    }
-  }
-};
-
-// assert.AssertionError instanceof Error
-util.inherits(assert.AssertionError, Error);
-
-function replacer(key, value) {
-  if (util.isUndefined(value)) {
-    return '' + value;
-  }
-  if (util.isNumber(value) && !isFinite(value)) {
-    return value.toString();
-  }
-  if (util.isFunction(value) || util.isRegExp(value)) {
-    return value.toString();
-  }
-  return value;
-}
-
-function truncate(s, n) {
-  if (util.isString(s)) {
-    return s.length < n ? s : s.slice(0, n);
-  } else {
-    return s;
-  }
-}
-
-function getMessage(self) {
-  return truncate(JSON.stringify(self.actual, replacer), 128) + ' ' +
-         self.operator + ' ' +
-         truncate(JSON.stringify(self.expected, replacer), 128);
-}
-
-// At present only the three keys mentioned above are used and
-// understood by the spec. Implementations or sub modules can pass
-// other keys to the AssertionError's constructor - they will be
-// ignored.
-
-// 3. All of the following functions must throw an AssertionError
-// when a corresponding condition is not met, with a message that
-// may be undefined if not provided.  All assertion methods provide
-// both the actual and expected values to the assertion error for
-// display purposes.
-
-function fail(actual, expected, message, operator, stackStartFunction) {
-  throw new assert.AssertionError({
-    message: message,
-    actual: actual,
-    expected: expected,
-    operator: operator,
-    stackStartFunction: stackStartFunction
-  });
-}
-
-// EXTENSION! allows for well behaved errors defined elsewhere.
-assert.fail = fail;
-
-// 4. Pure assertion tests whether a value is truthy, as determined
-// by !!guard.
-// assert.ok(guard, message_opt);
-// This statement is equivalent to assert.equal(true, !!guard,
-// message_opt);. To test strictly for the value true, use
-// assert.strictEqual(true, guard, message_opt);.
-
-function ok(value, message) {
-  if (!value) fail(value, true, message, '==', assert.ok);
-}
-assert.ok = ok;
-
-// 5. The equality assertion tests shallow, coercive equality with
-// ==.
-// assert.equal(actual, expected, message_opt);
-
-assert.equal = function equal(actual, expected, message) {
-  if (actual != expected) fail(actual, expected, message, '==', assert.equal);
-};
-
-// 6. The non-equality assertion tests for whether two objects are not equal
-// with != assert.notEqual(actual, expected, message_opt);
-
-assert.notEqual = function notEqual(actual, expected, message) {
-  if (actual == expected) {
-    fail(actual, expected, message, '!=', assert.notEqual);
-  }
-};
-
-// 7. The equivalence assertion tests a deep equality relation.
-// assert.deepEqual(actual, expected, message_opt);
-
-assert.deepEqual = function deepEqual(actual, expected, message) {
-  if (!_deepEqual(actual, expected)) {
-    fail(actual, expected, message, 'deepEqual', assert.deepEqual);
-  }
-};
-
-function _deepEqual(actual, expected) {
-  // 7.1. All identical values are equivalent, as determined by ===.
-  if (actual === expected) {
-    return true;
-
-  } else if (util.isBuffer(actual) && util.isBuffer(expected)) {
-    if (actual.length != expected.length) return false;
-
-    for (var i = 0; i < actual.length; i++) {
-      if (actual[i] !== expected[i]) return false;
-    }
-
-    return true;
-
-  // 7.2. If the expected value is a Date object, the actual value is
-  // equivalent if it is also a Date object that refers to the same time.
-  } else if (util.isDate(actual) && util.isDate(expected)) {
-    return actual.getTime() === expected.getTime();
-
-  // 7.3 If the expected value is a RegExp object, the actual value is
-  // equivalent if it is also a RegExp object with the same source and
-  // properties (`global`, `multiline`, `lastIndex`, `ignoreCase`).
-  } else if (util.isRegExp(actual) && util.isRegExp(expected)) {
-    return actual.source === expected.source &&
-           actual.global === expected.global &&
-           actual.multiline === expected.multiline &&
-           actual.lastIndex === expected.lastIndex &&
-           actual.ignoreCase === expected.ignoreCase;
-
-  // 7.4. Other pairs that do not both pass typeof value == 'object',
-  // equivalence is determined by ==.
-  } else if (!util.isObject(actual) && !util.isObject(expected)) {
-    return actual == expected;
-
-  // 7.5 For all other Object pairs, including Array objects, equivalence is
-  // determined by having the same number of owned properties (as verified
-  // with Object.prototype.hasOwnProperty.call), the same set of keys
-  // (although not necessarily the same order), equivalent values for every
-  // corresponding key, and an identical 'prototype' property. Note: this
-  // accounts for both named and indexed properties on Arrays.
-  } else {
-    return objEquiv(actual, expected);
-  }
-}
-
-function isArguments(object) {
-  return Object.prototype.toString.call(object) == '[object Arguments]';
-}
-
-function objEquiv(a, b) {
-  if (util.isNullOrUndefined(a) || util.isNullOrUndefined(b))
-    return false;
-  // an identical 'prototype' property.
-  if (a.prototype !== b.prototype) return false;
-  // if one is a primitive, the other must be same
-  if (util.isPrimitive(a) || util.isPrimitive(b)) {
-    return a === b;
-  }
-  var aIsArgs = isArguments(a),
-      bIsArgs = isArguments(b);
-  if ((aIsArgs && !bIsArgs) || (!aIsArgs && bIsArgs))
-    return false;
-  if (aIsArgs) {
-    a = pSlice.call(a);
-    b = pSlice.call(b);
-    return _deepEqual(a, b);
-  }
-  var ka = objectKeys(a),
-      kb = objectKeys(b),
-      key, i;
-  // having the same number of owned properties (keys incorporates
-  // hasOwnProperty)
-  if (ka.length != kb.length)
-    return false;
-  //the same set of keys (although not necessarily the same order),
-  ka.sort();
-  kb.sort();
-  //~~~cheap key test
-  for (i = ka.length - 1; i >= 0; i--) {
-    if (ka[i] != kb[i])
-      return false;
-  }
-  //equivalent values for every corresponding key, and
-  //~~~possibly expensive deep test
-  for (i = ka.length - 1; i >= 0; i--) {
-    key = ka[i];
-    if (!_deepEqual(a[key], b[key])) return false;
-  }
-  return true;
-}
-
-// 8. The non-equivalence assertion tests for any deep inequality.
-// assert.notDeepEqual(actual, expected, message_opt);
-
-assert.notDeepEqual = function notDeepEqual(actual, expected, message) {
-  if (_deepEqual(actual, expected)) {
-    fail(actual, expected, message, 'notDeepEqual', assert.notDeepEqual);
-  }
-};
-
-// 9. The strict equality assertion tests strict equality, as determined by ===.
-// assert.strictEqual(actual, expected, message_opt);
-
-assert.strictEqual = function strictEqual(actual, expected, message) {
-  if (actual !== expected) {
-    fail(actual, expected, message, '===', assert.strictEqual);
-  }
-};
-
-// 10. The strict non-equality assertion tests for strict inequality, as
-// determined by !==.  assert.notStrictEqual(actual, expected, message_opt);
-
-assert.notStrictEqual = function notStrictEqual(actual, expected, message) {
-  if (actual === expected) {
-    fail(actual, expected, message, '!==', assert.notStrictEqual);
-  }
-};
-
-function expectedException(actual, expected) {
-  if (!actual || !expected) {
-    return false;
-  }
-
-  if (Object.prototype.toString.call(expected) == '[object RegExp]') {
-    return expected.test(actual);
-  } else if (actual instanceof expected) {
-    return true;
-  } else if (expected.call({}, actual) === true) {
-    return true;
-  }
-
-  return false;
-}
-
-function _throws(shouldThrow, block, expected, message) {
-  var actual;
-
-  if (util.isString(expected)) {
-    message = expected;
-    expected = null;
-  }
-
-  try {
-    block();
-  } catch (e) {
-    actual = e;
-  }
-
-  message = (expected && expected.name ? ' (' + expected.name + ').' : '.') +
-            (message ? ' ' + message : '.');
-
-  if (shouldThrow && !actual) {
-    fail(actual, expected, 'Missing expected exception' + message);
-  }
-
-  if (!shouldThrow && expectedException(actual, expected)) {
-    fail(actual, expected, 'Got unwanted exception' + message);
-  }
-
-  if ((shouldThrow && actual && expected &&
-      !expectedException(actual, expected)) || (!shouldThrow && actual)) {
-    throw actual;
-  }
-}
-
-// 11. Expected to throw an error:
-// assert.throws(block, Error_opt, message_opt);
-
-assert.throws = function(block, /*optional*/error, /*optional*/message) {
-  _throws.apply(this, [true].concat(pSlice.call(arguments)));
-};
-
-// EXTENSION! This is annoying to write outside this module.
-assert.doesNotThrow = function(block, /*optional*/message) {
-  _throws.apply(this, [false].concat(pSlice.call(arguments)));
-};
-
-assert.ifError = function(err) { if (err) {throw err;}};
-
-var objectKeys = Object.keys || function (obj) {
-  var keys = [];
-  for (var key in obj) {
-    if (hasOwn.call(obj, key)) keys.push(key);
-  }
-  return keys;
-};
-
-},{"util/":267}],263:[function(require,module,exports){
-if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    ctor.prototype = Object.create(superCtor.prototype, {
-      constructor: {
-        value: ctor,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-  };
-} else {
-  // old school shim for old browsers
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
-  }
-}
-
-},{}],264:[function(require,module,exports){
-(function (process){
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-// resolves . and .. elements in a path array with directory names there
-// must be no slashes, empty elements, or device names (c:\) in the array
-// (so also no leading and trailing slashes - it does not distinguish
-// relative and absolute paths)
-function normalizeArray(parts, allowAboveRoot) {
-  // if the path tries to go above the root, `up` ends up > 0
-  var up = 0;
-  for (var i = parts.length - 1; i >= 0; i--) {
-    var last = parts[i];
-    if (last === '.') {
-      parts.splice(i, 1);
-    } else if (last === '..') {
-      parts.splice(i, 1);
-      up++;
-    } else if (up) {
-      parts.splice(i, 1);
-      up--;
-    }
-  }
-
-  // if the path is allowed to go above the root, restore leading ..s
-  if (allowAboveRoot) {
-    for (; up--; up) {
-      parts.unshift('..');
-    }
-  }
-
-  return parts;
-}
-
-// Split a filename into [root, dir, basename, ext], unix version
-// 'root' is just a slash, or nothing.
-var splitPathRe =
-    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-var splitPath = function(filename) {
-  return splitPathRe.exec(filename).slice(1);
-};
-
-// path.resolve([from ...], to)
-// posix version
-exports.resolve = function() {
-  var resolvedPath = '',
-      resolvedAbsolute = false;
-
-  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-    var path = (i >= 0) ? arguments[i] : process.cwd();
-
-    // Skip empty and invalid entries
-    if (typeof path !== 'string') {
-      throw new TypeError('Arguments to path.resolve must be strings');
-    } else if (!path) {
-      continue;
-    }
-
-    resolvedPath = path + '/' + resolvedPath;
-    resolvedAbsolute = path.charAt(0) === '/';
-  }
-
-  // At this point the path should be resolved to a full absolute path, but
-  // handle relative paths to be safe (might happen when process.cwd() fails)
-
-  // Normalize the path
-  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-    return !!p;
-  }), !resolvedAbsolute).join('/');
-
-  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-};
-
-// path.normalize(path)
-// posix version
-exports.normalize = function(path) {
-  var isAbsolute = exports.isAbsolute(path),
-      trailingSlash = substr(path, -1) === '/';
-
-  // Normalize the path
-  path = normalizeArray(filter(path.split('/'), function(p) {
-    return !!p;
-  }), !isAbsolute).join('/');
-
-  if (!path && !isAbsolute) {
-    path = '.';
-  }
-  if (path && trailingSlash) {
-    path += '/';
-  }
-
-  return (isAbsolute ? '/' : '') + path;
-};
-
-// posix version
-exports.isAbsolute = function(path) {
-  return path.charAt(0) === '/';
-};
-
-// posix version
-exports.join = function() {
-  var paths = Array.prototype.slice.call(arguments, 0);
-  return exports.normalize(filter(paths, function(p, index) {
-    if (typeof p !== 'string') {
-      throw new TypeError('Arguments to path.join must be strings');
-    }
-    return p;
-  }).join('/'));
-};
-
-
-// path.relative(from, to)
-// posix version
-exports.relative = function(from, to) {
-  from = exports.resolve(from).substr(1);
-  to = exports.resolve(to).substr(1);
-
-  function trim(arr) {
-    var start = 0;
-    for (; start < arr.length; start++) {
-      if (arr[start] !== '') break;
-    }
-
-    var end = arr.length - 1;
-    for (; end >= 0; end--) {
-      if (arr[end] !== '') break;
-    }
-
-    if (start > end) return [];
-    return arr.slice(start, end - start + 1);
-  }
-
-  var fromParts = trim(from.split('/'));
-  var toParts = trim(to.split('/'));
-
-  var length = Math.min(fromParts.length, toParts.length);
-  var samePartsLength = length;
-  for (var i = 0; i < length; i++) {
-    if (fromParts[i] !== toParts[i]) {
-      samePartsLength = i;
-      break;
-    }
-  }
-
-  var outputParts = [];
-  for (var i = samePartsLength; i < fromParts.length; i++) {
-    outputParts.push('..');
-  }
-
-  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-
-  return outputParts.join('/');
-};
-
-exports.sep = '/';
-exports.delimiter = ':';
-
-exports.dirname = function(path) {
-  var result = splitPath(path),
-      root = result[0],
-      dir = result[1];
-
-  if (!root && !dir) {
-    // No dirname whatsoever
-    return '.';
-  }
-
-  if (dir) {
-    // It has a dirname, strip trailing slash
-    dir = dir.substr(0, dir.length - 1);
-  }
-
-  return root + dir;
-};
-
-
-exports.basename = function(path, ext) {
-  var f = splitPath(path)[2];
-  // TODO: make this comparison case-insensitive on windows?
-  if (ext && f.substr(-1 * ext.length) === ext) {
-    f = f.substr(0, f.length - ext.length);
-  }
-  return f;
-};
-
-
-exports.extname = function(path) {
-  return splitPath(path)[3];
-};
-
-function filter (xs, f) {
-    if (xs.filter) return xs.filter(f);
-    var res = [];
-    for (var i = 0; i < xs.length; i++) {
-        if (f(xs[i], i, xs)) res.push(xs[i]);
-    }
-    return res;
-}
-
-// String.prototype.substr - negative index don't work in IE8
-var substr = 'ab'.substr(-1) === 'b'
-    ? function (str, start, len) { return str.substr(start, len) }
-    : function (str, start, len) {
-        if (start < 0) start = str.length + start;
-        return str.substr(start, len);
-    }
-;
-
-}).call(this,require('_process'))
-
-},{"_process":265}],265:[function(require,module,exports){
-// shim for using process in browser
-
-var process = module.exports = {};
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
+},{}],268:[function(require,module,exports){
+arguments[4][56][0].apply(exports,arguments)
+},{"./tree":274,"dup":56}],269:[function(require,module,exports){
+(function (process,__dirname){
+var util = require('util'),
+    fs = require('fs'),
+    path = require('path');
+
+
+function getVersion() {
+    if (process.browser) {
+        return require('../../package.json').version.split('.');
+    } else if (parseInt(process.version.split('.')[1], 10) > 4) {
+        return require('../../package.json').version.split('.');
     } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
+        // older node
+        var package_json = JSON.parse(fs.readFileSync(path.join(__dirname,'../../package.json')));
+        return package_json.version.split('.');
     }
 }
 
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = setTimeout(cleanUpNextTick);
-    draining = true;
+var carto = {
+    version: getVersion(),
+    Parser: require('./parser').Parser,
+    Renderer: require('./renderer').Renderer,
+    tree: require('./tree'),
+    RendererJS: require('./renderer_js'),
+    default_reference: require('./torque-reference'),
 
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
+    // @TODO
+    writeError: function(ctx, options) {
+        var message = '';
+        var extract = ctx.extract;
+        var error = [];
+
+        options = options || {};
+
+        if (options.silent) { return; }
+
+        options.indent = options.indent || '';
+
+        if (!('index' in ctx) || !extract) {
+            return util.error(options.indent + (ctx.stack || ctx.message));
+        }
+
+        if (typeof(extract[0]) === 'string') {
+            error.push(stylize((ctx.line - 1) + ' ' + extract[0], 'grey'));
+        }
+
+        if (extract[1] === '' && typeof extract[2] === 'undefined') {
+            extract[1] = '¶';
+        }
+        error.push(ctx.line + ' ' + extract[1].slice(0, ctx.column) +
+            stylize(stylize(extract[1][ctx.column], 'bold') +
+            extract[1].slice(ctx.column + 1), 'yellow'));
+
+        if (typeof(extract[2]) === 'string') {
+            error.push(stylize((ctx.line + 1) + ' ' + extract[2], 'grey'));
+        }
+        error = options.indent + error.join('\n' + options.indent) + '\033[0m\n';
+
+        message = options.indent + message + stylize(ctx.message, 'red');
+        if (ctx.filename) (message += stylize(' in ', 'red') + ctx.filename);
+
+        util.error(message, error);
+
+        if (ctx.callLine) {
+            util.error(stylize('from ', 'red') + (ctx.filename || ''));
+            util.error(stylize(ctx.callLine, 'grey') + ' ' + ctx.callExtract);
+        }
+        if (ctx.stack) { util.error(stylize(ctx.stack, 'red')); }
+    }
+};
+
+require('./tree/call');
+require('./tree/color');
+require('./tree/comment');
+require('./tree/definition');
+require('./tree/dimension');
+require('./tree/element');
+require('./tree/expression');
+require('./tree/filterset');
+require('./tree/filter');
+require('./tree/field');
+require('./tree/keyword');
+require('./tree/layer');
+require('./tree/literal');
+require('./tree/operation');
+require('./tree/quoted');
+require('./tree/imagefilter');
+require('./tree/reference');
+require('./tree/rule');
+require('./tree/ruleset');
+require('./tree/selector');
+require('./tree/style');
+require('./tree/url');
+require('./tree/value');
+require('./tree/variable');
+require('./tree/zoom');
+require('./tree/invalid');
+require('./tree/fontset');
+require('./tree/frame_offset');
+require('./functions');
+
+for (var k in carto) { exports[k] = carto[k]; }
+
+// Stylize a string
+function stylize(str, style) {
+    var styles = {
+        'bold' : [1, 22],
+        'inverse' : [7, 27],
+        'underline' : [4, 24],
+        'yellow' : [33, 39],
+        'green' : [32, 39],
+        'red' : [31, 39],
+        'grey' : [90, 39]
+    };
+    return '\033[' + styles[style][0] + 'm' + str +
+           '\033[' + styles[style][1] + 'm';
+}
+
+}).call(this,require('_process'),"/../d3.cartodb/node_modules/carto/lib/carto")
+
+},{"../../package.json":305,"./functions":268,"./parser":270,"./renderer":271,"./renderer_js":272,"./torque-reference":273,"./tree":274,"./tree/call":275,"./tree/color":276,"./tree/comment":277,"./tree/definition":278,"./tree/dimension":279,"./tree/element":280,"./tree/expression":281,"./tree/field":282,"./tree/filter":283,"./tree/filterset":284,"./tree/fontset":285,"./tree/frame_offset":286,"./tree/imagefilter":287,"./tree/invalid":288,"./tree/keyword":289,"./tree/layer":290,"./tree/literal":291,"./tree/operation":292,"./tree/quoted":293,"./tree/reference":294,"./tree/rule":295,"./tree/ruleset":296,"./tree/selector":297,"./tree/style":298,"./tree/url":299,"./tree/value":300,"./tree/variable":301,"./tree/zoom":302,"_process":329,"fs":325,"path":328,"util":331}],270:[function(require,module,exports){
+(function (global){
+var carto = exports,
+    tree = require('./tree'),
+    _ = global._ || require('underscore');
+
+//    Token matching is done with the `$` function, which either takes
+//    a terminal string or regexp, or a non-terminal function to call.
+//    It also takes care of moving all the indices forwards.
+carto.Parser = function Parser(env) {
+    var input,       // LeSS input string
+        i,           // current index in `input`
+        j,           // current chunk
+        temp,        // temporarily holds a chunk's state, for backtracking
+        memo,        // temporarily holds `i`, when backtracking
+        furthest,    // furthest index the parser has gone to
+        chunks,      // chunkified input
+        current,     // index of current chunk, in `input`
+        parser;
+
+    var that = this;
+
+    // This function is called after all files
+    // have been imported through `@import`.
+    var finish = function() {};
+
+    function save()    {
+        temp = chunks[j];
+        memo = i;
+        current = i;
+    }
+    function restore() {
+        chunks[j] = temp;
+        i = memo;
+        current = i;
+    }
+
+    function sync() {
+        if (i > current) {
+            chunks[j] = chunks[j].slice(i - current);
+            current = i;
+        }
+    }
+    //
+    // Parse from a token, regexp or string, and move forward if match
+    //
+    function $(tok) {
+        var match, args, length, c, index, endIndex, k;
+
+        // Non-terminal
+        if (tok instanceof Function) {
+            return tok.call(parser.parsers);
+        // Terminal
+        // Either match a single character in the input,
+        // or match a regexp in the current chunk (chunk[j]).
+        } else if (typeof(tok) === 'string') {
+            match = input.charAt(i) === tok ? tok : null;
+            length = 1;
+            sync();
+        } else {
+            sync();
+
+            match = tok.exec(chunks[j]);
+            if (match) {
+                length = match[0].length;
+            } else {
+                return null;
             }
         }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    clearTimeout(timeout);
-}
 
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
+        // The match is confirmed, add the match length to `i`,
+        // and consume any extra white-space characters (' ' || '\n')
+        // which come after that. The reason for this is that LeSS's
+        // grammar is mostly white-space insensitive.
+        if (match) {
+            var mem = i += length;
+            endIndex = i + chunks[j].length - length;
+
+            while (i < endIndex) {
+                c = input.charCodeAt(i);
+                if (! (c === 32 || c === 10 || c === 9)) { break; }
+                i++;
+            }
+            chunks[j] = chunks[j].slice(length + (i - mem));
+            current = i;
+
+            if (chunks[j].length === 0 && j < chunks.length - 1) { j++; }
+
+            if (typeof(match) === 'string') {
+                return match;
+            } else {
+                return match.length === 1 ? match[0] : match;
+            }
         }
     }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        setTimeout(drainQueue, 0);
-    }
-};
 
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-},{}],266:[function(require,module,exports){
-module.exports = function isBuffer(arg) {
-  return arg && typeof arg === 'object'
-    && typeof arg.copy === 'function'
-    && typeof arg.fill === 'function'
-    && typeof arg.readUInt8 === 'function';
-}
-},{}],267:[function(require,module,exports){
-(function (process,global){
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-var formatRegExp = /%[sdj%]/g;
-exports.format = function(f) {
-  if (!isString(f)) {
-    var objects = [];
-    for (var i = 0; i < arguments.length; i++) {
-      objects.push(inspect(arguments[i]));
-    }
-    return objects.join(' ');
-  }
-
-  var i = 1;
-  var args = arguments;
-  var len = args.length;
-  var str = String(f).replace(formatRegExp, function(x) {
-    if (x === '%%') return '%';
-    if (i >= len) return x;
-    switch (x) {
-      case '%s': return String(args[i++]);
-      case '%d': return Number(args[i++]);
-      case '%j':
-        try {
-          return JSON.stringify(args[i++]);
-        } catch (_) {
-          return '[Circular]';
-        }
-      default:
-        return x;
-    }
-  });
-  for (var x = args[i]; i < len; x = args[++i]) {
-    if (isNull(x) || !isObject(x)) {
-      str += ' ' + x;
-    } else {
-      str += ' ' + inspect(x);
-    }
-  }
-  return str;
-};
-
-
-// Mark that a method should not be used.
-// Returns a modified function which warns once by default.
-// If --no-deprecation is set, then it is a no-op.
-exports.deprecate = function(fn, msg) {
-  // Allow for deprecating things in the process of starting up.
-  if (isUndefined(global.process)) {
-    return function() {
-      return exports.deprecate(fn, msg).apply(this, arguments);
-    };
-  }
-
-  if (process.noDeprecation === true) {
-    return fn;
-  }
-
-  var warned = false;
-  function deprecated() {
-    if (!warned) {
-      if (process.throwDeprecation) {
-        throw new Error(msg);
-      } else if (process.traceDeprecation) {
-        console.trace(msg);
-      } else {
-        console.error(msg);
-      }
-      warned = true;
-    }
-    return fn.apply(this, arguments);
-  }
-
-  return deprecated;
-};
-
-
-var debugs = {};
-var debugEnviron;
-exports.debuglog = function(set) {
-  if (isUndefined(debugEnviron))
-    debugEnviron = process.env.NODE_DEBUG || '';
-  set = set.toUpperCase();
-  if (!debugs[set]) {
-    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
-      var pid = process.pid;
-      debugs[set] = function() {
-        var msg = exports.format.apply(exports, arguments);
-        console.error('%s %d: %s', set, pid, msg);
-      };
-    } else {
-      debugs[set] = function() {};
-    }
-  }
-  return debugs[set];
-};
-
-
-/**
- * Echos the value of a value. Trys to print the value out
- * in the best way possible given the different types.
- *
- * @param {Object} obj The object to print out.
- * @param {Object} opts Optional options object that alters the output.
- */
-/* legacy: obj, showHidden, depth, colors*/
-function inspect(obj, opts) {
-  // default options
-  var ctx = {
-    seen: [],
-    stylize: stylizeNoColor
-  };
-  // legacy...
-  if (arguments.length >= 3) ctx.depth = arguments[2];
-  if (arguments.length >= 4) ctx.colors = arguments[3];
-  if (isBoolean(opts)) {
-    // legacy...
-    ctx.showHidden = opts;
-  } else if (opts) {
-    // got an "options" object
-    exports._extend(ctx, opts);
-  }
-  // set default options
-  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
-  if (isUndefined(ctx.depth)) ctx.depth = 2;
-  if (isUndefined(ctx.colors)) ctx.colors = false;
-  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
-  if (ctx.colors) ctx.stylize = stylizeWithColor;
-  return formatValue(ctx, obj, ctx.depth);
-}
-exports.inspect = inspect;
-
-
-// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
-inspect.colors = {
-  'bold' : [1, 22],
-  'italic' : [3, 23],
-  'underline' : [4, 24],
-  'inverse' : [7, 27],
-  'white' : [37, 39],
-  'grey' : [90, 39],
-  'black' : [30, 39],
-  'blue' : [34, 39],
-  'cyan' : [36, 39],
-  'green' : [32, 39],
-  'magenta' : [35, 39],
-  'red' : [31, 39],
-  'yellow' : [33, 39]
-};
-
-// Don't use 'blue' not visible on cmd.exe
-inspect.styles = {
-  'special': 'cyan',
-  'number': 'yellow',
-  'boolean': 'yellow',
-  'undefined': 'grey',
-  'null': 'bold',
-  'string': 'green',
-  'date': 'magenta',
-  // "name": intentionally not styling
-  'regexp': 'red'
-};
-
-
-function stylizeWithColor(str, styleType) {
-  var style = inspect.styles[styleType];
-
-  if (style) {
-    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
-           '\u001b[' + inspect.colors[style][1] + 'm';
-  } else {
-    return str;
-  }
-}
-
-
-function stylizeNoColor(str, styleType) {
-  return str;
-}
-
-
-function arrayToHash(array) {
-  var hash = {};
-
-  array.forEach(function(val, idx) {
-    hash[val] = true;
-  });
-
-  return hash;
-}
-
-
-function formatValue(ctx, value, recurseTimes) {
-  // Provide a hook for user-specified inspect functions.
-  // Check that value is an object with an inspect function on it
-  if (ctx.customInspect &&
-      value &&
-      isFunction(value.inspect) &&
-      // Filter out the util module, it's inspect function is special
-      value.inspect !== exports.inspect &&
-      // Also filter out any prototype objects using the circular check.
-      !(value.constructor && value.constructor.prototype === value)) {
-    var ret = value.inspect(recurseTimes, ctx);
-    if (!isString(ret)) {
-      ret = formatValue(ctx, ret, recurseTimes);
-    }
-    return ret;
-  }
-
-  // Primitive types cannot have properties
-  var primitive = formatPrimitive(ctx, value);
-  if (primitive) {
-    return primitive;
-  }
-
-  // Look up the keys of the object.
-  var keys = Object.keys(value);
-  var visibleKeys = arrayToHash(keys);
-
-  if (ctx.showHidden) {
-    keys = Object.getOwnPropertyNames(value);
-  }
-
-  // IE doesn't make error fields non-enumerable
-  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
-  if (isError(value)
-      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
-    return formatError(value);
-  }
-
-  // Some type of object without properties can be shortcutted.
-  if (keys.length === 0) {
-    if (isFunction(value)) {
-      var name = value.name ? ': ' + value.name : '';
-      return ctx.stylize('[Function' + name + ']', 'special');
-    }
-    if (isRegExp(value)) {
-      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-    }
-    if (isDate(value)) {
-      return ctx.stylize(Date.prototype.toString.call(value), 'date');
-    }
-    if (isError(value)) {
-      return formatError(value);
-    }
-  }
-
-  var base = '', array = false, braces = ['{', '}'];
-
-  // Make Array say that they are Array
-  if (isArray(value)) {
-    array = true;
-    braces = ['[', ']'];
-  }
-
-  // Make functions say that they are functions
-  if (isFunction(value)) {
-    var n = value.name ? ': ' + value.name : '';
-    base = ' [Function' + n + ']';
-  }
-
-  // Make RegExps say that they are RegExps
-  if (isRegExp(value)) {
-    base = ' ' + RegExp.prototype.toString.call(value);
-  }
-
-  // Make dates with properties first say the date
-  if (isDate(value)) {
-    base = ' ' + Date.prototype.toUTCString.call(value);
-  }
-
-  // Make error with message first say the error
-  if (isError(value)) {
-    base = ' ' + formatError(value);
-  }
-
-  if (keys.length === 0 && (!array || value.length == 0)) {
-    return braces[0] + base + braces[1];
-  }
-
-  if (recurseTimes < 0) {
-    if (isRegExp(value)) {
-      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-    } else {
-      return ctx.stylize('[Object]', 'special');
-    }
-  }
-
-  ctx.seen.push(value);
-
-  var output;
-  if (array) {
-    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
-  } else {
-    output = keys.map(function(key) {
-      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
-    });
-  }
-
-  ctx.seen.pop();
-
-  return reduceToSingleString(output, base, braces);
-}
-
-
-function formatPrimitive(ctx, value) {
-  if (isUndefined(value))
-    return ctx.stylize('undefined', 'undefined');
-  if (isString(value)) {
-    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
-                                             .replace(/'/g, "\\'")
-                                             .replace(/\\"/g, '"') + '\'';
-    return ctx.stylize(simple, 'string');
-  }
-  if (isNumber(value))
-    return ctx.stylize('' + value, 'number');
-  if (isBoolean(value))
-    return ctx.stylize('' + value, 'boolean');
-  // For some reason typeof null is "object", so special case here.
-  if (isNull(value))
-    return ctx.stylize('null', 'null');
-}
-
-
-function formatError(value) {
-  return '[' + Error.prototype.toString.call(value) + ']';
-}
-
-
-function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
-  var output = [];
-  for (var i = 0, l = value.length; i < l; ++i) {
-    if (hasOwnProperty(value, String(i))) {
-      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-          String(i), true));
-    } else {
-      output.push('');
-    }
-  }
-  keys.forEach(function(key) {
-    if (!key.match(/^\d+$/)) {
-      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-          key, true));
-    }
-  });
-  return output;
-}
-
-
-function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
-  var name, str, desc;
-  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
-  if (desc.get) {
-    if (desc.set) {
-      str = ctx.stylize('[Getter/Setter]', 'special');
-    } else {
-      str = ctx.stylize('[Getter]', 'special');
-    }
-  } else {
-    if (desc.set) {
-      str = ctx.stylize('[Setter]', 'special');
-    }
-  }
-  if (!hasOwnProperty(visibleKeys, key)) {
-    name = '[' + key + ']';
-  }
-  if (!str) {
-    if (ctx.seen.indexOf(desc.value) < 0) {
-      if (isNull(recurseTimes)) {
-        str = formatValue(ctx, desc.value, null);
-      } else {
-        str = formatValue(ctx, desc.value, recurseTimes - 1);
-      }
-      if (str.indexOf('\n') > -1) {
-        if (array) {
-          str = str.split('\n').map(function(line) {
-            return '  ' + line;
-          }).join('\n').substr(2);
+    // Same as $(), but don't change the state of the parser,
+    // just return the match.
+    function peek(tok) {
+        if (typeof(tok) === 'string') {
+            return input.charAt(i) === tok;
         } else {
-          str = '\n' + str.split('\n').map(function(line) {
-            return '   ' + line;
-          }).join('\n');
+            return !!tok.test(chunks[j]);
+        }
+    }
+
+    function extractErrorLine(style, errorIndex) {
+        return (style.slice(0, errorIndex).match(/\n/g) || '').length + 1;
+    }
+
+
+    // Make an error object from a passed set of properties.
+    // Accepted properties:
+    // - `message`: Text of the error message.
+    // - `filename`: Filename where the error occurred.
+    // - `index`: Char. index where the error occurred.
+    function makeError(err) {
+        var einput;
+
+        _(err).defaults({
+            index: furthest,
+            filename: env.filename,
+            message: 'Parse error.',
+            line: 0,
+            column: -1
+        });
+
+        if (err.filename && that.env.inputs && that.env.inputs[err.filename]) {
+            einput = that.env.inputs[err.filename];
+        } else {
+            einput = input;
+        }
+
+        err.line = extractErrorLine(einput, err.index);
+        for (var n = err.index; n >= 0 && einput.charAt(n) !== '\n'; n--) {
+            err.column++;
+        }
+
+        return new Error(_('<%=filename%>:<%=line%>:<%=column%> <%=message%>').template(err));
+    }
+
+    this.env = env = env || {};
+    this.env.filename = this.env.filename || null;
+    this.env.inputs = this.env.inputs || {};
+
+    // The Parser
+    parser = {
+
+        extractErrorLine: extractErrorLine,
+        //
+        // Parse an input string into an abstract syntax tree.
+        // Throws an error on parse errors.
+        parse: function(str) {
+            var root, start, end, zone, line, lines, buff = [], c, error = null;
+
+            i = j = current = furthest = 0;
+            chunks = [];
+            input = str.replace(/\r\n/g, '\n');
+            if (env.filename) {
+                that.env.inputs[env.filename] = input;
+            }
+
+            var early_exit = false;
+
+            // Split the input into chunks.
+            chunks = (function (chunks) {
+                var j = 0,
+                    skip = /(?:@\{[\w-]+\}|[^"'`\{\}\/\(\)\\])+/g,
+                    comment = /\/\*(?:[^*]|\*+[^\/*])*\*+\/|\/\/.*/g,
+                    string = /"((?:[^"\\\r\n]|\\.)*)"|'((?:[^'\\\r\n]|\\.)*)'|`((?:[^`]|\\.)*)`/g,
+                    level = 0,
+                    match,
+                    chunk = chunks[0],
+                    inParam;
+
+                for (var i = 0, c, cc; i < input.length;) {
+                    skip.lastIndex = i;
+                    if (match = skip.exec(input)) {
+                        if (match.index === i) {
+                            i += match[0].length;
+                            chunk.push(match[0]);
+                        }
+                    }
+                    c = input.charAt(i);
+                    comment.lastIndex = string.lastIndex = i;
+
+                    if (match = string.exec(input)) {
+                        if (match.index === i) {
+                            i += match[0].length;
+                            chunk.push(match[0]);
+                            continue;
+                        }
+                    }
+
+                    if (!inParam && c === '/') {
+                        cc = input.charAt(i + 1);
+                        if (cc === '/' || cc === '*') {
+                            if (match = comment.exec(input)) {
+                                if (match.index === i) {
+                                    i += match[0].length;
+                                    chunk.push(match[0]);
+                                    continue;
+                                }
+                            }
+                        }
+                    }
+
+                    switch (c) {
+                        case '{': if (! inParam) { level ++;        chunk.push(c);                           break; }
+                        case '}': if (! inParam) { level --;        chunk.push(c); chunks[++j] = chunk = []; break; }
+                        case '(': if (! inParam) { inParam = true;  chunk.push(c);                           break; }
+                        case ')': if (  inParam) { inParam = false; chunk.push(c);                           break; }
+                        default:                                    chunk.push(c);
+                    }
+
+                    i++;
+                }
+                if (level !== 0) {
+                    error = {
+                        index: i - 1,
+                        type: 'Parse',
+                        message: (level > 0) ? "missing closing `}`" : "missing opening `{`"
+                    };
+                }
+
+                return chunks.map(function (c) { return c.join(''); });
+            })([[]]);
+
+            if (error) {
+                throw makeError(error);
+            }
+
+            // Start with the primary rule.
+            // The whole syntax tree is held under a Ruleset node,
+            // with the `root` property set to true, so no `{}` are
+            // output.
+            root = new tree.Ruleset([], $(this.parsers.primary));
+            root.root = true;
+
+            // Get an array of Ruleset objects, flattened
+            // and sorted according to specificitySort
+            root.toList = (function() {
+                var line, lines, column;
+                return function(env) {
+                    env.error = function(e) {
+                        if (!env.errors) env.errors = new Error('');
+                        if (env.errors.message) {
+                            env.errors.message += '\n' + makeError(e).message;
+                        } else {
+                            env.errors.message = makeError(e).message;
+                        }
+                    };
+                    env.frames = env.frames || [];
+
+
+                    // call populates Invalid-caused errors
+                    var definitions = this.flatten([], [], env);
+                    definitions.sort(specificitySort);
+                    return definitions;
+                };
+            })();
+
+            // Sort rules by specificity: this function expects selectors to be
+            // split already.
+            //
+            // Written to be used as a .sort(Function);
+            // argument.
+            //
+            // [1, 0, 0, 467] > [0, 0, 1, 520]
+            var specificitySort = function(a, b) {
+                var as = a.specificity;
+                var bs = b.specificity;
+
+                if (as[0] != bs[0]) return bs[0] - as[0];
+                if (as[1] != bs[1]) return bs[1] - as[1];
+                if (as[2] != bs[2]) return bs[2] - as[2];
+                return bs[3] - as[3];
+            };
+
+            return root;
+        },
+
+        // Here in, the parsing rules/functions
+        //
+        // The basic structure of the syntax tree generated is as follows:
+        //
+        //   Ruleset ->  Rule -> Value -> Expression -> Entity
+        //
+        //  In general, most rules will try to parse a token with the `$()` function, and if the return
+        //  value is truly, will return a new node, of the relevant type. Sometimes, we need to check
+        //  first, before parsing, that's when we use `peek()`.
+        parsers: {
+            // The `primary` rule is the *entry* and *exit* point of the parser.
+            // The rules here can appear at any level of the parse tree.
+            //
+            // The recursive nature of the grammar is an interplay between the `block`
+            // rule, which represents `{ ... }`, the `ruleset` rule, and this `primary` rule,
+            // as represented by this simplified grammar:
+            //
+            //     primary  →  (ruleset | rule)+
+            //     ruleset  →  selector+ block
+            //     block    →  '{' primary '}'
+            //
+            // Only at one point is the primary rule not called from the
+            // block rule: at the root level.
+            primary: function() {
+                var node, root = [];
+
+                while ((node = $(this.rule) || $(this.ruleset) ||
+                               $(this.comment)) ||
+                               $(/^[\s\n]+/) || (node = $(this.invalid))) {
+                    if (node) root.push(node);
+                }
+                return root;
+            },
+
+            invalid: function () {
+                var chunk = $(/^[^;\n]*[;\n]/);
+
+                // To fail gracefully, match everything until a semicolon or linebreak.
+                if (chunk) {
+                    return new tree.Invalid(chunk, memo);
+                }
+            },
+
+            // We create a Comment node for CSS comments `/* */`,
+            // but keep the LeSS comments `//` silent, by just skipping
+            // over them.
+            comment: function() {
+                var comment;
+
+                if (input.charAt(i) !== '/') return;
+
+                if (input.charAt(i + 1) === '/') {
+                    return new tree.Comment($(/^\/\/.*/), true);
+                } else if (comment = $(/^\/\*(?:[^*]|\*+[^\/*])*\*+\/\n?/)) {
+                    return new tree.Comment(comment);
+                }
+            },
+
+            // Entities are tokens which can be found inside an Expression
+            entities: {
+
+                // A string, which supports escaping " and ' "milky way" 'he\'s the one!'
+                quoted: function() {
+                    if (input.charAt(i) !== '"' && input.charAt(i) !== "'") return;
+                    var str = $(/^"((?:[^"\\\r\n]|\\.)*)"|'((?:[^'\\\r\n]|\\.)*)'/);
+                    if (str) {
+                        return new tree.Quoted(str[1] || str[2]);
+                    }
+                },
+
+                // A reference to a Mapnik field, like [NAME]
+                // Behind the scenes, this has the same representation, but Carto
+                // needs to be careful to warn when unsupported operations are used.
+                field: function() {
+                    if (! $('[')) return;
+                    var field_name = $(/(^[^\]]+)/);
+                    if (! $(']')) return;
+                    if (field_name) return new tree.Field(field_name[1]);
+                },
+
+                // This is a comparison operator
+                comparison: function() {
+                    var str = $(/^=~|=|!=|<=|>=|<|>/);
+                    if (str) {
+                        return str;
+                    }
+                },
+
+                // A catch-all word, such as: hard-light
+                // These can start with either a letter or a dash (-),
+                // and then contain numbers, underscores, and letters.
+                keyword: function() {
+                    var k = $(/^[A-Za-z-]+[A-Za-z-0-9_]*/);
+                    if (k) { return new tree.Keyword(k); }
+                },
+
+                // A function call like rgb(255, 0, 255)
+                // The arguments are parsed with the `entities.arguments` parser.
+                call: function() {
+                    var name, args;
+
+                    if (!(name = /^([\w\-]+|%)\(/.exec(chunks[j]))) return;
+
+                    name = name[1];
+
+                    if (name === 'url') {
+                        // url() is handled by the url parser instead
+                        return null;
+                    } else {
+                        i += name.length;
+                    }
+
+                    $('('); // Parse the '(' and consume whitespace.
+
+                    args = $(this.entities['arguments']);
+
+                    if (!$(')')) return;
+
+                    if (name) {
+                        return new tree.Call(name, args, i);
+                    }
+                },
+                // Arguments are comma-separated expressions
+                'arguments': function() {
+                    var args = [], arg;
+
+                    while (arg = $(this.expression)) {
+                        args.push(arg);
+                        if (! $(',')) { break; }
+                    }
+
+                    return args;
+                },
+                literal: function() {
+                    return $(this.entities.dimension) ||
+                        $(this.entities.keywordcolor) ||
+                        $(this.entities.hexcolor) ||
+                        $(this.entities.quoted);
+                },
+
+                // Parse url() tokens
+                //
+                // We use a specific rule for urls, because they don't really behave like
+                // standard function calls. The difference is that the argument doesn't have
+                // to be enclosed within a string, so it can't be parsed as an Expression.
+                url: function() {
+                    var value;
+
+                    if (input.charAt(i) !== 'u' || !$(/^url\(/)) return;
+                    value = $(this.entities.quoted) || $(this.entities.variable) ||
+                            $(/^[\-\w%@$\/.&=:;#+?~]+/) || '';
+                    if (! $(')')) {
+                        return new tree.Invalid(value, memo, 'Missing closing ) in URL.');
+                    } else {
+                        return new tree.URL((typeof value.value !== 'undefined' ||
+                            value instanceof tree.Variable) ?
+                            value : new tree.Quoted(value));
+                    }
+                },
+
+                // A Variable entity, such as `@fink`, in
+                //
+                //     width: @fink + 2px
+                //
+                // We use a different parser for variable definitions,
+                // see `parsers.variable`.
+                variable: function() {
+                    var name, index = i;
+
+                    if (input.charAt(i) === '@' && (name = $(/^@[\w-]+/))) {
+                        return new tree.Variable(name, index, env.filename);
+                    }
+                },
+
+                hexcolor: function() {
+                    var rgb;
+                    if (input.charAt(i) === '#' && (rgb = $(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})/))) {
+                        return new tree.Color(rgb[1]);
+                    }
+                },
+
+                keywordcolor: function() {
+                    var rgb = chunks[j].match(/^[a-z]+/);
+                    if (rgb && rgb[0] in tree.Reference.data.colors) {
+                        return new tree.Color(tree.Reference.data.colors[$(/^[a-z]+/)]);
+                    }
+                },
+
+                // A Dimension, that is, a number and a unit. The only
+                // unit that has an effect is %
+                dimension: function() {
+                    var c = input.charCodeAt(i);
+                    if ((c > 57 || c < 45) || c === 47) return;
+                    var value = $(/^(-?\d*\.?\d+(?:[eE][-+]?\d+)?)(\%|\w+)?/);
+                    if (value) {
+                        return new tree.Dimension(value[1], value[2], memo);
+                    }
+                }
+            },
+
+            // The variable part of a variable definition.
+            // Used in the `rule` parser. Like @fink:
+            variable: function() {
+                var name;
+
+                if (input.charAt(i) === '@' && (name = $(/^(@[\w-]+)\s*:/))) {
+                    return name[1];
+                }
+            },
+
+            // Entities are the smallest recognized token,
+            // and can be found inside a rule's value.
+            entity: function() {
+                return $(this.entities.call) ||
+                    $(this.entities.literal) ||
+                    $(this.entities.field) ||
+                    $(this.entities.variable) ||
+                    $(this.entities.url) ||
+                    $(this.entities.keyword);
+            },
+
+            // A Rule terminator. Note that we use `peek()` to check for '}',
+            // because the `block` rule will be expecting it, but we still need to make sure
+            // it's there, if ';' was ommitted.
+            end: function() {
+                return $(';') || peek('}');
+            },
+
+            // Elements are the building blocks for Selectors. They consist of
+            // an element name, such as a tag a class, or `*`.
+            element: function() {
+                var e = $(/^(?:[.#][\w\-]+|\*|Map)/);
+                if (e) return new tree.Element(e);
+            },
+
+            // Attachments allow adding multiple lines, polygons etc. to an
+            // object. There can only be one attachment per selector.
+            attachment: function() {
+                var s = $(/^::([\w\-]+(?:\/[\w\-]+)*)/);
+                if (s) return s[1];
+            },
+
+            // Selectors are made out of one or more Elements, see above.
+            selector: function() {
+                var a, attachment,
+                    e, elements = [],
+                    f, filters = new tree.Filterset(),
+                    z, zooms = [],
+                    frame_offset = tree.FrameOffset.none;
+                    segments = 0, conditions = 0;
+
+                while (
+                        (e = $(this.element)) ||
+                        (z = $(this.zoom)) ||
+                        (fo = $(this.frame_offset)) ||
+                        (f = $(this.filter)) ||
+                        (a = $(this.attachment))
+                    ) {
+                    segments++;
+                    if (e) {
+                        elements.push(e);
+                    } else if (z) {
+                        zooms.push(z);
+                        conditions++;
+                    } else if (fo) {
+                        frame_offset = fo;
+                        conditions++;
+                    } else if (f) {
+                        var err = filters.add(f);
+                        if (err) {
+                            throw makeError({
+                                message: err,
+                                index: i - 1
+                            });
+                        }
+                        conditions++;
+                    } else if (attachment) {
+                        throw makeError({
+                            message: 'Encountered second attachment name.',
+                            index: i - 1
+                        });
+                    } else {
+                        attachment = a;
+                    }
+
+                    var c = input.charAt(i);
+                    if (c === '{' || c === '}' || c === ';' || c === ',') { break; }
+                }
+
+                if (segments) {
+                    return new tree.Selector(filters, zooms, frame_offset, elements, attachment, conditions, memo);
+                }
+            },
+
+            filter: function() {
+                save();
+                var key, op, val;
+                if (! $('[')) return;
+                if (key = $(/^[a-zA-Z0-9\-_]+/) ||
+                    $(this.entities.quoted) ||
+                    $(this.entities.variable) ||
+                    $(this.entities.keyword) ||
+                    $(this.entities.field)) {
+                    // TODO: remove at 1.0.0
+                    if (key instanceof tree.Quoted) {
+                        key = new tree.Field(key.toString());
+                    }
+                    if ((op = $(this.entities.comparison)) &&
+                        (val = $(this.entities.quoted) ||
+                             $(this.entities.variable) ||
+                             $(this.entities.dimension) ||
+                             $(this.entities.keyword) ||
+                             $(this.entities.field))) {
+                        if (! $(']')) {
+                            throw makeError({
+                                message: 'Missing closing ] of filter.',
+                                index: memo - 1
+                            });
+                        }
+                        if (!key.is) key = new tree.Field(key);
+                        return new tree.Filter(key, op, val, memo, env.filename);
+                    }
+                }
+            },
+
+            frame_offset: function() {
+                save();
+                var op, val;
+                if ($(/^\[\s*frame-offset/g) &&
+                    (op = $(this.entities.comparison)) &&
+                    (val = $(/^\d+/)) &&
+                    $(']'))  {
+                        return tree.FrameOffset(op, val, memo);
+                }
+            },
+
+            zoom: function() {
+                save();
+                var op, val;
+                if ($(/^\[\s*zoom/g) &&
+                    (op = $(this.entities.comparison)) &&
+                    (val = $(this.entities.variable) || $(this.entities.dimension)) && $(']')) {
+                        return new tree.Zoom(op, val, memo);
+                } else {
+                    // backtrack
+                    restore();
+                }
+            },
+
+            // The `block` rule is used by `ruleset`
+            // It's a wrapper around the `primary` rule, with added `{}`.
+            block: function() {
+                var content;
+
+                if ($('{') && (content = $(this.primary)) && $('}')) {
+                    return content;
+                }
+            },
+
+            // div, .class, body > p {...}
+            ruleset: function() {
+                var selectors = [], s, f, l, rules, filters = [];
+                save();
+
+                while (s = $(this.selector)) {
+                    selectors.push(s);
+                    while ($(this.comment)) {}
+                    if (! $(',')) { break; }
+                    while ($(this.comment)) {}
+                }
+                if (s) {
+                    while ($(this.comment)) {}
+                }
+
+                if (selectors.length > 0 && (rules = $(this.block))) {
+                    if (selectors.length === 1 &&
+                        selectors[0].elements.length &&
+                        selectors[0].elements[0].value === 'Map') {
+                        var rs = new tree.Ruleset(selectors, rules);
+                        rs.isMap = true;
+                        return rs;
+                    }
+                    return new tree.Ruleset(selectors, rules);
+                } else {
+                    // Backtrack
+                    restore();
+                }
+            },
+
+            rule: function() {
+                var name, value, c = input.charAt(i);
+                save();
+
+                if (c === '.' || c === '#') { return; }
+
+                if (name = $(this.variable) || $(this.property)) {
+                    value = $(this.value);
+
+                    if (value && $(this.end)) {
+                        return new tree.Rule(name, value, memo, env.filename);
+                    } else {
+                        furthest = i;
+                        restore();
+                    }
+                }
+            },
+
+            font: function() {
+                var value = [], expression = [], weight, font, e;
+
+                while (e = $(this.entity)) {
+                    expression.push(e);
+                }
+
+                value.push(new tree.Expression(expression));
+
+                if ($(',')) {
+                    while (e = $(this.expression)) {
+                        value.push(e);
+                        if (! $(',')) { break; }
+                    }
+                }
+                return new tree.Value(value);
+            },
+
+            // A Value is a comma-delimited list of Expressions
+            // In a Rule, a Value represents everything after the `:`,
+            // and before the `;`.
+            value: function() {
+                var e, expressions = [];
+
+                while (e = $(this.expression)) {
+                    expressions.push(e);
+                    if (! $(',')) { break; }
+                }
+
+                if (expressions.length > 1) {
+                    return new tree.Value(expressions.map(function(e) {
+                        return e.value[0];
+                    }));
+                } else if (expressions.length === 1) {
+                    return new tree.Value(expressions);
+                }
+            },
+            // A sub-expression, contained by parenthensis
+            sub: function() {
+                var e;
+
+                if ($('(') && (e = $(this.expression)) && $(')')) {
+                    return e;
+                }
+            },
+            // This is a misnomer because it actually handles multiplication
+            // and division.
+            multiplication: function() {
+                var m, a, op, operation;
+                if (m = $(this.operand)) {
+                    while ((op = ($('/') || $('*') || $('%'))) && (a = $(this.operand))) {
+                        operation = new tree.Operation(op, [operation || m, a], memo);
+                    }
+                    return operation || m;
+                }
+            },
+            addition: function() {
+                var m, a, op, operation;
+                if (m = $(this.multiplication)) {
+                    while ((op = $(/^[-+]\s+/) || (input.charAt(i - 1) != ' ' && ($('+') || $('-')))) &&
+                           (a = $(this.multiplication))) {
+                        operation = new tree.Operation(op, [operation || m, a], memo);
+                    }
+                    return operation || m;
+                }
+            },
+
+            // An operand is anything that can be part of an operation,
+            // such as a Color, or a Variable
+            operand: function() {
+                return $(this.sub) || $(this.entity);
+            },
+
+            // Expressions either represent mathematical operations,
+            // or white-space delimited Entities.  @var * 2
+            expression: function() {
+                var e, delim, entities = [], d;
+
+                while (e = $(this.addition) || $(this.entity)) {
+                    entities.push(e);
+                }
+
+                if (entities.length > 0) {
+                    return new tree.Expression(entities);
+                }
+            },
+            property: function() {
+                var name = $(/^(([a-z][-a-z_0-9]*\/)?\*?-?[-a-z_0-9]+)\s*:/);
+                if (name) return name[1];
+            }
+        }
+    };
+    return parser;
+};
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"./tree":274,"underscore":304}],271:[function(require,module,exports){
+(function (global){
+var _ = global._ || require('underscore');
+var carto = require('./index');
+
+carto.Renderer = function Renderer(env, options) {
+    this.env = env || {};
+    this.options = options || {};
+    this.options.mapnik_version = this.options.mapnik_version || '3.0.0';
+};
+
+/**
+ * Prepare a MSS document (given as an string) into a
+ * XML Style fragment (mostly useful for debugging)
+ *
+ * @param {String} data the mss contents as a string.
+ */
+carto.Renderer.prototype.renderMSS = function render(data) {
+    // effects is a container for side-effects, which currently
+    // are limited to FontSets.
+    var env = _(this.env).defaults({
+        benchmark: false,
+        validation_data: false,
+        effects: []
+    });
+
+    if (!carto.tree.Reference.setVersion(this.options.mapnik_version)) {
+        throw new Error("Could not set mapnik version to " + this.options.mapnik_version);
+    }
+
+    var output = [];
+    var styles = [];
+
+    if (env.benchmark) console.time('Parsing MSS');
+    var parser = (carto.Parser(env)).parse(data);
+    if (env.benchmark) console.timeEnd('Parsing MSS');
+
+    if (env.benchmark) console.time('Rule generation');
+    var rule_list = parser.toList(env);
+    if (env.benchmark) console.timeEnd('Rule generation');
+
+    if (env.benchmark) console.time('Rule inheritance');
+    var rules = inheritDefinitions(rule_list, env);
+    if (env.benchmark) console.timeEnd('Rule inheritance');
+
+    if (env.benchmark) console.time('Style sort');
+    var sorted = sortStyles(rules,env);
+    if (env.benchmark) console.timeEnd('Style sort');
+
+    if (env.benchmark) console.time('Total Style generation');
+    for (var k = 0, rule, style_name; k < sorted.length; k++) {
+        rule = sorted[k];
+        style_name = 'style' + (rule.attachment !== '__default__' ? '-' + rule.attachment : '');
+        styles.push(style_name);
+        var bench_name = '\tStyle "'+style_name+'" (#'+k+') toXML';
+        if (env.benchmark) console.time(bench_name);
+        // env.effects can be modified by this call
+        output.push(carto.tree.StyleXML(style_name, rule.attachment, rule, env));
+        if (env.benchmark) console.timeEnd(bench_name);
+    }
+    if (env.benchmark) console.timeEnd('Total Style generation');
+    if (env.errors) throw env.errors;
+    return output.join('\n');
+};
+
+/**
+ * Prepare a MML document (given as an object) into a
+ * fully-localized XML file ready for Mapnik2 consumption
+ *
+ * @param {String} m - the JSON file as a string.
+ */
+carto.Renderer.prototype.render = function render(m) {
+    // effects is a container for side-effects, which currently
+    // are limited to FontSets.
+    var env = _(this.env).defaults({
+        benchmark: false,
+        validation_data: false,
+        effects: [],
+        ppi: 90.714
+    });
+
+    if (!carto.tree.Reference.setVersion(this.options.mapnik_version)) {
+        throw new Error("Could not set mapnik version to " + this.options.mapnik_version);
+    }
+
+    var output = [];
+
+    // Transform stylesheets into definitions.
+    var definitions = _(m.Stylesheet).chain()
+        .map(function(s) {
+            if (typeof s == 'string') {
+                throw new Error("Stylesheet object is expected not a string: '" + s + "'");
+            }
+            // Passing the environment from stylesheet to stylesheet,
+            // allows frames and effects to be maintained.
+            env = _(env).extend({filename:s.id});
+
+            var time = +new Date(),
+                root = (carto.Parser(env)).parse(s.data);
+            if (env.benchmark)
+                console.warn('Parsing time: ' + (new Date() - time) + 'ms');
+            return root.toList(env);
+        })
+        .flatten()
+        .value();
+
+    function appliesTo(name, classIndex) {
+        return function(definition) {
+            return definition.appliesTo(l.name, classIndex);
+        };
+    }
+
+    // Iterate through layers and create styles custom-built
+    // for each of them, and apply those styles to the layers.
+    var styles, l, classIndex, rules, sorted, matching;
+    for (var i = 0; i < m.Layer.length; i++) {
+        l = m.Layer[i];
+        styles = [];
+        classIndex = {};
+
+        if (env.benchmark) console.warn('processing layer: ' + l.id);
+        // Classes are given as space-separated alphanumeric strings.
+        var classes = (l['class'] || '').split(/\s+/g);
+        for (var j = 0; j < classes.length; j++) {
+            classIndex[classes[j]] = true;
+        }
+        matching = definitions.filter(appliesTo(l.name, classIndex));
+        rules = inheritDefinitions(matching, env);
+        sorted = sortStyles(rules, env);
+
+        for (var k = 0, rule, style_name; k < sorted.length; k++) {
+            rule = sorted[k];
+            style_name = l.name + (rule.attachment !== '__default__' ? '-' + rule.attachment : '');
+
+            // env.effects can be modified by this call
+            var styleXML = carto.tree.StyleXML(style_name, rule.attachment, rule, env);
+
+            if (styleXML) {
+                output.push(styleXML);
+                styles.push(style_name);
+            }
+        }
+
+        output.push(carto.tree.LayerXML(l, styles));
+    }
+
+    output.unshift(env.effects.map(function(e) {
+        return e.toXML(env);
+    }).join('\n'));
+
+    var map_properties = getMapProperties(m, definitions, env);
+
+    // Exit on errors.
+    if (env.errors) throw env.errors;
+
+    // Pass TileJSON and other custom parameters through to Mapnik XML.
+    var parameters = _(m).reduce(function(memo, v, k) {
+        if (!v && v !== 0) return memo;
+
+        switch (k) {
+        // Known skippable properties.
+        case 'srs':
+        case 'Layer':
+        case 'Stylesheet':
+            break;
+        // Non URL-bound TileJSON properties.
+        case 'bounds':
+        case 'center':
+        case 'minzoom':
+        case 'maxzoom':
+        case 'version':
+            memo.push('  <Parameter name="' + k + '">' + v + '</Parameter>');
+            break;
+        // Properties that require CDATA.
+        case 'name':
+        case 'description':
+        case 'legend':
+        case 'attribution':
+        case 'template':
+            memo.push('  <Parameter name="' + k + '"><![CDATA[' + v + ']]></Parameter>');
+            break;
+        // Mapnik image format.
+        case 'format':
+            memo.push('  <Parameter name="' + k + '">' + v + '</Parameter>');
+            break;
+        // Mapnik interactivity settings.
+        case 'interactivity':
+            memo.push('  <Parameter name="interactivity_layer">' + v.layer + '</Parameter>');
+            memo.push('  <Parameter name="interactivity_fields">' + v.fields + '</Parameter>');
+            break;
+        // Support any additional scalar properties.
+        default:
+            if ('string' === typeof v) {
+                memo.push('  <Parameter name="' + k + '"><![CDATA[' + v + ']]></Parameter>');
+            } else if ('number' === typeof v) {
+                memo.push('  <Parameter name="' + k + '">' + v + '</Parameter>');
+            } else if ('boolean' === typeof v) {
+                memo.push('  <Parameter name="' + k + '">' + v + '</Parameter>');
+            }
+            break;
+        }
+        return memo;
+    }, []);
+    if (parameters.length) output.unshift(
+        '<Parameters>\n' +
+        parameters.join('\n') +
+        '\n</Parameters>\n'
+    );
+
+    var properties = _(map_properties).map(function(v) { return ' ' + v; }).join('');
+
+    output.unshift(
+        '<?xml version="1.0" ' +
+        'encoding="utf-8"?>\n' +
+        '<!DOCTYPE Map[]>\n' +
+        '<Map' + properties +'>\n');
+    output.push('</Map>');
+    return output.join('\n');
+};
+
+/**
+ * This function currently modifies 'current'
+ * @param {Array}  current  current list of rules
+ * @param {Object} definition a Definition object to add to the rules
+ * @param {Object} byFilter an object/dictionary of existing filters. This is
+ * actually keyed `attachment->filter`
+ * @param {Object} env the current environment
+*/
+function addRules(current, definition, byFilter, env) {
+    var newFilters = definition.filters,
+        newRules = definition.rules,
+        updatedFilters, clone, previous;
+
+    // The current definition might have been split up into
+    // multiple definitions already.
+    for (var k = 0; k < current.length; k++) {
+        updatedFilters = current[k].filters.cloneWith(newFilters);
+        if (updatedFilters) {
+            previous = byFilter[updatedFilters];
+            if (previous) {
+                // There's already a definition with those exact
+                // filters. Add the current definitions' rules
+                // and stop processing it as the existing rule
+                // has already gone down the inheritance chain.
+                previous.addRules(newRules);
+            } else {
+                clone = current[k].clone(updatedFilters);
+                // Make sure that we're only maintaining the clone
+                // when we did actually add rules. If not, there's
+                // no need to keep the clone around.
+                if (clone.addRules(newRules)) {
+                    // We inserted an element before this one, so we need
+                    // to make sure that in the next loop iteration, we're
+                    // not performing the same task for this element again,
+                    // hence the k++.
+                    byFilter[updatedFilters] = clone;
+                    current.splice(k, 0, clone);
+                    k++;
+                }
+            }
+        } else if (updatedFilters === null) {
+            // if updatedFilters is null, then adding the filters doesn't
+            // invalidate or split the selector, so we addRules to the
+            // combined selector
+
+            // Filters can be added, but they don't change the
+            // filters. This means we don't have to split the
+            // definition.
+            //
+            // this is cloned here because of shared classes, see
+            // sharedclass.mss
+            current[k] = current[k].clone();
+            current[k].addRules(newRules);
+        }
+        // if updatedFeatures is false, then the filters split the rule,
+        // so they aren't the same inheritance chain
+    }
+    return current;
+}
+
+/**
+ * Apply inherited styles from their ancestors to them.
+ *
+ * called either once per render (in the case of mss) or per layer
+ * (for mml)
+ *
+ * @param {Object} definitions - a list of definitions objects
+ *   that contain .rules
+ * @param {Object} env - the environment
+ * @return {Array<Array>} an array of arrays is returned,
+ *   in which each array refers to a specific attachment
+ */
+function inheritDefinitions(definitions, env) {
+    var inheritTime = +new Date();
+    // definitions are ordered by specificity,
+    // high (index 0) to low
+    var byAttachment = {},
+        byFilter = {};
+    var result = [];
+    var current, previous, attachment;
+
+    // Evaluate the filters specified by each definition with the given
+    // environment to correctly resolve variable references
+    definitions.forEach(function(d) {
+        d.filters.ev(env);
+    });
+
+    for (var i = 0; i < definitions.length; i++) {
+
+        attachment = definitions[i].attachment;
+        current = [definitions[i]];
+
+        if (!byAttachment[attachment]) {
+            byAttachment[attachment] = [];
+            byAttachment[attachment].attachment = attachment;
+            byFilter[attachment] = {};
+            result.push(byAttachment[attachment]);
+        }
+
+        // Iterate over all subsequent rules.
+        for (var j = i + 1; j < definitions.length; j++) {
+            if (definitions[j].attachment === attachment) {
+                // Only inherit rules from the same attachment.
+                current = addRules(current, definitions[j], byFilter[attachment], env);
+            }
+        }
+
+        for (var k = 0; k < current.length; k++) {
+            byFilter[attachment][current[k].filters] = current[k];
+            byAttachment[attachment].push(current[k]);
+        }
+    }
+
+    if (env.benchmark) console.warn('Inheritance time: ' + ((new Date() - inheritTime)) + 'ms');
+
+    return result;
+
+}
+
+// Sort styles by the minimum index of their rules.
+// This sorts a slice of the styles, so it returns a sorted
+// array but does not change the input.
+function sortStylesIndex(a, b) { return b.index - a.index; }
+function sortStyles(styles, env) {
+    for (var i = 0; i < styles.length; i++) {
+        var style = styles[i];
+        style.index = Infinity;
+        for (var b = 0; b < style.length; b++) {
+            var rules = style[b].rules;
+            for (var r = 0; r < rules.length; r++) {
+                var rule = rules[r];
+                if (rule.index < style.index) {
+                    style.index = rule.index;
+                }
+            }
+        }
+    }
+
+    var result = styles.slice();
+    result.sort(sortStylesIndex);
+    return result;
+}
+
+/**
+ * Find a rule like Map { background-color: #fff; },
+ * if any, and return a list of properties to be inserted
+ * into the <Map element of the resulting XML. Translates
+ * properties of the mml object at `m` directly into XML
+ * properties.
+ *
+ * @param {Object} m the mml object.
+ * @param {Array} definitions the output of toList.
+ * @param {Object} env
+ * @return {String} rendered properties.
+ */
+function getMapProperties(m, definitions, env) {
+    var rules = {};
+    var symbolizers = carto.tree.Reference.data.symbolizers.map;
+
+    _(m).each(function(value, key) {
+        if (key in symbolizers) rules[key] = key + '="' + value + '"';
+    });
+
+    definitions.filter(function(r) {
+        return r.elements.join('') === 'Map';
+    }).forEach(function(r) {
+        for (var i = 0; i < r.rules.length; i++) {
+            var key = r.rules[i].name;
+            if (!(key in symbolizers)) {
+                env.error({
+                    message: 'Rule ' + key + ' not allowed for Map.',
+                    index: r.rules[i].index
+                });
+            }
+            rules[key] = r.rules[i].ev(env).toXML(env);
+        }
+    });
+    return rules;
+}
+
+module.exports = carto;
+module.exports.addRules = addRules;
+module.exports.inheritDefinitions = inheritDefinitions;
+module.exports.sortStyles = sortStyles;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"./index":269,"underscore":304}],272:[function(require,module,exports){
+(function (global){
+(function(carto) {
+var tree = require('./tree');
+var _ = global._ || require('underscore');
+
+
+function CartoCSS(style, options) {
+  this.options = options || {};
+  this.imageURLs = [];
+  if(style) {
+    this.setStyle(style);
+  }
+}
+
+CartoCSS.Layer = function(shader, options) {
+  this.options = options;
+  this.shader = shader;
+};
+
+
+CartoCSS.Layer.prototype = {
+
+  fullName: function() {
+    return this.shader.attachment;
+  },
+
+  name: function() {
+    return this.fullName().split('::')[0];
+  },
+
+  // frames this layer need to be rendered
+  frames: function() {
+    return this.shader.frames;
+  },
+
+  attachment: function() {
+    return this.fullName().split('::')[1];
+  },
+
+  eval: function(prop) {
+    var p = this.shader[prop];
+    if (!p || !p.style) return;
+    return p.style({}, { zoom: 0, 'frame-offset': 0 });
+  },
+
+  /*
+   * `props`: feature properties
+   * `context`: rendering properties, i.e zoom
+   */
+  getStyle: function(props, context) {
+    var style = {};
+    for(var i in this.shader) {
+      if(i !== 'attachment' && i !== 'zoom' && i !== 'frames' && i !== 'symbolizers') {
+        style[i] = this.shader[i].style(props, context);
+      }
+    }
+    return style;
+  },
+
+  /**
+   * return the symbolizers that need to be rendered with 
+   * this style. The order is the rendering order.
+   * @returns a list with 3 possible values 'line', 'marker', 'polygon'
+   */
+  getSymbolizers: function() {
+    return this.shader.symbolizers;
+  },
+
+  /**
+   * returns if the style varies with some feature property.
+   * Useful to optimize rendering
+   */
+  isVariable: function() {
+    for(var i in this.shader) {
+      if(i !== 'attachment' && i !== 'zoom' && i !== 'frames' && i !== 'symbolizers') {
+        if (!this.shader[i].constant) {
+          return true;
+        }
+      }
+    }
+    return false;
+  },
+
+  getShader: function() {
+    return this.shader;
+  },
+
+  /**
+   * returns true if a feature needs to be rendered
+   */
+  filter: function(featureType, props, context) {
+    for(var i in this.shader) {
+     var s = this.shader[i](props, context);
+     if(s) {
+       return true;
+     }
+    }
+    return false;
+  },
+
+  //
+  // given a geoemtry type returns the transformed one acording the CartoCSS
+  // For points there are two kind of types: point and sprite, the first one 
+  // is a circle, second one is an image sprite
+  //
+  // the other geometry types are the same than geojson (polygon, linestring...)
+  //
+  transformGeometry: function(type) {
+    return type;
+  },
+
+  transformGeometries: function(geojson) {
+    return geojson;
+  }
+
+};
+
+CartoCSS.prototype = {
+
+  setStyle: function(style) {
+    var layers = this.parse(style);
+    if(!layers) {
+      throw new Error(this.parse_env.errors);
+    }
+    this.layers = layers.map(function(shader) {
+        return new CartoCSS.Layer(shader);
+    });
+  },
+
+  getLayers: function() {
+    return this.layers;
+  },
+
+  getDefault: function() {
+    return this.findLayer({ attachment: '__default__' });
+  },
+
+  findLayer: function(where) {
+    return _.find(this.layers, function(value) {
+      for (var key in where) {
+        var v = value[key];
+        if (typeof(v) === 'function') {
+          v = v.call(value);
+        }
+        if (where[key] !== v) return false;
+      }
+      return true;
+    });
+  },
+
+  _createFn: function(ops) {
+    var body = ops.join('\n');
+    if(this.options.debug) console.log(body);
+    return Function("data","ctx", "var _value = null; " +  body + "; return _value; ");
+  },
+
+  _compile: function(shader) {
+    if(typeof shader === 'string') {
+        shader = eval("(function() { return " + shader +"; })()");
+    }
+    this.shader_src = shader;
+    for(var attr in shader) {
+        var c = mapper[attr];
+        if(c) {
+            this.compiled[c] = eval("(function() { return shader[attr]; })();");
+        }
+    }
+  },
+  getImageURLs: function(){
+    return this.imageURLs;
+  },
+
+  parse: function(cartocss) {
+    var parse_env = {
+      frames: [],
+      errors: [],
+      error: function(obj) {
+        this.errors.push(obj);
+      }
+    };
+    this.parse_env = parse_env;
+
+    var ruleset = null;
+    try {
+      ruleset = (new carto.Parser(parse_env)).parse(cartocss);
+    } catch(e) {
+      // add the style.mss string to match the response from the server
+      parse_env.errors.push(e.message);
+      return;
+    }
+    if(ruleset) {
+
+      function defKey(def) {
+        return def.elements[0] + "::" + def.attachment;
+      }
+      var defs = ruleset.toList(parse_env);
+      defs.reverse();
+      // group by elements[0].value::attachment
+      var layers = {};
+      for(var i = 0; i < defs.length; ++i) {
+        var def = defs[i];
+        var key = defKey(def);
+        var layer = layers[key] = (layers[key] || {
+          symbolizers: []
+        });
+        for(var u = 0; u<def.rules.length; u++){
+            if(def.rules[u].name === "marker-file" || def.rules[u].name === "point-file"){
+                var value = def.rules[u].value.value[0].value[0].value.value;
+                this.imageURLs.push(value);
+            }
+        } 
+        layer.frames = [];
+        layer.zoom = tree.Zoom.all;
+        var props = def.toJS(parse_env);
+        if (this.options.debug) console.log("props", props);
+        for(var v in props) {
+          var lyr = layer[v] = layer[v] || {
+            constant: false,
+            symbolizer: null,
+            js: [],
+            index: 0
+          };
+          // build javascript statements
+          lyr.js.push(props[v].map(function(a) { return a.js; }).join('\n'));
+          // get symbolizer for prop
+          lyr.symbolizer = _.first(props[v].map(function(a) { return a.symbolizer; }));
+          // serach the max index to know rendering order
+          lyr.index = _.max(props[v].map(function(a) { return a.index; }).concat(lyr.index));
+          lyr.constant = !_.any(props[v].map(function(a) { return !a.constant; }));
+        }
+      }
+
+      var ordered_layers = [];
+      if (this.options.debug) console.log(layers);
+
+      var done = {};
+      for(var i = 0; i < defs.length; ++i) {
+        var def = defs[i];
+        var k = defKey(def);
+        var layer = layers[k];
+        if(!done[k]) {
+          if(this.options.debug) console.log("**", k);
+          for(var prop in layer) {
+            if (prop !== 'zoom' && prop !== 'frames' && prop !== 'symbolizers') {
+              if(this.options.debug) console.log("*", prop);
+              layer[prop].style = this._createFn(layer[prop].js);
+              layer.symbolizers.push(layer[prop].symbolizer);
+              layer.symbolizers = _.uniq(layer.symbolizers);
+            }
+          }
+          layer.attachment = k;
+          ordered_layers.push(layer);
+          done[k] = true;
+        }
+        layer.zoom |= def.zoom;
+        layer.frames.push(def.frame_offset);
+      }
+
+      // uniq the frames
+      for(i = 0; i < ordered_layers.length; ++i) {
+        ordered_layers[i].frames = _.uniq(ordered_layers[i].frames);
+      }
+
+      return ordered_layers;
+
+    }
+    return null;
+  }
+};
+
+
+carto.RendererJS = function (options) {
+    this.options = options || {};
+    this.options.mapnik_version = this.options.mapnik_version || 'latest';
+};
+
+// Prepare a javascript object which contains the layers
+carto.RendererJS.prototype.render = function render(cartocss, callback) {
+    var reference = require('./torque-reference');
+    tree.Reference.setData(reference.version.latest);
+    return new CartoCSS(cartocss, this.options);
+}
+
+if(typeof(module) !== 'undefined') {
+  module.exports = carto.RendererJS;
+}
+
+
+})(require('../carto'));
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"../carto":269,"./torque-reference":273,"./tree":274,"underscore":304}],273:[function(require,module,exports){
+arguments[4][61][0].apply(exports,arguments)
+},{"dup":61}],274:[function(require,module,exports){
+arguments[4][62][0].apply(exports,arguments)
+},{"dup":62}],275:[function(require,module,exports){
+(function (global){
+(function(tree) {
+var _ = global._ || require('underscore');
+tree.Call = function Call(name, args, index) {
+    this.name = name;
+    this.args = args;
+    this.index = index;
+};
+
+tree.Call.prototype = {
+    is: 'call',
+    // When evuating a function call,
+    // we either find the function in `tree.functions` [1],
+    // in which case we call it, passing the  evaluated arguments,
+    // or we simply print it out as it appeared originally [2].
+    // The *functions.js* file contains the built-in functions.
+    // The reason why we evaluate the arguments, is in the case where
+    // we try to pass a variable to a function, like: `saturate(@color)`.
+    // The function should receive the value, not the variable.
+    'ev': function(env) {
+        var args = this.args.map(function(a) { return a.ev(env); });
+
+        for (var i = 0; i < args.length; i++) {
+            if (args[i].is === 'undefined') {
+                return {
+                    is: 'undefined',
+                    value: 'undefined'
+                };
+            }
+        }
+
+        if (this.name in tree.functions) {
+            if (tree.functions[this.name].length <= args.length) {
+                var val = tree.functions[this.name].apply(tree.functions, args);
+                if (val === null) {
+                    env.error({
+                        message: 'incorrect arguments given to ' + this.name + '()',
+                        index: this.index,
+                        type: 'runtime',
+                        filename: this.filename
+                    });
+                    return { is: 'undefined', value: 'undefined' };
+                }
+                return val;
+            } else {
+                env.error({
+                    message: 'incorrect number of arguments for ' + this.name +
+                        '(). ' + tree.functions[this.name].length + ' expected.',
+                    index: this.index,
+                    type: 'runtime',
+                    filename: this.filename
+                });
+                return {
+                    is: 'undefined',
+                    value: 'undefined'
+                };
+            }
+        } else {
+            var fn = tree.Reference.mapnikFunctions[this.name];
+            if (fn === undefined) {
+                var functions = _.pairs(tree.Reference.mapnikFunctions);
+                // cheap closest, needs improvement.
+                var name = this.name;
+                var mean = functions.map(function(f) {
+                    return [f[0], tree.Reference.editDistance(name, f[0]), f[1]];
+                }).sort(function(a, b) {
+                    return a[1] - b[1];
+                });
+                env.error({
+                    message: 'unknown function ' + this.name + '(), did you mean ' +
+                        mean[0][0] + '(' + mean[0][2] + ')',
+                    index: this.index,
+                    type: 'runtime',
+                    filename: this.filename
+                });
+                return {
+                    is: 'undefined',
+                    value: 'undefined'
+                };
+            }
+            if (fn !== args.length &&
+                !(Array.isArray(fn) && _.include(fn, args.length)) &&
+                // support variable-arg functions like `colorize-alpha`
+                fn !== -1) {
+                env.error({
+                    message: 'function ' + this.name + '() takes ' +
+                        fn + ' arguments and was given ' + args.length,
+                    index: this.index,
+                    type: 'runtime',
+                    filename: this.filename
+                });
+                return {
+                    is: 'undefined',
+                    value: 'undefined'
+                };
+            } else {
+                // Save the evaluated versions of arguments
+                this.args = args;
+                return this;
+            }
+        }
+    },
+
+    toString: function(env, format) {
+        if (this.args.length) {
+            return this.name + '(' + this.args.join(',') + ')';
+        } else {
+            return this.name;
+        }
+    }
+};
+
+})(require('../tree'));
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"../tree":274,"underscore":304}],276:[function(require,module,exports){
+arguments[4][64][0].apply(exports,arguments)
+},{"../tree":274,"dup":64}],277:[function(require,module,exports){
+arguments[4][65][0].apply(exports,arguments)
+},{"../tree":274,"dup":65}],278:[function(require,module,exports){
+(function (global){
+(function(tree) {
+var assert = require('assert'),
+    _ = global._ || require('underscore');
+
+// A definition is the combination of a selector and rules, like
+// #foo {
+//     polygon-opacity:1.0;
+// }
+//
+// The selector can have filters
+tree.Definition = function Definition(selector, rules) {
+    this.elements = selector.elements;
+    assert.ok(selector.filters instanceof tree.Filterset);
+    this.rules = rules;
+    this.ruleIndex = {};
+    for (var i = 0; i < this.rules.length; i++) {
+        if ('zoom' in this.rules[i]) this.rules[i] = this.rules[i].clone();
+        this.rules[i].zoom = selector.zoom;
+        this.ruleIndex[this.rules[i].updateID()] = true;
+    }
+    this.filters = selector.filters;
+    this.zoom = selector.zoom;
+    this.frame_offset = selector.frame_offset;
+    this.attachment = selector.attachment || '__default__';
+    this.specificity = selector.specificity();
+};
+
+tree.Definition.prototype.toString = function() {
+    var str = this.filters.toString();
+    for (var i = 0; i < this.rules.length; i++) {
+        str += '\n    ' + this.rules[i];
+    }
+    return str;
+};
+
+tree.Definition.prototype.clone = function(filters) {
+    if (filters) assert.ok(filters instanceof tree.Filterset);
+    var clone = Object.create(tree.Definition.prototype);
+    clone.rules = this.rules.slice();
+    clone.ruleIndex = _.clone(this.ruleIndex);
+    clone.filters = filters ? filters : this.filters.clone();
+    clone.attachment = this.attachment;
+    return clone;
+};
+
+tree.Definition.prototype.addRules = function(rules) {
+    var added = 0;
+
+    // Add only unique rules.
+    for (var i = 0; i < rules.length; i++) {
+        if (!this.ruleIndex[rules[i].id]) {
+            this.rules.push(rules[i]);
+            this.ruleIndex[rules[i].id] = true;
+            added++;
+        }
+    }
+
+    return added;
+};
+
+// Determine whether this selector matches a given id
+// and array of classes, by determining whether
+// all elements it contains match.
+tree.Definition.prototype.appliesTo = function(id, classes) {
+    for (var i = 0, l = this.elements.length; i < l; i++) {
+        var elem = this.elements[i];
+        if (!(elem.wildcard ||
+            (elem.type === 'class' && classes[elem.clean]) ||
+            (elem.type === 'id' && id === elem.clean))) return false;
+    }
+    return true;
+};
+
+function symbolizerName(symbolizer) {
+    function capitalize(str) { return str[1].toUpperCase(); }
+    return symbolizer.charAt(0).toUpperCase() +
+           symbolizer.slice(1).replace(/\-./, capitalize) + 'Symbolizer';
+}
+
+// Get a simple list of the symbolizers, in order
+function symbolizerList(sym_order) {
+    return sym_order.sort(function(a, b) { return a[1] - b[1]; })
+        .map(function(v) { return v[0]; });
+}
+
+tree.Definition.prototype.symbolizersToXML = function(env, symbolizers, zoom) {
+    var xml = zoom.toXML(env).join('') + this.filters.toXML(env);
+
+    // Sort symbolizers by the index of their first property definition
+    var sym_order = [], indexes = [];
+    for (var key in symbolizers) {
+        indexes = [];
+        for (var prop in symbolizers[key]) {
+            indexes.push(symbolizers[key][prop].index);
+        }
+        var min_idx = Math.min.apply(Math, indexes);
+        sym_order.push([key, min_idx]);
+    }
+
+    sym_order = symbolizerList(sym_order);
+    var sym_count = 0;
+
+    for (var i = 0; i < sym_order.length; i++) {
+        var attributes = symbolizers[sym_order[i]];
+        var symbolizer = sym_order[i].split('/').pop();
+
+        // Skip the magical * symbolizer which is used for universal properties
+        // which are bubbled up to Style elements intead of Symbolizer elements.
+        if (symbolizer === '*') continue;
+        sym_count++;
+
+        var fail = tree.Reference.requiredProperties(symbolizer, attributes);
+        if (fail) {
+            var rule = attributes[Object.keys(attributes).shift()];
+            env.error({
+                message: fail,
+                index: rule.index,
+                filename: rule.filename
+            });
+        }
+
+        var name = symbolizerName(symbolizer);
+
+        var selfclosing = true, tagcontent;
+        xml += '    <' + name + ' ';
+        for (var j in attributes) {
+            if (symbolizer === 'map') env.error({
+                message: 'Map properties are not permitted in other rules',
+                index: attributes[j].index,
+                filename: attributes[j].filename
+            });
+            var x = tree.Reference.selector(attributes[j].name);
+            if (x && x.serialization && x.serialization === 'content') {
+                selfclosing = false;
+                tagcontent = attributes[j].ev(env).toXML(env, true);
+            } else if (x && x.serialization && x.serialization === 'tag') {
+                selfclosing = false;
+                tagcontent = attributes[j].ev(env).toXML(env, true);
+            } else {
+                xml += attributes[j].ev(env).toXML(env) + ' ';
+            }
+        }
+        if (selfclosing) {
+            xml += '/>\n';
+        } else if (typeof tagcontent !== "undefined") {
+            if (tagcontent.indexOf('<') != -1) {
+                xml += '>' + tagcontent + '</' + name + '>\n';
+            } else {
+                xml += '><![CDATA[' + tagcontent + ']]></' + name + '>\n';
+            }
+        }
+    }
+    if (!sym_count || !xml) return '';
+    return '  <Rule>\n' + xml + '  </Rule>\n';
+};
+
+// Take a zoom range of zooms and 'i', the index of a rule in this.rules,
+// and finds all applicable symbolizers
+tree.Definition.prototype.collectSymbolizers = function(zooms, i) {
+    var symbolizers = {}, child;
+
+    for (var j = i; j < this.rules.length; j++) {
+        child = this.rules[j];
+        var key = child.instance + '/' + child.symbolizer;
+        if (zooms.current & child.zoom &&
+           (!(key in symbolizers) ||
+           (!(child.name in symbolizers[key])))) {
+            zooms.current &= child.zoom;
+            if (!(key in symbolizers)) {
+                symbolizers[key] = {};
+            }
+            symbolizers[key][child.name] = child;
+        }
+    }
+
+    if (Object.keys(symbolizers).length) {
+        zooms.rule &= (zooms.available &= ~zooms.current);
+        return symbolizers;
+    }
+};
+
+// The tree.Zoom.toString function ignores the holes in zoom ranges and outputs
+// scaledenominators that cover the whole range from the first to last bit set.
+// This algorithm can produces zoom ranges that may have holes. However,
+// when using the filter-mode="first", more specific zoom filters will always
+// end up before broader ranges. The filter-mode will pick those first before
+// resorting to the zoom range with the hole and stop processing further rules.
+tree.Definition.prototype.toXML = function(env, existing) {
+    var filter = this.filters.toString();
+    if (!(filter in existing)) existing[filter] = tree.Zoom.all;
+
+    var available = tree.Zoom.all, xml = '', zoom, symbolizers,
+        zooms = { available: tree.Zoom.all };
+    for (var i = 0; i < this.rules.length && available; i++) {
+        zooms.rule = this.rules[i].zoom;
+        if (!(existing[filter] & zooms.rule)) continue;
+
+        while (zooms.current = zooms.rule & available) {
+            if (symbolizers = this.collectSymbolizers(zooms, i)) {
+                if (!(existing[filter] & zooms.current)) continue;
+                xml += this.symbolizersToXML(env, symbolizers,
+                    (new tree.Zoom()).setZoom(existing[filter] & zooms.current));
+                existing[filter] &= ~zooms.current;
+            }
+        }
+    }
+
+    return xml;
+};
+
+tree.Definition.prototype.toJS = function(env) {
+  var shaderAttrs = {};
+
+  // merge conditions from filters with zoom condition of the
+  // definition
+  var zoom = "(" + this.zoom + " & (1 << ctx.zoom))";
+  var frame_offset = this.frame_offset;
+  var _if = this.filters.toJS(env);
+  var filters = [zoom];
+  if(_if) filters.push(_if);
+  if(frame_offset) filters.push('ctx["frame-offset"] === ' + frame_offset);
+  _if = filters.join(" && ");
+  _.each(this.rules, function(rule) {
+      if(rule instanceof tree.Rule) {
+        shaderAttrs[rule.name] = shaderAttrs[rule.name] || [];
+
+        var r = {
+          index: rule.index,
+          symbolizer: rule.symbolizer
+        };
+
+        if (_if) {
+          r.js = "if(" + _if + "){" + rule.value.toJS(env) + "}"
+        } else {
+          r.js = rule.value.toJS(env);
+        }
+
+        r.constant = rule.value.ev(env).is !== 'field';
+        r.filtered = !!_if;
+
+        shaderAttrs[rule.name].push(r);
+      } else {
+        throw new Error("Ruleset not supported");
+        //if (rule instanceof tree.Ruleset) {
+          //var sh = rule.toJS(env);
+          //for(var v in sh) {
+            //shaderAttrs[v] = shaderAttrs[v] || [];
+            //for(var attr in sh[v]) {
+              //shaderAttrs[v].push(sh[v][attr]);
+            //}
+          //}
+        //}
+      }
+  });
+  return shaderAttrs;
+};
+
+
+})(require('../tree'));
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"../tree":274,"assert":326,"underscore":304}],279:[function(require,module,exports){
+(function (global){
+(function(tree) {
+var _ = global._ || require('underscore');
+//
+// A number with a unit
+//
+tree.Dimension = function Dimension(value, unit, index) {
+    this.value = parseFloat(value);
+    this.unit = unit || null;
+    this.index = index;
+};
+
+tree.Dimension.prototype = {
+    is: 'float',
+    physical_units: ['m', 'cm', 'in', 'mm', 'pt', 'pc'],
+    screen_units: ['px', '%'],
+    all_units: ['m', 'cm', 'in', 'mm', 'pt', 'pc', 'px', '%'],
+    densities: {
+        m: 0.0254,
+        mm: 25.4,
+        cm: 2.54,
+        pt: 72,
+        pc: 6
+    },
+    ev: function (env) {
+        if (this.unit && !_.contains(this.all_units, this.unit)) {
+            env.error({
+                message: "Invalid unit: '" + this.unit + "'",
+                index: this.index
+            });
+            return { is: 'undefined', value: 'undefined' };
+        }
+
+        // normalize units which are not px or %
+        if (this.unit && _.contains(this.physical_units, this.unit)) {
+            if (!env.ppi) {
+                env.error({
+                    message: "ppi is not set, so metric units can't be used",
+                    index: this.index
+                });
+                return { is: 'undefined', value: 'undefined' };
+            }
+            // convert all units to inch
+            // convert inch to px using ppi
+            this.value = (this.value / this.densities[this.unit]) * env.ppi;
+            this.unit = 'px';
+        }
+
+        return this;
+    },
+    round: function() {
+        this.value = Math.round(this.value);
+        return this;
+    },
+    toColor: function() {
+        return new tree.Color([this.value, this.value, this.value]);
+    },
+    round: function() {
+        this.value = Math.round(this.value);
+        return this;
+    },
+    toString: function() {
+        return this.value.toString();
+    },
+    operate: function(env, op, other) {
+        if (this.unit === '%' && other.unit !== '%') {
+            env.error({
+                message: 'If two operands differ, the first must not be %',
+                index: this.index
+            });
+            return {
+                is: 'undefined',
+                value: 'undefined'
+            };
+        }
+
+        if (this.unit !== '%' && other.unit === '%') {
+            if (op === '*' || op === '/' || op === '%') {
+                env.error({
+                    message: 'Percent values can only be added or subtracted from other values',
+                    index: this.index
+                });
+                return {
+                    is: 'undefined',
+                    value: 'undefined'
+                };
+            }
+
+            return new tree.Dimension(tree.operate(op,
+                    this.value, this.value * other.value * 0.01),
+                this.unit);
+        }
+
+        //here the operands are either the same (% or undefined or px), or one is undefined and the other is px
+        return new tree.Dimension(tree.operate(op, this.value, other.value),
+            this.unit || other.unit);
+    }
+};
+
+})(require('../tree'));
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"../tree":274,"underscore":304}],280:[function(require,module,exports){
+arguments[4][68][0].apply(exports,arguments)
+},{"../tree":274,"dup":68}],281:[function(require,module,exports){
+arguments[4][69][0].apply(exports,arguments)
+},{"../tree":274,"dup":69}],282:[function(require,module,exports){
+arguments[4][70][0].apply(exports,arguments)
+},{"../tree":274,"dup":70}],283:[function(require,module,exports){
+arguments[4][71][0].apply(exports,arguments)
+},{"../tree":274,"dup":71}],284:[function(require,module,exports){
+(function (global){
+var tree = require('../tree');
+var _ = global._ || require('underscore');
+
+tree.Filterset = function Filterset() {
+    this.filters = {};
+};
+
+tree.Filterset.prototype.toXML = function(env) {
+    var filters = [];
+    for (var id in this.filters) {
+        filters.push('(' + this.filters[id].toXML(env).trim() + ')');
+    }
+    if (filters.length) {
+        return '    <Filter>' + filters.join(' and ') + '</Filter>\n';
+    } else {
+        return '';
+    }
+};
+
+tree.Filterset.prototype.toString = function() {
+    var arr = [];
+    for (var id in this.filters) arr.push(this.filters[id].id);
+    return arr.sort().join('\t');
+};
+
+tree.Filterset.prototype.ev = function(env) {
+    for (var i in this.filters) {
+        this.filters[i].ev(env);
+    }
+    return this;
+};
+
+tree.Filterset.prototype.clone = function() {
+    var clone = new tree.Filterset();
+    for (var id in this.filters) {
+        clone.filters[id] = this.filters[id];
+    }
+    return clone;
+};
+
+// Note: other has to be a tree.Filterset.
+tree.Filterset.prototype.cloneWith = function(other) {
+    var additions = [];
+    for (var id in other.filters) {
+        var status = this.addable(other.filters[id]);
+        // status is true, false or null. if it's null we don't fail this
+        // clone nor do we add the filter.
+        if (status === false) {
+            return false;
+        }
+        if (status === true) {
+            // Adding the filter will override another value.
+            additions.push(other.filters[id]);
+        }
+    }
+
+    // Adding the other filters doesn't make this filterset invalid, but it
+    // doesn't add anything to it either.
+    if (!additions.length) {
+        return null;
+    }
+
+    // We can successfully add all filters. Now clone the filterset and add the
+    // new rules.
+    var clone = new tree.Filterset();
+
+    // We can add the rules that are already present without going through the
+    // add function as a Filterset is always in it's simplest canonical form.
+    for (id in this.filters) {
+        clone.filters[id] = this.filters[id];
+    }
+
+    // Only add new filters that actually change the filter.
+    while (id = additions.shift()) {
+        clone.add(id);
+    }
+
+    return clone;
+};
+
+tree.Filterset.prototype.toJS = function(env) {
+  var opMap = {
+    '=': '==='
+  };
+  return _.map(this.filters, function(filter) {
+    var op = filter.op;
+    if(op in opMap) {
+      op = opMap[op];
+    }
+    var val = filter.val;
+    if(filter._val !== undefined) {
+      val = filter._val.toString(true);
+    }
+    var attrs = "data";
+    return attrs + "." + filter.key.value  + " " + op + " " + (val.is === 'string' ? "'"+ val +"'" : val);
+  }).join(' && ');
+};
+
+// Returns true when the new filter can be added, false otherwise.
+// It can also return null, and on the other side we test for === true or
+// false
+tree.Filterset.prototype.addable = function(filter) {
+    var key = filter.key.toString(),
+        value = filter.val.toString();
+
+    if (value.match(/^[0-9]+(\.[0-9]*)?$/)) value = parseFloat(value);
+
+    switch (filter.op) {
+        case '=':
+            // if there is already foo= and we're adding foo=
+            if (this.filters[key + '='] !== undefined) {
+                if (this.filters[key + '='].val.toString() != value) {
+                    return false;
+                } else {
+                    return null;
+                }
+            }
+            if (this.filters[key + '!=' + value] !== undefined) return false;
+            if (this.filters[key + '>'] !== undefined && this.filters[key + '>'].val >= value) return false;
+            if (this.filters[key + '<'] !== undefined && this.filters[key + '<'].val <= value) return false;
+            if (this.filters[key + '>='] !== undefined  && this.filters[key + '>='].val > value) return false;
+            if (this.filters[key + '<='] !== undefined  && this.filters[key + '<='].val < value) return false;
+            return true;
+
+        case '=~':
+            return true;
+
+        case '!=':
+            if (this.filters[key + '='] !== undefined) return (this.filters[key + '='].val == value) ? false : null;
+            if (this.filters[key + '!=' + value] !== undefined) return null;
+            if (this.filters[key + '>'] !== undefined && this.filters[key + '>'].val >= value) return null;
+            if (this.filters[key + '<'] !== undefined && this.filters[key + '<'].val <= value) return null;
+            if (this.filters[key + '>='] !== undefined && this.filters[key + '>='].val > value) return null;
+            if (this.filters[key + '<='] !== undefined && this.filters[key + '<='].val < value) return null;
+            return true;
+
+        case '>':
+            if (key + '=' in this.filters) {
+                if (this.filters[key + '='].val <= value) {
+                    return false;
+                } else {
+                    return null;
+                }
+            }
+            if (this.filters[key + '<'] !== undefined && this.filters[key + '<'].val <= value) return false;
+            if (this.filters[key + '<='] !== undefined  && this.filters[key + '<='].val <= value) return false;
+            if (this.filters[key + '>'] !== undefined && this.filters[key + '>'].val >= value) return null;
+            if (this.filters[key + '>='] !== undefined  && this.filters[key + '>='].val > value) return null;
+            return true;
+
+        case '>=':
+            if (this.filters[key + '=' ] !== undefined) return (this.filters[key + '='].val < value) ? false : null;
+            if (this.filters[key + '<' ] !== undefined && this.filters[key + '<'].val <= value) return false;
+            if (this.filters[key + '<='] !== undefined && this.filters[key + '<='].val < value) return false;
+            if (this.filters[key + '>' ] !== undefined && this.filters[key + '>'].val >= value) return null;
+            if (this.filters[key + '>='] !== undefined && this.filters[key + '>='].val >= value) return null;
+            return true;
+
+        case '<':
+            if (this.filters[key + '=' ] !== undefined) return (this.filters[key + '='].val >= value) ? false : null;
+            if (this.filters[key + '>' ] !== undefined && this.filters[key + '>'].val >= value) return false;
+            if (this.filters[key + '>='] !== undefined && this.filters[key + '>='].val >= value) return false;
+            if (this.filters[key + '<' ] !== undefined && this.filters[key + '<'].val <= value) return null;
+            if (this.filters[key + '<='] !== undefined && this.filters[key + '<='].val < value) return null;
+            return true;
+
+        case '<=':
+            if (this.filters[key + '=' ] !== undefined) return (this.filters[key + '='].val > value) ? false : null;
+            if (this.filters[key + '>' ] !== undefined && this.filters[key + '>'].val >= value) return false;
+            if (this.filters[key + '>='] !== undefined && this.filters[key + '>='].val > value) return false;
+            if (this.filters[key + '<' ] !== undefined && this.filters[key + '<'].val <= value) return null;
+            if (this.filters[key + '<='] !== undefined && this.filters[key + '<='].val <= value) return null;
+            return true;
+    }
+};
+
+// Does the new filter constitute a conflict?
+tree.Filterset.prototype.conflict = function(filter) {
+    var key = filter.key.toString(),
+        value = filter.val.toString();
+
+    if (!isNaN(parseFloat(value))) value = parseFloat(value);
+
+    // if (a=b) && (a=c)
+    // if (a=b) && (a!=b)
+    // or (a!=b) && (a=b)
+    if ((filter.op === '=' && this.filters[key + '='] !== undefined &&
+        value != this.filters[key + '='].val.toString()) ||
+        (filter.op === '!=' && this.filters[key + '='] !== undefined &&
+        value == this.filters[key + '='].val.toString()) ||
+        (filter.op === '=' && this.filters[key + '!='] !== undefined &&
+        value == this.filters[key + '!='].val.toString())) {
+        return filter.toString() + ' added to ' + this.toString() + ' produces an invalid filter';
+    }
+
+    return false;
+};
+
+// Only call this function for filters that have been cleared by .addable().
+tree.Filterset.prototype.add = function(filter, env) {
+    var key = filter.key.toString(),
+        id,
+        op = filter.op,
+        conflict = this.conflict(filter),
+        numval;
+
+    if (conflict) return conflict;
+
+    if (op === '=') {
+        for (var i in this.filters) {
+            if (this.filters[i].key == key) delete this.filters[i];
+        }
+        this.filters[key + '='] = filter;
+    } else if (op === '!=') {
+        this.filters[key + '!=' + filter.val] = filter;
+    } else if (op === '=~') {
+        this.filters[key + '=~' + filter.val] = filter;
+    } else if (op === '>') {
+        // If there are other filters that are also >
+        // but are less than this one, they don't matter, so
+        // remove them.
+        for (var j in this.filters) {
+            if (this.filters[j].key == key && this.filters[j].val <= filter.val) {
+                delete this.filters[j];
+            }
+        }
+        this.filters[key + '>'] = filter;
+    } else if (op === '>=') {
+        for (var k in this.filters) {
+            numval = (+this.filters[k].val.toString());
+            if (this.filters[k].key == key && numval < filter.val) {
+                delete this.filters[k];
+            }
+        }
+        if (this.filters[key + '!=' + filter.val] !== undefined) {
+            delete this.filters[key + '!=' + filter.val];
+            filter.op = '>';
+            this.filters[key + '>'] = filter;
+        }
+        else {
+            this.filters[key + '>='] = filter;
+        }
+    } else if (op === '<') {
+        for (var l in this.filters) {
+            numval = (+this.filters[l].val.toString());
+            if (this.filters[l].key == key && numval >= filter.val) {
+                delete this.filters[l];
+            }
+        }
+        this.filters[key + '<'] = filter;
+    } else if (op === '<=') {
+        for (var m in this.filters) {
+            numval = (+this.filters[m].val.toString());
+            if (this.filters[m].key == key && numval > filter.val) {
+                delete this.filters[m];
+            }
+        }
+        if (this.filters[key + '!=' + filter.val] !== undefined) {
+            delete this.filters[key + '!=' + filter.val];
+            filter.op = '<';
+            this.filters[key + '<'] = filter;
+        }
+        else {
+            this.filters[key + '<='] = filter;
+        }
+    }
+};
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"../tree":274,"underscore":304}],285:[function(require,module,exports){
+arguments[4][73][0].apply(exports,arguments)
+},{"../tree":274,"dup":73}],286:[function(require,module,exports){
+arguments[4][74][0].apply(exports,arguments)
+},{"../tree":274,"dup":74}],287:[function(require,module,exports){
+arguments[4][75][0].apply(exports,arguments)
+},{"../tree":274,"dup":75}],288:[function(require,module,exports){
+arguments[4][76][0].apply(exports,arguments)
+},{"../tree":274,"dup":76}],289:[function(require,module,exports){
+arguments[4][77][0].apply(exports,arguments)
+},{"../tree":274,"dup":77}],290:[function(require,module,exports){
+arguments[4][78][0].apply(exports,arguments)
+},{"../tree":274,"dup":78}],291:[function(require,module,exports){
+arguments[4][79][0].apply(exports,arguments)
+},{"../tree":274,"dup":79}],292:[function(require,module,exports){
+arguments[4][80][0].apply(exports,arguments)
+},{"../tree":274,"dup":80}],293:[function(require,module,exports){
+arguments[4][81][0].apply(exports,arguments)
+},{"../tree":274,"dup":81}],294:[function(require,module,exports){
+(function (global){
+// Carto pulls in a reference from the `mapnik-reference`
+// module. This file builds indexes from that file for its various
+// options, and provides validation methods for property: value
+// combinations.
+(function(tree) {
+
+var _ = global._ || require('underscore'),
+    ref = {};
+
+ref.setData = function(data) {
+    ref.data = data;
+    ref.selector_cache = generateSelectorCache(data);
+    ref.mapnikFunctions = generateMapnikFunctions(data);
+
+    ref.mapnikFunctions.matrix = [6];
+    ref.mapnikFunctions.translate = [1, 2];
+    ref.mapnikFunctions.scale = [1, 2];
+    ref.mapnikFunctions.rotate = [1, 3];
+    ref.mapnikFunctions.skewX = [1];
+    ref.mapnikFunctions.skewY = [1];
+
+    ref.required_cache = generateRequiredProperties(data);
+};
+
+ref.setVersion = function(version) {
+    var mapnik_reference = require('mapnik-reference');
+    if (mapnik_reference.version.hasOwnProperty(version)) {
+        ref.setData(mapnik_reference.version[version]);
+        return true;
+    } else {
+        return false;
+    }
+};
+
+ref.selectorData = function(selector, i) {
+    if (ref.selector_cache[selector]) return ref.selector_cache[selector][i];
+};
+
+ref.validSelector = function(selector) { return !!ref.selector_cache[selector]; };
+ref.selectorName = function(selector) { return ref.selectorData(selector, 2); };
+ref.selector = function(selector) { return ref.selectorData(selector, 0); };
+ref.symbolizer = function(selector) { return ref.selectorData(selector, 1); };
+
+function generateSelectorCache(data) {
+    var index = {};
+    for (var i in data.symbolizers) {
+        for (var j in data.symbolizers[i]) {
+            if (data.symbolizers[i][j].hasOwnProperty('css')) {
+                index[data.symbolizers[i][j].css] = [data.symbolizers[i][j], i, j];
+            }
+        }
+    }
+    return index;
+}
+
+function generateMapnikFunctions(data) {
+    var functions = {};
+    for (var i in data.symbolizers) {
+        for (var j in data.symbolizers[i]) {
+            if (data.symbolizers[i][j].type === 'functions') {
+                for (var k = 0; k < data.symbolizers[i][j].functions.length; k++) {
+                    var fn = data.symbolizers[i][j].functions[k];
+                    functions[fn[0]] = fn[1];
+                }
+            }
+        }
+    }
+    return functions;
+}
+
+function generateRequiredProperties(data) {
+    var cache = {};
+    for (var symbolizer_name in data.symbolizers) {
+        cache[symbolizer_name] = [];
+        for (var j in data.symbolizers[symbolizer_name]) {
+            if (data.symbolizers[symbolizer_name][j].required) {
+                cache[symbolizer_name].push(data.symbolizers[symbolizer_name][j].css);
+            }
+        }
+    }
+    return cache;
+}
+
+ref.requiredProperties = function(symbolizer_name, rules) {
+    var req = ref.required_cache[symbolizer_name];
+    for (var i in req) {
+        if (!(req[i] in rules)) {
+            return 'Property ' + req[i] + ' required for defining ' +
+                symbolizer_name + ' styles.';
+        }
+    }
+};
+
+// TODO: finish implementation - this is dead code
+ref._validateValue = {
+    'font': function(env, value) {
+        if (env.validation_data && env.validation_data.fonts) {
+            return env.validation_data.fonts.indexOf(value) != -1;
+        } else {
+            return true;
+        }
+    }
+};
+
+ref.isFont = function(selector) {
+    return ref.selector(selector).validate == 'font';
+};
+
+// https://gist.github.com/982927
+ref.editDistance = function(a, b){
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+    var matrix = [];
+    for (var i = 0; i <= b.length; i++) { matrix[i] = [i]; }
+    for (var j = 0; j <= a.length; j++) { matrix[0][j] = j; }
+    for (i = 1; i <= b.length; i++) {
+        for (j = 1; j <= a.length; j++) {
+            if (b.charAt(i-1) == a.charAt(j-1)) {
+                matrix[i][j] = matrix[i-1][j-1];
+            } else {
+                matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, // substitution
+                    Math.min(matrix[i][j-1] + 1, // insertion
+                    matrix[i-1][j] + 1)); // deletion
+            }
+        }
+    }
+    return matrix[b.length][a.length];
+};
+
+function validateFunctions(value, selector) {
+    if (value.value[0].is === 'string') return true;
+    for (var i in value.value) {
+        for (var j in value.value[i].value) {
+            if (value.value[i].value[j].is !== 'call') return false;
+            var f = _.find(ref
+                .selector(selector).functions, function(x) {
+                    return x[0] == value.value[i].value[j].name;
+                });
+            if (!(f && f[1] == -1)) {
+                // This filter is unknown or given an incorrect number of arguments
+                if (!f || f[1] !== value.value[i].value[j].args.length) return false;
+            }
+        }
+    }
+    return true;
+}
+
+function validateKeyword(value, selector) {
+    if (typeof ref.selector(selector).type === 'object') {
+        return ref.selector(selector).type
+            .indexOf(value.value[0].value) !== -1;
+    } else {
+        // allow unquoted keywords as strings
+        return ref.selector(selector).type === 'string';
+    }
+}
+
+ref.validValue = function(env, selector, value) {
+    var i, j;
+    // TODO: handle in reusable way
+    if (!ref.selector(selector)) {
+        return false;
+    } else if (value.value[0].is == 'keyword') {
+        return validateKeyword(value, selector);
+    } else if (value.value[0].is == 'undefined') {
+        // caught earlier in the chain - ignore here so that
+        // error is not overridden
+        return true;
+    } else if (ref.selector(selector).type == 'numbers') {
+        for (i in value.value) {
+            if (value.value[i].is !== 'float') {
+                return false;
+            }
+        }
+        return true;
+    } else if (ref.selector(selector).type == 'tags') {
+        if (!value.value) return false;
+        if (!value.value[0].value) {
+            return value.value[0].is === 'tag';
+        }
+        for (i = 0; i < value.value[0].value.length; i++) {
+            if (value.value[0].value[i].is !== 'tag') return false;
+        }
+        return true;
+    } else if (ref.selector(selector).type == 'functions') {
+        // For backwards compatibility, you can specify a string for `functions`-compatible
+        // values, though they will not be validated.
+        return validateFunctions(value, selector);
+    } else if (ref.selector(selector).type === 'unsigned') {
+        if (value.value[0].is === 'float') {
+            value.value[0].round();
+            return true;
+        } else {
+            return false;
+        }
+    } else if ((ref.selector(selector).expression)) {
+        return true;
+    } else {
+        if (ref.selector(selector).validate) {
+            var valid = false;
+            for (i = 0; i < value.value.length; i++) {
+                if (ref.selector(selector).type == value.value[i].is &&
+                    ref
+                        ._validateValue
+                            [ref.selector(selector).validate]
+                            (env, value.value[i].value)) {
+                    return true;
+                }
+            }
+            return valid;
+        } else {
+            return ref.selector(selector).type == value.value[0].is;
+        }
+    }
+};
+
+tree.Reference = ref;
+
+})(require('../tree'));
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"../tree":274,"mapnik-reference":303,"underscore":304}],295:[function(require,module,exports){
+arguments[4][83][0].apply(exports,arguments)
+},{"../tree":274,"dup":83}],296:[function(require,module,exports){
+arguments[4][84][0].apply(exports,arguments)
+},{"../tree":274,"dup":84}],297:[function(require,module,exports){
+arguments[4][85][0].apply(exports,arguments)
+},{"../tree":274,"dup":85}],298:[function(require,module,exports){
+(function (global){
+(function(tree) {
+var _ = global._ || require('underscore');
+
+// Given a style's name, attachment, definitions, and an environment object,
+// return a stringified style for Mapnik
+tree.StyleXML = function(name, attachment, definitions, env) {
+    var existing = {};
+    var image_filters = [], image_filters_inflate = [], direct_image_filters = [], comp_op = [], opacity = [];
+
+    for (var i = 0; i < definitions.length; i++) {
+        for (var j = 0; j < definitions[i].rules.length; j++) {
+            if (definitions[i].rules[j].name === 'image-filters') {
+                image_filters.push(definitions[i].rules[j]);
+            }
+            if (definitions[i].rules[j].name === 'image-filters-inflate') {
+                image_filters_inflate.push(definitions[i].rules[j]);
+            }
+            if (definitions[i].rules[j].name === 'direct-image-filters') {
+                direct_image_filters.push(definitions[i].rules[j]);
+            }
+            if (definitions[i].rules[j].name === 'comp-op') {
+                comp_op.push(definitions[i].rules[j]);
+            }
+            if (definitions[i].rules[j].name === 'opacity') {
+                opacity.push(definitions[i].rules[j]);
+            }
+        }
+    }
+
+    var rules = definitions.map(function(definition) {
+        return definition.toXML(env, existing);
+    });
+
+    var attrs_xml = '';
+
+    if (image_filters.length) {
+        attrs_xml += ' image-filters="' + _.chain(image_filters)
+            // prevent identical filters from being duplicated in the style
+            .uniq(function(i) { return i.id; }).map(function(f) {
+            return f.ev(env).toXML(env, true, ',', 'image-filter');
+        }).value().join(',') + '"';
+    }
+
+    if (image_filters_inflate.length) {
+        attrs_xml += ' image-filters-inflate="' + image_filters_inflate[0].value.ev(env).toString() + '"';
+    }
+
+    if (direct_image_filters.length) {
+        attrs_xml += ' direct-image-filters="' + _.chain(direct_image_filters)
+            // prevent identical filters from being duplicated in the style
+            .uniq(function(i) { return i.id; }).map(function(f) {
+            return f.ev(env).toXML(env, true, ',', 'direct-image-filter');
+        }).value().join(',') + '"';
+    }
+
+    if (comp_op.length && comp_op[0].value.ev(env).value != 'src-over') {
+        attrs_xml += ' comp-op="' + comp_op[0].value.ev(env).toString() + '"';
+    }
+
+    if (opacity.length && opacity[0].value.ev(env).value != 1) {
+        attrs_xml += ' opacity="' + opacity[0].value.ev(env).toString() + '"';
+    }
+    var rule_string = rules.join('');
+    if (!attrs_xml && !rule_string) return '';
+    return '<Style name="' + name + '" filter-mode="first"' + attrs_xml + '>\n' + rule_string + '</Style>';
+};
+
+})(require('../tree'));
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"../tree":274,"underscore":304}],299:[function(require,module,exports){
+arguments[4][87][0].apply(exports,arguments)
+},{"../tree":274,"dup":87}],300:[function(require,module,exports){
+arguments[4][88][0].apply(exports,arguments)
+},{"../tree":274,"dup":88}],301:[function(require,module,exports){
+arguments[4][89][0].apply(exports,arguments)
+},{"../tree":274,"dup":89}],302:[function(require,module,exports){
+arguments[4][90][0].apply(exports,arguments)
+},{"../tree":274,"dup":90}],303:[function(require,module,exports){
+(function (__dirname){
+var fs = require('fs'),
+    path = require('path'),
+    existsSync = require('fs').existsSync || require('path').existsSync;
+
+// Load all stated versions into the module exports
+module.exports.version = {};
+
+var refs = [
+ '2.0.0',
+ '2.0.1',
+ '2.0.2',
+ '2.1.0',
+ '2.1.1',
+ '2.2.0',
+ '2.3.0',
+ '3.0.0'
+];
+
+refs.map(function(version) {
+    module.exports.version[version] = require(path.join(__dirname, version, 'reference.json'));
+    var ds_path = path.join(__dirname, version, 'datasources.json');
+    if (existsSync(ds_path)) {
+        module.exports.version[version].datasources = require(ds_path).datasources;
+    }
+});
+
+}).call(this,"/../d3.cartodb/node_modules/carto/node_modules/mapnik-reference")
+
+},{"fs":325,"path":328}],304:[function(require,module,exports){
+module.exports = require(94);
+},{"dup":94}],305:[function(require,module,exports){
+module.exports={
+  "name": "carto",
+  "version": "0.15.1-cdb1",
+  "description": "CartoCSS Stylesheet Compiler",
+  "url": "https://github.com/cartodb/carto",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cartodb/carto.git"
+  },
+  "author": {
+    "name": "CartoDB",
+    "url": "http://cartodb.com/"
+  },
+  "keywords": [
+    "maps",
+    "css",
+    "stylesheets"
+  ],
+  "contributors": [
+    {
+      "name": "Tom MacWright",
+      "email": "macwright@gmail.com"
+    },
+    {
+      "name": "Konstantin Käfer"
+    },
+    {
+      "name": "Alexis Sellier",
+      "email": "self@cloudhead.net"
+    },
+    {
+      "name": "Raul Ochoa",
+      "email": "rochoa@cartodb.com"
+    },
+    {
+      "name": "Javi Santana",
+      "email": "jsantana@cartodb.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "Apache"
+    }
+  ],
+  "bin": {
+    "carto": "./bin/carto"
+  },
+  "man": [
+    "./man/carto.1"
+  ],
+  "main": "./lib/carto/index",
+  "engines": {
+    "node": ">=0.4.x"
+  },
+  "dependencies": {
+    "underscore": "~1.6.0",
+    "mapnik-reference": "~6.0.2",
+    "optimist": "~0.6.0"
+  },
+  "devDependencies": {
+    "mocha": "1.12.x",
+    "jshint": "0.2.x",
+    "sax": "0.1.x",
+    "istanbul": "~0.2.14",
+    "coveralls": "~2.10.1",
+    "browserify": "~7.0.0",
+    "uglify-js": "1.3.3"
+  },
+  "scripts": {
+    "pretest": "npm install",
+    "test": "mocha -R spec",
+    "coverage": "istanbul cover ./node_modules/.bin/_mocha && coveralls < ./coverage/lcov.info"
+  },
+  "readme": "# CartoCSS\n\n[![Build Status](https://secure.travis-ci.org/mapbox/carto.png)](http://travis-ci.org/mapbox/carto)\n\nIs as stylesheet renderer for javascript, It's an evolution of the Mapnik renderer from Mapbox.\nPlease, see original [Mapbox repo](http://github.com/mapbox/carto) for more information and credits\n\n## Quick Start\n\n```javascript\n// shader is a CartoCSS object\n\nvar cartocss = [\n    '#layer {',\n    ' marker-width: [property]',\n    ' marker-fill: red',\n    '}'\n].join('')\nvar shader = new carto.RendererJS().render(cartocss);\nvar layers = shader.getLayers()\nfor (var i = 0; i < layers.length; ++i) {\n    var layer = layers[i];\n    console.log(\"layer name: \", layer.fullName())\n    console.log(\"- frames: \", layer.frames())\n    console.log(\"- attachment: \", layer.attachment())\n\n    var layerShader = layer.getStyle({ property: 1 }, { zoom: 10 })\n    console.log(layerShader['marker-width']) // 1\n    console.log(layerShader['marker-fill']) // #FF0000\n}\n\n```\n\n# API\n\n## RendererJS\n\n### render(cartocss)\n\n## CartoCSS\n\ncompiled cartocss object\n\n### getLayers\n\nreturn the layers, an array of ``CartoCSS.Layer`` object\n\n### getDefault\n\nreturn the default layer (``CartoCSS.Layer``), usually the Map layer\n\n\n### findLayer(where)\n\nfind a layer using where object.\n\n```\nshader.findLayer({ name: 'test' })\n```\n\n## CartoCSS.Layer\n\n### getStyle(props, context)\n\nreturn the evaluated style:\n    - props: object containing properties needed to render the style. If the cartocss style uses\n      some variables they should be passed in this object\n    - context: rendering context variables like ``zoom`` or animation ``frame``\n\n\n\n\n\n\n\n\n\n\n## Reference Documentation\n\n* [mapbox.com/carto](http://mapbox.com/carto/)\n\n\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/cartodb/carto/issues"
+  },
+  "homepage": "https://github.com/cartodb/carto#readme",
+  "_id": "carto@0.15.1-cdb1",
+  "_shasum": "c43991f233072b4a77f80b2657f9b0673b455e0b",
+  "_resolved": "https://github.com/CartoDB/carto/archive/0.15.1-cdb1.tar.gz",
+  "_from": "https://github.com/CartoDB/carto/archive/0.15.1-cdb1.tar.gz"
+}
+
+},{}],306:[function(require,module,exports){
+(function(exports){
+crossfilter.version = "1.3.12";
+function crossfilter_identity(d) {
+  return d;
+}
+crossfilter.permute = permute;
+
+function permute(array, index) {
+  for (var i = 0, n = index.length, copy = new Array(n); i < n; ++i) {
+    copy[i] = array[index[i]];
+  }
+  return copy;
+}
+var bisect = crossfilter.bisect = bisect_by(crossfilter_identity);
+
+bisect.by = bisect_by;
+
+function bisect_by(f) {
+
+  // Locate the insertion point for x in a to maintain sorted order. The
+  // arguments lo and hi may be used to specify a subset of the array which
+  // should be considered; by default the entire array is used. If x is already
+  // present in a, the insertion point will be before (to the left of) any
+  // existing entries. The return value is suitable for use as the first
+  // argument to `array.splice` assuming that a is already sorted.
+  //
+  // The returned insertion point i partitions the array a into two halves so
+  // that all v < x for v in a[lo:i] for the left side and all v >= x for v in
+  // a[i:hi] for the right side.
+  function bisectLeft(a, x, lo, hi) {
+    while (lo < hi) {
+      var mid = lo + hi >>> 1;
+      if (f(a[mid]) < x) lo = mid + 1;
+      else hi = mid;
+    }
+    return lo;
+  }
+
+  // Similar to bisectLeft, but returns an insertion point which comes after (to
+  // the right of) any existing entries of x in a.
+  //
+  // The returned insertion point i partitions the array into two halves so that
+  // all v <= x for v in a[lo:i] for the left side and all v > x for v in
+  // a[i:hi] for the right side.
+  function bisectRight(a, x, lo, hi) {
+    while (lo < hi) {
+      var mid = lo + hi >>> 1;
+      if (x < f(a[mid])) hi = mid;
+      else lo = mid + 1;
+    }
+    return lo;
+  }
+
+  bisectRight.right = bisectRight;
+  bisectRight.left = bisectLeft;
+  return bisectRight;
+}
+var heap = crossfilter.heap = heap_by(crossfilter_identity);
+
+heap.by = heap_by;
+
+function heap_by(f) {
+
+  // Builds a binary heap within the specified array a[lo:hi]. The heap has the
+  // property such that the parent a[lo+i] is always less than or equal to its
+  // two children: a[lo+2*i+1] and a[lo+2*i+2].
+  function heap(a, lo, hi) {
+    var n = hi - lo,
+        i = (n >>> 1) + 1;
+    while (--i > 0) sift(a, i, n, lo);
+    return a;
+  }
+
+  // Sorts the specified array a[lo:hi] in descending order, assuming it is
+  // already a heap.
+  function sort(a, lo, hi) {
+    var n = hi - lo,
+        t;
+    while (--n > 0) t = a[lo], a[lo] = a[lo + n], a[lo + n] = t, sift(a, 1, n, lo);
+    return a;
+  }
+
+  // Sifts the element a[lo+i-1] down the heap, where the heap is the contiguous
+  // slice of array a[lo:lo+n]. This method can also be used to update the heap
+  // incrementally, without incurring the full cost of reconstructing the heap.
+  function sift(a, i, n, lo) {
+    var d = a[--lo + i],
+        x = f(d),
+        child;
+    while ((child = i << 1) <= n) {
+      if (child < n && f(a[lo + child]) > f(a[lo + child + 1])) child++;
+      if (x <= f(a[lo + child])) break;
+      a[lo + i] = a[lo + child];
+      i = child;
+    }
+    a[lo + i] = d;
+  }
+
+  heap.sort = sort;
+  return heap;
+}
+var heapselect = crossfilter.heapselect = heapselect_by(crossfilter_identity);
+
+heapselect.by = heapselect_by;
+
+function heapselect_by(f) {
+  var heap = heap_by(f);
+
+  // Returns a new array containing the top k elements in the array a[lo:hi].
+  // The returned array is not sorted, but maintains the heap property. If k is
+  // greater than hi - lo, then fewer than k elements will be returned. The
+  // order of elements in a is unchanged by this operation.
+  function heapselect(a, lo, hi, k) {
+    var queue = new Array(k = Math.min(hi - lo, k)),
+        min,
+        i,
+        x,
+        d;
+
+    for (i = 0; i < k; ++i) queue[i] = a[lo++];
+    heap(queue, 0, k);
+
+    if (lo < hi) {
+      min = f(queue[0]);
+      do {
+        if (x = f(d = a[lo]) > min) {
+          queue[0] = d;
+          min = f(heap(queue, 0, k)[0]);
+        }
+      } while (++lo < hi);
+    }
+
+    return queue;
+  }
+
+  return heapselect;
+}
+var insertionsort = crossfilter.insertionsort = insertionsort_by(crossfilter_identity);
+
+insertionsort.by = insertionsort_by;
+
+function insertionsort_by(f) {
+
+  function insertionsort(a, lo, hi) {
+    for (var i = lo + 1; i < hi; ++i) {
+      for (var j = i, t = a[i], x = f(t); j > lo && f(a[j - 1]) > x; --j) {
+        a[j] = a[j - 1];
+      }
+      a[j] = t;
+    }
+    return a;
+  }
+
+  return insertionsort;
+}
+// Algorithm designed by Vladimir Yaroslavskiy.
+// Implementation based on the Dart project; see lib/dart/LICENSE for details.
+
+var quicksort = crossfilter.quicksort = quicksort_by(crossfilter_identity);
+
+quicksort.by = quicksort_by;
+
+function quicksort_by(f) {
+  var insertionsort = insertionsort_by(f);
+
+  function sort(a, lo, hi) {
+    return (hi - lo < quicksort_sizeThreshold
+        ? insertionsort
+        : quicksort)(a, lo, hi);
+  }
+
+  function quicksort(a, lo, hi) {
+    // Compute the two pivots by looking at 5 elements.
+    var sixth = (hi - lo) / 6 | 0,
+        i1 = lo + sixth,
+        i5 = hi - 1 - sixth,
+        i3 = lo + hi - 1 >> 1,  // The midpoint.
+        i2 = i3 - sixth,
+        i4 = i3 + sixth;
+
+    var e1 = a[i1], x1 = f(e1),
+        e2 = a[i2], x2 = f(e2),
+        e3 = a[i3], x3 = f(e3),
+        e4 = a[i4], x4 = f(e4),
+        e5 = a[i5], x5 = f(e5);
+
+    var t;
+
+    // Sort the selected 5 elements using a sorting network.
+    if (x1 > x2) t = e1, e1 = e2, e2 = t, t = x1, x1 = x2, x2 = t;
+    if (x4 > x5) t = e4, e4 = e5, e5 = t, t = x4, x4 = x5, x5 = t;
+    if (x1 > x3) t = e1, e1 = e3, e3 = t, t = x1, x1 = x3, x3 = t;
+    if (x2 > x3) t = e2, e2 = e3, e3 = t, t = x2, x2 = x3, x3 = t;
+    if (x1 > x4) t = e1, e1 = e4, e4 = t, t = x1, x1 = x4, x4 = t;
+    if (x3 > x4) t = e3, e3 = e4, e4 = t, t = x3, x3 = x4, x4 = t;
+    if (x2 > x5) t = e2, e2 = e5, e5 = t, t = x2, x2 = x5, x5 = t;
+    if (x2 > x3) t = e2, e2 = e3, e3 = t, t = x2, x2 = x3, x3 = t;
+    if (x4 > x5) t = e4, e4 = e5, e5 = t, t = x4, x4 = x5, x5 = t;
+
+    var pivot1 = e2, pivotValue1 = x2,
+        pivot2 = e4, pivotValue2 = x4;
+
+    // e2 and e4 have been saved in the pivot variables. They will be written
+    // back, once the partitioning is finished.
+    a[i1] = e1;
+    a[i2] = a[lo];
+    a[i3] = e3;
+    a[i4] = a[hi - 1];
+    a[i5] = e5;
+
+    var less = lo + 1,   // First element in the middle partition.
+        great = hi - 2;  // Last element in the middle partition.
+
+    // Note that for value comparison, <, <=, >= and > coerce to a primitive via
+    // Object.prototype.valueOf; == and === do not, so in order to be consistent
+    // with natural order (such as for Date objects), we must do two compares.
+    var pivotsEqual = pivotValue1 <= pivotValue2 && pivotValue1 >= pivotValue2;
+    if (pivotsEqual) {
+
+      // Degenerated case where the partitioning becomes a dutch national flag
+      // problem.
+      //
+      // [ |  < pivot  | == pivot | unpartitioned | > pivot  | ]
+      //  ^             ^          ^             ^            ^
+      // left         less         k           great         right
+      //
+      // a[left] and a[right] are undefined and are filled after the
+      // partitioning.
+      //
+      // Invariants:
+      //   1) for x in ]left, less[ : x < pivot.
+      //   2) for x in [less, k[ : x == pivot.
+      //   3) for x in ]great, right[ : x > pivot.
+      for (var k = less; k <= great; ++k) {
+        var ek = a[k], xk = f(ek);
+        if (xk < pivotValue1) {
+          if (k !== less) {
+            a[k] = a[less];
+            a[less] = ek;
+          }
+          ++less;
+        } else if (xk > pivotValue1) {
+
+          // Find the first element <= pivot in the range [k - 1, great] and
+          // put [:ek:] there. We know that such an element must exist:
+          // When k == less, then el3 (which is equal to pivot) lies in the
+          // interval. Otherwise a[k - 1] == pivot and the search stops at k-1.
+          // Note that in the latter case invariant 2 will be violated for a
+          // short amount of time. The invariant will be restored when the
+          // pivots are put into their final positions.
+          while (true) {
+            var greatValue = f(a[great]);
+            if (greatValue > pivotValue1) {
+              great--;
+              // This is the only location in the while-loop where a new
+              // iteration is started.
+              continue;
+            } else if (greatValue < pivotValue1) {
+              // Triple exchange.
+              a[k] = a[less];
+              a[less++] = a[great];
+              a[great--] = ek;
+              break;
+            } else {
+              a[k] = a[great];
+              a[great--] = ek;
+              // Note: if great < k then we will exit the outer loop and fix
+              // invariant 2 (which we just violated).
+              break;
+            }
+          }
         }
       }
     } else {
-      str = ctx.stylize('[Circular]', 'special');
+
+      // We partition the list into three parts:
+      //  1. < pivot1
+      //  2. >= pivot1 && <= pivot2
+      //  3. > pivot2
+      //
+      // During the loop we have:
+      // [ | < pivot1 | >= pivot1 && <= pivot2 | unpartitioned  | > pivot2  | ]
+      //  ^            ^                        ^              ^             ^
+      // left         less                     k              great        right
+      //
+      // a[left] and a[right] are undefined and are filled after the
+      // partitioning.
+      //
+      // Invariants:
+      //   1. for x in ]left, less[ : x < pivot1
+      //   2. for x in [less, k[ : pivot1 <= x && x <= pivot2
+      //   3. for x in ]great, right[ : x > pivot2
+      for (var k = less; k <= great; k++) {
+        var ek = a[k], xk = f(ek);
+        if (xk < pivotValue1) {
+          if (k !== less) {
+            a[k] = a[less];
+            a[less] = ek;
+          }
+          ++less;
+        } else {
+          if (xk > pivotValue2) {
+            while (true) {
+              var greatValue = f(a[great]);
+              if (greatValue > pivotValue2) {
+                great--;
+                if (great < k) break;
+                // This is the only location inside the loop where a new
+                // iteration is started.
+                continue;
+              } else {
+                // a[great] <= pivot2.
+                if (greatValue < pivotValue1) {
+                  // Triple exchange.
+                  a[k] = a[less];
+                  a[less++] = a[great];
+                  a[great--] = ek;
+                } else {
+                  // a[great] >= pivot1.
+                  a[k] = a[great];
+                  a[great--] = ek;
+                }
+                break;
+              }
+            }
+          }
+        }
+      }
     }
-  }
-  if (isUndefined(name)) {
-    if (array && key.match(/^\d+$/)) {
-      return str;
+
+    // Move pivots into their final positions.
+    // We shrunk the list from both sides (a[left] and a[right] have
+    // meaningless values in them) and now we move elements from the first
+    // and third partition into these locations so that we can store the
+    // pivots.
+    a[lo] = a[less - 1];
+    a[less - 1] = pivot1;
+    a[hi - 1] = a[great + 1];
+    a[great + 1] = pivot2;
+
+    // The list is now partitioned into three partitions:
+    // [ < pivot1   | >= pivot1 && <= pivot2   |  > pivot2   ]
+    //  ^            ^                        ^             ^
+    // left         less                     great        right
+
+    // Recursive descent. (Don't include the pivot values.)
+    sort(a, lo, less - 1);
+    sort(a, great + 2, hi);
+
+    if (pivotsEqual) {
+      // All elements in the second partition are equal to the pivot. No
+      // need to sort them.
+      return a;
     }
-    name = JSON.stringify('' + key);
-    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
-      name = name.substr(1, name.length - 2);
-      name = ctx.stylize(name, 'name');
-    } else {
-      name = name.replace(/'/g, "\\'")
-                 .replace(/\\"/g, '"')
-                 .replace(/(^"|"$)/g, "'");
-      name = ctx.stylize(name, 'string');
+
+    // In theory it should be enough to call _doSort recursively on the second
+    // partition.
+    // The Android source however removes the pivot elements from the recursive
+    // call if the second partition is too large (more than 2/3 of the list).
+    if (less < i1 && great > i5) {
+      var lessValue, greatValue;
+      while ((lessValue = f(a[less])) <= pivotValue1 && lessValue >= pivotValue1) ++less;
+      while ((greatValue = f(a[great])) <= pivotValue2 && greatValue >= pivotValue2) --great;
+
+      // Copy paste of the previous 3-way partitioning with adaptions.
+      //
+      // We partition the list into three parts:
+      //  1. == pivot1
+      //  2. > pivot1 && < pivot2
+      //  3. == pivot2
+      //
+      // During the loop we have:
+      // [ == pivot1 | > pivot1 && < pivot2 | unpartitioned  | == pivot2 ]
+      //              ^                      ^              ^
+      //            less                     k              great
+      //
+      // Invariants:
+      //   1. for x in [ *, less[ : x == pivot1
+      //   2. for x in [less, k[ : pivot1 < x && x < pivot2
+      //   3. for x in ]great, * ] : x == pivot2
+      for (var k = less; k <= great; k++) {
+        var ek = a[k], xk = f(ek);
+        if (xk <= pivotValue1 && xk >= pivotValue1) {
+          if (k !== less) {
+            a[k] = a[less];
+            a[less] = ek;
+          }
+          less++;
+        } else {
+          if (xk <= pivotValue2 && xk >= pivotValue2) {
+            while (true) {
+              var greatValue = f(a[great]);
+              if (greatValue <= pivotValue2 && greatValue >= pivotValue2) {
+                great--;
+                if (great < k) break;
+                // This is the only location inside the loop where a new
+                // iteration is started.
+                continue;
+              } else {
+                // a[great] < pivot2.
+                if (greatValue < pivotValue1) {
+                  // Triple exchange.
+                  a[k] = a[less];
+                  a[less++] = a[great];
+                  a[great--] = ek;
+                } else {
+                  // a[great] == pivot1.
+                  a[k] = a[great];
+                  a[great--] = ek;
+                }
+                break;
+              }
+            }
+          }
+        }
+      }
     }
+
+    // The second partition has now been cleared of pivot elements and looks
+    // as follows:
+    // [  *  |  > pivot1 && < pivot2  | * ]
+    //        ^                      ^
+    //       less                  great
+    // Sort the second partition using recursive descent.
+
+    // The second partition looks as follows:
+    // [  *  |  >= pivot1 && <= pivot2  | * ]
+    //        ^                        ^
+    //       less                    great
+    // Simply sort it by recursive descent.
+
+    return sort(a, less, great + 1);
   }
 
-  return name + ': ' + str;
+  return sort;
 }
 
+var quicksort_sizeThreshold = 32;
+var crossfilter_array8 = crossfilter_arrayUntyped,
+    crossfilter_array16 = crossfilter_arrayUntyped,
+    crossfilter_array32 = crossfilter_arrayUntyped,
+    crossfilter_arrayLengthen = crossfilter_arrayLengthenUntyped,
+    crossfilter_arrayWiden = crossfilter_arrayWidenUntyped;
 
-function reduceToSingleString(output, base, braces) {
-  var numLinesEst = 0;
-  var length = output.reduce(function(prev, cur) {
-    numLinesEst++;
-    if (cur.indexOf('\n') >= 0) numLinesEst++;
-    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
-  }, 0);
+if (typeof Uint8Array !== "undefined") {
+  crossfilter_array8 = function(n) { return new Uint8Array(n); };
+  crossfilter_array16 = function(n) { return new Uint16Array(n); };
+  crossfilter_array32 = function(n) { return new Uint32Array(n); };
 
-  if (length > 60) {
-    return braces[0] +
-           (base === '' ? '' : base + '\n ') +
-           ' ' +
-           output.join(',\n  ') +
-           ' ' +
-           braces[1];
+  crossfilter_arrayLengthen = function(array, length) {
+    if (array.length >= length) return array;
+    var copy = new array.constructor(length);
+    copy.set(array);
+    return copy;
+  };
+
+  crossfilter_arrayWiden = function(array, width) {
+    var copy;
+    switch (width) {
+      case 16: copy = crossfilter_array16(array.length); break;
+      case 32: copy = crossfilter_array32(array.length); break;
+      default: throw new Error("invalid array width!");
+    }
+    copy.set(array);
+    return copy;
+  };
+}
+
+function crossfilter_arrayUntyped(n) {
+  var array = new Array(n), i = -1;
+  while (++i < n) array[i] = 0;
+  return array;
+}
+
+function crossfilter_arrayLengthenUntyped(array, length) {
+  var n = array.length;
+  while (n < length) array[n++] = 0;
+  return array;
+}
+
+function crossfilter_arrayWidenUntyped(array, width) {
+  if (width > 32) throw new Error("invalid array width!");
+  return array;
+}
+function crossfilter_filterExact(bisect, value) {
+  return function(values) {
+    var n = values.length;
+    return [bisect.left(values, value, 0, n), bisect.right(values, value, 0, n)];
+  };
+}
+
+function crossfilter_filterRange(bisect, range) {
+  var min = range[0],
+      max = range[1];
+  return function(values) {
+    var n = values.length;
+    return [bisect.left(values, min, 0, n), bisect.left(values, max, 0, n)];
+  };
+}
+
+function crossfilter_filterAll(values) {
+  return [0, values.length];
+}
+function crossfilter_null() {
+  return null;
+}
+function crossfilter_zero() {
+  return 0;
+}
+function crossfilter_reduceIncrement(p) {
+  return p + 1;
+}
+
+function crossfilter_reduceDecrement(p) {
+  return p - 1;
+}
+
+function crossfilter_reduceAdd(f) {
+  return function(p, v) {
+    return p + +f(v);
+  };
+}
+
+function crossfilter_reduceSubtract(f) {
+  return function(p, v) {
+    return p - f(v);
+  };
+}
+exports.crossfilter = crossfilter;
+
+function crossfilter() {
+  var crossfilter = {
+    add: add,
+    remove: removeData,
+    dimension: dimension,
+    groupAll: groupAll,
+    size: size
+  };
+
+  var data = [], // the records
+      n = 0, // the number of records; data.length
+      m = 0, // a bit mask representing which dimensions are in use
+      M = 8, // number of dimensions that can fit in `filters`
+      filters = crossfilter_array8(0), // M bits per record; 1 is filtered out
+      filterListeners = [], // when the filters change
+      dataListeners = [], // when data is added
+      removeDataListeners = []; // when data is removed
+
+  // Adds the specified new records to this crossfilter.
+  function add(newData) {
+    var n0 = n,
+        n1 = newData.length;
+
+    // If there's actually new data to add…
+    // Merge the new data into the existing data.
+    // Lengthen the filter bitset to handle the new records.
+    // Notify listeners (dimensions and groups) that new data is available.
+    if (n1) {
+      data = data.concat(newData);
+      filters = crossfilter_arrayLengthen(filters, n += n1);
+      dataListeners.forEach(function(l) { l(newData, n0, n1); });
+    }
+
+    return crossfilter;
   }
 
-  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
-}
+  // Removes all records that match the current filters.
+  function removeData() {
+    var newIndex = crossfilter_index(n, n),
+        removed = [];
+    for (var i = 0, j = 0; i < n; ++i) {
+      if (filters[i]) newIndex[i] = j++;
+      else removed.push(i);
+    }
 
+    // Remove all matching records from groups.
+    filterListeners.forEach(function(l) { l(0, [], removed); });
 
-// NOTE: These type checking functions intentionally don't use `instanceof`
-// because it is fragile and can be easily faked with `Object.create()`.
-function isArray(ar) {
-  return Array.isArray(ar);
-}
-exports.isArray = isArray;
+    // Update indexes.
+    removeDataListeners.forEach(function(l) { l(newIndex); });
 
-function isBoolean(arg) {
-  return typeof arg === 'boolean';
-}
-exports.isBoolean = isBoolean;
-
-function isNull(arg) {
-  return arg === null;
-}
-exports.isNull = isNull;
-
-function isNullOrUndefined(arg) {
-  return arg == null;
-}
-exports.isNullOrUndefined = isNullOrUndefined;
-
-function isNumber(arg) {
-  return typeof arg === 'number';
-}
-exports.isNumber = isNumber;
-
-function isString(arg) {
-  return typeof arg === 'string';
-}
-exports.isString = isString;
-
-function isSymbol(arg) {
-  return typeof arg === 'symbol';
-}
-exports.isSymbol = isSymbol;
-
-function isUndefined(arg) {
-  return arg === void 0;
-}
-exports.isUndefined = isUndefined;
-
-function isRegExp(re) {
-  return isObject(re) && objectToString(re) === '[object RegExp]';
-}
-exports.isRegExp = isRegExp;
-
-function isObject(arg) {
-  return typeof arg === 'object' && arg !== null;
-}
-exports.isObject = isObject;
-
-function isDate(d) {
-  return isObject(d) && objectToString(d) === '[object Date]';
-}
-exports.isDate = isDate;
-
-function isError(e) {
-  return isObject(e) &&
-      (objectToString(e) === '[object Error]' || e instanceof Error);
-}
-exports.isError = isError;
-
-function isFunction(arg) {
-  return typeof arg === 'function';
-}
-exports.isFunction = isFunction;
-
-function isPrimitive(arg) {
-  return arg === null ||
-         typeof arg === 'boolean' ||
-         typeof arg === 'number' ||
-         typeof arg === 'string' ||
-         typeof arg === 'symbol' ||  // ES6 symbol
-         typeof arg === 'undefined';
-}
-exports.isPrimitive = isPrimitive;
-
-exports.isBuffer = require('./support/isBuffer');
-
-function objectToString(o) {
-  return Object.prototype.toString.call(o);
-}
-
-
-function pad(n) {
-  return n < 10 ? '0' + n.toString(10) : n.toString(10);
-}
-
-
-var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-              'Oct', 'Nov', 'Dec'];
-
-// 26 Feb 16:19:34
-function timestamp() {
-  var d = new Date();
-  var time = [pad(d.getHours()),
-              pad(d.getMinutes()),
-              pad(d.getSeconds())].join(':');
-  return [d.getDate(), months[d.getMonth()], time].join(' ');
-}
-
-
-// log is just a thin wrapper to console.log that prepends a timestamp
-exports.log = function() {
-  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
-};
-
-
-/**
- * Inherit the prototype methods from one constructor into another.
- *
- * The Function.prototype.inherits from lang.js rewritten as a standalone
- * function (not on Function.prototype). NOTE: If this file is to be loaded
- * during bootstrapping this function needs to be rewritten using some native
- * functions as prototype setup using normal JavaScript does not work as
- * expected during bootstrapping (see mirror.js in r114903).
- *
- * @param {function} ctor Constructor function which needs to inherit the
- *     prototype.
- * @param {function} superCtor Constructor function to inherit prototype from.
- */
-exports.inherits = require('inherits');
-
-exports._extend = function(origin, add) {
-  // Don't do anything if add isn't an object
-  if (!add || !isObject(add)) return origin;
-
-  var keys = Object.keys(add);
-  var i = keys.length;
-  while (i--) {
-    origin[keys[i]] = add[keys[i]];
+    // Remove old filters and data by overwriting.
+    for (var i = 0, j = 0, k; i < n; ++i) {
+      if (k = filters[i]) {
+        if (i !== j) filters[j] = k, data[j] = data[i];
+        ++j;
+      }
+    }
+    data.length = j;
+    while (n > j) filters[--n] = 0;
   }
-  return origin;
-};
 
-function hasOwnProperty(obj, prop) {
-  return Object.prototype.hasOwnProperty.call(obj, prop);
+  // Adds a new dimension with the specified value accessor function.
+  function dimension(value) {
+    var dimension = {
+      filter: filter,
+      filterExact: filterExact,
+      filterRange: filterRange,
+      filterFunction: filterFunction,
+      filterAll: filterAll,
+      top: top,
+      bottom: bottom,
+      group: group,
+      groupAll: groupAll,
+      dispose: dispose,
+      remove: dispose // for backwards-compatibility
+    };
+
+    var one = ~m & -~m, // lowest unset bit as mask, e.g., 00001000
+        zero = ~one, // inverted one, e.g., 11110111
+        values, // sorted, cached array
+        index, // value rank ↦ object id
+        newValues, // temporary array storing newly-added values
+        newIndex, // temporary array storing newly-added index
+        sort = quicksort_by(function(i) { return newValues[i]; }),
+        refilter = crossfilter_filterAll, // for recomputing filter
+        refilterFunction, // the custom filter function in use
+        indexListeners = [], // when data is added
+        dimensionGroups = [],
+        lo0 = 0,
+        hi0 = 0;
+
+    // Updating a dimension is a two-stage process. First, we must update the
+    // associated filters for the newly-added records. Once all dimensions have
+    // updated their filters, the groups are notified to update.
+    dataListeners.unshift(preAdd);
+    dataListeners.push(postAdd);
+
+    removeDataListeners.push(removeData);
+
+    // Incorporate any existing data into this dimension, and make sure that the
+    // filter bitset is wide enough to handle the new dimension.
+    m |= one;
+    if (M >= 32 ? !one : m & -(1 << M)) {
+      filters = crossfilter_arrayWiden(filters, M <<= 1);
+    }
+    preAdd(data, 0, n);
+    postAdd(data, 0, n);
+
+    // Incorporates the specified new records into this dimension.
+    // This function is responsible for updating filters, values, and index.
+    function preAdd(newData, n0, n1) {
+
+      // Permute new values into natural order using a sorted index.
+      newValues = newData.map(value);
+      newIndex = sort(crossfilter_range(n1), 0, n1);
+      newValues = permute(newValues, newIndex);
+
+      // Bisect newValues to determine which new records are selected.
+      var bounds = refilter(newValues), lo1 = bounds[0], hi1 = bounds[1], i;
+      if (refilterFunction) {
+        for (i = 0; i < n1; ++i) {
+          if (!refilterFunction(newValues[i], i)) filters[newIndex[i] + n0] |= one;
+        }
+      } else {
+        for (i = 0; i < lo1; ++i) filters[newIndex[i] + n0] |= one;
+        for (i = hi1; i < n1; ++i) filters[newIndex[i] + n0] |= one;
+      }
+
+      // If this dimension previously had no data, then we don't need to do the
+      // more expensive merge operation; use the new values and index as-is.
+      if (!n0) {
+        values = newValues;
+        index = newIndex;
+        lo0 = lo1;
+        hi0 = hi1;
+        return;
+      }
+
+      var oldValues = values,
+          oldIndex = index,
+          i0 = 0,
+          i1 = 0;
+
+      // Otherwise, create new arrays into which to merge new and old.
+      values = new Array(n);
+      index = crossfilter_index(n, n);
+
+      // Merge the old and new sorted values, and old and new index.
+      for (i = 0; i0 < n0 && i1 < n1; ++i) {
+        if (oldValues[i0] < newValues[i1]) {
+          values[i] = oldValues[i0];
+          index[i] = oldIndex[i0++];
+        } else {
+          values[i] = newValues[i1];
+          index[i] = newIndex[i1++] + n0;
+        }
+      }
+
+      // Add any remaining old values.
+      for (; i0 < n0; ++i0, ++i) {
+        values[i] = oldValues[i0];
+        index[i] = oldIndex[i0];
+      }
+
+      // Add any remaining new values.
+      for (; i1 < n1; ++i1, ++i) {
+        values[i] = newValues[i1];
+        index[i] = newIndex[i1] + n0;
+      }
+
+      // Bisect again to recompute lo0 and hi0.
+      bounds = refilter(values), lo0 = bounds[0], hi0 = bounds[1];
+    }
+
+    // When all filters have updated, notify index listeners of the new values.
+    function postAdd(newData, n0, n1) {
+      indexListeners.forEach(function(l) { l(newValues, newIndex, n0, n1); });
+      newValues = newIndex = null;
+    }
+
+    function removeData(reIndex) {
+      for (var i = 0, j = 0, k; i < n; ++i) {
+        if (filters[k = index[i]]) {
+          if (i !== j) values[j] = values[i];
+          index[j] = reIndex[k];
+          ++j;
+        }
+      }
+      values.length = j;
+      while (j < n) index[j++] = 0;
+
+      // Bisect again to recompute lo0 and hi0.
+      var bounds = refilter(values);
+      lo0 = bounds[0], hi0 = bounds[1];
+    }
+
+    // Updates the selected values based on the specified bounds [lo, hi].
+    // This implementation is used by all the public filter methods.
+    function filterIndexBounds(bounds) {
+      var lo1 = bounds[0],
+          hi1 = bounds[1];
+
+      if (refilterFunction) {
+        refilterFunction = null;
+        filterIndexFunction(function(d, i) { return lo1 <= i && i < hi1; });
+        lo0 = lo1;
+        hi0 = hi1;
+        return dimension;
+      }
+
+      var i,
+          j,
+          k,
+          added = [],
+          removed = [];
+
+      // Fast incremental update based on previous lo index.
+      if (lo1 < lo0) {
+        for (i = lo1, j = Math.min(lo0, hi1); i < j; ++i) {
+          filters[k = index[i]] ^= one;
+          added.push(k);
+        }
+      } else if (lo1 > lo0) {
+        for (i = lo0, j = Math.min(lo1, hi0); i < j; ++i) {
+          filters[k = index[i]] ^= one;
+          removed.push(k);
+        }
+      }
+
+      // Fast incremental update based on previous hi index.
+      if (hi1 > hi0) {
+        for (i = Math.max(lo1, hi0), j = hi1; i < j; ++i) {
+          filters[k = index[i]] ^= one;
+          added.push(k);
+        }
+      } else if (hi1 < hi0) {
+        for (i = Math.max(lo0, hi1), j = hi0; i < j; ++i) {
+          filters[k = index[i]] ^= one;
+          removed.push(k);
+        }
+      }
+
+      lo0 = lo1;
+      hi0 = hi1;
+      filterListeners.forEach(function(l) { l(one, added, removed); });
+      return dimension;
+    }
+
+    // Filters this dimension using the specified range, value, or null.
+    // If the range is null, this is equivalent to filterAll.
+    // If the range is an array, this is equivalent to filterRange.
+    // Otherwise, this is equivalent to filterExact.
+    function filter(range) {
+      return range == null
+          ? filterAll() : Array.isArray(range)
+          ? filterRange(range) : typeof range === "function"
+          ? filterFunction(range)
+          : filterExact(range);
+    }
+
+    // Filters this dimension to select the exact value.
+    function filterExact(value) {
+      return filterIndexBounds((refilter = crossfilter_filterExact(bisect, value))(values));
+    }
+
+    // Filters this dimension to select the specified range [lo, hi].
+    // The lower bound is inclusive, and the upper bound is exclusive.
+    function filterRange(range) {
+      return filterIndexBounds((refilter = crossfilter_filterRange(bisect, range))(values));
+    }
+
+    // Clears any filters on this dimension.
+    function filterAll() {
+      return filterIndexBounds((refilter = crossfilter_filterAll)(values));
+    }
+
+    // Filters this dimension using an arbitrary function.
+    function filterFunction(f) {
+      refilter = crossfilter_filterAll;
+
+      filterIndexFunction(refilterFunction = f);
+
+      lo0 = 0;
+      hi0 = n;
+
+      return dimension;
+    }
+
+    function filterIndexFunction(f) {
+      var i,
+          k,
+          x,
+          added = [],
+          removed = [];
+
+      for (i = 0; i < n; ++i) {
+        if (!(filters[k = index[i]] & one) ^ !!(x = f(values[i], i))) {
+          if (x) filters[k] &= zero, added.push(k);
+          else filters[k] |= one, removed.push(k);
+        }
+      }
+      filterListeners.forEach(function(l) { l(one, added, removed); });
+    }
+
+    // Returns the top K selected records based on this dimension's order.
+    // Note: observes this dimension's filter, unlike group and groupAll.
+    function top(k) {
+      var array = [],
+          i = hi0,
+          j;
+
+      while (--i >= lo0 && k > 0) {
+        if (!filters[j = index[i]]) {
+          array.push(data[j]);
+          --k;
+        }
+      }
+
+      return array;
+    }
+
+    // Returns the bottom K selected records based on this dimension's order.
+    // Note: observes this dimension's filter, unlike group and groupAll.
+    function bottom(k) {
+      var array = [],
+          i = lo0,
+          j;
+
+      while (i < hi0 && k > 0) {
+        if (!filters[j = index[i]]) {
+          array.push(data[j]);
+          --k;
+        }
+        i++;
+      }
+
+      return array;
+    }
+
+    // Adds a new group to this dimension, using the specified key function.
+    function group(key) {
+      var group = {
+        top: top,
+        all: all,
+        reduce: reduce,
+        reduceCount: reduceCount,
+        reduceSum: reduceSum,
+        order: order,
+        orderNatural: orderNatural,
+        size: size,
+        dispose: dispose,
+        remove: dispose // for backwards-compatibility
+      };
+
+      // Ensure that this group will be removed when the dimension is removed.
+      dimensionGroups.push(group);
+
+      var groups, // array of {key, value}
+          groupIndex, // object id ↦ group id
+          groupWidth = 8,
+          groupCapacity = crossfilter_capacity(groupWidth),
+          k = 0, // cardinality
+          select,
+          heap,
+          reduceAdd,
+          reduceRemove,
+          reduceInitial,
+          update = crossfilter_null,
+          reset = crossfilter_null,
+          resetNeeded = true,
+          groupAll = key === crossfilter_null;
+
+      if (arguments.length < 1) key = crossfilter_identity;
+
+      // The group listens to the crossfilter for when any dimension changes, so
+      // that it can update the associated reduce values. It must also listen to
+      // the parent dimension for when data is added, and compute new keys.
+      filterListeners.push(update);
+      indexListeners.push(add);
+      removeDataListeners.push(removeData);
+
+      // Incorporate any existing data into the grouping.
+      add(values, index, 0, n);
+
+      // Incorporates the specified new values into this group.
+      // This function is responsible for updating groups and groupIndex.
+      function add(newValues, newIndex, n0, n1) {
+        var oldGroups = groups,
+            reIndex = crossfilter_index(k, groupCapacity),
+            add = reduceAdd,
+            initial = reduceInitial,
+            k0 = k, // old cardinality
+            i0 = 0, // index of old group
+            i1 = 0, // index of new record
+            j, // object id
+            g0, // old group
+            x0, // old key
+            x1, // new key
+            g, // group to add
+            x; // key of group to add
+
+        // If a reset is needed, we don't need to update the reduce values.
+        if (resetNeeded) add = initial = crossfilter_null;
+
+        // Reset the new groups (k is a lower bound).
+        // Also, make sure that groupIndex exists and is long enough.
+        groups = new Array(k), k = 0;
+        groupIndex = k0 > 1 ? crossfilter_arrayLengthen(groupIndex, n) : crossfilter_index(n, groupCapacity);
+
+        // Get the first old key (x0 of g0), if it exists.
+        if (k0) x0 = (g0 = oldGroups[0]).key;
+
+        // Find the first new key (x1), skipping NaN keys.
+        while (i1 < n1 && !((x1 = key(newValues[i1])) >= x1)) ++i1;
+
+        // While new keys remain…
+        while (i1 < n1) {
+
+          // Determine the lesser of the two current keys; new and old.
+          // If there are no old keys remaining, then always add the new key.
+          if (g0 && x0 <= x1) {
+            g = g0, x = x0;
+
+            // Record the new index of the old group.
+            reIndex[i0] = k;
+
+            // Retrieve the next old key.
+            if (g0 = oldGroups[++i0]) x0 = g0.key;
+          } else {
+            g = {key: x1, value: initial()}, x = x1;
+          }
+
+          // Add the lesser group.
+          groups[k] = g;
+
+          // Add any selected records belonging to the added group, while
+          // advancing the new key and populating the associated group index.
+          while (!(x1 > x)) {
+            groupIndex[j = newIndex[i1] + n0] = k;
+            if (!(filters[j] & zero)) g.value = add(g.value, data[j]);
+            if (++i1 >= n1) break;
+            x1 = key(newValues[i1]);
+          }
+
+          groupIncrement();
+        }
+
+        // Add any remaining old groups that were greater than all new keys.
+        // No incremental reduce is needed; these groups have no new records.
+        // Also record the new index of the old group.
+        while (i0 < k0) {
+          groups[reIndex[i0] = k] = oldGroups[i0++];
+          groupIncrement();
+        }
+
+        // If we added any new groups before any old groups,
+        // update the group index of all the old records.
+        if (k > i0) for (i0 = 0; i0 < n0; ++i0) {
+          groupIndex[i0] = reIndex[groupIndex[i0]];
+        }
+
+        // Modify the update and reset behavior based on the cardinality.
+        // If the cardinality is less than or equal to one, then the groupIndex
+        // is not needed. If the cardinality is zero, then there are no records
+        // and therefore no groups to update or reset. Note that we also must
+        // change the registered listener to point to the new method.
+        j = filterListeners.indexOf(update);
+        if (k > 1) {
+          update = updateMany;
+          reset = resetMany;
+        } else {
+          if (!k && groupAll) {
+            k = 1;
+            groups = [{key: null, value: initial()}];
+          }
+          if (k === 1) {
+            update = updateOne;
+            reset = resetOne;
+          } else {
+            update = crossfilter_null;
+            reset = crossfilter_null;
+          }
+          groupIndex = null;
+        }
+        filterListeners[j] = update;
+
+        // Count the number of added groups,
+        // and widen the group index as needed.
+        function groupIncrement() {
+          if (++k === groupCapacity) {
+            reIndex = crossfilter_arrayWiden(reIndex, groupWidth <<= 1);
+            groupIndex = crossfilter_arrayWiden(groupIndex, groupWidth);
+            groupCapacity = crossfilter_capacity(groupWidth);
+          }
+        }
+      }
+
+      function removeData() {
+        if (k > 1) {
+          var oldK = k,
+              oldGroups = groups,
+              seenGroups = crossfilter_index(oldK, oldK);
+
+          // Filter out non-matches by copying matching group index entries to
+          // the beginning of the array.
+          for (var i = 0, j = 0; i < n; ++i) {
+            if (filters[i]) {
+              seenGroups[groupIndex[j] = groupIndex[i]] = 1;
+              ++j;
+            }
+          }
+
+          // Reassemble groups including only those groups that were referred
+          // to by matching group index entries.  Note the new group index in
+          // seenGroups.
+          groups = [], k = 0;
+          for (i = 0; i < oldK; ++i) {
+            if (seenGroups[i]) {
+              seenGroups[i] = k++;
+              groups.push(oldGroups[i]);
+            }
+          }
+
+          if (k > 1) {
+            // Reindex the group index using seenGroups to find the new index.
+            for (var i = 0; i < j; ++i) groupIndex[i] = seenGroups[groupIndex[i]];
+          } else {
+            groupIndex = null;
+          }
+          filterListeners[filterListeners.indexOf(update)] = k > 1
+              ? (reset = resetMany, update = updateMany)
+              : k === 1 ? (reset = resetOne, update = updateOne)
+              : reset = update = crossfilter_null;
+        } else if (k === 1) {
+          if (groupAll) return;
+          for (var i = 0; i < n; ++i) if (filters[i]) return;
+          groups = [], k = 0;
+          filterListeners[filterListeners.indexOf(update)] =
+          update = reset = crossfilter_null;
+        }
+      }
+
+      // Reduces the specified selected or deselected records.
+      // This function is only used when the cardinality is greater than 1.
+      function updateMany(filterOne, added, removed) {
+        if (filterOne === one || resetNeeded) return;
+
+        var i,
+            k,
+            n,
+            g;
+
+        // Add the added values.
+        for (i = 0, n = added.length; i < n; ++i) {
+          if (!(filters[k = added[i]] & zero)) {
+            g = groups[groupIndex[k]];
+            g.value = reduceAdd(g.value, data[k]);
+          }
+        }
+
+        // Remove the removed values.
+        for (i = 0, n = removed.length; i < n; ++i) {
+          if ((filters[k = removed[i]] & zero) === filterOne) {
+            g = groups[groupIndex[k]];
+            g.value = reduceRemove(g.value, data[k]);
+          }
+        }
+      }
+
+      // Reduces the specified selected or deselected records.
+      // This function is only used when the cardinality is 1.
+      function updateOne(filterOne, added, removed) {
+        if (filterOne === one || resetNeeded) return;
+
+        var i,
+            k,
+            n,
+            g = groups[0];
+
+        // Add the added values.
+        for (i = 0, n = added.length; i < n; ++i) {
+          if (!(filters[k = added[i]] & zero)) {
+            g.value = reduceAdd(g.value, data[k]);
+          }
+        }
+
+        // Remove the removed values.
+        for (i = 0, n = removed.length; i < n; ++i) {
+          if ((filters[k = removed[i]] & zero) === filterOne) {
+            g.value = reduceRemove(g.value, data[k]);
+          }
+        }
+      }
+
+      // Recomputes the group reduce values from scratch.
+      // This function is only used when the cardinality is greater than 1.
+      function resetMany() {
+        var i,
+            g;
+
+        // Reset all group values.
+        for (i = 0; i < k; ++i) {
+          groups[i].value = reduceInitial();
+        }
+
+        // Add any selected records.
+        for (i = 0; i < n; ++i) {
+          if (!(filters[i] & zero)) {
+            g = groups[groupIndex[i]];
+            g.value = reduceAdd(g.value, data[i]);
+          }
+        }
+      }
+
+      // Recomputes the group reduce values from scratch.
+      // This function is only used when the cardinality is 1.
+      function resetOne() {
+        var i,
+            g = groups[0];
+
+        // Reset the singleton group values.
+        g.value = reduceInitial();
+
+        // Add any selected records.
+        for (i = 0; i < n; ++i) {
+          if (!(filters[i] & zero)) {
+            g.value = reduceAdd(g.value, data[i]);
+          }
+        }
+      }
+
+      // Returns the array of group values, in the dimension's natural order.
+      function all() {
+        if (resetNeeded) reset(), resetNeeded = false;
+        return groups;
+      }
+
+      // Returns a new array containing the top K group values, in reduce order.
+      function top(k) {
+        var top = select(all(), 0, groups.length, k);
+        return heap.sort(top, 0, top.length);
+      }
+
+      // Sets the reduce behavior for this group to use the specified functions.
+      // This method lazily recomputes the reduce values, waiting until needed.
+      function reduce(add, remove, initial) {
+        reduceAdd = add;
+        reduceRemove = remove;
+        reduceInitial = initial;
+        resetNeeded = true;
+        return group;
+      }
+
+      // A convenience method for reducing by count.
+      function reduceCount() {
+        return reduce(crossfilter_reduceIncrement, crossfilter_reduceDecrement, crossfilter_zero);
+      }
+
+      // A convenience method for reducing by sum(value).
+      function reduceSum(value) {
+        return reduce(crossfilter_reduceAdd(value), crossfilter_reduceSubtract(value), crossfilter_zero);
+      }
+
+      // Sets the reduce order, using the specified accessor.
+      function order(value) {
+        select = heapselect_by(valueOf);
+        heap = heap_by(valueOf);
+        function valueOf(d) { return value(d.value); }
+        return group;
+      }
+
+      // A convenience method for natural ordering by reduce value.
+      function orderNatural() {
+        return order(crossfilter_identity);
+      }
+
+      // Returns the cardinality of this group, irrespective of any filters.
+      function size() {
+        return k;
+      }
+
+      // Removes this group and associated event listeners.
+      function dispose() {
+        var i = filterListeners.indexOf(update);
+        if (i >= 0) filterListeners.splice(i, 1);
+        i = indexListeners.indexOf(add);
+        if (i >= 0) indexListeners.splice(i, 1);
+        i = removeDataListeners.indexOf(removeData);
+        if (i >= 0) removeDataListeners.splice(i, 1);
+        return group;
+      }
+
+      return reduceCount().orderNatural();
+    }
+
+    // A convenience function for generating a singleton group.
+    function groupAll() {
+      var g = group(crossfilter_null), all = g.all;
+      delete g.all;
+      delete g.top;
+      delete g.order;
+      delete g.orderNatural;
+      delete g.size;
+      g.value = function() { return all()[0].value; };
+      return g;
+    }
+
+    // Removes this dimension and associated groups and event listeners.
+    function dispose() {
+      dimensionGroups.forEach(function(group) { group.dispose(); });
+      var i = dataListeners.indexOf(preAdd);
+      if (i >= 0) dataListeners.splice(i, 1);
+      i = dataListeners.indexOf(postAdd);
+      if (i >= 0) dataListeners.splice(i, 1);
+      i = removeDataListeners.indexOf(removeData);
+      if (i >= 0) removeDataListeners.splice(i, 1);
+      m &= zero;
+      return filterAll();
+    }
+
+    return dimension;
+  }
+
+  // A convenience method for groupAll on a dummy dimension.
+  // This implementation can be optimized since it always has cardinality 1.
+  function groupAll() {
+    var group = {
+      reduce: reduce,
+      reduceCount: reduceCount,
+      reduceSum: reduceSum,
+      value: value,
+      dispose: dispose,
+      remove: dispose // for backwards-compatibility
+    };
+
+    var reduceValue,
+        reduceAdd,
+        reduceRemove,
+        reduceInitial,
+        resetNeeded = true;
+
+    // The group listens to the crossfilter for when any dimension changes, so
+    // that it can update the reduce value. It must also listen to the parent
+    // dimension for when data is added.
+    filterListeners.push(update);
+    dataListeners.push(add);
+
+    // For consistency; actually a no-op since resetNeeded is true.
+    add(data, 0, n);
+
+    // Incorporates the specified new values into this group.
+    function add(newData, n0) {
+      var i;
+
+      if (resetNeeded) return;
+
+      // Add the added values.
+      for (i = n0; i < n; ++i) {
+        if (!filters[i]) {
+          reduceValue = reduceAdd(reduceValue, data[i]);
+        }
+      }
+    }
+
+    // Reduces the specified selected or deselected records.
+    function update(filterOne, added, removed) {
+      var i,
+          k,
+          n;
+
+      if (resetNeeded) return;
+
+      // Add the added values.
+      for (i = 0, n = added.length; i < n; ++i) {
+        if (!filters[k = added[i]]) {
+          reduceValue = reduceAdd(reduceValue, data[k]);
+        }
+      }
+
+      // Remove the removed values.
+      for (i = 0, n = removed.length; i < n; ++i) {
+        if (filters[k = removed[i]] === filterOne) {
+          reduceValue = reduceRemove(reduceValue, data[k]);
+        }
+      }
+    }
+
+    // Recomputes the group reduce value from scratch.
+    function reset() {
+      var i;
+
+      reduceValue = reduceInitial();
+
+      for (i = 0; i < n; ++i) {
+        if (!filters[i]) {
+          reduceValue = reduceAdd(reduceValue, data[i]);
+        }
+      }
+    }
+
+    // Sets the reduce behavior for this group to use the specified functions.
+    // This method lazily recomputes the reduce value, waiting until needed.
+    function reduce(add, remove, initial) {
+      reduceAdd = add;
+      reduceRemove = remove;
+      reduceInitial = initial;
+      resetNeeded = true;
+      return group;
+    }
+
+    // A convenience method for reducing by count.
+    function reduceCount() {
+      return reduce(crossfilter_reduceIncrement, crossfilter_reduceDecrement, crossfilter_zero);
+    }
+
+    // A convenience method for reducing by sum(value).
+    function reduceSum(value) {
+      return reduce(crossfilter_reduceAdd(value), crossfilter_reduceSubtract(value), crossfilter_zero);
+    }
+
+    // Returns the computed reduce value.
+    function value() {
+      if (resetNeeded) reset(), resetNeeded = false;
+      return reduceValue;
+    }
+
+    // Removes this group and associated event listeners.
+    function dispose() {
+      var i = filterListeners.indexOf(update);
+      if (i >= 0) filterListeners.splice(i);
+      i = dataListeners.indexOf(add);
+      if (i >= 0) dataListeners.splice(i);
+      return group;
+    }
+
+    return reduceCount();
+  }
+
+  // Returns the number of records in this crossfilter, irrespective of any filters.
+  function size() {
+    return n;
+  }
+
+  return arguments.length
+      ? add(arguments[0])
+      : crossfilter;
 }
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+// Returns an array of size n, big enough to store ids up to m.
+function crossfilter_index(n, m) {
+  return (m < 0x101
+      ? crossfilter_array8 : m < 0x10001
+      ? crossfilter_array16
+      : crossfilter_array32)(n);
+}
 
-},{"./support/isBuffer":266,"_process":265,"inherits":263}],268:[function(require,module,exports){
+// Constructs a new array of size n, with sequential values from 0 to n - 1.
+function crossfilter_range(n) {
+  var range = crossfilter_index(n, n);
+  for (var i = -1; ++i < n;) range[i] = i;
+  return range;
+}
+
+function crossfilter_capacity(w) {
+  return w === 8
+      ? 0x100 : w === 16
+      ? 0x10000
+      : 0x100000000;
+}
+})(typeof exports !== 'undefined' && exports || this);
+
+},{}],307:[function(require,module,exports){
+module.exports = require("./crossfilter").crossfilter;
+
+},{"./crossfilter":306}],308:[function(require,module,exports){
 !function() {
   var d3 = {
-    version: "3.5.8"
+    version: "3.5.9"
   };
   var d3_arraySlice = [].slice, d3_array = function(list) {
     return d3_arraySlice.call(list);
@@ -66254,7 +69563,7 @@ function hasOwnProperty(obj, prop) {
         function ended() {
           if (!position(parent, dragId)) return;
           dragSubject.on(move + dragName, null).on(end + dragName, null);
-          dragRestore(dragged && d3.event.target === target);
+          dragRestore(dragged);
           dispatch({
             type: "dragend"
           });
@@ -66492,7 +69801,7 @@ function hasOwnProperty(obj, prop) {
       }), center0 = null;
     }
     function mousedowned() {
-      var that = this, target = d3.event.target, dispatch = event.of(that, arguments), dragged = 0, subject = d3.select(d3_window(that)).on(mousemove, moved).on(mouseup, ended), location0 = location(d3.mouse(that)), dragRestore = d3_event_dragSuppress(that);
+      var that = this, dispatch = event.of(that, arguments), dragged = 0, subject = d3.select(d3_window(that)).on(mousemove, moved).on(mouseup, ended), location0 = location(d3.mouse(that)), dragRestore = d3_event_dragSuppress(that);
       d3_selection_interrupt.call(that);
       zoomstarted(dispatch);
       function moved() {
@@ -66502,7 +69811,7 @@ function hasOwnProperty(obj, prop) {
       }
       function ended() {
         subject.on(mousemove, null).on(mouseup, null);
-        dragRestore(dragged && d3.event.target === target);
+        dragRestore(dragged);
         zoomended(dispatch);
       }
     }
@@ -73949,6 +77258,14 @@ function hasOwnProperty(obj, prop) {
           delete lock[cancelId];
         }
       }
+      timer.c = tick;
+      d3_timer(function() {
+        if (timer.c && tick(elapsed || 1)) {
+          timer.c = null;
+          timer.t = NaN;
+        }
+        return 1;
+      }, 0, time);
       lock.active = id;
       transition.event && transition.event.start.call(node, node.__data__, i);
       tweens = [];
@@ -73959,14 +77276,6 @@ function hasOwnProperty(obj, prop) {
       });
       ease = transition.ease;
       duration = transition.duration;
-      timer.c = tick;
-      d3_timer(function() {
-        if (timer.c && tick(elapsed || 1)) {
-          timer.c = null;
-          timer.t = NaN;
-        }
-        return 1;
-      }, 0, time);
     }
     function tick(elapsed) {
       var t = elapsed / duration, e = ease(t), n = tweens.length;
@@ -74568,11 +77877,3459 @@ function hasOwnProperty(obj, prop) {
   d3.xml = d3_xhrType(function(request) {
     return request.responseXML;
   });
-  if (typeof define === "function" && define.amd) define(this.d3 = d3); else if (typeof module === "object" && module.exports) module.exports = d3; else this.d3 = d3;
+  if (typeof define === "function" && define.amd) this.d3 = d3, define(d3); else if (typeof module === "object" && module.exports) module.exports = d3; else this.d3 = d3;
 }();
-},{}],269:[function(require,module,exports){
-module.exports = require(2);
-},{"dup":2}],270:[function(require,module,exports){
+},{}],309:[function(require,module,exports){
+!function() {
+  var topojson = {
+    version: "1.6.19",
+    mesh: function(topology) { return object(topology, meshArcs.apply(this, arguments)); },
+    meshArcs: meshArcs,
+    merge: function(topology) { return object(topology, mergeArcs.apply(this, arguments)); },
+    mergeArcs: mergeArcs,
+    feature: featureOrCollection,
+    neighbors: neighbors,
+    presimplify: presimplify
+  };
+
+  function stitchArcs(topology, arcs) {
+    var stitchedArcs = {},
+        fragmentByStart = {},
+        fragmentByEnd = {},
+        fragments = [],
+        emptyIndex = -1;
+
+    // Stitch empty arcs first, since they may be subsumed by other arcs.
+    arcs.forEach(function(i, j) {
+      var arc = topology.arcs[i < 0 ? ~i : i], t;
+      if (arc.length < 3 && !arc[1][0] && !arc[1][1]) {
+        t = arcs[++emptyIndex], arcs[emptyIndex] = i, arcs[j] = t;
+      }
+    });
+
+    arcs.forEach(function(i) {
+      var e = ends(i),
+          start = e[0],
+          end = e[1],
+          f, g;
+
+      if (f = fragmentByEnd[start]) {
+        delete fragmentByEnd[f.end];
+        f.push(i);
+        f.end = end;
+        if (g = fragmentByStart[end]) {
+          delete fragmentByStart[g.start];
+          var fg = g === f ? f : f.concat(g);
+          fragmentByStart[fg.start = f.start] = fragmentByEnd[fg.end = g.end] = fg;
+        } else {
+          fragmentByStart[f.start] = fragmentByEnd[f.end] = f;
+        }
+      } else if (f = fragmentByStart[end]) {
+        delete fragmentByStart[f.start];
+        f.unshift(i);
+        f.start = start;
+        if (g = fragmentByEnd[start]) {
+          delete fragmentByEnd[g.end];
+          var gf = g === f ? f : g.concat(f);
+          fragmentByStart[gf.start = g.start] = fragmentByEnd[gf.end = f.end] = gf;
+        } else {
+          fragmentByStart[f.start] = fragmentByEnd[f.end] = f;
+        }
+      } else {
+        f = [i];
+        fragmentByStart[f.start = start] = fragmentByEnd[f.end = end] = f;
+      }
+    });
+
+    function ends(i) {
+      var arc = topology.arcs[i < 0 ? ~i : i], p0 = arc[0], p1;
+      if (topology.transform) p1 = [0, 0], arc.forEach(function(dp) { p1[0] += dp[0], p1[1] += dp[1]; });
+      else p1 = arc[arc.length - 1];
+      return i < 0 ? [p1, p0] : [p0, p1];
+    }
+
+    function flush(fragmentByEnd, fragmentByStart) {
+      for (var k in fragmentByEnd) {
+        var f = fragmentByEnd[k];
+        delete fragmentByStart[f.start];
+        delete f.start;
+        delete f.end;
+        f.forEach(function(i) { stitchedArcs[i < 0 ? ~i : i] = 1; });
+        fragments.push(f);
+      }
+    }
+
+    flush(fragmentByEnd, fragmentByStart);
+    flush(fragmentByStart, fragmentByEnd);
+    arcs.forEach(function(i) { if (!stitchedArcs[i < 0 ? ~i : i]) fragments.push([i]); });
+
+    return fragments;
+  }
+
+  function meshArcs(topology, o, filter) {
+    var arcs = [];
+
+    if (arguments.length > 1) {
+      var geomsByArc = [],
+          geom;
+
+      function arc(i) {
+        var j = i < 0 ? ~i : i;
+        (geomsByArc[j] || (geomsByArc[j] = [])).push({i: i, g: geom});
+      }
+
+      function line(arcs) {
+        arcs.forEach(arc);
+      }
+
+      function polygon(arcs) {
+        arcs.forEach(line);
+      }
+
+      function geometry(o) {
+        if (o.type === "GeometryCollection") o.geometries.forEach(geometry);
+        else if (o.type in geometryType) geom = o, geometryType[o.type](o.arcs);
+      }
+
+      var geometryType = {
+        LineString: line,
+        MultiLineString: polygon,
+        Polygon: polygon,
+        MultiPolygon: function(arcs) { arcs.forEach(polygon); }
+      };
+
+      geometry(o);
+
+      geomsByArc.forEach(arguments.length < 3
+          ? function(geoms) { arcs.push(geoms[0].i); }
+          : function(geoms) { if (filter(geoms[0].g, geoms[geoms.length - 1].g)) arcs.push(geoms[0].i); });
+    } else {
+      for (var i = 0, n = topology.arcs.length; i < n; ++i) arcs.push(i);
+    }
+
+    return {type: "MultiLineString", arcs: stitchArcs(topology, arcs)};
+  }
+
+  function mergeArcs(topology, objects) {
+    var polygonsByArc = {},
+        polygons = [],
+        components = [];
+
+    objects.forEach(function(o) {
+      if (o.type === "Polygon") register(o.arcs);
+      else if (o.type === "MultiPolygon") o.arcs.forEach(register);
+    });
+
+    function register(polygon) {
+      polygon.forEach(function(ring) {
+        ring.forEach(function(arc) {
+          (polygonsByArc[arc = arc < 0 ? ~arc : arc] || (polygonsByArc[arc] = [])).push(polygon);
+        });
+      });
+      polygons.push(polygon);
+    }
+
+    function exterior(ring) {
+      return cartesianRingArea(object(topology, {type: "Polygon", arcs: [ring]}).coordinates[0]) > 0; // TODO allow spherical?
+    }
+
+    polygons.forEach(function(polygon) {
+      if (!polygon._) {
+        var component = [],
+            neighbors = [polygon];
+        polygon._ = 1;
+        components.push(component);
+        while (polygon = neighbors.pop()) {
+          component.push(polygon);
+          polygon.forEach(function(ring) {
+            ring.forEach(function(arc) {
+              polygonsByArc[arc < 0 ? ~arc : arc].forEach(function(polygon) {
+                if (!polygon._) {
+                  polygon._ = 1;
+                  neighbors.push(polygon);
+                }
+              });
+            });
+          });
+        }
+      }
+    });
+
+    polygons.forEach(function(polygon) {
+      delete polygon._;
+    });
+
+    return {
+      type: "MultiPolygon",
+      arcs: components.map(function(polygons) {
+        var arcs = [];
+
+        // Extract the exterior (unique) arcs.
+        polygons.forEach(function(polygon) {
+          polygon.forEach(function(ring) {
+            ring.forEach(function(arc) {
+              if (polygonsByArc[arc < 0 ? ~arc : arc].length < 2) {
+                arcs.push(arc);
+              }
+            });
+          });
+        });
+
+        // Stitch the arcs into one or more rings.
+        arcs = stitchArcs(topology, arcs);
+
+        // If more than one ring is returned,
+        // at most one of these rings can be the exterior;
+        // this exterior ring has the same winding order
+        // as any exterior ring in the original polygons.
+        if ((n = arcs.length) > 1) {
+          var sgn = exterior(polygons[0][0]);
+          for (var i = 0, t; i < n; ++i) {
+            if (sgn === exterior(arcs[i])) {
+              t = arcs[0], arcs[0] = arcs[i], arcs[i] = t;
+              break;
+            }
+          }
+        }
+
+        return arcs;
+      })
+    };
+  }
+
+  function featureOrCollection(topology, o) {
+    return o.type === "GeometryCollection" ? {
+      type: "FeatureCollection",
+      features: o.geometries.map(function(o) { return feature(topology, o); })
+    } : feature(topology, o);
+  }
+
+  function feature(topology, o) {
+    var f = {
+      type: "Feature",
+      id: o.id,
+      properties: o.properties || {},
+      geometry: object(topology, o)
+    };
+    if (o.id == null) delete f.id;
+    return f;
+  }
+
+  function object(topology, o) {
+    var absolute = transformAbsolute(topology.transform),
+        arcs = topology.arcs;
+
+    function arc(i, points) {
+      if (points.length) points.pop();
+      for (var a = arcs[i < 0 ? ~i : i], k = 0, n = a.length, p; k < n; ++k) {
+        points.push(p = a[k].slice());
+        absolute(p, k);
+      }
+      if (i < 0) reverse(points, n);
+    }
+
+    function point(p) {
+      p = p.slice();
+      absolute(p, 0);
+      return p;
+    }
+
+    function line(arcs) {
+      var points = [];
+      for (var i = 0, n = arcs.length; i < n; ++i) arc(arcs[i], points);
+      if (points.length < 2) points.push(points[0].slice());
+      return points;
+    }
+
+    function ring(arcs) {
+      var points = line(arcs);
+      while (points.length < 4) points.push(points[0].slice());
+      return points;
+    }
+
+    function polygon(arcs) {
+      return arcs.map(ring);
+    }
+
+    function geometry(o) {
+      var t = o.type;
+      return t === "GeometryCollection" ? {type: t, geometries: o.geometries.map(geometry)}
+          : t in geometryType ? {type: t, coordinates: geometryType[t](o)}
+          : null;
+    }
+
+    var geometryType = {
+      Point: function(o) { return point(o.coordinates); },
+      MultiPoint: function(o) { return o.coordinates.map(point); },
+      LineString: function(o) { return line(o.arcs); },
+      MultiLineString: function(o) { return o.arcs.map(line); },
+      Polygon: function(o) { return polygon(o.arcs); },
+      MultiPolygon: function(o) { return o.arcs.map(polygon); }
+    };
+
+    return geometry(o);
+  }
+
+  function reverse(array, n) {
+    var t, j = array.length, i = j - n; while (i < --j) t = array[i], array[i++] = array[j], array[j] = t;
+  }
+
+  function bisect(a, x) {
+    var lo = 0, hi = a.length;
+    while (lo < hi) {
+      var mid = lo + hi >>> 1;
+      if (a[mid] < x) lo = mid + 1;
+      else hi = mid;
+    }
+    return lo;
+  }
+
+  function neighbors(objects) {
+    var indexesByArc = {}, // arc index -> array of object indexes
+        neighbors = objects.map(function() { return []; });
+
+    function line(arcs, i) {
+      arcs.forEach(function(a) {
+        if (a < 0) a = ~a;
+        var o = indexesByArc[a];
+        if (o) o.push(i);
+        else indexesByArc[a] = [i];
+      });
+    }
+
+    function polygon(arcs, i) {
+      arcs.forEach(function(arc) { line(arc, i); });
+    }
+
+    function geometry(o, i) {
+      if (o.type === "GeometryCollection") o.geometries.forEach(function(o) { geometry(o, i); });
+      else if (o.type in geometryType) geometryType[o.type](o.arcs, i);
+    }
+
+    var geometryType = {
+      LineString: line,
+      MultiLineString: polygon,
+      Polygon: polygon,
+      MultiPolygon: function(arcs, i) { arcs.forEach(function(arc) { polygon(arc, i); }); }
+    };
+
+    objects.forEach(geometry);
+
+    for (var i in indexesByArc) {
+      for (var indexes = indexesByArc[i], m = indexes.length, j = 0; j < m; ++j) {
+        for (var k = j + 1; k < m; ++k) {
+          var ij = indexes[j], ik = indexes[k], n;
+          if ((n = neighbors[ij])[i = bisect(n, ik)] !== ik) n.splice(i, 0, ik);
+          if ((n = neighbors[ik])[i = bisect(n, ij)] !== ij) n.splice(i, 0, ij);
+        }
+      }
+    }
+
+    return neighbors;
+  }
+
+  function presimplify(topology, triangleArea) {
+    var absolute = transformAbsolute(topology.transform),
+        relative = transformRelative(topology.transform),
+        heap = minAreaHeap();
+
+    if (!triangleArea) triangleArea = cartesianTriangleArea;
+
+    topology.arcs.forEach(function(arc) {
+      var triangles = [],
+          maxArea = 0,
+          triangle;
+
+      // To store each point’s effective area, we create a new array rather than
+      // extending the passed-in point to workaround a Chrome/V8 bug (getting
+      // stuck in smi mode). For midpoints, the initial effective area of
+      // Infinity will be computed in the next step.
+      for (var i = 0, n = arc.length, p; i < n; ++i) {
+        p = arc[i];
+        absolute(arc[i] = [p[0], p[1], Infinity], i);
+      }
+
+      for (var i = 1, n = arc.length - 1; i < n; ++i) {
+        triangle = arc.slice(i - 1, i + 2);
+        triangle[1][2] = triangleArea(triangle);
+        triangles.push(triangle);
+        heap.push(triangle);
+      }
+
+      for (var i = 0, n = triangles.length; i < n; ++i) {
+        triangle = triangles[i];
+        triangle.previous = triangles[i - 1];
+        triangle.next = triangles[i + 1];
+      }
+
+      while (triangle = heap.pop()) {
+        var previous = triangle.previous,
+            next = triangle.next;
+
+        // If the area of the current point is less than that of the previous point
+        // to be eliminated, use the latter's area instead. This ensures that the
+        // current point cannot be eliminated without eliminating previously-
+        // eliminated points.
+        if (triangle[1][2] < maxArea) triangle[1][2] = maxArea;
+        else maxArea = triangle[1][2];
+
+        if (previous) {
+          previous.next = next;
+          previous[2] = triangle[2];
+          update(previous);
+        }
+
+        if (next) {
+          next.previous = previous;
+          next[0] = triangle[0];
+          update(next);
+        }
+      }
+
+      arc.forEach(relative);
+    });
+
+    function update(triangle) {
+      heap.remove(triangle);
+      triangle[1][2] = triangleArea(triangle);
+      heap.push(triangle);
+    }
+
+    return topology;
+  };
+
+  function cartesianRingArea(ring) {
+    var i = -1,
+        n = ring.length,
+        a,
+        b = ring[n - 1],
+        area = 0;
+
+    while (++i < n) {
+      a = b;
+      b = ring[i];
+      area += a[0] * b[1] - a[1] * b[0];
+    }
+
+    return area * .5;
+  }
+
+  function cartesianTriangleArea(triangle) {
+    var a = triangle[0], b = triangle[1], c = triangle[2];
+    return Math.abs((a[0] - c[0]) * (b[1] - a[1]) - (a[0] - b[0]) * (c[1] - a[1]));
+  }
+
+  function compareArea(a, b) {
+    return a[1][2] - b[1][2];
+  }
+
+  function minAreaHeap() {
+    var heap = {},
+        array = [],
+        size = 0;
+
+    heap.push = function(object) {
+      up(array[object._ = size] = object, size++);
+      return size;
+    };
+
+    heap.pop = function() {
+      if (size <= 0) return;
+      var removed = array[0], object;
+      if (--size > 0) object = array[size], down(array[object._ = 0] = object, 0);
+      return removed;
+    };
+
+    heap.remove = function(removed) {
+      var i = removed._, object;
+      if (array[i] !== removed) return; // invalid request
+      if (i !== --size) object = array[size], (compareArea(object, removed) < 0 ? up : down)(array[object._ = i] = object, i);
+      return i;
+    };
+
+    function up(object, i) {
+      while (i > 0) {
+        var j = ((i + 1) >> 1) - 1,
+            parent = array[j];
+        if (compareArea(object, parent) >= 0) break;
+        array[parent._ = i] = parent;
+        array[object._ = i = j] = object;
+      }
+    }
+
+    function down(object, i) {
+      while (true) {
+        var r = (i + 1) << 1,
+            l = r - 1,
+            j = i,
+            child = array[j];
+        if (l < size && compareArea(array[l], child) < 0) child = array[j = l];
+        if (r < size && compareArea(array[r], child) < 0) child = array[j = r];
+        if (j === i) break;
+        array[child._ = i] = child;
+        array[object._ = i = j] = object;
+      }
+    }
+
+    return heap;
+  }
+
+  function transformAbsolute(transform) {
+    if (!transform) return noop;
+    var x0,
+        y0,
+        kx = transform.scale[0],
+        ky = transform.scale[1],
+        dx = transform.translate[0],
+        dy = transform.translate[1];
+    return function(point, i) {
+      if (!i) x0 = y0 = 0;
+      point[0] = (x0 += point[0]) * kx + dx;
+      point[1] = (y0 += point[1]) * ky + dy;
+    };
+  }
+
+  function transformRelative(transform) {
+    if (!transform) return noop;
+    var x0,
+        y0,
+        kx = transform.scale[0],
+        ky = transform.scale[1],
+        dx = transform.translate[0],
+        dy = transform.translate[1];
+    return function(point, i) {
+      if (!i) x0 = y0 = 0;
+      var x1 = (point[0] - dx) / kx | 0,
+          y1 = (point[1] - dy) / ky | 0;
+      point[0] = x1 - x0;
+      point[1] = y1 - y0;
+      x0 = x1;
+      y0 = y1;
+    };
+  }
+
+  function noop() {}
+
+  if (typeof define === "function" && define.amd) define(topojson);
+  else if (typeof module === "object" && module.exports) module.exports = topojson;
+  else this.topojson = topojson;
+}();
+
+},{}],310:[function(require,module,exports){
+module.exports = require(94);
+},{"dup":94}],311:[function(require,module,exports){
+(function (global){
+var Event = {}
+Event.on = function (evt, callback) {
+  var cb = this._evt_callbacks = this._evt_callbacks || {}
+  var l = cb[evt] || (cb[evt] = [])
+  l.push(callback)
+  return this
+}
+
+Event.trigger = function (evt) {
+  var c = this._evt_callbacks && this._evt_callbacks[evt]
+  for (var i = 0; c && i < c.length; ++i) {
+    c[i].apply(this, Array.prototype.slice.call(arguments, 1))
+  }
+  return this
+}
+
+Event.fire = Event.trigger
+
+Event.off = function (evt, callback) {
+  var c = this._evt_callbacks && this._evt_callbacks[evt]
+  if (c && !callback) {
+    delete this._evt_callbacks[evt]
+    return this
+  }
+  var remove = []
+  for (var i = 0; c && i < c.length; ++i) {
+    if (c[i] === callback) remove.push(i)
+  }
+  while ((i = remove.pop()) !== undefined) c.splice(i, 1)
+  return this
+}
+
+Event.callbacks = function (evt) {
+  return (this._evt_callbacks && this._evt_callbacks[evt]) || []
+}
+
+function extend () {
+  var objs = arguments
+  var a = objs[0]
+  for (var i = 1; i < objs.length; ++i) {
+    var b = objs[i]
+    for (var k in b) {
+      a[k] = b[k]
+    }
+  }
+  return a
+}
+
+function clone (a) {
+  return extend({}, a)
+}
+
+function isFunction (f) {
+  return typeof f === 'function' || false
+}
+
+function isArray (value) {
+  return value && typeof value === 'object' && Object.prototype.toString.call(value) === '[object Array]'
+}
+
+// types
+var types = {
+  Uint8Array: typeof (global['Uint8Array']) !== 'undefined' ? global.Uint8Array : Array,
+  Uint8ClampedArray: typeof (global['Uint8ClampedArray']) !== 'undefined' ? global.Uint8ClampedArray : Array,
+  Uint32Array: typeof (global['Uint32Array']) !== 'undefined' ? global.Uint32Array : Array,
+  Int16Array: typeof (global['Int16Array']) !== 'undefined' ? global.Int16Array : Array,
+  Int32Array: typeof (global['Int32Array']) !== 'undefined' ? global.Int32Array : Array
+}
+
+function isBrowserSupported () {
+  return !!document.createElement('canvas')
+}
+
+function userAgent () {
+  return typeof navigator !== 'undefined' ? navigator.userAgent : ''
+}
+
+var flags = {
+  sprites_to_images: userAgent().indexOf('Safari') === -1 && userAgent().indexOf('Firefox') === -1
+}
+
+module.exports = {
+  Event: Event,
+  extend: extend,
+  clone: clone,
+  isFunction: isFunction,
+  isArray: isArray,
+  types: types,
+  isBrowserSupported: isBrowserSupported,
+  flags: flags
+}
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{}],312:[function(require,module,exports){
+var Crossfilter = require('crossfilter')
+var cartodb = require('./')
+
+function Filter () {
+  this.crossfilter = new Crossfilter()
+  this.dimensions = {}
+  this.tiles = {}
+  this.visibleTiles = []
+  this.filters = {}
+}
+
+cartodb.d3.extend(Filter.prototype, cartodb.d3.Event, {
+  addTile: function (tilePoint, collection) {
+    var tilePointString = tilePoint.x + ':' + tilePoint.y + ':' + tilePoint.zoom
+    if (typeof this.tiles[tilePointString] !== 'undefined') return this.getTile(tilePoint)
+    this.crossfilter.add(collection.features.map(function (f) {
+      f.properties.tilePoint = tilePoint.x + ':' + tilePoint.y + ':' + tilePoint.zoom
+      return f
+    }))
+    this.tiles[tilePointString] = true
+    return this.getTile(tilePoint)
+  },
+
+  removeTile: function (tilePoint) {
+    var tilePointString = tilePoint.x + ':' + tilePoint.y + ':' + tilePoint.zoom
+    if (!this.dimensions.tiles) {
+      return
+    }
+    this.dimensions.tiles.filter(tilePointString)
+    this.crossfilter.remove()
+    this.dimensions.tiles.filterAll()
+    delete this.tiles[tilePointString]
+  },
+
+  getTile: function (tilePoint) {
+    var tilePointString = tilePoint.x + ':' + tilePoint.y + ':' + tilePoint.zoom
+    if (!this.dimensions.tiles) {
+      this.dimensions.tiles = this.crossfilter.dimension(function (f) { return f.properties.tilePoint })
+    }
+    var tile = {type: 'FeatureCollection', features: null}
+    this.dimensions.tiles.filter(tilePointString)
+    tile.features = this.dimensions.tiles.top(Infinity)
+    this.dimensions.tiles.filterAll()
+    return tile
+  },
+
+  filterRange: function (column, range) {
+    this.filter(column, range)
+  },
+
+  filter: function (column, filterfn) {
+    this._createDimension(column)
+    this.dimensions[column].filter(filterfn)
+    this.filters[column] = filterfn
+    this.fire('filterApplied')
+  },
+
+  filterAccept: function (column, terms) {
+    this.filter(column, Filter.accept(terms))
+  },
+
+  filterReject: function (column, terms) {
+    this.filter(column, Filter.reject(terms))
+  },
+
+  clearFilters: function () {
+    for (var column in this.dimensions) {
+      this.dimensions[column].filterAll()
+      delete this.filters[column]
+    }
+    this.fire('filterApplied')
+  },
+
+  clearFilter: function (column) {
+    this.dimensions[column].filterAll()
+    delete this.filters[column]
+    this.fire('filterApplied')
+  },
+
+  getValues: function (ownFilter, column) {
+    if (!this.dimensions['tiles']) return []
+    var values = []
+    if (typeof ownFilter === 'undefined' || ownFilter){
+      values = this.dimensions['tiles'].top(Infinity)
+    }
+    else {
+      this._createDimension(column)
+      this.dimensions[column].filterAll()
+      var values = this.dimensions[column].top(Infinity)
+      this.dimensions[column].filter(this.filters[column])
+    }
+    var uniqueValues = []
+    var ids = {}
+    for (var i = 0; i < values.length; i++) {
+      if (!(values[i].properties.cartodb_id in ids)) {
+        uniqueValues.push(values[i])
+        ids[values[i].properties.cartodb_id] = true
+      }
+    }
+    var boundingBox = this.visibleTiles.tiles
+    var ring = this.visibleTiles.ring
+    if (boundingBox) {
+      uniqueValues = uniqueValues.filter(function(feature) {
+        if (boundingBox.indexOf(feature.properties.tilePoint) > -1) return true
+        else if (feature.geometry.coordinates && ring.indexOf(feature.properties.tilePoint) > -1) {
+          if (this.visibleTiles.se.x >= feature.geometry.coordinates[0] &&
+              feature.geometry.coordinates[0] >= this.visibleTiles.nw.x && 
+              this.visibleTiles.se.y <= feature.geometry.coordinates[1] &&
+              feature.geometry.coordinates[1] <= this.visibleTiles.nw.y) {
+            return true
+          }
+          else return false
+        }
+      }.bind(this))
+    }
+
+    return uniqueValues
+  },
+
+  getColumnValues: function (column, numberOfValues) {
+    this._createDimension(column)
+    return this.dimensions[column].group().top(numberOfValues ? numberOfValues : Infinity)
+  },
+
+
+  setBoundingBox: function (visible) {
+    this.visibleTiles = visible
+  },
+
+  getMax: function (column) { 
+    this._createDimension(column)
+    try {
+      return this.dimensions[column].top(1)[0].properties[column]
+    }
+    catch(e) {
+      return null
+    }
+  },
+
+  getMin: function (column) { 
+    this._createDimension(column)
+    try {
+      return this.dimensions[column].bottom(1)[0].properties[column]
+    }
+    catch(e) {
+      return null
+    }
+  },
+
+  getCount: function (column) {
+    this._createDimension(column)
+    return this.dimensions[column].groupAll().value()
+  },
+
+  _createDimension: function (column) {
+    if (!this.dimensions[column]) {
+      this.dimensions[column] = this.crossfilter.dimension(function (f) { return f.properties[column] })
+    }
+  }
+})
+
+Filter.accept = function (terms) {
+  if (terms === 'all') {
+    return function () { return true }
+  } else if (terms === 'none') {
+    return function () { return false }
+  }
+  var termsDict = {}
+  terms.forEach(function (t) {
+    termsDict[t] = true
+  })
+  return function (f) {
+    if (termsDict[f]) {
+      return true
+    }
+    return false
+  }
+}
+
+Filter.reject = function (terms) {
+  if (terms === 'all') {
+    return function () { return false }
+  } else if (terms === 'none') {
+    return function () { return true }
+  }
+  var termsDict = {}
+  terms.forEach(function (t) {
+    termsDict[t] = true
+  })
+  return function (f) {
+    if (!termsDict[f]) {
+      return true
+    }
+    return false
+  }
+}
+
+module.exports = Filter
+
+},{"./":314,"crossfilter":307}],313:[function(require,module,exports){
+module.exports = {
+  tile2lon: function (x, z) {
+    return (x / Math.pow(2, z) * 360 - 180)
+  },
+  tile2lat: function (y, z) {
+    var n = Math.PI - 2 * Math.PI * y / Math.pow(2, z)
+    return (180 / Math.PI * Math.atan(0.5 * (Math.exp(n) - Math.exp(-n))))
+  },
+  geo2Webmercator: function (x_lon, y_lat) {
+    x_lon = x_lon % 180
+    // 0.017453292519943295 => Deg to rad constant
+    var num = x_lon * 0.017453292519943295
+    // 6378137 => Earth radius
+    var x = 6378137.0 * num
+    var a = y_lat * 0.017453292519943295
+    var x_mercator = x
+    var y_mercator = 3189068.5 * Math.log((1.0 + Math.sin(a)) / (1.0 - Math.sin(a)))
+    return {x: x_mercator, y: y_mercator}
+  },
+  webmercator2Geo: function(x, y) {
+    
+  },
+  wrapX: function (x, zoom) {
+    var limit_x = Math.pow(2, zoom)
+    var corrected_x = ((x % limit_x) + limit_x) % limit_x
+    return corrected_x
+  },
+  hashFeature: function (id, tilePoint) {
+    var x = tilePoint.x, z = tilePoint.zoom
+    if (typeof tilePoint === 'string') {
+      tilePoint = tilePoint.split(":")
+      x = tilePoint[0]
+      z = tilePoint[2]
+    }
+    var pane = Math.floor(x / Math.pow(2, z))
+    return [id, pane].join(':')
+  },
+  lng2tile: function (lon,zoom) { return (Math.floor((lon+180)/360*Math.pow(2,zoom))); },
+  lat2tile: function (lat,zoom) { return (Math.floor((1-Math.log(Math.tan(lat*Math.PI/180) + 1/Math.cos(lat*Math.PI/180))/Math.PI)/2 *Math.pow(2,zoom))); },
+
+  latLng2Tile: function (lat, lng, zoom) {
+    return {x: this.lng2tile(lng, zoom),
+            y: this.lat2tile(lat, zoom),
+            zoom: zoom}
+  }
+}
+
+},{}],314:[function(require,module,exports){
+module.exports.d3 = require('./core')
+require('./leaflet_d3.js')
+var elements = {
+  Util: require('./util.js'),
+  geo: require('./geo.js'),
+  Renderer: require('./renderer.js'),
+  net: require('./net.js'),
+  filter: require('./filter.js'),
+  provider: require('./providers')
+}
+for (var key in elements) {
+  module.exports.d3[key] = elements[key]
+}
+
+},{"./core":311,"./filter.js":312,"./geo.js":313,"./leaflet_d3.js":315,"./net.js":316,"./providers":317,"./renderer.js":321,"./util.js":323}],315:[function(require,module,exports){
+var Renderer = require('./renderer')
+var providers = require('./providers')
+var TileLoader = require('./tileloader')
+var geo = require('./geo')
+var L = window.L
+
+L.CartoDBd3Layer = L.TileLayer.extend({
+  options: {
+    minZoom: 0,
+    maxZoom: 28,
+    tileSize: 256,
+    zoomOffset: 0,
+    tileBuffer: 50
+  },
+
+  events: {
+    featureOver: null,
+    featureOut: null,
+    featureClick: null
+  },
+
+  initialize: function (options) {
+    options = options || {}
+    this.renderers = []
+    this.svgTiles = {}
+    this.eventCallbacks = {}
+    this._animated = true
+    L.Util.setOptions(this, options)
+    var styles = this.options.styles
+    if (!styles) {
+      styles = [this.options.cartocss]
+      this.options.styles = styles
+    }
+    if (this.options.layers && this.options.user) {
+      this.provider = new providers.WindshaftProvider(this.options)
+    } else {
+      this.provider = new providers.XYZProvider(this.options)
+    }
+    this.provider.on('ready', this._resetRenderers.bind(this))
+  },
+
+  on: function (eventName, callback) {
+    if (eventName in this.events) {
+      if (this.renderers.length > 0) {
+        this.renderers.forEach(function (renderer) {
+          renderer.on(eventName, callback)
+        })
+      } else {
+        this.eventCallbacks[eventName] = callback
+      }
+    } else {
+      L.TileLayer.prototype.on.call(this, arguments[0], arguments[1])
+    }
+  },
+
+  _getVisibleTiles: function () {
+    var bounds = this._map.getBounds()
+    var zoom = this._map.getZoom()
+    var northWest = bounds.getNorthWest()
+    var southEast = bounds.getSouthEast()
+    var nwTile = geo.latLng2Tile(northWest.lat, northWest.lng, zoom)
+    var seTile = geo.latLng2Tile(southEast.lat, southEast.lng, zoom)
+    var tiles = []
+    var ring = []
+    for(var y = nwTile.y; y<=seTile.y; y++) {
+      for(var x = nwTile.x; x<=seTile.x; x++) {
+        if (y === nwTile.y || y === seTile.y || x === nwTile.x || x === seTile.x){
+          ring.push([x,y,zoom].join(':'))
+        }
+        else{
+          tiles.push([x,y,zoom].join(':'))
+        }
+      }
+    }
+    var se = geo.geo2Webmercator(southEast.lng, southEast.lat)
+    var nw = geo.geo2Webmercator(northWest.lng, northWest.lat)
+    return { tiles: tiles, ring: ring, se: se, nw: nw }
+  },
+
+  applyFilter: function (sublayerIndex, filterType, filterOptions) {
+    var sublayer = this.renderers[sublayerIndex]
+    switch (filterType) {
+      case 'accept':
+        sublayer.filter.filterAccept(filterOptions.column, filterOptions.values)
+        break
+      case 'reject':
+        sublayer.filter.filterReject(filterOptions.column, filterOptions.values)
+        break
+      case 'range':
+        sublayer.filter.filterRange(filterOptions.column, [filterOptions.min, filterOptions.max])
+        break
+    }
+    sublayer.redraw()
+  },
+
+  setProvider: function (options) {
+    this.styles = options.styles
+    this.provider.setURL(options.urlTemplate)
+  },
+  setUrl: function (url) {
+    this.setProvider({
+      styles: this.options.styles,
+      urlTemplate: url
+    })
+  },
+
+  featuresLoaded: function () {
+    if (!this.provider) return false
+    return this.provider.allTilesLoaded()
+  },
+
+  getFilter: function (layerIndex) {
+    return this.renderers[layerIndex].filter
+  },
+
+  getFeatures: function () {
+    var features = []
+    if (this.renderers.length > 0) {
+      this.renderers.forEach(function (r) {
+        features.push(r.filter.getValues())
+      })
+    }
+    return features
+  },
+
+  onAdd: function (map) {
+    this._map = map
+    this.options.map = map
+    this.options.layer = this
+    this._initContainer()
+
+    this.tileLoader = new TileLoader({
+      tileSize: this.options.tileSize,
+      maxZoom: this.options.maxZoom,
+      minZoom: this.options.minZoom,
+      provider: this.provider,
+      map: map
+    })
+    this.tileLoader.loadTiles()
+    this._tileContainer.setAttribute('class', 'leaflet-zoom-animated leaflet-tile-container')
+    this._bgBuffer.setAttribute('class', 'leaflet-zoom-animated leaflet-tile-container')
+    this.tileLoader.on('tileAdded', this._renderTile, this)
+    this.tileLoader.on('tileRemoved', this._clearTile, this)
+    this.tileLoader.on('tilesLoaded', function () {
+      this._setBoundingBox()
+      this.fire('featuresChanged', this.getFeatures())
+    }, this)
+    this._map.on({
+      'zoomanim': this._animateZoom,
+      'zoomend': this._endZoomAnim,
+      'moveend': this._setBoundingBox
+    }, this)
+  },
+
+  onRemove: function (map) {
+    this.tileLoader.unbindAndClearTiles()
+  },
+
+  addTo: function (map) {
+    map.addLayer(this)
+    return this
+  },
+
+  _setBoundingBox: function () {
+    var visible = this._getVisibleTiles()
+    this.renderers.forEach(function (renderer) {
+      renderer.filter.setBoundingBox(visible)
+    })
+  },
+
+  _resetRenderers: function () {
+    var self = this
+    if (this.renderers.length > 0) {
+      this.renderers = []
+    }
+    var styles = this.options.styles
+    if (styles.length > 0) {
+      for (var i = 0; i < styles.length; i++) {
+        this.renderers.push(new Renderer({
+          cartocss: styles[i],
+          index: i,
+          layer: this
+        }))
+      }
+    } else {
+      this.renderers.push(new Renderer({
+        cartocss: '',
+        index: 0,
+        layer: this
+      }))
+    }
+    for (var tileKey in this.svgTiles) {
+      var split = tileKey.split(':')
+      var tilePoint = {
+        x: parseInt(split[0], 10),
+        y: parseInt(split[1], 10),
+        zoom: parseInt(split[2], 10)
+      }
+      this.tileLoader._loadTile(tilePoint)
+    }
+
+    this.renderers.forEach(function (r) {
+      r.filter.on('filterApplied', function () {
+        self.fire('featuresChanged', self.getFeatures())
+      })
+      for (var key in self.eventCallbacks){
+        r.on(key, function() {
+
+          debugger;
+          var latLng = self._map.layerPointToLatLng([arguments[2].x, arguments[2].y])
+          arguments[1] = Object.keys(latLng).map(function(e){return latLng[e]})
+          self.eventCallbacks[key].apply(self, arguments)
+        })
+      }
+    })
+  },
+
+  _renderTile: function (data) {
+    var tilePoint = data.tilePoint
+    var geometry = data.geometry
+    var self = this
+    var tileKey = tilePoint.x + ':' + tilePoint.y + ':' + tilePoint.zoom
+    var tile = this.svgTiles[tileKey]
+    if (!tile) {
+      tile = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+      // tile.style.padding = this.options.tileBuffer + 'px'
+      // tile.style.margin = '-' + this.options.tileBuffer + 'px'
+      tile.setAttribute('class', 'leaflet-tile')
+      this.svgTiles[tileKey] = tile
+      this._tileContainer.appendChild(tile)
+    }
+
+    for (var i = 0; i < self.renderers.length; i++) {
+      if (geometry.features.length > 1 && geometry.features[0].type === 'FeatureCollection') { // This means there's more than one layer
+        if (geometry.features.length !== this.renderers.length) return
+      } else {
+        if (this.renderers.length > 1) return
+      }
+      var collection = self.renderers.length > 1 ? geometry.features[i] : geometry
+      self.renderers[i].render(tile, collection, tilePoint)
+    }
+
+    var tilePos = this._getTilePos(tilePoint)
+    tile.style.width = tile.style.height = this._getTileSize() + 'px'
+    L.DomUtil.setPosition(tile, tilePos, L.Browser.chrome)
+  },
+
+  _clearTile: function (data) {
+    var split = data.tileKey.split(':')
+    var tilePoint = {x: split[0], y: split[1], zoom: split[2]}
+    this.renderers.forEach(function (r) {
+      r.filter.removeTile(tilePoint)
+    })
+    if (this._tileContainer.hasChildNodes(this.svgTiles[data.tileKey])){
+      this._tileContainer.removeChild(this.svgTiles[data.tileKey])
+    }
+    delete this.svgTiles[data.tileKey]
+  },
+
+  _getTilePos: function (tilePoint) {
+    tilePoint = new L.Point(tilePoint.x, tilePoint.y)
+    var origin = this._map.getPixelOrigin()
+    var tileSize = this._getTileSize()
+
+    return tilePoint.multiplyBy(tileSize).subtract(origin)
+  },
+
+  latLngToLayerPoint: function (lat, lng) {
+    return this._map.latLngToLayerPoint(new L.LatLng(lat, lng))
+  },
+
+  _getTileSize: function () {
+    var map = this._map
+    var zoom = map.getZoom() + this.options.zoomOffset
+    var zoomN = this.options.maxNativeZoom
+    var tileSize = this.options.tileSize
+
+    if (zoomN && zoom > zoomN) {
+      tileSize = Math.round(map.getZoomScale(zoom) / map.getZoomScale(zoomN) * tileSize)
+    }
+
+    return tileSize
+  },
+
+  setCartoCSS: function (index, cartocss) {
+    this.options.styles[index] = cartocss
+    this.renderers[index].setCartoCSS(cartocss)
+  },
+
+  _getLoadedTilesPercentage: function (container) {
+    var tiles = container.getElementsByTagName('svg')
+    var i, len
+    var count = 0
+
+    for (i = 0, len = tiles.length; i < len; i++) {
+      if (tiles[i].complete) {
+        count++
+      }
+    }
+    return count / len
+  },
+
+  _endZoomAnim: function () {
+    var front = this._tileContainer
+    var bg = this._bgBuffer
+    front.style.visibility = ''
+    front.parentNode.appendChild(front) // Bring to fore
+    bg.style.transform = ''
+    bg.innerHTML = ''
+    // force reflow
+    L.Util.falseFn(bg.offsetWidth)
+
+    this._animating = false
+  },
+
+  _stopLoadingImages: function (container) {
+    var tiles = Array.prototype.slice.call(container.getElementsByTagName('svg'))
+    var i, len, tile
+    this.tileLoader._tilesLoading = {}
+    for (i = 0, len = tiles.length; i < len; i++) {
+      tile = tiles[i]
+      tile.parentNode.removeChild(tile)
+    }
+    this.provider.abortPending()
+  }
+})
+
+},{"./geo":313,"./providers":317,"./renderer":321,"./tileloader":322}],316:[function(require,module,exports){
+(function (global){
+var d3 = require('d3')
+
+// http://bl.ocks.org/tmcw/4494715
+module.exports.jsonp = function (url, callback) {
+  function rand () {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    var c = ''
+    var i = -1
+    while (++i < 15) c += chars.charAt(Math.floor(Math.random() * 52))
+    return c
+  }
+
+  function create (url) {
+    var e = url.match(/callback=(\w+)/)
+    var c = e ? e[1] : rand()
+    window[c] = function (data) {
+      callback(data)
+      delete window[c]
+      script.remove()
+    }
+    return c
+  }
+
+  var cb = create(url)
+  var script = d3.select('head')
+      .append('script')
+      .attr('type', 'text/javascript')
+      .attr('src', url.replace(/(\{|%7B)callback(\{|%7D)/, cb))
+}
+
+module.exports.get = function get (url, callback, options) {
+  options = options || {
+    method: 'GET',
+    data: null,
+    responseType: 'text'
+  }
+  var Request = window.XMLHttpRequest
+  // from d3.js
+  if (global.XDomainRequest &&
+    !('withCredentials' in Request) &&
+    /^(http(s)?:)?\/\//.test(url)) Request = global.XDomainRequest
+
+  var req = new Request()
+  req.open(options.method, url, true)
+
+  function respond () {
+    var status = req.status
+    var r = options.responseType === 'arraybuffer' ? req.response : req.responseText
+    if (!status && r || status >= 200 && status < 300 || status === 304) {
+      callback(req)
+    } else {
+      callback(null)
+    }
+  }
+
+  'onload' in req
+    ? req.onload = req.onerror = respond
+    : req.onreadystatechange = function () { req.readyState > 3 && respond() }
+
+  req.onprogress = function () {}
+
+  req.responseType = options.responseType // 'arraybuffer'
+  if (options.data) {
+    req.setRequestHeader('Content-type', 'application/json')
+    // req.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    req.setRequestHeader('Accept', '*')
+  }
+  req.send(options.data)
+  return req
+}
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"d3":308}],317:[function(require,module,exports){
+module.exports = {
+  SQLProvider: require('./sql.js'),
+  XYZProvider: require('./xyz.js'),
+  WindshaftProvider: require('./windshaft.js')
+}
+
+},{"./sql.js":318,"./windshaft.js":319,"./xyz.js":320}],318:[function(require,module,exports){
+var d3 = require('d3')
+var geo = require('../geo')
+
+function SQLProvider (options) {
+  this.sql_api_template = options.sql_api_template || 'http://{user}.cartodb.com'
+  this.user = options.user
+  this.table = options.table
+  this.format = options.format
+  this.tileCache = {}
+}
+
+SQLProvider.prototype = {
+  getTile: function (tilePoint, callback) {
+    var tileData = this.tileCache[tilePoint.zoom + ':' + tilePoint.x + ':' + tilePoint.y]
+    if (tileData) {
+      callback(tilePoint, tileData)
+    } else {
+      var tileBB = {
+        n: geo.tile2lat(tilePoint.y, tilePoint.zoom),
+        s: geo.tile2lat(tilePoint.y + 1, tilePoint.zoom),
+        e: geo.tile2lon(tilePoint.x, tilePoint.zoom),
+        w: geo.tile2lon(tilePoint.x + 1, tilePoint.zoom)
+      }
+      var query = 'SELECT * FROM ' + this.table
+      query += ' WHERE the_geom && ST_MakeEnvelope({w},{s},{e},{n}, 4326)'
+      query = query
+      .replace('{w}', tileBB.w)
+      .replace('{s}', tileBB.s)
+      .replace('{e}', tileBB.e)
+      .replace('{n}', tileBB.n)
+
+      this.getGeometry(query, tilePoint.zoom, function (geometry) {
+        this.tileCache[tilePoint.zoom + ':' + tilePoint.x + ':' + tilePoint.y] = geometry
+        callback(tilePoint, geometry)
+      }.bind(this))
+    }
+  },
+
+  _query: function (sql, callback, format) {
+    var url = this.sql_api_template.replace('{user}', this.user)
+    url += '/api/v2/sql?q=' + encodeURIComponent(sql)
+    if (format) {
+      url += '&format=' + format
+    }
+    d3.json(url, callback)
+  },
+
+  getGeometry: function (sql, zoom, callback) {
+    // request the schema fist to extract columns and generate the final
+    // sql query with the right the_geom simplification for the zoom level.
+    // The current zoom level may not the best but good enough for a test
+    var schemaSQL = 'select * from (' + sql + ') __cdb limit 0'
+    this._query(schemaSQL, function (data) {
+      // generate the final sql. Ideally only variables used in cartocss
+      // should be requested
+      var columns = Object.keys(data.fields).filter(function (f) {
+        return f !== 'the_geom' && f !== 'the_geom_webmercator'
+      })
+
+      // pixel size with some factor to avoid remove geometries
+      var px = this.pixelSizeForZoom(zoom)
+      var the_geom = 'st_transform(st_simplify(st_snaptogrid(the_geom_webmercator, {px}, {px}), {px}/2), 3857) as the_geom'.replace(/{px}/g, px)
+      // generate the sql with all the columns + the geometry simplified
+      var finalSQL = 'select ' + columns.join(',') + ',' + the_geom + ' FROM (' + sql + ') __cdb'
+
+      this._query(finalSQL, function (collection) {
+        collection.features = collection.features.filter(function (d) {
+          return d.geometry && d.geometry.coordinates.length > 0
+        })
+        callback(collection)
+      }, 'geojson')
+    }.bind(this))
+  },
+
+  pixelSizeForZoom: function (zoom) {
+    var earth_circumference = 40075017
+    var tile_size = 256
+    var full_resolution = earth_circumference / tile_size
+    return full_resolution / Math.pow(2, zoom)
+  },
+  invalidateCache: function () {
+    this.tileCache = {}
+  }
+}
+
+module.exports = SQLProvider
+
+},{"../geo":313,"d3":308}],319:[function(require,module,exports){
+var cartodb = require('../')
+var XYZProvider = require('./xyz.js')
+
+function WindshaftProvider (options) {
+  this.tiler_template = options.tiler_template || 'http://{user}.cartodb.com'
+  this.user = options.user
+  this.layers = options.layers;
+  this.format = options.format
+  this.options = options
+  this._tileQueue = []
+  this.initialize()
+  this._ready = false
+  this.requests = {}
+}
+
+cartodb.d3.extend(WindshaftProvider.prototype, cartodb.d3.Event, {
+
+  initialize: function () {
+    this.tiler_template = this.tiler_template.replace('{user}', this.user)
+    var mapconfig = this._generateMapconfig(this.table)
+    var url = this.tiler_template + '/api/v1/map?config=' + encodeURIComponent(JSON.stringify(mapconfig))
+    cartodb.d3.net.jsonp(url + '&callback=mapconfig', function (data) {
+      this.layergroup = data
+      this._ready = true
+      this.urlTemplate = this.tiler_template + '/api/v1/map/' + this.layergroup.layergroupid + '/mapnik/{z}/{x}/{y}.geojson'
+      XYZProvider.prototype._processQueue.apply(this)
+      this.fire('ready')
+    }.bind(this))
+  },
+
+  getTile: XYZProvider.prototype.getTile,
+
+  getGeometry: XYZProvider.prototype.getGeometry,
+
+  abortPending: XYZProvider.prototype.abortPending,
+
+  allTilesLoaded: XYZProvider.prototype.allTilesLoaded,
+
+  _generateMapconfig: function (table) {
+    var mapconfig = {
+      'version': '1.0.1',
+      'layers': this.layers.map(function(layer) {
+         return {
+           'type': 'cartodb',
+           'options': {
+             'sql': layer.sql,
+             'cartocss': layer.cartocss,
+             'cartocss_version': '2.1.1'
+           }
+         }
+      })
+    };
+    return mapconfig
+  }
+})
+
+module.exports = WindshaftProvider
+
+},{"../":314,"./xyz.js":320}],320:[function(require,module,exports){
+var d3 = require('d3')
+var topojson = require('topojson')
+var cartodb = require('../')
+
+function XYZProvider (options) {
+  this.format = options.format
+  this.urlTemplate = options.urlTemplate
+  this.tilejson = options.tilejson
+  this._tileQueue = []
+  this._ready = false
+  this.requests = {}
+  if (!this.urlTemplate) {
+    if (this.tilejson) {
+      this.urlTemplate = this.tilejson.tiles[0]
+      this._setReady()
+    }
+  } else {
+    this._setReady()
+  }
+}
+
+cartodb.d3.extend(XYZProvider.prototype, cartodb.d3.Event, {
+
+  getTile: function (tilePoint, callback) {
+    if (this._ready) {
+      var self = this
+      this.getGeometry(tilePoint, function (err, geometry) {
+        if (err) return
+        if (geometry.type === 'Topology') {
+          self.format = 'topojson'
+          geometry = topojson.feature(geometry, geometry.objects.vectile)
+        }
+        self.requests[[tilePoint.x, tilePoint.y, tilePoint.zoom].join(':')].complete = true
+        callback(tilePoint, geometry)
+      })
+    } else {
+      this._tileQueue.push([tilePoint, callback])
+    }
+  },
+
+  getGeometry: function (tilePoint, callback) {
+    var self = this
+    var url = this.urlTemplate
+      .replace('{x}', tilePoint.x)
+      .replace('{y}', tilePoint.y)
+      .replace('{z}', tilePoint.zoom)
+      .replace('{s}', 'abcd'[(tilePoint.x * tilePoint.y) % 4])
+      .replace('.png', '.geojson')
+    var tilePointString = [tilePoint.x, tilePoint.y, tilePoint.zoom].join(':')
+    var request = d3.json(url, callback)
+    this.requests[tilePointString] = request
+  },
+
+  _setReady: function () {
+    this._ready = true
+    window.setTimeout(function () {
+      this.fire('ready')
+      this._processQueue()
+    }.bind(this), 0)
+  },
+
+  setURL: function (url) {
+    this.urlTemplate = url
+    this._setReady()
+  },
+
+  abortPending: function () {
+    for (var tileKey in this.requests) {
+      this.requests[tileKey].abort()
+    }
+    this.requests = {}
+  },
+
+  allTilesLoaded: function () {
+    for (var request in this.requests) {
+      if (!this.requests[request].complete) return false
+    }
+    return true
+  },
+
+  _processQueue: function () {
+    var self = this
+    this._tileQueue.forEach(function (item) {
+      self.getTile.apply(self, item)
+    })
+  }
+})
+
+module.exports = XYZProvider
+
+},{"../":314,"d3":308,"topojson":309}],321:[function(require,module,exports){
+(function (global){
+var d3 = global.d3 || require('d3')
+var cartodb = global.cartodb || {}
+var carto = global.carto || require('carto')
+var _ = global._ || require('underscore')
+var geo = require('./geo')
+var Filter = require('./filter')
+
+cartodb.d3 = d3 || {}
+
+d3.selection.prototype.moveToFront = function () {
+  return this.each(function () {
+    this.parentNode.appendChild(this)
+  })
+}
+
+var Renderer = function (options) {
+  this.options = options
+  this.index = options.index
+  if (options.cartocss) {
+    this.setCartoCSS(options.cartocss)
+  }
+  this.globalVariables = {}
+  this.layer = options.layer
+  this.filter = new Filter()
+  this.geometries = {}
+}
+
+Renderer.prototype = {
+  events: {
+    featureOver: null,
+    featureOut: null,
+    featureClick: null
+  },
+
+  /**
+   * changes a global variable in cartocss
+   * it can be used in carotcss in this way:
+   * [prop < global.variableName] {...}
+   *
+   * this function can be used passing an object with all the variables or just key value:
+   * layer.setGlobal('test', 1)
+   * layer.setGlobal({test: 1, bar: 3})
+   *
+   * layer will be refreshed after calling it
+   */
+  setGlobal: function () {
+    var args = Array.prototype.slice.call(arguments)
+    if (args.length === 2) {
+      this.globalVariables[args[0]] = args[1]
+    } else {
+      this.globalVariables = args[0]
+    }
+  },
+
+  setCartoCSS: function (cartocss) {
+    this.renderer = new carto.RendererJS()
+    this.shader = this.renderer.render(cartocss)
+    if (this.layer) {
+      for (var tileKey in this.layer.svgTiles) {
+        var tilePoint = tileKey.split(':')
+        tilePoint = {x: tilePoint[0], y: tilePoint[1], zoom: tilePoint[2]}
+        this.render(this.layer.svgTiles[tileKey], null, tilePoint, true)
+      }
+    }
+  },
+
+  on: function (eventName, callback) {
+    var self = this
+    if (eventName ==='featureOver') {
+      this.events.featureOver = function (f) {
+        var selection = d3.select(this)
+        this.style.cursor = 'pointer'
+        var properties = selection.data()[0].properties
+        var index = Renderer.getIndexFromFeature(this)
+        var latLng = self._getLatLngFromEvent(self.layer._map, f)
+        var pos = self._getPosFromEvent(self.layer._map, f)
+        self.layer.eventCallbacks.featureOver(f, latLng, pos, properties, index)
+      }
+    } else if (eventName ==='featureOut') {
+      this.events.featureOut = function (f) {
+        var selection = d3.select(this)
+        var sym = this.attributes['class'].value
+        selection.reset = function () {
+          selection.style(self.styleForSymbolizer(sym, 'shader'))
+        }
+        var index = Renderer.getIndexFromFeature(this)
+        var latLng = self._getLatLngFromEvent(self.layer._map, f)
+        var pos = self._getPosFromEvent(self.layer._map, f)
+        self.layer.eventCallbacks.featureOut(f, latLng, pos, d3.select(this).data()[0].properties, index)
+      }
+    } else if (eventName ==='featureClick') {
+      this.events.featureClick = function (f) {
+        var index = Renderer.getIndexFromFeature(this)
+        var latLng = self._getLatLngFromEvent(self.layer._map, f)
+        var pos = self._getPosFromEvent(self.layer._map, f)
+        self.layer.eventCallbacks.featureClick(f, latLng, pos, d3.select(this).data()[0].properties, index)
+      }
+    } else if (eventName ==='featuresChanged') {
+      this.filter.on('featuresChanged', callback)
+    }
+  },
+
+  _getLatLngFromEvent: function (map, mouseEvent) {
+    var mapBoundingBoxClientRect = map.getContainer().getBoundingClientRect()
+    var latLng = map.layerPointToLatLng([
+      mouseEvent.clientX - mapBoundingBoxClientRect.left,
+      mouseEvent.clientY - mapBoundingBoxClientRect.top
+    ]);
+
+    return [latLng.lat, latLng.lng]
+  },
+
+  _getPosFromEvent: function (map, mouseEvent) {
+    var mapBoundingBoxClientRect = map.getContainer().getBoundingClientRect()
+    return {
+      x: mouseEvent.clientX - mapBoundingBoxClientRect.left,
+      y: mouseEvent.clientY - mapBoundingBoxClientRect.top
+    };
+  },
+
+  redraw: function (updating) {
+    if (this.layer) {
+      for (var tileKey in this.layer.svgTiles) {
+        var tilePoint = tileKey.split(':')
+        this.layer.svgTiles[tileKey].children[this.index].innerHTML = ''
+        tilePoint = {x: tilePoint[0], y: tilePoint[1], zoom: tilePoint[2]}
+        this.render(this.layer.svgTiles[tileKey], null, tilePoint, false)
+      }
+    }
+  },
+
+  // there are special rules for layers, for example "::hover", this function
+  // search for them and attach to the original layer, so if you have
+  // #test {}
+  // #test::hover {}
+  // this function will return an array with a single layer. That layer will contain a
+  // hover as an attribute
+  processLayersRules: function (layers) {
+    var specialAttachments = ['hover']
+    var realLayers = []
+    var attachments = []
+    // map layer names
+    var layerByName = {}
+    layers.forEach(function (layer) {
+      if (specialAttachments.indexOf(layer.attachment()) !== -1) {
+        attachments.push(layer)
+      } else {
+        layerByName[layer.name()] = layer
+        realLayers.push(layer)
+      }
+    })
+
+    // link attachment with layers
+    attachments.forEach(function (attachment) {
+      var n = layerByName[attachment.name()]
+      if (n) {
+        n[attachment.attachment()] = attachment
+      } else {
+        console.log('attachment without layer')
+      }
+    })
+
+    return realLayers
+  },
+
+  styleForSymbolizer: function (symbolyzer, shaderName) {
+    if (symbolyzer === 'polygon' || symbolyzer === 'line') {
+      return {
+        'fill': function (d) { return d[shaderName]['polygon-fill'] || 'none' },
+        'fill-opacity': function (d) { return d[shaderName]['polygon-opacity'] },
+        'stroke': function (d) { return d[shaderName]['line-color'] },
+        'stroke-width': function (d) { return d[shaderName]['line-width'] },
+        'stroke-opacity': function (d) { return d[shaderName]['line-opacity'] },
+        'mix-blend-mode': function (d) { return d[shaderName]['comp-op'] }
+      }
+    } else if (symbolyzer === 'markers') {
+      return {
+        'fill': function (d) { return d[shaderName]['marker-fill'] || 'none' },
+        'fill-opacity': function (d) { return d[shaderName]['marker-fill-opacity'] },
+        'stroke': function (d) { return d[shaderName]['marker-line-color'] },
+        'stroke-width': function (d) { return d[shaderName]['marker-line-width'] },
+        'radius': function (d) {
+          return d[shaderName]['marker-width'] / 2
+        },
+        'mix-blend-mode': function (d) { return d[shaderName]['comp-op'] }
+      }
+    } else if (symbolyzer === 'text') {
+      return {
+        'fill': function (d) { return d[shaderName]['text-fill'] || 'none' },
+        'mix-blend-mode': function (d) { return d[shaderName]['comp-op'] }
+      }
+    }
+  },
+
+  generateProjection: function (tilePoint) {
+    var corrected_x = geo.wrapX(tilePoint.x, tilePoint.zoom)
+    return function (x, y) {
+      var earthRadius = 6378137 * 2 * Math.PI
+      var earthRadius2 = earthRadius / 2
+      var invEarth = 1.0 / earthRadius
+      var pixelScale = 256 * (1 << tilePoint.zoom)
+      x = pixelScale * (x + earthRadius2) * invEarth
+      y = pixelScale * (-y + earthRadius2) * invEarth
+      if (this.stream) {
+        this.stream.point(x - corrected_x * 256, y - tilePoint.y * 256)
+      } else {
+        return { x: x - corrected_x * 256, y: y - tilePoint.y * 256 }
+      }
+    }
+  },
+
+  render: function (svg, collection, tilePoint, updating) {
+    var self = this
+    collection = this.filter.addTile(tilePoint, collection) // It won't add duplicates
+    var g, styleLayers
+    var svgSel = d3.select(svg)
+    if (svg.children[this.index]) {
+      g = d3.select(svg.children[this.index])
+      styleLayers = g.data()
+    } else {
+      g = svgSel.append('g')
+    }
+    this.projection = this.generateProjection(tilePoint)
+    this.path = d3.geo.path().projection(d3.geo.transform({ point: this.projection }))
+
+    if (!this.shader || !collection || collection.features.length === 0) return
+    var layers = this.shader.getLayers()
+
+    // search for hovers and other special rules for the renderer
+    layers = this.processLayersRules(layers)
+
+    layers.forEach(function (layer, i) {
+      var thisGroup
+      var children = g[0][0].children
+      if(!children[i]) thisGroup = g.append('g')
+      else thisGroup = d3.select(children[i])
+      var sym = self._getSymbolizer(layer)
+      var features
+      if (!updating) {
+        features = self._createFeatures(layer, collection, thisGroup[0][0])
+      } else {
+        features = thisGroup.selectAll('.' + sym)
+      }
+      this.tilePoint = tilePoint
+      self._styleFeatures(layer, features, this)
+    })
+    svgSel.attr('class', svgSel.attr('class') + ' leaflet-tile-loaded')
+  },
+
+  _styleFeatures: function (layer, features, group) {
+    var sym = this._getSymbolizer(layer)
+    var self = this
+    features.each(function (d) {
+      if (!d.properties) d.properties = {}
+      var featureHash = geo.hashFeature(d.properties.cartodb_id, group.tilePoint)
+      if (!self.geometries[featureHash]) self.geometries[featureHash] = []
+      self.geometries[featureHash].push(this)
+      d.properties.global = self.globalVariables
+      d.shader = layer.getStyle(d.properties, {zoom: group.tilePoint.zoom, time: self.time})
+      this.onmousemove = self.events.featureOver
+      this.onmouseleave = self.events.featureOut
+      this.onclick = self.events.featureClick
+      if (layer.hover) {
+        d.shader_hover = layer.hover.getStyle(d.properties, { zoom: group.tilePoint.zoom, time: self.time })
+        _.defaults(d.shader_hover, d.shader)
+        self.events.featureOver = function (f) {
+          this.style.cursor = 'default'
+          var element = d3.select(this).data()[0]
+          var hash = geo.hashFeature(element.properties.cartodb_id, element.properties.tilePoint)
+          self.geometries[hash].forEach(function (feature) {
+            d3.select(feature).style(self.styleForSymbolizer(sym, 'shader_hover'))
+          })
+        }
+        self.events.featureOut = function () {
+          var element = d3.select(this).data()[0]
+          var hash = geo.hashFeature(element.properties.cartodb_id, element.properties.tilePoint)
+          self.geometries[hash].forEach(function (feature) {
+            d3.select(feature).style(self.styleForSymbolizer(sym, 'shader'))
+          })
+        }
+      }
+    })
+    if (sym === 'text') {
+      features = this._transformText(features)
+    }
+
+    var styleFn = self.styleForSymbolizer(this._getSymbolizer(layer), 'shader')
+    features.attr('r', styleFn.radius)
+    features.attr('mix-blend-mode', styleFn['mix-blend-mode'])
+    features.style(styleFn)
+  },
+
+  _createFeatures: function (layer, collection, group) {
+    var self = this
+    var sym = this._getSymbolizer(layer)
+    var geometry = collection.features
+    var transform = transformForSymbolizer(sym)
+    if (transform) {
+      geometry = geometry.map(transform)
+    }
+
+    // select based on symbolizer
+    var features = d3.select(group)
+      .selectAll('.' + sym)
+      .data(geometry)
+
+    if (sym === 'text') {
+      features.enter().append('svg:text').attr('class', sym)
+    } else if (sym === 'markers') {
+      features.enter().append('circle').attr('class', sym)
+      features.each(function(f) {
+        if (f.coordinates[0]){
+          var coords = self.projection.apply(this, f.coordinates)
+          this.setAttribute('cx', coords.x)
+          this.setAttribute('cy', coords.y)
+        }
+        else{
+          this.parentElement.removeChild(this)
+        }
+      })
+    } else {
+      features.enter().append('path').attr('class', sym)
+      features.attr('d', this.path)
+    }
+    features.exit().remove()
+    return features
+  },
+
+  _getSymbolizer: function (layer) {
+    var symbolizers = layer.getSymbolizers()
+    symbolizers = _.filter(symbolizers, function (f) {
+      return f !== '*'
+    })
+    // merge line and polygon symbolizers
+    symbolizers = _.uniq(symbolizers.map(function (d) { return d === 'line' ? 'polygon' : d }))
+    return symbolizers[0]
+  },
+
+  _transformText: function (feature) {
+    var self = this
+    feature.text(function (d) {
+      return d.shader['text-name']
+    })
+    feature.attr('dy', function (d) {
+      return d.shader['text-dy']
+    })
+    feature.attr('text-anchor', 'middle')
+    feature.attr('x', function (d) {
+      if (d.geometry.coordinates[0]) {
+        var p = self.projection(d.geometry.coordinates[0], d.geometry.coordinates[1])
+        return p.x
+      }
+      else {
+        this.remove()
+      }
+    })
+    feature.attr('y', function (d) {
+      if (d.geometry.coordinates[0]) {
+        var p = self.projection(d.geometry.coordinates[0], d.geometry.coordinates[1])
+        return p.y
+      }
+      else {
+        this.remove()
+      }
+    })
+    return feature
+  }
+}
+
+Renderer.getIndexFromFeature = function (element) {
+  var i = 0
+  var node = element.parentElement.parentElement
+  while (node = node.previousSibling) i ++
+  return i
+}
+
+function transformForSymbolizer (symbolizer) {
+  if (symbolizer === 'markers' || symbolizer === 'labels') {
+    var pathC = d3.geo.path().projection(function (d) { return d })
+    return function (d) {
+      return d._centroid || (d._centroid = {
+        type: 'Point',
+        properties: d.properties,
+        coordinates: pathC.centroid(d)
+      })
+    }
+  }
+  return null
+}
+
+module.exports = Renderer
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"./filter":312,"./geo":313,"carto":269,"d3":308,"underscore":310}],322:[function(require,module,exports){
+var L = window.L
+
+module.exports = L.Class.extend({
+  includes: L.Mixin.Events,
+
+  initialize: function (options) {
+    var self = this
+    this.options = options
+    this.provider = options.provider
+    this._map = options.map
+    this._tiles = {}
+    this._tilesLoading = {}
+    this._tilesToLoad = 0
+    this.lastDrag = 0
+    this._map.on('moveend', this._reloadTiles, this)
+    // this._map.on('drag', function () {
+    //   if ((this.dragging._lastTime - self.lastDrag) > 500) {
+    //     self.lastDrag = this.dragging._lastTime
+    //     self._reloadTiles()
+    //   }
+    // })
+  },
+
+  loadTiles: function () {
+    this._reloadTiles()
+  },
+
+  _reloadTiles: function () {
+    if (!this._map) {
+      return
+    }
+
+    var bounds = this._map.getPixelBounds()
+    var zoom = this._map.getZoom()
+    var tileSize = this.options.tileSize
+
+    if (zoom > this.options.maxZoom || zoom < this.options.minZoom) {
+      return
+    }
+
+    var nwTilePoint = new L.Point(
+      Math.floor(bounds.min.x / tileSize),
+      Math.floor(bounds.min.y / tileSize)
+    )
+    var seTilePoint = new L.Point(
+      Math.floor(bounds.max.x / tileSize),
+      Math.floor(bounds.max.y / tileSize)
+    )
+    var tileBounds = new L.Bounds(nwTilePoint, seTilePoint)
+
+    this._addTilesFromCenterOut(tileBounds)
+    this._removeOtherTiles(tileBounds)
+  },
+
+  _addTilesFromCenterOut: function (bounds) {
+    var queue = []
+    var center = bounds.getCenter()
+    var zoom = this._map.getZoom()
+
+    var j, i, point
+
+    for (j = bounds.min.y; j <= bounds.max.y; j++) {
+      for (i = bounds.min.x; i <= bounds.max.x; i++) {
+        point = new L.Point(i, j)
+        point.zoom = zoom
+        if (this._tileShouldBeLoaded(point)) {
+          queue.push(point)
+        }
+      }
+    }
+
+    var tilesToLoad = queue.length
+
+    if (tilesToLoad === 0) {
+      return
+    }
+
+    // load tiles in order of their distance to center
+    queue.sort(function (a, b) {
+      return a.distanceTo(center) - b.distanceTo(center)
+    })
+
+    this._tilesToLoad += tilesToLoad
+
+    for (i = 0; i < tilesToLoad; i++) {
+      this._loadTile(queue[i])
+    }
+    this.fire('tilesLoading')
+  },
+
+  _loadTile: function (tilePoint) {
+    var tileKey = this._tileKey(tilePoint)
+    this._tilesLoading[tileKey] = tilePoint
+    this.provider.getTile(tilePoint, function (tilePoint, geometry) {
+      if (tilePoint.zoom !== this._map.getZoom()) return
+      this._tiles[tileKey] = true
+      delete this._tilesLoading[tileKey]
+      this._tilesToLoad--
+      this.fire('tileAdded', {tilePoint: tilePoint, geometry: geometry})
+      if (this.provider.allTilesLoaded()) {
+        this.fire('tilesLoaded')
+      }
+    }.bind(this))
+  },
+
+  _removeOtherTiles: function (bounds) {
+    var kArr, x, y, z, key
+    var zoom = this._map.getZoom()
+
+    for (key in this._tiles) {
+      if (this._tiles.hasOwnProperty(key)) {
+        kArr = key.split(':')
+        x = parseInt(kArr[0], 10)
+        y = parseInt(kArr[1], 10)
+        z = parseInt(kArr[2], 10)
+
+        // remove tile if it's out of bounds
+        if (zoom !== z || x < bounds.min.x || x > bounds.max.x || y < bounds.min.y || y > bounds.max.y) {
+          this._removeTile(key)
+        }
+      }
+    }
+  },
+
+  unbindAndClearTiles: function () {
+    this._map.off('moveend', this._reloadTiles, this)
+    this._map.off('zoomstart', this._invalidateProviderCache, this)
+    this._removeTiles()
+  },
+
+  _removeTiles: function (bounds) {
+    for (var key in this._tiles) {
+      this._removeTile(key)
+    }
+  },
+
+  _removeTile: function (key) {
+    this.fire('tileRemoved', { tileKey: key })
+    delete this._tiles[key]
+    delete this._tilesLoading[key]
+  },
+
+  _tileShouldBeLoaded: function (tilePoint) {
+    var k = this._tileKey(tilePoint)
+    return !(k in this._tiles) && !(k in this._tilesLoading)
+  },
+
+  _tileKey: function (tilePoint) {
+    return tilePoint.x + ':' + tilePoint.y + ':' + tilePoint.zoom
+  }
+})
+
+},{}],323:[function(require,module,exports){
+var L = window.L
+var cartodb = require('../')
+
+module.exports = {
+  viz: function (url, map, done) {
+    cartodb.d3.net.jsonp(url + '?callback=vizjson', function (data) {
+      map.setView(JSON.parse(data.center), data.zoom)
+      // get base layer, not render anything in case of non ZXY layers
+      var baseLayer = data.layers[0]
+      if (baseLayer.options.urlTemplate) {
+        map.addLayer(new L.TileLayer(baseLayer.options.urlTemplate, {
+          subdomains: baseLayer.options.subdomains || 'abcd'
+        }))
+      } else if (baseLayer.options.color) {
+        document.getElementById('map').style['background-color'] = baseLayer.options.color
+      }
+      // assume first layer is the one with cartodb data
+      var cartodbLayer = data.layers[1]
+      if (cartodbLayer.type === 'layergroup') {
+        var layers = cartodbLayer.options.layer_definition.layers.map(function (layer) {
+          return {
+            // fix the \n in sql
+            sql: layer.options.sql.replace(/\n/g, ' '),
+            cartocss: layer.options.cartocss
+          }
+        })
+
+        var lyr = new L.CartoDBd3Layer({
+          user: cartodbLayer.options.user_name,
+          layers: layers,
+          styles: layers.map(function(l) { return l.cartocss })
+        }).addTo(map)
+
+        done(null, lyr, layers)
+      } else {
+        done(new Error('named maps not supported'))
+      }
+    })
+  }
+}
+
+},{"../":314}],324:[function(require,module,exports){
+module.exports = require(1);
+},{"dup":1,"jquery":333,"underscore":356}],325:[function(require,module,exports){
+
+},{}],326:[function(require,module,exports){
+// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
+//
+// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
+//
+// Originally from narwhal.js (http://narwhaljs.org)
+// Copyright (c) 2009 Thomas Robinson <280north.com>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the 'Software'), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// when used in node, this will actually load the util module we depend on
+// versus loading the builtin util module as happens otherwise
+// this is a bug in node module loading as far as I am concerned
+var util = require('util/');
+
+var pSlice = Array.prototype.slice;
+var hasOwn = Object.prototype.hasOwnProperty;
+
+// 1. The assert module provides functions that throw
+// AssertionError's when particular conditions are not met. The
+// assert module must conform to the following interface.
+
+var assert = module.exports = ok;
+
+// 2. The AssertionError is defined in assert.
+// new assert.AssertionError({ message: message,
+//                             actual: actual,
+//                             expected: expected })
+
+assert.AssertionError = function AssertionError(options) {
+  this.name = 'AssertionError';
+  this.actual = options.actual;
+  this.expected = options.expected;
+  this.operator = options.operator;
+  if (options.message) {
+    this.message = options.message;
+    this.generatedMessage = false;
+  } else {
+    this.message = getMessage(this);
+    this.generatedMessage = true;
+  }
+  var stackStartFunction = options.stackStartFunction || fail;
+
+  if (Error.captureStackTrace) {
+    Error.captureStackTrace(this, stackStartFunction);
+  }
+  else {
+    // non v8 browsers so we can have a stacktrace
+    var err = new Error();
+    if (err.stack) {
+      var out = err.stack;
+
+      // try to strip useless frames
+      var fn_name = stackStartFunction.name;
+      var idx = out.indexOf('\n' + fn_name);
+      if (idx >= 0) {
+        // once we have located the function frame
+        // we need to strip out everything before it (and its line)
+        var next_line = out.indexOf('\n', idx + 1);
+        out = out.substring(next_line + 1);
+      }
+
+      this.stack = out;
+    }
+  }
+};
+
+// assert.AssertionError instanceof Error
+util.inherits(assert.AssertionError, Error);
+
+function replacer(key, value) {
+  if (util.isUndefined(value)) {
+    return '' + value;
+  }
+  if (util.isNumber(value) && !isFinite(value)) {
+    return value.toString();
+  }
+  if (util.isFunction(value) || util.isRegExp(value)) {
+    return value.toString();
+  }
+  return value;
+}
+
+function truncate(s, n) {
+  if (util.isString(s)) {
+    return s.length < n ? s : s.slice(0, n);
+  } else {
+    return s;
+  }
+}
+
+function getMessage(self) {
+  return truncate(JSON.stringify(self.actual, replacer), 128) + ' ' +
+         self.operator + ' ' +
+         truncate(JSON.stringify(self.expected, replacer), 128);
+}
+
+// At present only the three keys mentioned above are used and
+// understood by the spec. Implementations or sub modules can pass
+// other keys to the AssertionError's constructor - they will be
+// ignored.
+
+// 3. All of the following functions must throw an AssertionError
+// when a corresponding condition is not met, with a message that
+// may be undefined if not provided.  All assertion methods provide
+// both the actual and expected values to the assertion error for
+// display purposes.
+
+function fail(actual, expected, message, operator, stackStartFunction) {
+  throw new assert.AssertionError({
+    message: message,
+    actual: actual,
+    expected: expected,
+    operator: operator,
+    stackStartFunction: stackStartFunction
+  });
+}
+
+// EXTENSION! allows for well behaved errors defined elsewhere.
+assert.fail = fail;
+
+// 4. Pure assertion tests whether a value is truthy, as determined
+// by !!guard.
+// assert.ok(guard, message_opt);
+// This statement is equivalent to assert.equal(true, !!guard,
+// message_opt);. To test strictly for the value true, use
+// assert.strictEqual(true, guard, message_opt);.
+
+function ok(value, message) {
+  if (!value) fail(value, true, message, '==', assert.ok);
+}
+assert.ok = ok;
+
+// 5. The equality assertion tests shallow, coercive equality with
+// ==.
+// assert.equal(actual, expected, message_opt);
+
+assert.equal = function equal(actual, expected, message) {
+  if (actual != expected) fail(actual, expected, message, '==', assert.equal);
+};
+
+// 6. The non-equality assertion tests for whether two objects are not equal
+// with != assert.notEqual(actual, expected, message_opt);
+
+assert.notEqual = function notEqual(actual, expected, message) {
+  if (actual == expected) {
+    fail(actual, expected, message, '!=', assert.notEqual);
+  }
+};
+
+// 7. The equivalence assertion tests a deep equality relation.
+// assert.deepEqual(actual, expected, message_opt);
+
+assert.deepEqual = function deepEqual(actual, expected, message) {
+  if (!_deepEqual(actual, expected)) {
+    fail(actual, expected, message, 'deepEqual', assert.deepEqual);
+  }
+};
+
+function _deepEqual(actual, expected) {
+  // 7.1. All identical values are equivalent, as determined by ===.
+  if (actual === expected) {
+    return true;
+
+  } else if (util.isBuffer(actual) && util.isBuffer(expected)) {
+    if (actual.length != expected.length) return false;
+
+    for (var i = 0; i < actual.length; i++) {
+      if (actual[i] !== expected[i]) return false;
+    }
+
+    return true;
+
+  // 7.2. If the expected value is a Date object, the actual value is
+  // equivalent if it is also a Date object that refers to the same time.
+  } else if (util.isDate(actual) && util.isDate(expected)) {
+    return actual.getTime() === expected.getTime();
+
+  // 7.3 If the expected value is a RegExp object, the actual value is
+  // equivalent if it is also a RegExp object with the same source and
+  // properties (`global`, `multiline`, `lastIndex`, `ignoreCase`).
+  } else if (util.isRegExp(actual) && util.isRegExp(expected)) {
+    return actual.source === expected.source &&
+           actual.global === expected.global &&
+           actual.multiline === expected.multiline &&
+           actual.lastIndex === expected.lastIndex &&
+           actual.ignoreCase === expected.ignoreCase;
+
+  // 7.4. Other pairs that do not both pass typeof value == 'object',
+  // equivalence is determined by ==.
+  } else if (!util.isObject(actual) && !util.isObject(expected)) {
+    return actual == expected;
+
+  // 7.5 For all other Object pairs, including Array objects, equivalence is
+  // determined by having the same number of owned properties (as verified
+  // with Object.prototype.hasOwnProperty.call), the same set of keys
+  // (although not necessarily the same order), equivalent values for every
+  // corresponding key, and an identical 'prototype' property. Note: this
+  // accounts for both named and indexed properties on Arrays.
+  } else {
+    return objEquiv(actual, expected);
+  }
+}
+
+function isArguments(object) {
+  return Object.prototype.toString.call(object) == '[object Arguments]';
+}
+
+function objEquiv(a, b) {
+  if (util.isNullOrUndefined(a) || util.isNullOrUndefined(b))
+    return false;
+  // an identical 'prototype' property.
+  if (a.prototype !== b.prototype) return false;
+  // if one is a primitive, the other must be same
+  if (util.isPrimitive(a) || util.isPrimitive(b)) {
+    return a === b;
+  }
+  var aIsArgs = isArguments(a),
+      bIsArgs = isArguments(b);
+  if ((aIsArgs && !bIsArgs) || (!aIsArgs && bIsArgs))
+    return false;
+  if (aIsArgs) {
+    a = pSlice.call(a);
+    b = pSlice.call(b);
+    return _deepEqual(a, b);
+  }
+  var ka = objectKeys(a),
+      kb = objectKeys(b),
+      key, i;
+  // having the same number of owned properties (keys incorporates
+  // hasOwnProperty)
+  if (ka.length != kb.length)
+    return false;
+  //the same set of keys (although not necessarily the same order),
+  ka.sort();
+  kb.sort();
+  //~~~cheap key test
+  for (i = ka.length - 1; i >= 0; i--) {
+    if (ka[i] != kb[i])
+      return false;
+  }
+  //equivalent values for every corresponding key, and
+  //~~~possibly expensive deep test
+  for (i = ka.length - 1; i >= 0; i--) {
+    key = ka[i];
+    if (!_deepEqual(a[key], b[key])) return false;
+  }
+  return true;
+}
+
+// 8. The non-equivalence assertion tests for any deep inequality.
+// assert.notDeepEqual(actual, expected, message_opt);
+
+assert.notDeepEqual = function notDeepEqual(actual, expected, message) {
+  if (_deepEqual(actual, expected)) {
+    fail(actual, expected, message, 'notDeepEqual', assert.notDeepEqual);
+  }
+};
+
+// 9. The strict equality assertion tests strict equality, as determined by ===.
+// assert.strictEqual(actual, expected, message_opt);
+
+assert.strictEqual = function strictEqual(actual, expected, message) {
+  if (actual !== expected) {
+    fail(actual, expected, message, '===', assert.strictEqual);
+  }
+};
+
+// 10. The strict non-equality assertion tests for strict inequality, as
+// determined by !==.  assert.notStrictEqual(actual, expected, message_opt);
+
+assert.notStrictEqual = function notStrictEqual(actual, expected, message) {
+  if (actual === expected) {
+    fail(actual, expected, message, '!==', assert.notStrictEqual);
+  }
+};
+
+function expectedException(actual, expected) {
+  if (!actual || !expected) {
+    return false;
+  }
+
+  if (Object.prototype.toString.call(expected) == '[object RegExp]') {
+    return expected.test(actual);
+  } else if (actual instanceof expected) {
+    return true;
+  } else if (expected.call({}, actual) === true) {
+    return true;
+  }
+
+  return false;
+}
+
+function _throws(shouldThrow, block, expected, message) {
+  var actual;
+
+  if (util.isString(expected)) {
+    message = expected;
+    expected = null;
+  }
+
+  try {
+    block();
+  } catch (e) {
+    actual = e;
+  }
+
+  message = (expected && expected.name ? ' (' + expected.name + ').' : '.') +
+            (message ? ' ' + message : '.');
+
+  if (shouldThrow && !actual) {
+    fail(actual, expected, 'Missing expected exception' + message);
+  }
+
+  if (!shouldThrow && expectedException(actual, expected)) {
+    fail(actual, expected, 'Got unwanted exception' + message);
+  }
+
+  if ((shouldThrow && actual && expected &&
+      !expectedException(actual, expected)) || (!shouldThrow && actual)) {
+    throw actual;
+  }
+}
+
+// 11. Expected to throw an error:
+// assert.throws(block, Error_opt, message_opt);
+
+assert.throws = function(block, /*optional*/error, /*optional*/message) {
+  _throws.apply(this, [true].concat(pSlice.call(arguments)));
+};
+
+// EXTENSION! This is annoying to write outside this module.
+assert.doesNotThrow = function(block, /*optional*/message) {
+  _throws.apply(this, [false].concat(pSlice.call(arguments)));
+};
+
+assert.ifError = function(err) { if (err) {throw err;}};
+
+var objectKeys = Object.keys || function (obj) {
+  var keys = [];
+  for (var key in obj) {
+    if (hasOwn.call(obj, key)) keys.push(key);
+  }
+  return keys;
+};
+
+},{"util/":331}],327:[function(require,module,exports){
+if (typeof Object.create === 'function') {
+  // implementation from standard node.js 'util' module
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+  };
+} else {
+  // old school shim for old browsers
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    var TempCtor = function () {}
+    TempCtor.prototype = superCtor.prototype
+    ctor.prototype = new TempCtor()
+    ctor.prototype.constructor = ctor
+  }
+}
+
+},{}],328:[function(require,module,exports){
+(function (process){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes, empty elements, or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = parts.length - 1; i >= 0; i--) {
+    var last = parts[i];
+    if (last === '.') {
+      parts.splice(i, 1);
+    } else if (last === '..') {
+      parts.splice(i, 1);
+      up++;
+    } else if (up) {
+      parts.splice(i, 1);
+      up--;
+    }
+  }
+
+  // if the path is allowed to go above the root, restore leading ..s
+  if (allowAboveRoot) {
+    for (; up--; up) {
+      parts.unshift('..');
+    }
+  }
+
+  return parts;
+}
+
+// Split a filename into [root, dir, basename, ext], unix version
+// 'root' is just a slash, or nothing.
+var splitPathRe =
+    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
+var splitPath = function(filename) {
+  return splitPathRe.exec(filename).slice(1);
+};
+
+// path.resolve([from ...], to)
+// posix version
+exports.resolve = function() {
+  var resolvedPath = '',
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+    var path = (i >= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== 'string') {
+      throw new TypeError('Arguments to path.resolve must be strings');
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + '/' + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === '/';
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join('/');
+
+  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === '/';
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split('/'), function(p) {
+    return !!p;
+  }), !isAbsolute).join('/');
+
+  if (!path && !isAbsolute) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolute ? '/' : '') + path;
+};
+
+// posix version
+exports.isAbsolute = function(path) {
+  return path.charAt(0) === '/';
+};
+
+// posix version
+exports.join = function() {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== 'string') {
+      throw new TypeError('Arguments to path.join must be strings');
+    }
+    return p;
+  }).join('/'));
+};
+
+
+// path.relative(from, to)
+// posix version
+exports.relative = function(from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start < arr.length; start++) {
+      if (arr[start] !== '') break;
+    }
+
+    var end = arr.length - 1;
+    for (; end >= 0; end--) {
+      if (arr[end] !== '') break;
+    }
+
+    if (start > end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split('/'));
+  var toParts = trim(to.split('/'));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i < length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i < fromParts.length; i++) {
+    outputParts.push('..');
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join('/');
+};
+
+exports.sep = '/';
+exports.delimiter = ':';
+
+exports.dirname = function(path) {
+  var result = splitPath(path),
+      root = result[0],
+      dir = result[1];
+
+  if (!root && !dir) {
+    // No dirname whatsoever
+    return '.';
+  }
+
+  if (dir) {
+    // It has a dirname, strip trailing slash
+    dir = dir.substr(0, dir.length - 1);
+  }
+
+  return root + dir;
+};
+
+
+exports.basename = function(path, ext) {
+  var f = splitPath(path)[2];
+  // TODO: make this comparison case-insensitive on windows?
+  if (ext && f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+};
+
+
+exports.extname = function(path) {
+  return splitPath(path)[3];
+};
+
+function filter (xs, f) {
+    if (xs.filter) return xs.filter(f);
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        if (f(xs[i], i, xs)) res.push(xs[i]);
+    }
+    return res;
+}
+
+// String.prototype.substr - negative index don't work in IE8
+var substr = 'ab'.substr(-1) === 'b'
+    ? function (str, start, len) { return str.substr(start, len) }
+    : function (str, start, len) {
+        if (start < 0) start = str.length + start;
+        return str.substr(start, len);
+    }
+;
+
+}).call(this,require('_process'))
+
+},{"_process":329}],329:[function(require,module,exports){
+// shim for using process in browser
+
+var process = module.exports = {};
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = setTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    clearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        setTimeout(drainQueue, 0);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+},{}],330:[function(require,module,exports){
+module.exports = function isBuffer(arg) {
+  return arg && typeof arg === 'object'
+    && typeof arg.copy === 'function'
+    && typeof arg.fill === 'function'
+    && typeof arg.readUInt8 === 'function';
+}
+},{}],331:[function(require,module,exports){
+(function (process,global){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+var formatRegExp = /%[sdj%]/g;
+exports.format = function(f) {
+  if (!isString(f)) {
+    var objects = [];
+    for (var i = 0; i < arguments.length; i++) {
+      objects.push(inspect(arguments[i]));
+    }
+    return objects.join(' ');
+  }
+
+  var i = 1;
+  var args = arguments;
+  var len = args.length;
+  var str = String(f).replace(formatRegExp, function(x) {
+    if (x === '%%') return '%';
+    if (i >= len) return x;
+    switch (x) {
+      case '%s': return String(args[i++]);
+      case '%d': return Number(args[i++]);
+      case '%j':
+        try {
+          return JSON.stringify(args[i++]);
+        } catch (_) {
+          return '[Circular]';
+        }
+      default:
+        return x;
+    }
+  });
+  for (var x = args[i]; i < len; x = args[++i]) {
+    if (isNull(x) || !isObject(x)) {
+      str += ' ' + x;
+    } else {
+      str += ' ' + inspect(x);
+    }
+  }
+  return str;
+};
+
+
+// Mark that a method should not be used.
+// Returns a modified function which warns once by default.
+// If --no-deprecation is set, then it is a no-op.
+exports.deprecate = function(fn, msg) {
+  // Allow for deprecating things in the process of starting up.
+  if (isUndefined(global.process)) {
+    return function() {
+      return exports.deprecate(fn, msg).apply(this, arguments);
+    };
+  }
+
+  if (process.noDeprecation === true) {
+    return fn;
+  }
+
+  var warned = false;
+  function deprecated() {
+    if (!warned) {
+      if (process.throwDeprecation) {
+        throw new Error(msg);
+      } else if (process.traceDeprecation) {
+        console.trace(msg);
+      } else {
+        console.error(msg);
+      }
+      warned = true;
+    }
+    return fn.apply(this, arguments);
+  }
+
+  return deprecated;
+};
+
+
+var debugs = {};
+var debugEnviron;
+exports.debuglog = function(set) {
+  if (isUndefined(debugEnviron))
+    debugEnviron = process.env.NODE_DEBUG || '';
+  set = set.toUpperCase();
+  if (!debugs[set]) {
+    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
+      var pid = process.pid;
+      debugs[set] = function() {
+        var msg = exports.format.apply(exports, arguments);
+        console.error('%s %d: %s', set, pid, msg);
+      };
+    } else {
+      debugs[set] = function() {};
+    }
+  }
+  return debugs[set];
+};
+
+
+/**
+ * Echos the value of a value. Trys to print the value out
+ * in the best way possible given the different types.
+ *
+ * @param {Object} obj The object to print out.
+ * @param {Object} opts Optional options object that alters the output.
+ */
+/* legacy: obj, showHidden, depth, colors*/
+function inspect(obj, opts) {
+  // default options
+  var ctx = {
+    seen: [],
+    stylize: stylizeNoColor
+  };
+  // legacy...
+  if (arguments.length >= 3) ctx.depth = arguments[2];
+  if (arguments.length >= 4) ctx.colors = arguments[3];
+  if (isBoolean(opts)) {
+    // legacy...
+    ctx.showHidden = opts;
+  } else if (opts) {
+    // got an "options" object
+    exports._extend(ctx, opts);
+  }
+  // set default options
+  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
+  if (isUndefined(ctx.depth)) ctx.depth = 2;
+  if (isUndefined(ctx.colors)) ctx.colors = false;
+  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
+  if (ctx.colors) ctx.stylize = stylizeWithColor;
+  return formatValue(ctx, obj, ctx.depth);
+}
+exports.inspect = inspect;
+
+
+// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+inspect.colors = {
+  'bold' : [1, 22],
+  'italic' : [3, 23],
+  'underline' : [4, 24],
+  'inverse' : [7, 27],
+  'white' : [37, 39],
+  'grey' : [90, 39],
+  'black' : [30, 39],
+  'blue' : [34, 39],
+  'cyan' : [36, 39],
+  'green' : [32, 39],
+  'magenta' : [35, 39],
+  'red' : [31, 39],
+  'yellow' : [33, 39]
+};
+
+// Don't use 'blue' not visible on cmd.exe
+inspect.styles = {
+  'special': 'cyan',
+  'number': 'yellow',
+  'boolean': 'yellow',
+  'undefined': 'grey',
+  'null': 'bold',
+  'string': 'green',
+  'date': 'magenta',
+  // "name": intentionally not styling
+  'regexp': 'red'
+};
+
+
+function stylizeWithColor(str, styleType) {
+  var style = inspect.styles[styleType];
+
+  if (style) {
+    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
+           '\u001b[' + inspect.colors[style][1] + 'm';
+  } else {
+    return str;
+  }
+}
+
+
+function stylizeNoColor(str, styleType) {
+  return str;
+}
+
+
+function arrayToHash(array) {
+  var hash = {};
+
+  array.forEach(function(val, idx) {
+    hash[val] = true;
+  });
+
+  return hash;
+}
+
+
+function formatValue(ctx, value, recurseTimes) {
+  // Provide a hook for user-specified inspect functions.
+  // Check that value is an object with an inspect function on it
+  if (ctx.customInspect &&
+      value &&
+      isFunction(value.inspect) &&
+      // Filter out the util module, it's inspect function is special
+      value.inspect !== exports.inspect &&
+      // Also filter out any prototype objects using the circular check.
+      !(value.constructor && value.constructor.prototype === value)) {
+    var ret = value.inspect(recurseTimes, ctx);
+    if (!isString(ret)) {
+      ret = formatValue(ctx, ret, recurseTimes);
+    }
+    return ret;
+  }
+
+  // Primitive types cannot have properties
+  var primitive = formatPrimitive(ctx, value);
+  if (primitive) {
+    return primitive;
+  }
+
+  // Look up the keys of the object.
+  var keys = Object.keys(value);
+  var visibleKeys = arrayToHash(keys);
+
+  if (ctx.showHidden) {
+    keys = Object.getOwnPropertyNames(value);
+  }
+
+  // IE doesn't make error fields non-enumerable
+  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+  if (isError(value)
+      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+    return formatError(value);
+  }
+
+  // Some type of object without properties can be shortcutted.
+  if (keys.length === 0) {
+    if (isFunction(value)) {
+      var name = value.name ? ': ' + value.name : '';
+      return ctx.stylize('[Function' + name + ']', 'special');
+    }
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    }
+    if (isDate(value)) {
+      return ctx.stylize(Date.prototype.toString.call(value), 'date');
+    }
+    if (isError(value)) {
+      return formatError(value);
+    }
+  }
+
+  var base = '', array = false, braces = ['{', '}'];
+
+  // Make Array say that they are Array
+  if (isArray(value)) {
+    array = true;
+    braces = ['[', ']'];
+  }
+
+  // Make functions say that they are functions
+  if (isFunction(value)) {
+    var n = value.name ? ': ' + value.name : '';
+    base = ' [Function' + n + ']';
+  }
+
+  // Make RegExps say that they are RegExps
+  if (isRegExp(value)) {
+    base = ' ' + RegExp.prototype.toString.call(value);
+  }
+
+  // Make dates with properties first say the date
+  if (isDate(value)) {
+    base = ' ' + Date.prototype.toUTCString.call(value);
+  }
+
+  // Make error with message first say the error
+  if (isError(value)) {
+    base = ' ' + formatError(value);
+  }
+
+  if (keys.length === 0 && (!array || value.length == 0)) {
+    return braces[0] + base + braces[1];
+  }
+
+  if (recurseTimes < 0) {
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    } else {
+      return ctx.stylize('[Object]', 'special');
+    }
+  }
+
+  ctx.seen.push(value);
+
+  var output;
+  if (array) {
+    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
+  } else {
+    output = keys.map(function(key) {
+      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
+    });
+  }
+
+  ctx.seen.pop();
+
+  return reduceToSingleString(output, base, braces);
+}
+
+
+function formatPrimitive(ctx, value) {
+  if (isUndefined(value))
+    return ctx.stylize('undefined', 'undefined');
+  if (isString(value)) {
+    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
+                                             .replace(/'/g, "\\'")
+                                             .replace(/\\"/g, '"') + '\'';
+    return ctx.stylize(simple, 'string');
+  }
+  if (isNumber(value))
+    return ctx.stylize('' + value, 'number');
+  if (isBoolean(value))
+    return ctx.stylize('' + value, 'boolean');
+  // For some reason typeof null is "object", so special case here.
+  if (isNull(value))
+    return ctx.stylize('null', 'null');
+}
+
+
+function formatError(value) {
+  return '[' + Error.prototype.toString.call(value) + ']';
+}
+
+
+function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
+  var output = [];
+  for (var i = 0, l = value.length; i < l; ++i) {
+    if (hasOwnProperty(value, String(i))) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          String(i), true));
+    } else {
+      output.push('');
+    }
+  }
+  keys.forEach(function(key) {
+    if (!key.match(/^\d+$/)) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          key, true));
+    }
+  });
+  return output;
+}
+
+
+function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
+  var name, str, desc;
+  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
+  if (desc.get) {
+    if (desc.set) {
+      str = ctx.stylize('[Getter/Setter]', 'special');
+    } else {
+      str = ctx.stylize('[Getter]', 'special');
+    }
+  } else {
+    if (desc.set) {
+      str = ctx.stylize('[Setter]', 'special');
+    }
+  }
+  if (!hasOwnProperty(visibleKeys, key)) {
+    name = '[' + key + ']';
+  }
+  if (!str) {
+    if (ctx.seen.indexOf(desc.value) < 0) {
+      if (isNull(recurseTimes)) {
+        str = formatValue(ctx, desc.value, null);
+      } else {
+        str = formatValue(ctx, desc.value, recurseTimes - 1);
+      }
+      if (str.indexOf('\n') > -1) {
+        if (array) {
+          str = str.split('\n').map(function(line) {
+            return '  ' + line;
+          }).join('\n').substr(2);
+        } else {
+          str = '\n' + str.split('\n').map(function(line) {
+            return '   ' + line;
+          }).join('\n');
+        }
+      }
+    } else {
+      str = ctx.stylize('[Circular]', 'special');
+    }
+  }
+  if (isUndefined(name)) {
+    if (array && key.match(/^\d+$/)) {
+      return str;
+    }
+    name = JSON.stringify('' + key);
+    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
+      name = name.substr(1, name.length - 2);
+      name = ctx.stylize(name, 'name');
+    } else {
+      name = name.replace(/'/g, "\\'")
+                 .replace(/\\"/g, '"')
+                 .replace(/(^"|"$)/g, "'");
+      name = ctx.stylize(name, 'string');
+    }
+  }
+
+  return name + ': ' + str;
+}
+
+
+function reduceToSingleString(output, base, braces) {
+  var numLinesEst = 0;
+  var length = output.reduce(function(prev, cur) {
+    numLinesEst++;
+    if (cur.indexOf('\n') >= 0) numLinesEst++;
+    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
+  }, 0);
+
+  if (length > 60) {
+    return braces[0] +
+           (base === '' ? '' : base + '\n ') +
+           ' ' +
+           output.join(',\n  ') +
+           ' ' +
+           braces[1];
+  }
+
+  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
+}
+
+
+// NOTE: These type checking functions intentionally don't use `instanceof`
+// because it is fragile and can be easily faked with `Object.create()`.
+function isArray(ar) {
+  return Array.isArray(ar);
+}
+exports.isArray = isArray;
+
+function isBoolean(arg) {
+  return typeof arg === 'boolean';
+}
+exports.isBoolean = isBoolean;
+
+function isNull(arg) {
+  return arg === null;
+}
+exports.isNull = isNull;
+
+function isNullOrUndefined(arg) {
+  return arg == null;
+}
+exports.isNullOrUndefined = isNullOrUndefined;
+
+function isNumber(arg) {
+  return typeof arg === 'number';
+}
+exports.isNumber = isNumber;
+
+function isString(arg) {
+  return typeof arg === 'string';
+}
+exports.isString = isString;
+
+function isSymbol(arg) {
+  return typeof arg === 'symbol';
+}
+exports.isSymbol = isSymbol;
+
+function isUndefined(arg) {
+  return arg === void 0;
+}
+exports.isUndefined = isUndefined;
+
+function isRegExp(re) {
+  return isObject(re) && objectToString(re) === '[object RegExp]';
+}
+exports.isRegExp = isRegExp;
+
+function isObject(arg) {
+  return typeof arg === 'object' && arg !== null;
+}
+exports.isObject = isObject;
+
+function isDate(d) {
+  return isObject(d) && objectToString(d) === '[object Date]';
+}
+exports.isDate = isDate;
+
+function isError(e) {
+  return isObject(e) &&
+      (objectToString(e) === '[object Error]' || e instanceof Error);
+}
+exports.isError = isError;
+
+function isFunction(arg) {
+  return typeof arg === 'function';
+}
+exports.isFunction = isFunction;
+
+function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg === 'boolean' ||
+         typeof arg === 'number' ||
+         typeof arg === 'string' ||
+         typeof arg === 'symbol' ||  // ES6 symbol
+         typeof arg === 'undefined';
+}
+exports.isPrimitive = isPrimitive;
+
+exports.isBuffer = require('./support/isBuffer');
+
+function objectToString(o) {
+  return Object.prototype.toString.call(o);
+}
+
+
+function pad(n) {
+  return n < 10 ? '0' + n.toString(10) : n.toString(10);
+}
+
+
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+              'Oct', 'Nov', 'Dec'];
+
+// 26 Feb 16:19:34
+function timestamp() {
+  var d = new Date();
+  var time = [pad(d.getHours()),
+              pad(d.getMinutes()),
+              pad(d.getSeconds())].join(':');
+  return [d.getDate(), months[d.getMonth()], time].join(' ');
+}
+
+
+// log is just a thin wrapper to console.log that prepends a timestamp
+exports.log = function() {
+  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+};
+
+
+/**
+ * Inherit the prototype methods from one constructor into another.
+ *
+ * The Function.prototype.inherits from lang.js rewritten as a standalone
+ * function (not on Function.prototype). NOTE: If this file is to be loaded
+ * during bootstrapping this function needs to be rewritten using some native
+ * functions as prototype setup using normal JavaScript does not work as
+ * expected during bootstrapping (see mirror.js in r114903).
+ *
+ * @param {function} ctor Constructor function which needs to inherit the
+ *     prototype.
+ * @param {function} superCtor Constructor function to inherit prototype from.
+ */
+exports.inherits = require('inherits');
+
+exports._extend = function(origin, add) {
+  // Don't do anything if add isn't an object
+  if (!add || !isObject(add)) return origin;
+
+  var keys = Object.keys(add);
+  var i = keys.length;
+  while (i--) {
+    origin[keys[i]] = add[keys[i]];
+  }
+  return origin;
+};
+
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{"./support/isBuffer":330,"_process":329,"inherits":327}],332:[function(require,module,exports){
+module.exports = require(308);
+},{"dup":308}],333:[function(require,module,exports){
+module.exports = require(3);
+},{"dup":3}],334:[function(require,module,exports){
 //! moment.js
 //! version : 2.10.6
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -77768,51 +84525,51 @@ module.exports = require(2);
     return _moment;
 
 }));
-},{}],271:[function(require,module,exports){
-module.exports = require(5);
-},{"./src/js/main":277,"dup":5}],272:[function(require,module,exports){
-arguments[4][6][0].apply(exports,arguments)
-},{"dup":6}],273:[function(require,module,exports){
+},{}],335:[function(require,module,exports){
+module.exports = require(6);
+},{"./src/js/main":341,"dup":6}],336:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"dup":7}],274:[function(require,module,exports){
+},{"dup":7}],337:[function(require,module,exports){
 arguments[4][8][0].apply(exports,arguments)
-},{"dup":8}],275:[function(require,module,exports){
+},{"dup":8}],338:[function(require,module,exports){
 arguments[4][9][0].apply(exports,arguments)
-},{"dup":9}],276:[function(require,module,exports){
+},{"dup":9}],339:[function(require,module,exports){
 arguments[4][10][0].apply(exports,arguments)
-},{"./class":272,"./dom":273,"dup":10}],277:[function(require,module,exports){
+},{"dup":10}],340:[function(require,module,exports){
 arguments[4][11][0].apply(exports,arguments)
-},{"./plugin/destroy":279,"./plugin/initialize":287,"./plugin/update":291,"dup":11}],278:[function(require,module,exports){
+},{"./class":336,"./dom":337,"dup":11}],341:[function(require,module,exports){
 arguments[4][12][0].apply(exports,arguments)
-},{"dup":12}],279:[function(require,module,exports){
+},{"./plugin/destroy":343,"./plugin/initialize":351,"./plugin/update":355,"dup":12}],342:[function(require,module,exports){
 arguments[4][13][0].apply(exports,arguments)
-},{"../lib/dom":273,"../lib/helper":276,"./instances":288,"dup":13}],280:[function(require,module,exports){
+},{"dup":13}],343:[function(require,module,exports){
 arguments[4][14][0].apply(exports,arguments)
-},{"../../lib/helper":276,"../instances":288,"../update-geometry":289,"../update-scroll":290,"dup":14}],281:[function(require,module,exports){
+},{"../lib/dom":337,"../lib/helper":340,"./instances":352,"dup":14}],344:[function(require,module,exports){
 arguments[4][15][0].apply(exports,arguments)
-},{"../../lib/dom":273,"../../lib/helper":276,"../instances":288,"../update-geometry":289,"../update-scroll":290,"dup":15}],282:[function(require,module,exports){
+},{"../../lib/helper":340,"../instances":352,"../update-geometry":353,"../update-scroll":354,"dup":15}],345:[function(require,module,exports){
 arguments[4][16][0].apply(exports,arguments)
-},{"../../lib/helper":276,"../instances":288,"../update-geometry":289,"../update-scroll":290,"dup":16}],283:[function(require,module,exports){
+},{"../../lib/dom":337,"../../lib/helper":340,"../instances":352,"../update-geometry":353,"../update-scroll":354,"dup":16}],346:[function(require,module,exports){
 arguments[4][17][0].apply(exports,arguments)
-},{"../../lib/helper":276,"../instances":288,"../update-geometry":289,"../update-scroll":290,"dup":17}],284:[function(require,module,exports){
+},{"../../lib/helper":340,"../instances":352,"../update-geometry":353,"../update-scroll":354,"dup":17}],347:[function(require,module,exports){
 arguments[4][18][0].apply(exports,arguments)
-},{"../instances":288,"../update-geometry":289,"dup":18}],285:[function(require,module,exports){
+},{"../../lib/helper":340,"../instances":352,"../update-geometry":353,"../update-scroll":354,"dup":18}],348:[function(require,module,exports){
 arguments[4][19][0].apply(exports,arguments)
-},{"../../lib/helper":276,"../instances":288,"../update-geometry":289,"../update-scroll":290,"dup":19}],286:[function(require,module,exports){
+},{"../instances":352,"../update-geometry":353,"dup":19}],349:[function(require,module,exports){
 arguments[4][20][0].apply(exports,arguments)
-},{"../instances":288,"../update-geometry":289,"../update-scroll":290,"dup":20}],287:[function(require,module,exports){
+},{"../../lib/helper":340,"../instances":352,"../update-geometry":353,"../update-scroll":354,"dup":20}],350:[function(require,module,exports){
 arguments[4][21][0].apply(exports,arguments)
-},{"../lib/class":272,"../lib/helper":276,"./handler/click-rail":280,"./handler/drag-scrollbar":281,"./handler/keyboard":282,"./handler/mouse-wheel":283,"./handler/native-scroll":284,"./handler/selection":285,"./handler/touch":286,"./instances":288,"./update-geometry":289,"dup":21}],288:[function(require,module,exports){
+},{"../instances":352,"../update-geometry":353,"../update-scroll":354,"dup":21}],351:[function(require,module,exports){
 arguments[4][22][0].apply(exports,arguments)
-},{"../lib/dom":273,"../lib/event-manager":274,"../lib/guid":275,"../lib/helper":276,"./default-setting":278,"dup":22}],289:[function(require,module,exports){
+},{"../lib/class":336,"../lib/helper":340,"./handler/click-rail":344,"./handler/drag-scrollbar":345,"./handler/keyboard":346,"./handler/mouse-wheel":347,"./handler/native-scroll":348,"./handler/selection":349,"./handler/touch":350,"./instances":352,"./update-geometry":353,"dup":22}],352:[function(require,module,exports){
 arguments[4][23][0].apply(exports,arguments)
-},{"../lib/class":272,"../lib/dom":273,"../lib/helper":276,"./instances":288,"./update-scroll":290,"dup":23}],290:[function(require,module,exports){
+},{"../lib/dom":337,"../lib/event-manager":338,"../lib/guid":339,"../lib/helper":340,"./default-setting":342,"dup":23}],353:[function(require,module,exports){
 arguments[4][24][0].apply(exports,arguments)
-},{"./instances":288,"dup":24}],291:[function(require,module,exports){
+},{"../lib/class":336,"../lib/dom":337,"../lib/helper":340,"./instances":352,"./update-scroll":354,"dup":24}],354:[function(require,module,exports){
 arguments[4][25][0].apply(exports,arguments)
-},{"../lib/dom":273,"../lib/helper":276,"./instances":288,"./update-geometry":289,"dup":25}],292:[function(require,module,exports){
-module.exports = require(93);
-},{"dup":93}],293:[function(require,module,exports){
+},{"./instances":352,"dup":25}],355:[function(require,module,exports){
+arguments[4][26][0].apply(exports,arguments)
+},{"../lib/dom":337,"../lib/helper":340,"./instances":352,"./update-geometry":353,"dup":26}],356:[function(require,module,exports){
+module.exports = require(94);
+},{"dup":94}],357:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var DashboardView = require('./dashboard-view');
@@ -77905,7 +84662,7 @@ module.exports = function (selector, vizJSON, opts) {
   };
 };
 
-},{"./dashboard-view":299,"./widgets-service":303,"./widgets/widgets-collection":374,"cartodb.js":222,"underscore":292}],294:[function(require,module,exports){
+},{"./dashboard-view":363,"./widgets-service":367,"./widgets/widgets-collection":438,"cartodb.js":230,"underscore":356}],358:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var WidgetViewFactory = require('./widgets/widget-view-factory');
@@ -77984,7 +84741,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./widgets/time-series/content-view":351,"./widgets/time-series/torque-content-view":354,"./widgets/widget-view-factory":372,"cartodb.js":222,"underscore":292}],295:[function(require,module,exports){
+},{"./widgets/time-series/content-view":415,"./widgets/time-series/torque-content-view":418,"./widgets/widget-view-factory":436,"cartodb.js":230,"underscore":356}],359:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./dashboard-menu-view.tpl');
 var moment = require('moment');
@@ -78017,7 +84774,7 @@ var DashboardMenuView = cdb.core.View.extend({
 
 module.exports = DashboardMenuView;
 
-},{"./dashboard-menu-view.tpl":296,"cartodb.js":222,"moment":270}],296:[function(require,module,exports){
+},{"./dashboard-menu-view.tpl":360,"cartodb.js":230,"moment":334}],360:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78039,7 +84796,7 @@ __p+='<div class="CDB-Dashboard-menuContainer"> <div class="CDB-Dashboard-menuIn
 return __p;
 };
 
-},{"underscore":292}],297:[function(require,module,exports){
+},{"underscore":356}],361:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var Ps = require('perfect-scrollbar');
@@ -78189,7 +84946,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./dashboard-sidebar.tpl":298,"./widgets/category/content-view":308,"./widgets/formula/content-view":333,"./widgets/histogram/content-view":337,"./widgets/list/content-view":344,"./widgets/widget-view-factory":372,"cartodb.js":222,"jquery":269,"perfect-scrollbar":271,"underscore":292}],298:[function(require,module,exports){
+},{"./dashboard-sidebar.tpl":362,"./widgets/category/content-view":372,"./widgets/formula/content-view":397,"./widgets/histogram/content-view":401,"./widgets/list/content-view":408,"./widgets/widget-view-factory":436,"cartodb.js":230,"jquery":333,"perfect-scrollbar":335,"underscore":356}],362:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78199,7 +84956,7 @@ __p+='<div class="CDB-Widget-canvasInner js-container"></div>';
 return __p;
 };
 
-},{"underscore":292}],299:[function(require,module,exports){
+},{"underscore":356}],363:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./dashboard.tpl');
 var DashboardBelowMapView = require('./dashboard-below-map-view');
@@ -78255,7 +85012,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./dashboard-below-map-view":294,"./dashboard-menu-view":295,"./dashboard-sidebar-view":297,"./dashboard.tpl":300,"cartodb.js":222}],300:[function(require,module,exports){
+},{"./dashboard-below-map-view":358,"./dashboard-menu-view":359,"./dashboard-sidebar-view":361,"./dashboard.tpl":364,"cartodb.js":230}],364:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78265,7 +85022,7 @@ __p+='<div class="CDB-Dashboard-mapWrapper js-map-wrapper"> <div class="CDB-Map-
 return __p;
 };
 
-},{"underscore":292}],301:[function(require,module,exports){
+},{"underscore":356}],365:[function(require,module,exports){
 var _ = require('underscore');
 var d3 = require('d3');
 
@@ -78313,7 +85070,7 @@ format.formatValue = function (value) {
 
 module.exports = format;
 
-},{"d3":268,"underscore":292}],302:[function(require,module,exports){
+},{"d3":332,"underscore":356}],366:[function(require,module,exports){
 var cdb = require('cartodb.js');
 
 cdb.deepInsights = {
@@ -78322,7 +85079,7 @@ cdb.deepInsights = {
 
 module.exports = cdb;
 
-},{"./create-dashboard":293,"cartodb.js":222}],303:[function(require,module,exports){
+},{"./create-dashboard":357,"cartodb.js":230}],367:[function(require,module,exports){
 var _ = require('underscore');
 var WidgetModel = require('./widgets/widget-model');
 var CategoryWidgetModel = require('./widgets/category/category-widget-model');
@@ -78481,7 +85238,7 @@ function _checkProperties (obj, propertiesArray) {
 
 module.exports = WidgetsService;
 
-},{"./widgets/category/category-widget-model":306,"./widgets/histogram/histogram-widget-model":341,"./widgets/widget-model":370,"underscore":292}],304:[function(require,module,exports){
+},{"./widgets/category/category-widget-model":370,"./widgets/histogram/histogram-widget-model":405,"./widgets/widget-model":434,"underscore":356}],368:[function(require,module,exports){
 var _ = require('underscore');
 var d3 = require('d3');
 var cdb = require('cartodb.js');
@@ -78603,7 +85360,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"cartodb.js":222,"d3":268,"underscore":292}],305:[function(require,module,exports){
+},{"cartodb.js":230,"d3":332,"underscore":356}],369:[function(require,module,exports){
 var _ = require('underscore');
 var colors = ['#2CA095', '#E5811B', '#4A4DBA', '#AD2BAD', '#559030', '#E1C221']; // Demo colors
 var defaultColor = '#CCC';
@@ -78666,7 +85423,7 @@ CategoryColors.prototype.getCategoryByColor = function (color) {
 
 module.exports = CategoryColors;
 
-},{"underscore":292}],306:[function(require,module,exports){
+},{"underscore":356}],370:[function(require,module,exports){
 var _ = require('underscore');
 var WidgetModel = require('../widget-model');
 var CategoryColors = require('./category-colors');
@@ -78806,7 +85563,7 @@ module.exports = WidgetModel.extend({
 
 });
 
-},{"../widget-model":370,"./category-colors":305,"./locked-categories-collection":318,"underscore":292}],307:[function(require,module,exports){
+},{"../widget-model":434,"./category-colors":369,"./locked-categories-collection":382,"underscore":356}],371:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78816,7 +85573,7 @@ __p+='<div class="CDB-Widget-header js-header"></div> <div class="CDB-Widget-con
 return __p;
 };
 
-},{"underscore":292}],308:[function(require,module,exports){
+},{"underscore":356}],372:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var SearchTitleView = require('./title/search-title-view');
 var CategoryOptionsView = require('./options/options-view');
@@ -78914,7 +85671,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./content-template.tpl":307,"./list/items-view":315,"./list/search-items-view":317,"./options/options-view":320,"./paginator/paginator-view":322,"./paginator/search-paginator-view":324,"./stats/stats-view":327,"./title/search-title-view":329,"cartodb.js":222}],309:[function(require,module,exports){
+},{"./content-template.tpl":371,"./list/items-view":379,"./list/search-items-view":381,"./options/options-view":384,"./paginator/paginator-view":386,"./paginator/search-paginator-view":388,"./stats/stats-view":391,"./title/search-title-view":393,"cartodb.js":230}],373:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78944,7 +85701,7 @@ __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listButto
 return __p;
 };
 
-},{"underscore":292}],310:[function(require,module,exports){
+},{"underscore":356}],374:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -78974,7 +85731,7 @@ __p+='<div class="CDB-Widget-listItemInner '+
 return __p;
 };
 
-},{"underscore":292}],311:[function(require,module,exports){
+},{"underscore":356}],375:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var formatter = require('../../../../formatter');
 var clickableTemplate = require('./item-clickable-template.tpl');
@@ -79034,7 +85791,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../../../formatter":301,"./item-clickable-template.tpl":309,"./item-unclickable-template.tpl":310,"cartodb.js":222}],312:[function(require,module,exports){
+},{"../../../../formatter":365,"./item-clickable-template.tpl":373,"./item-unclickable-template.tpl":374,"cartodb.js":230}],376:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79062,7 +85819,7 @@ __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listItemI
 return __p;
 };
 
-},{"underscore":292}],313:[function(require,module,exports){
+},{"underscore":356}],377:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var formatter = require('../../../../formatter');
 var template = require('./search-item-clickable-template.tpl');
@@ -79118,7 +85875,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../../../formatter":301,"./search-item-clickable-template.tpl":312,"cartodb.js":222}],314:[function(require,module,exports){
+},{"../../../../formatter":365,"./search-item-clickable-template.tpl":376,"cartodb.js":230}],378:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79128,7 +85885,7 @@ __p+='<li class="CDB-Widget-listItem CDB-Widget-listItem--fake"></li> <li class=
 return __p;
 };
 
-},{"underscore":292}],315:[function(require,module,exports){
+},{"underscore":356}],379:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var cdb = require('cartodb.js');
@@ -79260,7 +86017,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./item/item-view":311,"./items-placeholder-template.tpl":314,"cartodb.js":222,"jquery":269,"underscore":292}],316:[function(require,module,exports){
+},{"./item/item-view":375,"./items-placeholder-template.tpl":378,"cartodb.js":230,"jquery":333,"underscore":356}],380:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79272,7 +86029,7 @@ __p+='<li class="CDB-Widget-listItem"> <h4 class="CDB-Text CDB-Size-large">No re
 return __p;
 };
 
-},{"underscore":292}],317:[function(require,module,exports){
+},{"underscore":356}],381:[function(require,module,exports){
 var $ = require('jquery');
 var CategoryItemsView = require('./items-view');
 var WidgetSearchCategoryItemView = require('./item/search-item-view');
@@ -79355,7 +86112,7 @@ module.exports = CategoryItemsView.extend({
 
 });
 
-},{"./item/search-item-view":313,"./items-view":315,"./search-items-no-results-template.tpl":316,"jquery":269}],318:[function(require,module,exports){
+},{"./item/search-item-view":377,"./items-view":379,"./search-items-no-results-template.tpl":380,"jquery":333}],382:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -79406,7 +86163,7 @@ module.exports = Backbone.Collection.extend({
 
 });
 
-},{"backbone":260,"underscore":292}],319:[function(require,module,exports){
+},{"backbone":324,"underscore":356}],383:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79448,7 +86205,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":292}],320:[function(require,module,exports){
+},{"underscore":356}],384:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./options-template.tpl');
 
@@ -79518,7 +86275,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./options-template.tpl":319,"cartodb.js":222}],321:[function(require,module,exports){
+},{"./options-template.tpl":383,"cartodb.js":230}],385:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79546,7 +86303,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":292}],322:[function(require,module,exports){
+},{"underscore":356}],386:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var cdb = require('cartodb.js');
@@ -79662,7 +86419,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./paginator-template.tpl":321,"cartodb.js":222,"jquery":269,"underscore":292}],323:[function(require,module,exports){
+},{"./paginator-template.tpl":385,"cartodb.js":230,"jquery":333,"underscore":356}],387:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79686,7 +86443,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":292}],324:[function(require,module,exports){
+},{"underscore":356}],388:[function(require,module,exports){
 var PaginatorView = require('./paginator-view');
 var searchTemplate = require('./search-paginator-template.tpl');
 
@@ -79728,7 +86485,7 @@ module.exports = PaginatorView.extend({
 
 });
 
-},{"./paginator-view":322,"./search-paginator-template.tpl":323}],325:[function(require,module,exports){
+},{"./paginator-view":386,"./search-paginator-template.tpl":387}],389:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79740,7 +86497,7 @@ __p+=''+
 return __p;
 };
 
-},{"underscore":292}],326:[function(require,module,exports){
+},{"underscore":356}],390:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79768,7 +86525,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":292}],327:[function(require,module,exports){
+},{"underscore":356}],391:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var formatter = require('../../../formatter');
@@ -79872,7 +86629,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"../../../formatter":301,"../../animate-values":304,"./cats-template.tpl":325,"./stats-template.tpl":326,"cartodb.js":222,"underscore":292}],328:[function(require,module,exports){
+},{"../../../formatter":365,"../../animate-values":368,"./cats-template.tpl":389,"./stats-template.tpl":390,"cartodb.js":230,"underscore":356}],392:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -79906,7 +86663,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":292}],329:[function(require,module,exports){
+},{"underscore":356}],393:[function(require,module,exports){
 var _ = require('underscore');
 var $ = require('jquery');
 var cdb = require('cartodb.js');
@@ -80065,7 +86822,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../dropdown/widget-dropdown-view":331,"../../widget-tooltip-view":371,"./search-title-template.tpl":328,"cartodb.js":222,"jquery":269,"underscore":292}],330:[function(require,module,exports){
+},{"../../dropdown/widget-dropdown-view":395,"../../widget-tooltip-view":435,"./search-title-template.tpl":392,"cartodb.js":230,"jquery":333,"underscore":356}],394:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -80075,7 +86832,7 @@ __p+='<ul class="CDB-Text CDB-Size-medium"> <li class="CDB-Dropdown-item"> <butt
 return __p;
 };
 
-},{"underscore":292}],331:[function(require,module,exports){
+},{"underscore":356}],395:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var cdb = require('cartodb.js');
@@ -80209,7 +86966,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./template.tpl":330,"cartodb.js":222,"jquery":269,"underscore":292}],332:[function(require,module,exports){
+},{"./template.tpl":394,"cartodb.js":230,"jquery":333,"underscore":356}],396:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -80225,7 +86982,7 @@ __p+=''+
 return __p;
 };
 
-},{"underscore":292}],333:[function(require,module,exports){
+},{"underscore":356}],397:[function(require,module,exports){
 var _ = require('underscore');
 var d3 = require('d3');
 var cdb = require('cartodb.js');
@@ -80329,7 +87086,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../formatter":301,"../animate-values.js":304,"../dropdown/widget-dropdown-view":331,"./animation-template.tpl":332,"./template.tpl":334,"cartodb.js":222,"d3":268,"underscore":292}],334:[function(require,module,exports){
+},{"../../formatter":365,"../animate-values.js":368,"../dropdown/widget-dropdown-view":395,"./animation-template.tpl":396,"./template.tpl":398,"cartodb.js":230,"d3":332,"underscore":356}],398:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -80379,7 +87136,7 @@ __p+=' </div>';
 return __p;
 };
 
-},{"underscore":292}],335:[function(require,module,exports){
+},{"underscore":356}],399:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -80393,7 +87150,7 @@ __p+=''+
 return __p;
 };
 
-},{"underscore":292}],336:[function(require,module,exports){
+},{"underscore":356}],400:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var d3 = require('d3');
@@ -81484,7 +88241,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"../../formatter":301,"cartodb.js":222,"d3":268,"jquery":269,"underscore":292}],337:[function(require,module,exports){
+},{"../../formatter":365,"cartodb.js":230,"d3":332,"jquery":333,"underscore":356}],401:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var Backbone = require('backbone');
@@ -81960,7 +88717,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"../../formatter":301,"../animate-values.js":304,"../dropdown/widget-dropdown-view":331,"./animation-template.tpl":335,"./chart":336,"./content.tpl":338,"./histogram-title-view":340,"./placeholder.tpl":342,"backbone":260,"cartodb.js":222,"underscore":292}],338:[function(require,module,exports){
+},{"../../formatter":365,"../animate-values.js":368,"../dropdown/widget-dropdown-view":395,"./animation-template.tpl":399,"./chart":400,"./content.tpl":402,"./histogram-title-view":404,"./placeholder.tpl":406,"backbone":324,"cartodb.js":230,"underscore":356}],402:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -81974,7 +88731,7 @@ __p+=' </div> <div class="CDB-Widget-content CDB-Widget-content--histogram js-co
 return __p;
 };
 
-},{"underscore":292}],339:[function(require,module,exports){
+},{"underscore":356}],403:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -81994,7 +88751,7 @@ __p+='<div class="CDB-Widget-title CDB-Widget-contentSpaced"> <h3 class="CDB-Tex
 return __p;
 };
 
-},{"underscore":292}],340:[function(require,module,exports){
+},{"underscore":356}],404:[function(require,module,exports){
 var $ = require('jquery');
 var cdb = require('cartodb.js');
 var TooltipView = require('../widget-tooltip-view');
@@ -82057,7 +88814,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../widget-tooltip-view":371,"./histogram-title-template.tpl":339,"cartodb.js":222,"jquery":269}],341:[function(require,module,exports){
+},{"../widget-tooltip-view":435,"./histogram-title-template.tpl":403,"cartodb.js":230,"jquery":333}],405:[function(require,module,exports){
 var WidgetModel = require('../widget-model');
 
 /**
@@ -82076,7 +88833,7 @@ module.exports = WidgetModel.extend({
 
 });
 
-},{"../widget-model":370}],342:[function(require,module,exports){
+},{"../widget-model":434}],406:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82092,7 +88849,7 @@ __p+=' </ul>';
 return __p;
 };
 
-},{"underscore":292}],343:[function(require,module,exports){
+},{"underscore":356}],407:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82108,7 +88865,7 @@ __p+='<div class="CDB-Widget-header"> <div class="CDB-Widget-title CDB-Widget-co
 return __p;
 };
 
-},{"underscore":292}],344:[function(require,module,exports){
+},{"underscore":356}],408:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var format = require('../../formatter');
@@ -82189,7 +88946,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../formatter":301,"./content-template.tpl":343,"./edges-view":345,"./items-view":348,"./paginator-view":349,"./placeholder-template.tpl":350,"cartodb.js":222,"underscore":292}],345:[function(require,module,exports){
+},{"../../formatter":365,"./content-template.tpl":407,"./edges-view":409,"./items-view":412,"./paginator-view":413,"./placeholder-template.tpl":414,"cartodb.js":230,"underscore":356}],409:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 
@@ -82247,7 +89004,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"cartodb.js":222,"underscore":292}],346:[function(require,module,exports){
+},{"cartodb.js":230,"underscore":356}],410:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82303,7 +89060,7 @@ __p+='';
 return __p;
 };
 
-},{"underscore":292}],347:[function(require,module,exports){
+},{"underscore":356}],411:[function(require,module,exports){
 var _ = require('underscore');
 var format = require('../../formatter');
 var cdb = require('cartodb.js');
@@ -82382,7 +89139,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../../formatter":301,"./item-template.tpl":346,"cartodb.js":222,"underscore":292}],348:[function(require,module,exports){
+},{"../../formatter":365,"./item-template.tpl":410,"cartodb.js":230,"underscore":356}],412:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var WidgetListItemView = require('./item-view');
 
@@ -82427,7 +89184,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./item-view":347,"cartodb.js":222}],349:[function(require,module,exports){
+},{"./item-view":411,"cartodb.js":230}],413:[function(require,module,exports){
 var $ = require('jquery');
 var _ = require('underscore');
 var cdb = require('cartodb.js');
@@ -82532,7 +89289,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"cartodb.js":222,"jquery":269,"underscore":292}],350:[function(require,module,exports){
+},{"cartodb.js":230,"jquery":333,"underscore":356}],414:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82542,7 +89299,7 @@ __p+='<ul class="CDB-Widget-list CDB-Widget-list--withBorders"> <li class="CDB-W
 return __p;
 };
 
-},{"underscore":292}],351:[function(require,module,exports){
+},{"underscore":356}],415:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var placeholderTemplate = require('./placeholder.tpl');
@@ -82605,7 +89362,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./histogram-view":352,"./placeholder.tpl":353,"cartodb.js":222,"underscore":292}],352:[function(require,module,exports){
+},{"./histogram-view":416,"./placeholder.tpl":417,"cartodb.js":230,"underscore":356}],416:[function(require,module,exports){
 var $ = require('jquery');
 var cdb = require('cartodb.js');
 var HistogramChartView = require('../histogram/chart');
@@ -82693,7 +89450,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../histogram/chart":336,"cartodb.js":222,"jquery":269}],353:[function(require,module,exports){
+},{"../histogram/chart":400,"cartodb.js":230,"jquery":333}],417:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82717,7 +89474,7 @@ __p+=' </div> </div>';
 return __p;
 };
 
-},{"underscore":292}],354:[function(require,module,exports){
+},{"underscore":356}],418:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 var torqueTemplate = require('./torque-template.tpl');
@@ -82784,7 +89541,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./placeholder.tpl":353,"./torque-header-view":357,"./torque-histogram-view":358,"./torque-template.tpl":363,"cartodb.js":222,"underscore":292}],355:[function(require,module,exports){
+},{"./placeholder.tpl":417,"./torque-header-view":421,"./torque-histogram-view":422,"./torque-template.tpl":427,"cartodb.js":230,"underscore":356}],419:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./torque-controls.tpl');
 
@@ -82827,7 +89584,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-controls.tpl":356,"cartodb.js":222}],356:[function(require,module,exports){
+},{"./torque-controls.tpl":420,"cartodb.js":230}],420:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -82839,7 +89596,7 @@ __p+='<div class="CDB-Widget-controlButtonContent"> <i class="'+
 return __p;
 };
 
-},{"underscore":292}],357:[function(require,module,exports){
+},{"underscore":356}],421:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var TorqueControlsView = require('./torque-controls-view');
 var TorqueTimeInfoView = require('./torque-time-info-view');
@@ -82912,7 +89669,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-controls-view":355,"./torque-render-range-info-view":359,"./torque-reset-render-range-view":361,"./torque-time-info-view":364,"cartodb.js":222}],358:[function(require,module,exports){
+},{"./torque-controls-view":419,"./torque-render-range-info-view":423,"./torque-reset-render-range-view":425,"./torque-time-info-view":428,"cartodb.js":230}],422:[function(require,module,exports){
 var $ = require('jquery');
 var cdb = require('cartodb.js');
 var HistogramChartView = require('../histogram/chart');
@@ -83055,7 +89812,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"../histogram/chart":336,"./torque-time-slider-view":366,"cartodb.js":222,"jquery":269}],359:[function(require,module,exports){
+},{"../histogram/chart":400,"./torque-time-slider-view":430,"cartodb.js":230,"jquery":333}],423:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var d3 = require('d3');
 var template = require('./torque-render-range-info.tpl');
@@ -83096,7 +89853,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-render-range-info.tpl":360,"cartodb.js":222,"d3":268}],360:[function(require,module,exports){
+},{"./torque-render-range-info.tpl":424,"cartodb.js":230,"d3":332}],424:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83114,7 +89871,7 @@ __p+='<p class="CDB-Text CDB-Size-large u-iBlock"> Selected from </p> <p class="
 return __p;
 };
 
-},{"underscore":292}],361:[function(require,module,exports){
+},{"underscore":356}],425:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./torque-reset-render-range.tpl');
 
@@ -83141,7 +89898,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-reset-render-range.tpl":362,"cartodb.js":222}],362:[function(require,module,exports){
+},{"./torque-reset-render-range.tpl":426,"cartodb.js":230}],426:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83151,7 +89908,7 @@ __p+='<button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-W
 return __p;
 };
 
-},{"underscore":292}],363:[function(require,module,exports){
+},{"underscore":356}],427:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83161,7 +89918,7 @@ __p+='<div class="CDB-Widget-header CDB-Widget-header--timeSeries js-header"></d
 return __p;
 };
 
-},{"underscore":292}],364:[function(require,module,exports){
+},{"underscore":356}],428:[function(require,module,exports){
 var d3 = require('d3');
 var cdb = require('cartodb.js');
 var template = require('./torque-time-info.tpl');
@@ -83198,7 +89955,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./torque-time-info.tpl":365,"cartodb.js":222,"d3":268}],365:[function(require,module,exports){
+},{"./torque-time-info.tpl":429,"cartodb.js":230,"d3":332}],429:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83212,7 +89969,7 @@ __p+='<p class="CDB-Text CDB-Size-large u-iBlock"> '+
 return __p;
 };
 
-},{"underscore":292}],366:[function(require,module,exports){
+},{"underscore":356}],430:[function(require,module,exports){
 var d3 = require('d3');
 var cdb = require('cartodb.js');
 
@@ -83372,7 +90129,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"cartodb.js":222,"d3":268}],367:[function(require,module,exports){
+},{"cartodb.js":230,"d3":332}],431:[function(require,module,exports){
 var _ = require('underscore');
 module.exports = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
@@ -83382,7 +90139,7 @@ __p+='<button class="CDB-Widget-button CDB-Widget-errorButton js-refresh"> <span
 return __p;
 };
 
-},{"underscore":292}],368:[function(require,module,exports){
+},{"underscore":356}],432:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var template = require('./widget-error-template.tpl');
 
@@ -83430,7 +90187,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"./widget-error-template.tpl":367,"cartodb.js":222}],369:[function(require,module,exports){
+},{"./widget-error-template.tpl":431,"cartodb.js":230}],433:[function(require,module,exports){
 var cdb = require('cartodb.js');
 
 /**
@@ -83470,7 +90227,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"cartodb.js":222}],370:[function(require,module,exports){
+},{"cartodb.js":230}],434:[function(require,module,exports){
 var _ = require('underscore');
 var cdb = require('cartodb.js');
 
@@ -83514,7 +90271,7 @@ module.exports = cdb.core.Model.extend({
   }
 });
 
-},{"cartodb.js":222,"underscore":292}],371:[function(require,module,exports){
+},{"cartodb.js":230,"underscore":356}],435:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var _ = require('underscore');
 
@@ -83575,7 +90332,7 @@ module.exports = cdb.core.View.extend({
 
 });
 
-},{"cartodb.js":222,"underscore":292}],372:[function(require,module,exports){
+},{"cartodb.js":230,"underscore":356}],436:[function(require,module,exports){
 var _ = require('underscore');
 var WidgetView = require('./widget-view');
 
@@ -83627,7 +90384,7 @@ WidgetViewFactory.prototype.createWidgetView = function (widget) {
 
 module.exports = WidgetViewFactory;
 
-},{"./widget-view":373,"underscore":292}],373:[function(require,module,exports){
+},{"./widget-view":437,"underscore":356}],437:[function(require,module,exports){
 var cdb = require('cartodb.js');
 var WidgetLoaderView = require('./widget-loader-view');
 var WidgetErrorView = require('./widget-error-view');
@@ -83685,7 +90442,7 @@ module.exports = cdb.core.View.extend({
   }
 });
 
-},{"./widget-error-view":368,"./widget-loader-view":369,"cartodb.js":222}],374:[function(require,module,exports){
+},{"./widget-error-view":432,"./widget-loader-view":433,"cartodb.js":230}],438:[function(require,module,exports){
 var _ = require('underscore');
 var Backbone = require('backbone');
 
@@ -83709,6 +90466,6 @@ module.exports = Backbone.Collection.extend({
   }
 });
 
-},{"backbone":260,"underscore":292}]},{},[302])(302)
+},{"backbone":324,"underscore":356}]},{},[366])(366)
 });
 //# sourceMappingURL=deep-insights.uncompressed.map
