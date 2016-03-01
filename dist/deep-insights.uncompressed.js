@@ -31498,7 +31498,7 @@ module.exports={
       "/vendor"
     ]
   },
-  "gitHead": "1b0b38181ac45069b8199a55269feec3818badb4",
+  "gitHead": "eb1567daa1efb21fce88606b05a0fec5759fde6d",
   "readme": "CartoDB.js (v3.15)\n===========\n\n[![Build Status](http://clinker.cartodb.net/desktop/plugin/public/status/CartoDB-js-develop-testing)]\n(http://clinker.cartodb.net/jenkins/job/CartoDB-js-develop-testing)\n\nThis library allows to embed visualizations created with CartoDB in your map or website in a simple way.\n\n\n## Quick start\n\n  1. Add cartodb.js and css to your site:\n\n    ```html\n\n        <link rel=\"stylesheet\" href=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css\" />\n        <script src=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js\"></script>\n\n        <!-- use these cartodb.css links if you are using https -->\n        <!--link rel=\"stylesheet\" href=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css\" /-->\n\n        <!-- use this cartodb.js link if you are using https -->\n        <!-- script src=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js\"></script -->\n    ```\n\n\n  2. Create the map and add the layer\n\n    ```javascript\n      var map = L.map('map').setView([0, 0], 3);\n\n      // set a base layer\n      L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png', {\n        attribution: 'stamen http://maps.stamen.com/'\n      }).addTo(map);\n\n      // add the cartodb layer\n      var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json';\n      cartodb.createLayer(map, layerUrl).addTo(map);\n    ```\n\n### Usage with Bower\n\nYou can install **cartodb.js** with [bower](http://bower.io/) by running\n\n```sh\nbower install cartodb.js\n```\n\n\n## Documentation\nYou can find the documentation online [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) and the [source](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md) inside this repository.\n\n## Examples\n\n - [Load a layer with google maps](http://cartodb.github.com/cartodb.js/examples/gmaps_force_basemap.html)\n - [Load a layer with Leaflet](http://cartodb.github.com/cartodb.js/examples/leaflet.html)\n - [Show a complete visualization](http://cartodb.github.com/cartodb.js/examples/easy.html)\n - [A visualization with a layer selector](http://cartodb.github.com/cartodb.js/examples/layer_selector.html)\n - [How to create a custom infowindow](http://cartodb.github.com/cartodb.js/examples/custom_infowindow.html)\n - [The Hobbit filming location paths](http://cartodb.github.com/cartodb.js/examples/TheHobbitLocations/) a full example with some widgets\n\n\n## How to build\nBuild CartoDB.js library:\n\n  - Install [node.js](http://nodejs.org/download/), from 0.10 version\n  - Install grunt & bower: `npm install -g grunt-cli bower`\n  - Install node dependencies: `npm install`\n  - Install bower dependencies: `bower install`\n  - Install [ruby](https://www.ruby-lang.org/en/installation/) and [bundler](https://github.com/bundler/bundler)\n  - Install ruby dependencies: `bundle install` (necessary for compass gem)\n  - Start the server: `grunt build`\n  - Happy mapping!\n  - \n  \n## Submitting Contributions\n\nYou will need to sign a Contributor License Agreement (CLA) before making a submission. [Learn more here.](https://cartodb.com/contributing)\n\n",
   "readmeFilename": "README.md",
   "bugs": {
@@ -31506,9 +31506,9 @@ module.exports={
   },
   "homepage": "https://github.com/CartoDB/cartodb.js#readme",
   "_id": "cartodb.js@4.0.0-alpha.1",
-  "_shasum": "82bc0f240aa96c52ad31f9deebc0fcdf756d0853",
-  "_from": "cartodb/cartodb.js#1b0b381",
-  "_resolved": "git://github.com/cartodb/cartodb.js.git#1b0b38181ac45069b8199a55269feec3818badb4"
+  "_shasum": "7119c9833c12d3216e41647de89e69db9b610daf",
+  "_from": "cartodb/cartodb.js#eb1567d",
+  "_resolved": "git://github.com/cartodb/cartodb.js.git#eb1567daa1efb21fce88606b05a0fec5759fde6d"
 }
 
 },{}],133:[function(require,module,exports){
@@ -33566,7 +33566,7 @@ module.exports = DataviewModelBase.extend({
     this._data = new CategoriesCollection();
     this._searchModel = new SearchModel();
 
-    this.on('change:column change:aggregation change:aggregation_column', this._reloadMap, this);
+    this.on('change:column change:aggregation change:aggregation_column', this._reloadMapAndForceFetch, this);
 
     this.bind('change:url change:boundingBox', function () {
       this._searchModel.set({
@@ -34115,13 +34115,24 @@ module.exports = Model.extend({
   /**
    * @protected
    */
-  _reloadMap: function () {
-    this._map.reload({
-      sourceLayerId: this.layer.get('id')
+  _reloadMap: function (opts) {
+    opts = opts || {};
+    this._map.reload(
+      _.extend(
+        opts, {
+          sourceLayerId: this.layer.get('id')
+        }
+      )
+    );
+  },
+
+  _reloadMapAndForceFetch: function () {
+    this._reloadMap({
+      forceFetch: true
     });
   },
 
-  _onNewWindshaftMapInstance: function (windshaftMapInstance, sourceLayerId) {
+  _onNewWindshaftMapInstance: function (windshaftMapInstance, sourceLayerId, forceFetch) {
     var url = windshaftMapInstance.getDataviewURL({
       dataviewId: this.get('id'),
       protocol: window.location.protocol === 'https:' ? 'https' : 'http'
@@ -34131,7 +34142,10 @@ module.exports = Model.extend({
       var silent = (sourceLayerId && sourceLayerId !== this.layer.get('id'));
 
       // TODO: Instead of setting the url here, we could invoke fetch directly
-      this.set('url', url, { silent: silent });
+      this.set('url', url, {
+        silent: silent,
+        forceFetch: forceFetch
+      });
     }
   },
 
@@ -34158,8 +34172,8 @@ module.exports = Model.extend({
   _onChangeBinds: function () {
     this.listenTo(this._map, 'change:center change:zoom', _.debounce(this._onMapBoundsChanged.bind(this), BOUNDING_BOX_FILTER_WAIT));
 
-    this.on('change:url', function () {
-      if (this._shouldFetchOnURLChange()) {
+    this.on('change:url', function (mdl, attrs, opts) {
+      if ((opts && opts.forceFetch) || this._shouldFetchOnURLChange()) {
         this.fetch();
       }
     }, this);
@@ -34416,7 +34430,7 @@ module.exports = DataviewModelBase.extend({
 
   initialize: function () {
     DataviewModelBase.prototype.initialize.apply(this, arguments);
-    this.on('change:column change:operation', this._reloadMap, this);
+    this.on('change:column change:operation', this._reloadMapAndForceFetch, this);
   },
 
   parse: function (r) {
@@ -34509,7 +34523,7 @@ module.exports = DataviewModelBase.extend({
       }
     }, this);
     this.listenTo(this.layer, 'change:meta', this._onChangeLayerMeta);
-    this.on('change:column', this._reloadMap, this);
+    this.on('change:column', this._reloadMapAndForceFetch, this);
     this.on('change:bins change:start change:end', this._fetchAndResetFilter, this);
   },
 
@@ -34621,7 +34635,7 @@ module.exports = DataviewModelBase.extend({
   initialize: function (attrs, opts) {
     DataviewModelBase.prototype.initialize.call(this, attrs, opts);
     this._data = new Backbone.Collection(this.get('data'));
-    this.on('change:columns', this._reloadMap, this);
+    this.on('change:columns', this._reloadMapAndForceFetch, this);
   },
 
   getData: function () {
@@ -34987,6 +35001,18 @@ CategoryGeoJSONDataProvider.prototype.getData = function () {
     features = filter.getValues(false, columnName);
   }
 
+  var data = {
+    categories: [],
+    categoriesCount: 0,
+    count: 0,
+    max: 0,
+    min: 0,
+    nulls: 0,
+    type: 'aggregation'
+  };
+
+  if (!features.length) return data;
+
   // TODO: There's probably a more efficient way of doing this
   var groups = _.groupBy(features, function (feature) { return feature.properties[columnName]; });
   var groupCounts = _.map(Object.keys(groups), function (key) {
@@ -34998,18 +35024,11 @@ CategoryGeoJSONDataProvider.prototype.getData = function () {
   var sortedGroups = _.sortBy(groupCounts, function (group) {
     return group.value;
   }).reverse();
-  var count = features.length;
-
-  var nulls = filter.getValues(false, columnName).reduce(function (p, c) { return p + (c.properties[columnName] === null ? 1 : 0); }, 0);
-  var data = {
-    categories: [],
-    categoriesCount: sortedGroups.length,
-    count: count,
-    max: sortedGroups[0].value,
-    min: sortedGroups[sortedGroups.length - 1].value,
-    nulls: nulls,
-    type: 'aggregation'
-  };
+  data.count = features.length;
+  data.categoriesCount = sortedGroups.length;
+  data.max = sortedGroups[0].value;
+  data.min = sortedGroups[sortedGroups.length - 1].value;
+  data.nulls = filter.getValues(false, columnName).reduce(function (p, c) { return p + (c.properties[columnName] === null ? 1 : 0); }, 0);
 
   _.each(sortedGroups.slice(0, numberOfCategories), function (category) {
     data.categories.push({
@@ -38404,7 +38423,8 @@ var Map = Model.extend({
     if (this._windshaftMap) {
       var instanceOptions = {
         layers: this.layers.models,
-        sourceLayerId: options && options.sourceLayerId
+        sourceLayerId: options && options.sourceLayerId,
+        forceFetch: options && options.forceFetch
       };
 
       if (this._dataviewsCollection) {
@@ -38417,8 +38437,8 @@ var Map = Model.extend({
   _updateAttributions: function () {
     var defaultCartoDBAttribution = this.defaults.attribution[0];
     var attributions = _.chain(this.layers.models)
-      .map(function(layer) { return sanitize.html(layer.get('attribution')); })
-      .reject(function(attribution) { return attribution == defaultCartoDBAttribution})
+      .map(function (layer) { return sanitize.html(layer.get('attribution')); })
+      .reject(function (attribution) { return attribution === defaultCartoDBAttribution; })
       .compact()
       .uniq()
       .value();
@@ -46662,6 +46682,7 @@ var WindshaftMap = Backbone.Model.extend({
     });
     var dataviews = options.dataviews;
     var sourceLayerId = options.sourceLayerId;
+    var forceFetch = options.forceFetch;
 
     var mapConfig = this.configGenerator.generate({
       layers: layers,
@@ -46689,7 +46710,7 @@ var WindshaftMap = Backbone.Model.extend({
       filters: filters.toJSON(),
       success: function (mapInstance) {
         this.set(mapInstance);
-        this.trigger('instanceCreated', this, sourceLayerId);
+        this.trigger('instanceCreated', this, sourceLayerId, forceFetch);
 
         // TODO: Revisit this (will layerIndex work for NamedMaps??)
         // Should we move it somewhere else?
@@ -86175,24 +86196,24 @@ __p+=' <p class="CDB-Text is-semibold CDB-Size-small u-upperCase js-textInfo"> '
 __p+=' '+
 ((__t=( totalCats ))==null?'':_.escape(__t))+
 ' blocked <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-link u-lSpace js-unlock">unlock</button> ';
- } else if (areAllRejected || rejectedCats === totalCats) { 
+ } else { 
+__p+=' ';
+ if (noneSelected) { 
 __p+=' None selected ';
  } else { 
 __p+=' '+
-((__t=( rejectedCats === 0 && acceptedCats === 0 || acceptedCats >= totalCats ? "All selected" : acceptedCats + " selected" ))==null?'':_.escape(__t))+
+((__t=( allSelected ? "All selected" : acceptedCatsInData + " selected" ))==null?'':_.escape(__t))+
 ' ';
  if (canBeLocked) { 
 __p+=' <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-link u-lSpace js-lock">lock</button> ';
  }
 __p+=' ';
  }
-__p+=' </p> ';
- if (!isLocked && totalCats > 2) { 
-__p+=' <div class="CDB-Widget-filterButtons"> ';
- if (rejectedCats > 0 || acceptedCats > 0 || areAllRejected) { 
-__p+=' <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-link CDB-Widget-filterButton js-all">all</button> ';
+__p+=' ';
  } 
-__p+=' </div> ';
+__p+=' </p> ';
+ if (canSelectAll) { 
+__p+=' <div class="CDB-Widget-filterButtons"> <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-link CDB-Widget-filterButton js-all">all</button> </div> ';
  } 
 __p+=' ';
  } 
@@ -86225,17 +86246,26 @@ module.exports = cdb.core.View.extend({
   },
 
   render: function () {
+    var acceptedCats = this.dataviewModel.filter.acceptedCategories.size();
+    var rejectedCats = this.dataviewModel.filter.rejectedCategories.size();
+    var acceptedCatsInData = this.dataviewModel.numberOfAcceptedCategories();
+    var rejectedCatsInData = this.dataviewModel.numberOfRejectedCategories();
+    var areAllRejected = this.dataviewModel.filter.areAllRejected();
+    var totalCats = this.dataviewModel.getData().size();
+    var isLocked = this.widgetModel.isLocked();
+
     this.$el.html(
       template({
-        acceptedCats: this.dataviewModel.numberOfAcceptedCategories(),
-        rejectedCats: this.dataviewModel.numberOfRejectedCategories(),
-        areAllRejected: this.dataviewModel.filter.areAllRejected(),
-        isLocked: this.widgetModel.isLocked(),
-        canBeLocked: this.widgetModel.canBeLocked(),
-        totalLocked: this.widgetModel.lockedCategories.size(),
         isSearchEnabled: this.widgetModel.isSearchEnabled(),
         isSearchApplied: this.dataviewModel.isSearchApplied(),
-        totalCats: this.dataviewModel.getData().size()
+        isLocked: isLocked,
+        canBeLocked: this.widgetModel.canBeLocked(),
+        allSelected: (rejectedCatsInData === 0 && acceptedCatsInData === 0) || acceptedCatsInData >= totalCats,
+        canSelectAll: !isLocked && (rejectedCats > 0 || acceptedCats > 0 || areAllRejected) && totalCats > 2,
+        noneSelected: areAllRejected || (rejectedCatsInData === totalCats) || (acceptedCatsInData === 0 && acceptedCats > 0),
+        acceptedCatsInData: acceptedCatsInData,
+        totalLocked: this.widgetModel.lockedCategories.size(),
+        totalCats: totalCats
       })
     );
     return this;
@@ -87463,7 +87493,6 @@ module.exports = cdb.core.View.extend({
     this._setupDimensions();
     this._calcBarWidth();
     this._generateChartContent();
-    this._removeShadowBars();
     this._generateShadowBars();
   },
 
@@ -87473,7 +87502,6 @@ module.exports = cdb.core.View.extend({
     this._generateAxis();
     this._updateChart();
 
-    this._generateShadowBars();
     this.chart.select('.CDB-Chart-handles').moveToFront();
     this.chart.select('.Brush').moveToFront();
   },
@@ -88261,7 +88289,7 @@ module.exports = cdb.core.View.extend({
   },
 
   events: {
-    'click .js-clear': '_clear',
+    'click .js-clear': '_resetWidget',
     'click .js-zoom': '_zoom'
   },
 
@@ -88401,7 +88429,6 @@ module.exports = cdb.core.View.extend({
   _renderMainChart: function () {
     this.histogramChartView = new HistogramChartView(({
       margin: { top: 4, right: 4, bottom: 4, left: 4 },
-      hasShadowBards: true,
       hasHandles: true,
       hasAxisTip: true,
       width: this.canvasWidth,
@@ -88659,8 +88686,21 @@ module.exports = cdb.core.View.extend({
     if (this.model.get('zoomed')) {
       this._onZoomIn();
     } else {
-      this._onZoomOut();
+      this._resetWidget();
     }
+  },
+
+  _showMiniRange: function () {
+    var loBarIndex = this.model.get('lo_index');
+    var hiBarIndex = this.model.get('hi_index');
+
+    this.miniHistogramChartView.selectRange(loBarIndex, hiBarIndex);
+    this.miniHistogramChartView.show();
+  },
+
+  _zoom: function () {
+    this.model.set({ zoomed: true, zoom_enabled: false });
+    this.histogramChartView.removeSelection();
   },
 
   _onZoomIn: function () {
@@ -88673,16 +88713,12 @@ module.exports = cdb.core.View.extend({
     this._dataviewModel.fetch();
   },
 
-  _zoom: function () {
-    this.model.set({ zoomed: true, zoom_enabled: false });
-    this.histogramChartView.removeSelection();
-  },
-
-  _onZoomOut: function () {
+  _resetWidget: function () {
     this.lockedByUser = true;
     this.lockZoomedData = false;
     this.unsettingRange = true;
     this.model.set({
+      zoomed: false,
       zoom_enabled: false,
       filter_enabled: false,
       lo_index: null,
@@ -88695,21 +88731,8 @@ module.exports = cdb.core.View.extend({
     this.histogramChartView.resetYScale();
     this.histogramChartView.contract(this.defaults.chartHeight);
     this.histogramChartView.resetIndexes();
-
-    this.miniHistogramChartView.hide();
-  },
-
-  _showMiniRange: function () {
-    var loBarIndex = this.model.get('lo_index');
-    var hiBarIndex = this.model.get('hi_index');
-
-    this.miniHistogramChartView.selectRange(loBarIndex, hiBarIndex);
-    this.miniHistogramChartView.show();
-  },
-
-  _clear: function () {
     this.histogramChartView.removeSelection();
-    this.model.set({ zoomed: false, zoom_enabled: false });
+    this.miniHistogramChartView.hide();
   }
 });
 
@@ -89339,14 +89362,6 @@ module.exports = cdb.core.View.extend({
     return this;
   },
 
-  _onFirstLoad: function () {
-    this._dataviewModel.once('change:data', this.render, this);
-    this._dataviewModel.fetch();
-    if (!this._isDataEmpty()) {
-      this.render();
-    }
-  },
-
   _appendView: function (view) {
     this.addView(view);
     this.$el.append(view.render().el);
@@ -89355,6 +89370,11 @@ module.exports = cdb.core.View.extend({
   _isDataEmpty: function () {
     var data = this._dataviewModel.getData();
     return _.isEmpty(data) || _.size(data) === 0;
+  },
+
+  _onFirstLoad: function () {
+    this.render();
+    this._dataviewModel.fetch(); // do an explicit fetch again, to get actual data with the filters applied (e.g. bbox)
   }
 });
 
@@ -89406,7 +89426,8 @@ module.exports = cdb.core.View.extend({
         return (i * 3);
       },
       height: this.defaults.histogramChartHeight,
-      data: this.model.getData()
+      data: this.model.getData(),
+      displayShadowBars: true
     });
     this.addView(this._chartView);
     this.$el.append(this._chartView.render().el);
@@ -89486,11 +89507,7 @@ module.exports = cdb.core.View.extend({
 
   initialize: function () {
     this._dataviewModel = this.model.dataviewModel;
-    this._initBinds();
-  },
-
-  _initBinds: function () {
-    this._dataviewModel.once('change:data', this.render, this);
+    this._dataviewModel.once('change:data', this._onFirstDataChange, this);
     this.add_related_model(this._dataviewModel);
   },
 
@@ -89534,6 +89551,11 @@ module.exports = cdb.core.View.extend({
   _isDataEmpty: function () {
     var data = this._dataviewModel.getData();
     return _.isEmpty(data) || _.size(data) === 0;
+  },
+
+  _onFirstDataChange: function () {
+    this.render();
+    this._dataviewModel.fetch(); // do an explicit fetch again, to get actual data with the filters applied (e.g. bbox)
   }
 });
 
@@ -89783,16 +89805,21 @@ module.exports = cdb.core.View.extend({
   },
 
   _reSelectRange: function () {
-    function clamp (a, b, t) {
-      return Math.max(a, Math.min(b, t));
+    if (!this._rangeFilter.isEmpty()) {
+      var loStep = this.timeToStep(this._rangeFilter.get('min'));
+      var hiStep = this.timeToStep(this._rangeFilter.get('max'));
+
+      // clamp values since the range can be outside of the current torque thing
+      var steps = this._torqueLayerModel.get('steps');
+      this._torqueLayerModel.renderRange(
+        this._clampRangeVal(0, steps, loStep), // start
+        this._clampRangeVal(0, steps, hiStep) // end
+      );
     }
-    var loStep = this.timeToStep(this._rangeFilter.get('min'));
-    var hiStep = this.timeToStep(this._rangeFilter.get('max'));
-    // clamp values since the range can be outside of the current torque thing
-    this._torqueLayerModel.renderRange(
-      clamp(0, this._torqueLayerModel.get('steps'), loStep),
-      clamp(0, this._torqueLayerModel.get('steps'), hiStep)
-    );
+  },
+
+  _clampRangeVal: function (a, b, t) {
+    return Math.max(a, Math.min(b, t));
   },
 
   _onChangeChartWidth: function () {
