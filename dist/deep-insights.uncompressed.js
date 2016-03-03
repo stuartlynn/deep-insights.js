@@ -7796,7 +7796,7 @@ tree.Filterset.prototype.toJS = function(env) {
       val = filter._val.toString(true);
     }
     var attrs = "data";
-    return attrs + "." + filter.key.value  + " " + op + " " + (val.is === 'string' ? "'"+ val +"'" : val);
+    return attrs + "." + filter.key.value  + " " + op + " " + (val.is === 'string' ? "'" + val.toString().replace(/'/g, "\\'") + "'" : val);
   }).join(' && ');
 };
 
@@ -9262,6 +9262,7 @@ module.exports={
     "test": "mocha -R spec",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && coveralls < ./coverage/lcov.info"
   },
+  "gitHead": "27850ed122a6f5dbfc5efa4938d8385bbcbc87c5",
   "readme": "# CartoCSS\n\n[![Build Status](https://secure.travis-ci.org/mapbox/carto.png)](http://travis-ci.org/mapbox/carto)\n\nIs as stylesheet renderer for javascript, It's an evolution of the Mapnik renderer from Mapbox.\nPlease, see original [Mapbox repo](http://github.com/mapbox/carto) for more information and credits\n\n## Quick Start\n\n```javascript\n// shader is a CartoCSS object\n\nvar cartocss = [\n    '#layer {',\n    ' marker-width: [property]',\n    ' marker-fill: red',\n    '}'\n].join('')\nvar shader = new carto.RendererJS().render(cartocss);\nvar layers = shader.getLayers()\nfor (var i = 0; i < layers.length; ++i) {\n    var layer = layers[i];\n    console.log(\"layer name: \", layer.fullName())\n    console.log(\"- frames: \", layer.frames())\n    console.log(\"- attachment: \", layer.attachment())\n\n    var layerShader = layer.getStyle({ property: 1 }, { zoom: 10 })\n    console.log(layerShader['marker-width']) // 1\n    console.log(layerShader['marker-fill']) // #FF0000\n}\n\n```\n\n# API\n\n## RendererJS\n\n### render(cartocss)\n\n## CartoCSS\n\ncompiled cartocss object\n\n### getLayers\n\nreturn the layers, an array of ``CartoCSS.Layer`` object\n\n### getDefault\n\nreturn the default layer (``CartoCSS.Layer``), usually the Map layer\n\n\n### findLayer(where)\n\nfind a layer using where object.\n\n```\nshader.findLayer({ name: 'test' })\n```\n\n## CartoCSS.Layer\n\n### getStyle(props, context)\n\nreturn the evaluated style:\n    - props: object containing properties needed to render the style. If the cartocss style uses\n      some variables they should be passed in this object\n    - context: rendering context variables like ``zoom`` or animation ``frame``\n\n\n\n\n\n\n\n\n\n\n## Reference Documentation\n\n* [mapbox.com/carto](http://mapbox.com/carto/)\n\n\n",
   "readmeFilename": "README.md",
   "bugs": {
@@ -9269,9 +9270,9 @@ module.exports={
   },
   "homepage": "https://github.com/cartodb/carto#readme",
   "_id": "carto@0.15.1-cdb1",
-  "_shasum": "c43991f233072b4a77f80b2657f9b0673b455e0b",
-  "_resolved": "https://github.com/CartoDB/carto/archive/0.15.1-cdb1.tar.gz",
-  "_from": "https://github.com/CartoDB/carto/archive/0.15.1-cdb1.tar.gz"
+  "_shasum": "ccefdc794a94ef649094f1a93bcf14bb545f2587",
+  "_from": "git://github.com/CartoDB/carto.git#27850ed",
+  "_resolved": "git://github.com/CartoDB/carto.git#27850ed122a6f5dbfc5efa4938d8385bbcbc87c5"
 }
 
 },{}],47:[function(require,module,exports){
@@ -11429,16 +11430,10 @@ cartodb.d3.extend(Filter.prototype, cartodb.d3.Event, {
     var ring = this.visibleTiles.ring
     if (boundingBox) {
       uniqueValues = uniqueValues.filter(function(feature) {
-        if (boundingBox.indexOf(feature.properties.tilePoint) > -1) return true
-        else if (feature.geometry.coordinates && ring.indexOf(feature.properties.tilePoint) > -1) {
-          if (this.visibleTiles.se.x >= feature.geometry.coordinates[0] &&
+          return (this.visibleTiles.se.x >= feature.geometry.coordinates[0] &&
               feature.geometry.coordinates[0] >= this.visibleTiles.nw.x && 
               this.visibleTiles.se.y <= feature.geometry.coordinates[1] &&
-              feature.geometry.coordinates[1] <= this.visibleTiles.nw.y) {
-            return true
-          }
-          else return false
-        }
+              feature.geometry.coordinates[1] <= this.visibleTiles.nw.y)
       }.bind(this))
     }
 
@@ -11581,7 +11576,7 @@ var elements = {
   geo: require('./geo.js'),
   Renderer: require('./renderer.js'),
   net: require('./net.js'),
-  filter: require('./filter.js'),
+  Filter: require('./filter.js'),
   provider: require('./providers')
 }
 for (var key in elements) {
@@ -11794,11 +11789,7 @@ L.CartoDBd3Layer = L.TileLayer.extend({
         self.fire('featuresChanged', self.getFeatures())
       })
       for (var key in self.eventCallbacks){
-        r.on(key, function() {
-          var latLng = self._map.layerPointToLatLng([arguments[2].x, arguments[2].y])
-          arguments[1] = Object.keys(latLng).map(function(e){return latLng[e]})
-          self.eventCallbacks[key].apply(self, arguments)
-        })
+        r.on(key, self.eventCallbacks[key])
       }
     })
   },
@@ -12235,6 +12226,7 @@ module.exports = XYZProvider
 
 },{"../":53,"d3":305,"topojson":49}],60:[function(require,module,exports){
 (function (global){
+/** global L **/
 var d3 = global.d3 || require('d3')
 var cartodb = global.cartodb || {}
 var carto = global.carto || require('carto')
@@ -12305,54 +12297,78 @@ Renderer.prototype = {
     var self = this
     if (eventName ==='featureOver') {
       this.events.featureOver = function (f) {
-        var selection = d3.select(this)
         this.style.cursor = 'pointer'
+        var selection = d3.select(this)
         var properties = selection.data()[0].properties
         var index = Renderer.getIndexFromFeature(this)
-        var latLng = self._getLatLngFromEvent(self.layer._map, f)
-        var pos = self._getPosFromEvent(self.layer._map, f)
-        self.layer.eventCallbacks.featureOver(f, latLng, pos, properties, index)
+        var layerPoint = self._getLayerPointFromEvent(self.layer._map, f)
+        var latLng = self.layer._map.layerPointToLatLng(layerPoint)
+        var pos = self.layer._map.layerPointToContainerPoint(layerPoint)
+        self.layer.eventCallbacks.featureOver(f, [ latLng.lat, latLng.lng ], pos, properties, index)
       }
     } else if (eventName ==='featureOut') {
       this.events.featureOut = function (f) {
         var selection = d3.select(this)
+        var properties = selection.data()[0].properties
         var sym = this.attributes['class'].value
         selection.reset = function () {
           selection.style(self.styleForSymbolizer(sym, 'shader'))
         }
         var index = Renderer.getIndexFromFeature(this)
-        var latLng = self._getLatLngFromEvent(self.layer._map, f)
-        var pos = self._getPosFromEvent(self.layer._map, f)
-        self.layer.eventCallbacks.featureOut(f, latLng, pos, d3.select(this).data()[0].properties, index)
+        var layerPoint = self._getLayerPointFromEvent(self.layer._map, f)
+        var latLng = self.layer._map.layerPointToLatLng(layerPoint)
+        var pos = self.layer._map.layerPointToContainerPoint(layerPoint)
+        self.layer.eventCallbacks.featureOut(f, [ latLng.lat, latLng.lng ], pos, properties, index)
       }
     } else if (eventName ==='featureClick') {
       this.events.featureClick = function (f) {
+        var selection = d3.select(this)
+        var properties = selection.data()[0].properties
         var index = Renderer.getIndexFromFeature(this)
-        var latLng = self._getLatLngFromEvent(self.layer._map, f)
-        var pos = self._getPosFromEvent(self.layer._map, f)
-        self.layer.eventCallbacks.featureClick(f, latLng, pos, d3.select(this).data()[0].properties, index)
+        var layerPoint = self._getLayerPointFromEvent(self.layer._map, f)
+        var latLng = self.layer._map.layerPointToLatLng(layerPoint)
+        var pos = self.layer._map.layerPointToContainerPoint(layerPoint)
+        self.layer.eventCallbacks.featureClick(f, [ latLng.lat, latLng.lng ], pos, properties, index)
       }
     } else if (eventName ==='featuresChanged') {
       this.filter.on('featuresChanged', callback)
     }
   },
 
-  _getLatLngFromEvent: function (map, mouseEvent) {
-    var mapBoundingBoxClientRect = map.getContainer().getBoundingClientRect()
-    var latLng = map.layerPointToLatLng([
-      mouseEvent.clientX - mapBoundingBoxClientRect.left,
-      mouseEvent.clientY - mapBoundingBoxClientRect.top
-    ]);
+  _getLayerPointFromEvent: function (map, event) {
+    var curleft = 0;
+    var curtop = 0;
+    var obj = map.getContainer();
 
-    return [latLng.lat, latLng.lng]
-  },
+    var x, y;
+    if (event.changedTouches && event.changedTouches.length > 0) {
+      x = event.changedTouches[0].clientX + window.scrollX;
+      y = event.changedTouches[0].clientY + window.scrollY;
+    } else {
+      x = event.clientX;
+      y = event.clientY;
+    }
 
-  _getPosFromEvent: function (map, mouseEvent) {
-    var mapBoundingBoxClientRect = map.getContainer().getBoundingClientRect()
-    return {
-      x: mouseEvent.clientX - mapBoundingBoxClientRect.left,
-      y: mouseEvent.clientY - mapBoundingBoxClientRect.top
-    };
+    var pointX;
+    var pointY;
+    // If the map is fixed at the top of the window, we can't use offsetParent
+    // cause there might be some scrolling that we need to take into account.
+    if (obj.offsetParent && obj.offsetTop > 0) {
+      do {
+        curleft += obj.offsetLeft;
+        curtop += obj.offsetTop;
+      } while (obj = obj.offsetParent);
+      pointX = x - curleft;
+      pointY = y - curtop;
+    } else {
+      var rect = obj.getBoundingClientRect();
+      var scrollX = (window.scrollX || window.pageXOffset);
+      var scrollY = (window.scrollY || window.pageYOffset);
+      pointX = (event.clientX ? event.clientX : x) - rect.left - obj.clientLeft - scrollX;
+      pointY = (event.clientY ? event.clientY : y) - rect.top - obj.clientTop - scrollY;
+    }
+    var point = new L.Point(pointX, pointY);
+    return map.containerPointToLayerPoint(point);
   },
 
   redraw: function (updating) {
@@ -12408,18 +12424,21 @@ Renderer.prototype = {
         'stroke': function (d) { return d[shaderName]['line-color'] },
         'stroke-width': function (d) { return d[shaderName]['line-width'] },
         'stroke-opacity': function (d) { return d[shaderName]['line-opacity'] },
-        'mix-blend-mode': function (d) { return d[shaderName]['comp-op'] }
+        'mix-blend-mode': function (d) { return d[shaderName]['comp-op'] },
+        'stroke-dasharray': function (d) { return d[shaderName]['line-dasharray']}
       }
     } else if (symbolyzer === 'markers') {
       return {
         'fill': function (d) { return d[shaderName]['marker-fill'] || 'none' },
         'fill-opacity': function (d) { return d[shaderName]['marker-fill-opacity'] },
         'stroke': function (d) { return d[shaderName]['marker-line-color'] },
+        'stroke-opacity': function (d) { return d[shaderName]['marker-line-opacity'] },
         'stroke-width': function (d) { return d[shaderName]['marker-line-width'] },
         'radius': function (d) {
           return d[shaderName]['marker-width'] / 2
         },
-        'mix-blend-mode': function (d) { return d[shaderName]['comp-op'] }
+        'mix-blend-mode': function (d) { return d[shaderName]['comp-op'] },
+        'stroke-dasharray': function (d) { return d[shaderName]['line-dasharray']}
       }
     } else if (symbolyzer === 'text') {
       return {
@@ -31382,7 +31401,7 @@ module.exports={
     "underscore": "1.8.3",
     "cartoassets": "github:cartodb/CartoAssets#master",
     "d3": "3.5.8",
-    "d3.cartodb": "git://github.com/CartoDB/d3.cartodb.git#09fb950"
+    "d3.cartodb": "git://github.com/CartoDB/d3.cartodb.git#c3f420a"
   },
   "devDependencies": {
     "browserify": "11.2.0",
@@ -31498,7 +31517,7 @@ module.exports={
       "/vendor"
     ]
   },
-  "gitHead": "eb1567daa1efb21fce88606b05a0fec5759fde6d",
+  "gitHead": "9c9ce9c713be50bbd48df3586d1fdddb04c4eab7",
   "readme": "CartoDB.js (v3.15)\n===========\n\n[![Build Status](http://clinker.cartodb.net/desktop/plugin/public/status/CartoDB-js-develop-testing)]\n(http://clinker.cartodb.net/jenkins/job/CartoDB-js-develop-testing)\n\nThis library allows to embed visualizations created with CartoDB in your map or website in a simple way.\n\n\n## Quick start\n\n  1. Add cartodb.js and css to your site:\n\n    ```html\n\n        <link rel=\"stylesheet\" href=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css\" />\n        <script src=\"http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js\"></script>\n\n        <!-- use these cartodb.css links if you are using https -->\n        <!--link rel=\"stylesheet\" href=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css\" /-->\n\n        <!-- use this cartodb.js link if you are using https -->\n        <!-- script src=\"https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js\"></script -->\n    ```\n\n\n  2. Create the map and add the layer\n\n    ```javascript\n      var map = L.map('map').setView([0, 0], 3);\n\n      // set a base layer\n      L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png', {\n        attribution: 'stamen http://maps.stamen.com/'\n      }).addTo(map);\n\n      // add the cartodb layer\n      var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/2b13c956-e7c1-11e2-806b-5404a6a683d5/viz.json';\n      cartodb.createLayer(map, layerUrl).addTo(map);\n    ```\n\n### Usage with Bower\n\nYou can install **cartodb.js** with [bower](http://bower.io/) by running\n\n```sh\nbower install cartodb.js\n```\n\n\n## Documentation\nYou can find the documentation online [here](http://docs.cartodb.com/cartodb-platform/cartodb-js.html) and the [source](https://github.com/CartoDB/cartodb.js/blob/develop/doc/API.md) inside this repository.\n\n## Examples\n\n - [Load a layer with google maps](http://cartodb.github.com/cartodb.js/examples/gmaps_force_basemap.html)\n - [Load a layer with Leaflet](http://cartodb.github.com/cartodb.js/examples/leaflet.html)\n - [Show a complete visualization](http://cartodb.github.com/cartodb.js/examples/easy.html)\n - [A visualization with a layer selector](http://cartodb.github.com/cartodb.js/examples/layer_selector.html)\n - [How to create a custom infowindow](http://cartodb.github.com/cartodb.js/examples/custom_infowindow.html)\n - [The Hobbit filming location paths](http://cartodb.github.com/cartodb.js/examples/TheHobbitLocations/) a full example with some widgets\n\n\n## How to build\nBuild CartoDB.js library:\n\n  - Install [node.js](http://nodejs.org/download/), from 0.10 version\n  - Install grunt & bower: `npm install -g grunt-cli bower`\n  - Install node dependencies: `npm install`\n  - Install bower dependencies: `bower install`\n  - Install [ruby](https://www.ruby-lang.org/en/installation/) and [bundler](https://github.com/bundler/bundler)\n  - Install ruby dependencies: `bundle install` (necessary for compass gem)\n  - Start the server: `grunt build`\n  - Happy mapping!\n  - \n  \n## Submitting Contributions\n\nYou will need to sign a Contributor License Agreement (CLA) before making a submission. [Learn more here.](https://cartodb.com/contributing)\n\n",
   "readmeFilename": "README.md",
   "bugs": {
@@ -31506,9 +31525,9 @@ module.exports={
   },
   "homepage": "https://github.com/CartoDB/cartodb.js#readme",
   "_id": "cartodb.js@4.0.0-alpha.1",
-  "_shasum": "7119c9833c12d3216e41647de89e69db9b610daf",
-  "_from": "cartodb/cartodb.js#eb1567d",
-  "_resolved": "git://github.com/cartodb/cartodb.js.git#eb1567daa1efb21fce88606b05a0fec5759fde6d"
+  "_shasum": "81ef217f61573d4abc39201d5c89638e0bf9785c",
+  "_from": "cartodb/cartodb.js#9c9ce9c",
+  "_resolved": "git://github.com/cartodb/cartodb.js.git#9c9ce9c713be50bbd48df3586d1fdddb04c4eab7"
 }
 
 },{}],133:[function(require,module,exports){
@@ -33547,13 +33566,10 @@ module.exports = DataviewModelBase.extend({
   ),
 
   url: function () {
-    var params = [];
-    if (this.get('boundingBox')) {
-      params.push('bbox=' + this.get('boundingBox'));
-    }
-
-    params.push('own_filter=' + (this.get('filterEnabled') ? 1 : 0));
-
+    var params = [
+      'bbox=' + this._getBoundingBoxFilterParam(),
+      'own_filter=' + (this.get('filterEnabled') ? 1 : 0)
+    ];
     return this.get('url') + '?' + params.join('&');
   },
 
@@ -33568,10 +33584,9 @@ module.exports = DataviewModelBase.extend({
 
     this.on('change:column change:aggregation change:aggregation_column', this._reloadMapAndForceFetch, this);
 
-    this.bind('change:url change:boundingBox', function () {
+    this.bind('change:url', function () {
       this._searchModel.set({
-        url: this.get('url'),
-        boundingBox: this.get('boundingBox')
+        url: this.get('url')
       });
     }, this);
 
@@ -33587,6 +33602,11 @@ module.exports = DataviewModelBase.extend({
     }, this);
 
     this._bindSearchModelEvents();
+  },
+
+  _onMapBoundsChanged: function () {
+    DataviewModelBase.prototype._onMapBoundsChanged.apply(this, arguments);
+    this._searchModel.fetchIfSearchIsApplied();
   },
 
   _bindSearchModelEvents: function () {
@@ -33922,15 +33942,12 @@ module.exports = Model.extend({
   initialize: function (attrs, opts) {
     this._data = new CategoriesCollection();
     this.sync = BackboneAbortSync.bind(this);
-    this._initBinds();
   },
 
-  _initBinds: function () {
-    this.bind('change:boundingBox', function () {
-      if (this.isSearchApplied()) {
-        this.fetch();
-      }
-    }, this);
+  fetchIfSearchIsApplied: function () {
+    if (this.isSearchApplied()) {
+      this.fetch();
+    }
   },
 
   setData: function (data) {
@@ -34036,11 +34053,15 @@ module.exports = Model.extend({
   },
 
   url: function () {
-    var params = [];
-    if (this.get('boundingBox')) {
-      params.push('bbox=' + this.get('boundingBox'));
-    }
+    var params = [
+      'bbox=' + this._getBoundingBoxFilterParam()
+    ];
     return this.get('url') + '?' + params.join('&');
+  },
+
+  _getBoundingBoxFilterParam: function () {
+    var boundingBoxFilter = new WindshaftFiltersBoundingBoxFilter(this._map.getViewBounds());
+    return boundingBoxFilter.toString();
   },
 
   initialize: function (attrs, opts) {
@@ -34075,7 +34096,6 @@ module.exports = Model.extend({
       this._dataProvider = dataProvider.createDataProviderForDataview(this);
     }
     this._initBinds();
-    this._updateBoundingBox();
   },
 
   _initBinds: function () {
@@ -34146,6 +34166,10 @@ module.exports = Model.extend({
         silent: silent,
         forceFetch: forceFetch
       });
+
+      if (this.get('sync_on_data_change')) {
+        this._newDataAvailable = true;
+      }
     }
   },
 
@@ -34160,15 +34184,6 @@ module.exports = Model.extend({
     this.set({enabled: value});
   },
 
-  _onMapBoundsChanged: function () {
-    this._updateBoundingBox();
-  },
-
-  _updateBoundingBox: function () {
-    var boundingBoxFilter = new WindshaftFiltersBoundingBoxFilter(this._map.getViewBounds());
-    this.set('boundingBox', boundingBoxFilter.toString());
-  },
-
   _onChangeBinds: function () {
     this.listenTo(this._map, 'change:center change:zoom', _.debounce(this._onMapBoundsChanged.bind(this), BOUNDING_BOX_FILTER_WAIT));
 
@@ -34177,24 +34192,23 @@ module.exports = Model.extend({
         this.fetch();
       }
     }, this);
-    this.on('change:boundingBox', function () {
-      if (this._shouldFetchOnBoundingBoxChange()) {
-        this.fetch();
-      }
-    }, this);
 
     this.on('change:enabled', function (mdl, isEnabled) {
-      if (isEnabled) {
-        if (mdl.changedAttributes(this._previousAttrs)) {
-          this.fetch();
-        }
-      } else {
-        this._previousAttrs = {
-          url: this.get('url'),
-          boundingBox: this.get('boundingBox')
-        };
+      if (isEnabled && this._newDataAvailable) {
+        this.fetch();
+        this._newDataAvailable = false;
       }
     }, this);
+  },
+
+  _onMapBoundsChanged: function () {
+    if (this._shouldFetchOnBoundingBoxChange()) {
+      this.fetch();
+    }
+
+    if (this.get('sync_on_bbox_change')) {
+      this._newDataAvailable = true;
+    }
   },
 
   _shouldFetchOnURLChange: function () {
@@ -34389,21 +34403,6 @@ module.exports = Model.extend({
   _newModel: function (m) {
     this._dataviewsCollection.add(m);
     return m;
-  },
-
-  _indexOf: function (layerModel) {
-    // We need to filter the layers to only select those that Windshaft knows about
-    // and be able to calculate the right index.
-    var interactiveLayers = this._layersCollection.select(function (layer) {
-      return layer.get('type') === 'CartoDB' || layer.get('type') === 'torque';
-    });
-
-    var index = interactiveLayers.indexOf(layerModel);
-    if (index >= 0) {
-      return index;
-    } else {
-      throw new Error('layer must be located in layers collection to work');
-    }
   }
 });
 
@@ -34478,6 +34477,9 @@ module.exports = DataviewModelBase.extend({
   url: function () {
     var params = [];
 
+    if (this.get('submitBBox')) {
+      params.push('bbox=' + this._getBoundingBoxFilterParam());
+    }
     if (this.get('column_type')) {
       params.push('column_type=' + this.get('column_type'));
     }
@@ -34494,10 +34496,6 @@ module.exports = DataviewModelBase.extend({
         params.push('bins=' + this.get('bins'));
       }
     }
-    if (this.get('boundingBox') && this.get('submitBBox')) {
-      params.push('bbox=' + this.get('boundingBox'));
-    }
-
     var url = this.get('url');
     if (params.length > 0) {
       url += '?' + params.join('&');
@@ -34996,9 +34994,11 @@ CategoryGeoJSONDataProvider.prototype.getData = function () {
   var filterEnabled = options.filterEnabled;
   var numberOfCategories = 5;
   var filter = this._vectorLayerView.getFilter(this._layerIndex);
-  var features = this._getFeatures();
+  var features;
   if (!filterEnabled) {
     features = filter.getValues(false, columnName);
+  } else {
+    features = filter.getValues();
   }
 
   var data = {
@@ -35024,6 +35024,7 @@ CategoryGeoJSONDataProvider.prototype.getData = function () {
   var sortedGroups = _.sortBy(groupCounts, function (group) {
     return group.value;
   }).reverse();
+
   data.count = features.length;
   data.categoriesCount = sortedGroups.length;
   data.max = sortedGroups[0].value;
@@ -35084,8 +35085,9 @@ var FormulaGeoJSONDataProvider = function (vectorLayerView, layerIndex) {
 _.extend(FormulaGeoJSONDataProvider.prototype, GeoJSONDataProviderBase.prototype);
 
 FormulaGeoJSONDataProvider.prototype.getData = function () {
+  var filter = this._vectorLayerView.getFilter(this._layerIndex);
   var options = this._dataview.attributes;
-  var features = this._getFeatures();
+  var features = filter.getValues();
   var operation = options.operation;
   var columnName = options.column;
   var nulls = features.reduce(function (p, c) { return p + (c.properties[columnName] === null ? 1 : 0); }, 0);
@@ -35133,10 +35135,6 @@ GeoJSONDataProviderBase.prototype.getData = function () {
 };
 
 GeoJSONDataProviderBase.prototype.applyFilter = function () {};
-
-GeoJSONDataProviderBase.prototype._getFeatures = function () {
-  return this._vectorLayerView.getFeatures()[this._layerIndex];
-};
 
 _.extend(GeoJSONDataProviderBase.prototype, Backbone.Events);
 
@@ -35197,7 +35195,7 @@ HistogramGeoJSONDataProvider.prototype.getData = function () {
     end = filter.getMax(columnName);
     start = filter.getMin(columnName);
     values = filter.getValues();
-    bins = d3.layout.histogram().bins(numberOfBins)(filter.getValues().map(function (f) {
+    bins = d3.layout.histogram().bins(numberOfBins)(values.map(function (f) {
       return f.properties[options.column];
     }));
     width = (end - start) / options.data.length;
@@ -35206,7 +35204,7 @@ HistogramGeoJSONDataProvider.prototype.getData = function () {
     start = typeof options.start === 'number' ? options.start : filter.getMin(columnName);
     width = (end - start) / options.bins;
     values = filter.getValues(false, columnName);
-    bins = d3.layout.histogram().bins(numberOfBins)(filter.getValues(false, columnName).map(function (f) {
+    bins = d3.layout.histogram().bins(numberOfBins)(values.map(function (f) {
       return f.properties[options.column];
     }));
   }
@@ -86202,7 +86200,7 @@ __p+=' ';
 __p+=' None selected ';
  } else { 
 __p+=' '+
-((__t=( allSelected ? "All selected" : acceptedCatsInData + " selected" ))==null?'':_.escape(__t))+
+((__t=( allSelected ? "All selected" : acceptedCats + " selected" ))==null?'':_.escape(__t))+
 ' ';
  if (canBeLocked) { 
 __p+=' <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-link u-lSpace js-lock">lock</button> ';
@@ -86248,8 +86246,6 @@ module.exports = cdb.core.View.extend({
   render: function () {
     var acceptedCats = this.dataviewModel.filter.acceptedCategories.size();
     var rejectedCats = this.dataviewModel.filter.rejectedCategories.size();
-    var acceptedCatsInData = this.dataviewModel.numberOfAcceptedCategories();
-    var rejectedCatsInData = this.dataviewModel.numberOfRejectedCategories();
     var areAllRejected = this.dataviewModel.filter.areAllRejected();
     var totalCats = this.dataviewModel.getData().size();
     var isLocked = this.widgetModel.isLocked();
@@ -86260,10 +86256,10 @@ module.exports = cdb.core.View.extend({
         isSearchApplied: this.dataviewModel.isSearchApplied(),
         isLocked: isLocked,
         canBeLocked: this.widgetModel.canBeLocked(),
-        allSelected: (rejectedCatsInData === 0 && acceptedCatsInData === 0) || acceptedCatsInData >= totalCats,
+        allSelected: (rejectedCats === 0 && acceptedCats === 0) || acceptedCats >= totalCats,
         canSelectAll: !isLocked && (rejectedCats > 0 || acceptedCats > 0 || areAllRejected) && totalCats > 2,
-        noneSelected: areAllRejected || (rejectedCatsInData === totalCats) || (acceptedCatsInData === 0 && acceptedCats > 0),
-        acceptedCatsInData: acceptedCatsInData,
+        noneSelected: areAllRejected || (rejectedCats === totalCats),
+        acceptedCats: acceptedCats,
         totalLocked: this.widgetModel.lockedCategories.size(),
         totalCats: totalCats
       })
