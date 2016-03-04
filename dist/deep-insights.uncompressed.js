@@ -9270,7 +9270,7 @@ module.exports={
   },
   "homepage": "https://github.com/cartodb/carto#readme",
   "_id": "carto@0.15.1-cdb1",
-  "_shasum": "ccefdc794a94ef649094f1a93bcf14bb545f2587",
+  "_shasum": "af9fda74001fe93c14f50a9eb959bc7c369c6dab",
   "_from": "git://github.com/CartoDB/carto.git#27850ed",
   "_resolved": "git://github.com/CartoDB/carto.git#27850ed122a6f5dbfc5efa4938d8385bbcbc87c5"
 }
@@ -31525,7 +31525,7 @@ module.exports={
   },
   "homepage": "https://github.com/CartoDB/cartodb.js#readme",
   "_id": "cartodb.js@4.0.0-alpha.1",
-  "_shasum": "81ef217f61573d4abc39201d5c89638e0bf9785c",
+  "_shasum": "56b870a05d111ddb091053b5486e3867f7e47f8c",
   "_from": "cartodb/cartodb.js#9c9ce9c",
   "_resolved": "git://github.com/cartodb/cartodb.js.git#9c9ce9c713be50bbd48df3586d1fdddb04c4eab7"
 }
@@ -85906,9 +85906,6 @@ var _ = require('underscore');
 var cdb = require('cartodb.js');
 var CategoryItemView = require('./item/item-view');
 var placeholder = require('./items-placeholder-template.tpl');
-// It is the minimum number of items in order to change select
-// behaviour within the category list.
-var MIN_CATEGORIES = 2;
 
 /**
  * Category list view
@@ -85993,11 +85990,10 @@ module.exports = cdb.core.View.extend({
     var clickedName = mdl.get('name');
 
     if (isSelected) {
-      // If there isn't any filter applied and there are several categories
-      // (> MIN_CATEGORIES), clicking over one will turn rest into as "unselected"
+      // If there isn't any filter applied,
+      // clicking over one will turn rest into as "unselected"
       if (filter.rejectedCategories.size() === 0 &&
-          filter.acceptedCategories.size() === 0 &&
-          this.dataviewModel.getSize() > MIN_CATEGORIES
+          filter.acceptedCategories.size() === 0
       ) {
         var data = this.dataviewModel.getData();
         // Make elements "unselected"
@@ -86256,9 +86252,9 @@ module.exports = cdb.core.View.extend({
         isSearchApplied: this.dataviewModel.isSearchApplied(),
         isLocked: isLocked,
         canBeLocked: this.widgetModel.canBeLocked(),
-        allSelected: (rejectedCats === 0 && acceptedCats === 0) || acceptedCats >= totalCats,
-        canSelectAll: !isLocked && (rejectedCats > 0 || acceptedCats > 0 || areAllRejected) && totalCats > 2,
-        noneSelected: areAllRejected || (rejectedCats === totalCats),
+        allSelected: (rejectedCats === 0 && acceptedCats === 0 && !areAllRejected),
+        canSelectAll: !isLocked && (rejectedCats > 0 || acceptedCats > 0 || areAllRejected),
+        noneSelected: areAllRejected || (!totalCats && !acceptedCats),
         acceptedCats: acceptedCats,
         totalLocked: this.widgetModel.lockedCategories.size(),
         totalCats: totalCats
@@ -86277,8 +86273,8 @@ module.exports = cdb.core.View.extend({
     this.add_related_model(this.dataviewModel);
 
     var f = this.dataviewModel.filter;
-    f.acceptedCategories.bind('change add remove', this.render, this);
-    f.rejectedCategories.bind('change add remove', this.render, this);
+    f.acceptedCategories.bind('add remove reset', this.render, this);
+    f.rejectedCategories.bind('add remove reset', this.render, this);
     this.add_related_model(f.rejectedCategories);
     this.add_related_model(f.acceptedCategories);
   },
@@ -87656,7 +87652,7 @@ module.exports = cdb.core.View.extend({
   },
 
   _getYScale: function () {
-    var data = this.model.get('data');
+    var data = (this._originalData && this._originalData.toJSON()) || this.model.get('data');
     return d3.scale.linear().domain([0, d3.max(data, function (d) { return _.isEmpty(d) ? 0 : d.freq; })]).range([this.chartHeight(), 0]);
   },
 
