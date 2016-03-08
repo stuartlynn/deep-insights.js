@@ -245,18 +245,15 @@
               "options": {
                 "visible": true,
                 "type": "Tiled",
-                "name": "Dark matter",
-                "className": "dark_matter_rainbow_labels",
+                "name": "Dark matter (labels below)",
+                "className": "dark_matter_rainbow",
                 "base_type": "default",
-                "urlTemplate": "http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png",
+                "urlTemplate": "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
                 "minZoom": "0",
                 "maxZoom": "18",
                 "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
                 "subdomains": "abcd",
                 "style": null,
-                "labels": {
-                  "url": "http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png"
-                },
                 "read_only": true,
                 "category": "CartoDB",
                 "order": 0,
@@ -338,29 +335,8 @@
                 },
                 "attribution": ""
               }
-            },
-            {
-              "options": {
-                "visible": true,
-                "type": "Tiled",
-                "default": "true",
-                "url": "http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png",
-                "subdomains": "abcd",
-                "minZoom": "0",
-                "maxZoom": "18",
-                "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
-                "urlTemplate": "http://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png",
-                "name": "Dark matter Labels",
-                "id": "22751919-3f57-406f-b961-8d71f4c18373",
-                "className": "httpsbasemapscartocdncomlight_only_labelszxypng",
-                "order": 2
-              },
-              "infowindow": null,
-              "tooltip": null,
-              "id": "22751919-3f57-406f-b961-8d71f4c18373",
-              "order": 2,
-              "type": "tiled"
             }
+
           ],
           "overlays": [
             {
