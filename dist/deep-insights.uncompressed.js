@@ -9270,7 +9270,7 @@ module.exports={
   },
   "homepage": "https://github.com/cartodb/carto#readme",
   "_id": "carto@0.15.1-cdb1",
-  "_shasum": "5cda1b6bb6ce448df9bf33c8b30921c1dbd4a668",
+  "_shasum": "96b01e8b78a9e394d2c8a6d76232106421c7bc53",
   "_from": "git://github.com/CartoDB/carto.git#27850ed",
   "_resolved": "git://github.com/CartoDB/carto.git#27850ed122a6f5dbfc5efa4938d8385bbcbc87c5"
 }
@@ -31525,7 +31525,7 @@ module.exports={
   },
   "homepage": "https://github.com/CartoDB/cartodb.js#readme",
   "_id": "cartodb.js@4.0.0-alpha.1",
-  "_shasum": "703bc4110ffdf9624b3bd7da4bff094bb70f691a",
+  "_shasum": "8354a737cd5410ef82c85487a23d97543c958241",
   "_from": "cartodb/cartodb.js#a01a3ac",
   "_resolved": "git://github.com/cartodb/cartodb.js.git#a01a3ace0be323dbf98c930186c519fe058b810d"
 }
@@ -84855,7 +84855,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<div class="CDB-Dashboard-menuContainer"> <div class="CDB-Dashboard-menuInner"> <div class="CDB-Dashboard-menuHeader"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <div class="CDB-Dashboard-menuInfo"> <button class="CDB-Shape CDB-Shape--medium js-toggle-view"> <div class="CDB-Shape-threePoints is-horizontal is-medium is-white"> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> </div> </button> </div> <div class="CDB-Dashboard-menuInfo is-active"> <button class="CDB-Shape CDB-Shape--medium js-toggle-view"> <div class="CDB-Shape-threePoints is-horizontal is-medium"> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> <div class="CDB-Shape-threePointsItem is-round"></div> </div> </button> </div> <ul class="CDB-Dashboard-menuActions"> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-heartFill CDB-Size-large"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-twitter CDB-Size-large"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-facebook CDB-Size-medium"></i> </a> </li> <li class="CDB-Dashboard-menuActionsItem"> <a href="#" class="u-hintTextColor"> <i class="CDB-IconFont CDB-IconFont-anchor CDB-Size-medium"></i> </a> </li> </ul> <div class="CDB-Dashboard-menuTexts CDB-Dashboard-hideMobile"> <p class="CDB-Text CDB-Size-small u-upperCase u-altTextColor u-bSpace--m js-timeAgo">UPDATED '+
 ((__t=( updatedAt ))==null?'':_.escape(__t))+
-'</p> <h1 class="CDB-Dashboard-menuTitle CDB-Text CDB-Size-huge js-title">'+
+'</p> <h1 class="CDB-Dashboard-menuTitle CDB-Text CDB-Size-huge u-ellipsis js-title">'+
 ((__t=( title ))==null?'':_.escape(__t))+
 '</h1> <h2 class="CDB-Text CDB-Size-large is-light u-secondaryTextColor js-description">'+
 ((__t=( cdb.core.sanitize.html(description) ))==null?'':__t)+
@@ -84863,7 +84863,7 @@ __p+='<div class="CDB-Dashboard-menuContainer"> <div class="CDB-Dashboard-menuIn
 ((__t=( userAvatarURL ))==null?'':_.escape(__t))+
 '" alt="avatar" class="inline-block"> </div> <p class="CDB-Text CDB-Size-medium CDB-Dashboard-menuFooterTxt">'+
 ((__t=( userName ))==null?'':_.escape(__t))+
-'</p> </li> </ul> </div> </div> <div class="CDB-Dashboard-bg js-toggle-view"></div> <div class="CDB-Dashboard-menuHeaderMobile u-showMobile"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <button class="js-toggle-view-link"> <span class="CDB-Shape CDB-Shape--hamburguer"></span> </button> <div class="CDB-Dashboard-menuMedia CDB-Dashboard-menuAvatar"> <img src="'+
+'</p> </li> </ul> </div> </div> <div class="CDB-Dashboard-bg js-toggle-view"></div> <div class="CDB-Dashboard-menuHeaderMobile u-showMobile"> <div class="CDB-Dashboard-menuLogo"> <i class="CDB-IconFont CDB-IconFont-cartoFante"></i> </div> <button class="js-toggle-view"> <span class="CDB-Shape CDB-Shape--hamburguer"></span> </button> <div class="CDB-Dashboard-menuMedia CDB-Dashboard-menuAvatar"> <img src="'+
 ((__t=( userAvatarURL ))==null?'':_.escape(__t))+
 '" alt="avatar" class="inline-block"> </div> </div> </div>';
 }
@@ -85212,7 +85212,7 @@ WidgetsService.prototype.createHistogramModel = function (attrs, layer) {
 
   var dataviewModel = this._dataviews.createHistogramModel(layer, attrs);
 
-  var attrsNames = ['id', 'title', 'collapsed', 'bins', 'show_stats'];
+  var attrsNames = ['id', 'title', 'collapsed', 'bins', 'show_stats', 'normalized'];
   var widgetAttrs = _.pick(attrs, attrsNames);
   widgetAttrs.type = 'histogram';
   widgetAttrs.attrsNames = attrsNames;
@@ -85752,7 +85752,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<button type="button" class="CDB-Widget-listItemInner CDB-Widget-listButton js-button '+
 ((__t=( isDisabled ? 'is-disabled' : '' ))==null?'':_.escape(__t))+
-'"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold u-upperCase CDB-Size-medium" title="'+
+'"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold u-upperCase CDB-Size-medium u-ellipsis u-rSpace--xl" title="'+
 ((__t=( name ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( name ))==null?'':_.escape(__t))+
@@ -85782,7 +85782,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<div class="CDB-Widget-listItemInner '+
 ((__t=( isDisabled ? 'is-disabled' : '' ))==null?'':_.escape(__t))+
-'"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold u-upperCase CDB-Size-medium" title="'+
+'"> <div class="CDB-Widget-contentSpaced"> <p class="CDB-Text is-semibold u-upperCase CDB-Size-medium u-ellipsis u-rSpace--xl" title="'+
 ((__t=( name ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( name ))==null?'':_.escape(__t))+
@@ -86616,7 +86616,7 @@ var AnimateValues = require('../../animate-values');
  */
 
 module.exports = cdb.core.View.extend({
-  className: 'CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase',
+  className: 'CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase u-tSpace',
   tagName: 'dl',
 
   initialize: function () {
@@ -87182,7 +87182,7 @@ __p+=' '+
  } 
 __p+='</h3> <div class="CDB-Widget-options"> <button class="CDB-Shape js-actions"> <div class="CDB-Shape-threePoints is-blue is-small"> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> <div class="CDB-Shape-threePointsItem"></div> </div> </button> </div> </div> ';
  if (showStats) { 
-__p+=' <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase"> <dt class="CDB-Widget-infoCount">'+
+__p+=' <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase u-tSpace"> <dt class="CDB-Widget-infoCount">'+
 ((__t=( nulls ))==null?'':_.escape(__t))+
 '</dt><dd class="CDB-Widget-infoDescription">null rows</dd> </dl> ';
  } 
@@ -87708,6 +87708,9 @@ module.exports = cdb.core.View.extend({
 
   _getYScale: function () {
     var data = (this._originalData && this._originalData.getData()) || this.model.get('data');
+    if (this.options.normalized) {
+      data = this.model.get('data');
+    }
     return d3.scale.linear().domain([0, d3.max(data, function (d) { return _.isEmpty(d) ? 0 : d.freq; })]).range([this.chartHeight(), 0]);
   },
 
@@ -87735,7 +87738,7 @@ module.exports = cdb.core.View.extend({
     var data = this._getDataForScales();
     this.updateXScale();
 
-    if (!this._originalYScale) {
+    if (!this._originalYScale || this.options.normalized) {
       this._originalYScale = this.yScale = this._getYScale();
     }
 
@@ -88257,7 +88260,9 @@ module.exports = cdb.core.View.extend({
   },
 
   showShadowBars: function () {
-    this.model.set('show_shadow_bars', true);
+    if (this.options.displayShadowBars) {
+      this.model.set('show_shadow_bars', true);
+    }
   },
 
   _generateShadowBars: function () {
@@ -88498,7 +88503,8 @@ module.exports = cdb.core.View.extend({
       height: this.defaults.chartHeight,
       data: this._dataviewModel.getData(),
       originalData: this._originalData,
-      displayShadowBars: true
+      displayShadowBars: !this.model.get('normalized'),
+      normalized: this.model.get('normalized')
     }));
 
     this.$('.js-content').append(this.histogramChartView.el);
@@ -88519,6 +88525,7 @@ module.exports = cdb.core.View.extend({
       height: 40,
       showOnWidthChange: false,
       data: this._dataviewModel.getData(),
+      normalized: this.model.get('normalized'),
       originalData: this._originalData
     }));
 
@@ -88783,7 +88790,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<div class="CDB-Widget-header js-header"> <div class="js-title"></div> ';
  if (showStats) { 
-__p+=' <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> ';
+__p+=' <dl class="CDB-Widget-info CDB-Text CDB-Size-small u-secondaryTextColor u-upperCase u-tSpace"> <dt class="CDB-Widget-infoCount js-nulls">0</dt><dd class="CDB-Widget-infoDescription">NULL ROWS</dd> <dt class="CDB-Widget-infoCount js-min">0</dt><dd class="CDB-Widget-infoDescription">MIN</dd> <dt class="CDB-Widget-infoCount js-avg">0</dt><dd class="CDB-Widget-infoDescription">AVG</dd> <dt class="CDB-Widget-infoCount js-max">0</dt><dd class="CDB-Widget-infoDescription">MAX</dd> </dl> ';
  } 
 __p+=' </div> <div class="CDB-Widget-content CDB-Widget-content--histogram js-content"> <div class="CDB-Widget-tooltip CDB-Widget-tooltip--light CDB-Text CDB-Size-small js-tooltip"></div> <div class="CDB-Widget-filter CDB-Widget-contentSpaced"> <p class="CDB-Text CDB-Size-small is-semibold u-upperCase js-val">…</p> <div class="CDB-Widget-filterButtons js-filter is-hidden"> <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-filterButton js-zoom">zoom</button> <button class="CDB-Text CDB-Size-small u-upperCase u-actionTextColor CDB-Widget-filterButton js-clear">clear</button> </div> </div> </div>';
 }
@@ -88917,7 +88924,7 @@ __p+='<div class="CDB-Widget-header"> <div class="CDB-Widget-title CDB-Widget-co
 ((__t=( title ))==null?'':_.escape(__t))+
 '">'+
 ((__t=( title ))==null?'':_.escape(__t))+
-'</h3> </div> <dl class="CDB-Widget-info CDB-Widget-textSmaller CDB-Widget-textSmaller--upper"> <dt>'+
+'</h3> </div> <dl class="CDB-Widget-info CDB-Widget-textSmaller CDB-Widget-textSmaller--upper u-tSpace"> <dt>'+
 ((__t=( itemsCount ))==null?'':_.escape(__t))+
 '</dt><dd class="CDB-Widget-info">rows</dd> </dl> </div> <div class="CDB-Widget-content CDB-Widget-content--noSidesMargin"> <div class="CDB-Widget-listWrapper js-content"></div> </div> <div class="CDB-Widget-footer js-footer"></div>';
 }
