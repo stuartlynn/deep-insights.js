@@ -34,7 +34,6 @@
               "id": "min-population-formula",
               "type": "formula",
               "title": "Min population (disabled sync)",
-              "order": 1,
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
               "options": {
                 "column": "pop_max",
@@ -49,7 +48,6 @@
               "id": "max-population-formula",
               "type": "formula",
               "title": "Max population",
-              "order": 5,
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
               "options": {
                 "column": "pop_max",
@@ -59,7 +57,6 @@
               "id": "avg-population-formula",
               "type": "formula",
               "title": "Avg population",
-              "order": 4,
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
               "options": {
                 "column": "pop_max",
@@ -69,7 +66,6 @@
               "id": "total-population-formula",
               "type": "formula",
               "title": "Total population",
-              "order": 2,
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
               "options": {
                 "column": "pop_max",
@@ -80,7 +76,6 @@
               "type": "formula",
               "title": "# places",
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
-              "order": 7,
               "options": {
                 "column": "pop_max",
                 "operation": "count"
@@ -89,7 +84,6 @@
               "id": "amount-spent-histogram",
               "type": "histogram",
               "title": "Amount spent",
-              "order": 3,
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
               "options": {
                 "column": "pop_max",
@@ -100,7 +94,6 @@
               "id": "population-histogram",
               "type": "histogram",
               "title": "Population",
-              "order": 6,
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
               "options": {
                 "column": "pop_max",
@@ -110,7 +103,6 @@
               "id": "country-category",
               "type": "category",
               "title": "Country",
-              "order": 8,
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
               "options": {
                 "column": "adm0_a3",
@@ -121,7 +113,6 @@
               "id": "rank-category",
               "type": "category",
               "title": "Rank category",
-              "order": 9,
               "layer_id": "4d82e8df-f21b-4225-b776-61b1bdffde6c",
               "options": {
                 "column": "labelrank",
@@ -242,7 +233,7 @@
                       "options": {
                         "sql": "select * from ne_10m_populated_places_simple",
                         "layer_name": "Populated places",
-                        "cartocss": "/** simple visualization */\n\n#places{\n marker-fill-opacity: 0.9;\n  marker-line-color: #FFF;\n  marker-line-width: 0.6;\n  marker-line-opacity: 1;\n  marker-placement: point;\n  marker-type: ellipse;\n  marker-width: 8;\n  marker-fill: green;\n  marker-allow-overlap: true;\n}",
+                        "cartocss": "/** simple visualization */\n\n#places{\n marker-fill-opacity: 0.9;\n  marker-line-color: #FFF;\n  marker-line-width: 0.6;\n  marker-line-opacity: 1;\n  marker-placement: point;\n  marker-type: ellipse;\n  marker-width: 8;\n  marker-fill: darkblue;\n  marker-allow-overlap: true;\n}",
                         "cartocss_version": "2.1.1",
                         "interactivity": "cartodb_id,adm0_a3,name,pop_max",
                         "table_name": "\"\"."
@@ -312,7 +303,8 @@
           "next": null,
           "transition_options": {
             "time": 0
-          }
+          },
+          vector: true
         };
 
         var dashboard = cartodb.deepInsights.createDashboard('#dashboard', vizJSON, {
