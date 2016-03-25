@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deep-Insights.js | Populated Places (local)</title>
+  <meta name=viewport content="width=device-width initial-scale=1">
+  <link rel="stylesheet" href="../dist/themes/css/deep-insights.css" />
+  <!--
+    Placing a local-config.js file with:
+
+    window.GLOBAL_CDB_CONFIG = {
+      maps_api_template: "http://{user}.localhost.lan:8181",
+      user_name: "development"
+    };
+
+    will override this example user/maps api template
+  -->
+  <script src="../dist/deep-insights.uncompressed.js"></script>
+  <style type="text/css">
+    html, body {
+      position:relative;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="Dashboard-canvas" id="dashboard"></div>
+
+  <script>
+    window.onload = function() {
+
+
+      var vizJSON = {
+        "id": "d08ec5c8-f2c4-11e5-a590-0ecd1babdde5",
+        "version": "0.1.0",
+        "title": "lancour_auctions",
+        "likes": 0,
+        "description": null,
+        "scrollwheel": false,
+        "legends": true,
+        "url": null,
+        "map_provider": "leaflet",
+
+        "user": {
+          "fullname": "Stuart Lynn",
+          "avatar_url": "https://s3.amazonaws.com/com.cartodb.users-assets.production/production/piensaenpixel/assets/20150507074635Captura%20de%20pantalla%202015-05-07%20a%20la%28s%29%2009.46.28.png"
+        },
+
+
+        "datasource": {
+            "type": "public_map",
+            "user_name": "stuartlynn",
+            "maps_api_template": "https://{user}.cartodb.com:443",
+            "stat_tag": "d08ec5c8-f2c4-11e5-a590-0ecd1babdde5",
+            "force_cors": true
+        },
+
+        "widgets": [
+          {
+            "type": "formula",
+            "title": "Total Lots",
+            "layer_id": "4ff3575d-2636-47f4-8e9b-61347df50788",
+            "options": {
+              "column": "cartodb_id",
+              "operation": "count"
+            }
+          },
+          {
+            "type": "histogram",
+            "title": "years",
+            "layer_id": "4ff3575d-2636-47f4-8e9b-61347df50788",
+            "options": {
+              "column": "yearn",
+              "bins": 20
+            }
+          },
+          {
+            "title": "Owner",
+            "type": "category",
+            "layer_id": "4ff3575d-2636-47f4-8e9b-61347df50788",
+            "options": {
+              "type": "aggregation",
+              "column": "owner",
+              "aggregationColumn": "owner",
+              "aggregation": "count",
+              "sync": true
+            }
+          },
+        ],
+
+        "bounds": [
+          [
+            40.9052096972736,
+            -73.6962890625
+          ],
+          [
+            43.45291889355468,
+            -67.598876953125
+          ]
+        ],
+        "center": "[42.19189902447192, -70.6475830078125]",
+        "zoom": 8,
+        "updated_at": "2016-03-25T20:05:21+00:00",
+        "layers": [
+          {
+            "options": {
+              "visible": true,
+              "type": "Tiled",
+              "name": "Dark matter (labels below)",
+              "className": "dark_matter_rainbow",
+              "base_type": "default",
+              "urlTemplate": "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+              "minZoom": "0",
+              "maxZoom": "18",
+              "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>",
+              "subdomains": "abcd",
+              "style": null,
+              "read_only": true,
+              "category": "CartoDB",
+              "order": 0,
+              "id": "cd0da12f-3b93-480a-80c7-bc20ced37798"
+            },
+            "infowindow": null,
+            "tooltip": null,
+            "id": "cd0da12f-3b93-480a-80c7-bc20ced37798",
+            "order": 0,
+            "type": "tiled"
+          },
+          {
+            "type": "layergroup",
+            "options": {
+              "user_name": "stuartlynn",
+              "maps_api_template": "https://{user}.cartodb.com:443",
+              "sql_api_template": "https://{user}.cartodb.com:443",
+              "tiler_protocol": "http",
+              "tiler_domain": "cartodb.com",
+              "tiler_port": "80",
+              "sql_api_protocol": "http",
+              "sql_api_domain": "cartodb.com",
+              "sql_api_endpoint": "/api/v2/sql",
+              "sql_api_port": 80,
+              "filter": "mapnik",
+              "layer_definition": {
+                "stat_tag": "d08ec5c8-f2c4-11e5-a590-0ecd1babdde5",
+                "version": "1.0.1",
+                "layers": [
+                  {
+                    "id": "4ff3575d-2636-47f4-8e9b-61347df50788",
+                    "type": "CartoDB",
+                    "infowindow": {
+                      "fields": [],
+                      "template_name": "table/views/infowindow_light",
+                      "template": "<div class=\"cartodb-popup v2\">\n  <a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a>\n  <div class=\"cartodb-popup-content-wrapper\">\n    <div class=\"cartodb-popup-content\">\n      {{#content.fields}}\n        {{#title}}<h4>{{title}}</h4>{{/title}}\n        {{#value}}\n          <p {{#type}}class=\"{{ type }}\"{{/type}}>{{{ value }}}</p>\n        {{/value}}\n        {{^value}}\n          <p class=\"empty\">null</p>\n        {{/value}}\n      {{/content.fields}}\n    </div>\n  </div>\n  <div class=\"cartodb-popup-tip-container\"></div>\n</div>\n",
+                      "alternative_names": {},
+                      "width": 226,
+                      "maxHeight": 180
+                    },
+                    "tooltip": {
+                      "fields": [
+                        {
+                          "name": "descriptio",
+                          "title": true,
+                          "position": 2
+                        },
+                        {
+                          "name": "owner",
+                          "title": true,
+                          "position": 7
+                        },
+                        {
+                          "name": "year",
+                          "title": true,
+                          "position": 9
+                        }
+                      ],
+                      "template_name": "tooltip_light",
+                      "template": "<div class=\"cartodb-tooltip-content-wrapper\">\n  <div class=\"cartodb-tooltip-content\">\n  {{#fields}}\n    {{#title}}\n    <h4>{{title}}</h4>\n    {{/title}}\n    <p>{{{ value }}}</p>\n  {{/fields}}\n  </div>\n</div>",
+                      "alternative_names": {},
+                      "maxHeight": 180
+                    },
+                    "legend": {
+                      "type": "none",
+                      "show_title": false,
+                      "title": "",
+                      "template": "",
+                      "visible": true
+                    },
+                    "order": 1,
+                    "visible": true,
+                    "options": {
+                      "sql": "SELECT *, split_part(number_of_, '+',1)::numeric as lot_count,  year::numeric yearn FROM stuartlynn.lancour_auctions ",
+                      "layer_name": "lancour_auctions",
+                      "cartocss": "/** simple visualization */\n\n#lancour_auctions{\n  marker-fill-opacity: 0.9;\n  marker-line-color: #FFF;\n  marker-line-width: 1;\n  marker-line-opacity: 1;\n  marker-placement: point;\n  marker-type: ellipse;\n  marker-width: 7;\n  marker-fill: #A53ED5;\n  marker-allow-overlap: true;\n}",
+                      // "cartocss":'',
+                      "cartocss_version": "2.1.1",
+                      "interactivity": "cartodb_id,descriptio,owner,year",
+                      "table_name": "\"\"."
+                    }
+                  }
+                ]
+              },
+              "attribution": ""
+            }
+          }
+        ],
+        "overlays": [
+          {
+            "type": "share",
+            "order": 2,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 20
+            },
+            "template": ""
+          },
+          {
+            "type": "search",
+            "order": 3,
+            "options": {
+              "display": true,
+              "x": 60,
+              "y": 20
+            },
+            "template": ""
+          },
+          {
+            "type": "zoom",
+            "order": 6,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 20
+            },
+            "template": "<a href=\"#zoom_in\" class=\"zoom_in\">+</a> <a href=\"#zoom_out\" class=\"zoom_out\">-</a>"
+          },
+          {
+            "type": "loader",
+            "order": 8,
+            "options": {
+              "display": true,
+              "x": 20,
+              "y": 150
+            },
+            "template": "<div class=\"loader\" original-title=\"\"></div>"
+          },
+          {
+            "type": "logo",
+            "order": 9,
+            "options": {
+              "display": true,
+              "x": 10,
+              "y": 40
+            },
+            "template": ""
+          }
+        ],
+        "prev": null,
+        "next": null,
+        "transition_options": {
+          "time": 0
+        }
+      }
+
+      cartodb.deepInsights.createDashboard('#dashboard', vizJSON, {
+        no_cdn: false,
+      });
+    }
+    </script>
+    </body>
+    </html>
